@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.watchmore {
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: #515151;
+  color: white;
+  box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.watchmore:hover {
+  color: #515151;
+  background: white;
+}
+/*# sourceMappingURL=watchmore.css.map */

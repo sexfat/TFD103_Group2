@@ -1,3 +1,4 @@
+$shaodw:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 *{
     box-sizing: border-box;
 }
@@ -9,7 +10,7 @@
     color: #515151;
     font-size: 24px;
     border: none;
-    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow;
     transition: 0.2s;
     
     img{

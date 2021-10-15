@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        label{
+            margin:5px;
+            padding:5px 15px;
+            background: burlywood;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input{
+            margin:5px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border:none;
+            outline: none;
+            box-shadow: inset -1px -1px 3px rgba(0,0,0,.8);
+            position:relative;
+            top:4px;
+        }
+        #treat{
+            background-color: #F7EDD4;
+            border-radius: 5px;
+            padding:40px 60px;
+            position: relative;
+        }
+        .select{
+            display:flex;
+            /* grid-template-columns: repeat(12,100px); */
+            /* grid-template-rows: 50px; */
+            margin-bottom:25px;
+        }
+        .select:last-child{
+            margin-bottom:35px;
+        }
+        .select span{
+            width:120px;
+            font-size: 18px;
+        }
+        .select span:first-child{
+            position: relative;
+            top:4px;
+            width:80px;
+        }
+        button{
+            position: absolute;
+            right:60px;
+            bottom:40px;
+            width:100px;
+            height:30px;
+            background-color: #515151;
+            color:white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="treat">
+        <div id="select_outline">
+        <div class="select">
+            <span>糕體：</span>
+            <span><input type="checkbox"  v-model="drinks" value="原味鮮奶油" id="原味鮮奶油">原味鮮奶油</span>
+            <span><input type="checkbox"  v-model="drinks" value="巧克力奶油" id="巧克力奶油">巧克力奶油</span>
+            <span><input type="checkbox"  v-model="drinks" value="水果鮮奶油" id="水果鮮奶油">水果鮮奶油</span>
+            <span><input type="checkbox"  v-model="drinks" value="綜合口味" id="綜合口味">綜合口味</span>
+            <span><input type="checkbox"  v-model="drinks" value="其他糕體" id="其他糕體">其他糕體</span>
+        </div>
+        <div class="select">
+            <span>水果：</span>
+            <span><input type="checkbox"  v-model="breads" value="草莓" id="草莓">草莓</span>
+            <span><input type="checkbox"  v-model="breads" value="藍莓" id="藍莓">藍莓</span>
+            <span><input type="checkbox"  v-model="breads" value="櫻桃" id="櫻桃">櫻桃</span>
+            <span><input type="checkbox"  v-model="breads" value="橘子" id="橘子">橘子</span>
+            <span><input type="checkbox"  v-model="breads" value="檸檬" id="檸檬">檸檬</span>
+            <span><input type="checkbox"  v-model="breads" value="奇異果" id="奇異果">奇異果</span>
+            <span><input type="checkbox"  v-model="breads" value="其他水果" id="其他水果">其他水果</span>
+        </div>
+        <div class="select">
+            <span>裝飾：</span>
+            <span><input type="checkbox"  v-model="condiments" value="圓形立牌" id="圓形立牌">圓形立牌</span>
+            <span><input type="checkbox"  v-model="condiments" value="生日立牌" id="生日立牌">生日立牌</span>
+            <span><input type="checkbox"  v-model="condiments" value="奶油" id="奶油">奶油</span>
+            <span><input type="checkbox"  v-model="condiments" value="葉子" id="葉子">葉子</span>
+            <span><input type="checkbox"  v-model="condiments" value="迷迭香" id="迷迭香">迷迭香</span>
+            <span><input type="checkbox"  v-model="condiments" value="薄荷" id="薄荷">薄荷</span>
+            <span><input type="checkbox"  v-model="condiments" value="其他裝飾" id="其他裝飾">其他裝飾</span>
+        </div>
+        <!-- <div class="select"> 
+            <span><input type="checkbox"  v-model="foods" value="meat" id="meat">meat</span>
+            <span><input type="checkbox"  v-model="foods" value="pork" id="pork">pork</span>
+            <span><input type="checkbox"  v-model="foods" value="chicken" id="chicken">chicken</span>
+            <span><input type="checkbox"  v-model="foods" value="rice" id="rice">rice</span>
+        </div> -->
+        </div>
+        <br>
+        <label v-for="drink in drinks" :for="drink">{{drink}}</label>
+        <label v-for="bread in breads" :for="bread">{{bread}}</label>
+        <label v-for="condiment in condiments" :for="condiment">{{condiment}}</label>
+        <label v-for="food in foods" :for="food">{{food}}</label>
+        <button class="clearall">清空選項</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#treat",
+            data:{
+                drinks:[],
+                breads:[],
+                condiments:[],
+                foods:[],
+            },
+        });
+    </script>
+</body>
+</html>
