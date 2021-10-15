@@ -1,0 +1,20 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/base/_variables.scss",
+        "../sass/base/_reset.scss",
+        "../sass/base/_typography.scss",
+        "../sass/base/_color.scss",
+        "../sass/mixins/_mixin.scss",
+        "../sass/components/_button.scss",
+        "../sass/components/_filter.scss",
+        "../sass/modules/_rwd.scss",
+        "../sass/layouts/_header.scss",
+        "../sass/layouts/_footer.scss",
+        "../sass/pages/_index.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

@@ -1,0 +1,30 @@
+.title_h1 {
+  display: inline-block;
+  position: relative;
+}
+
+.title_h1 h1 {
+  display: inline-block;
+  font-size: 36px;
+  color: #515151;
+}
+
+.title_h1 span {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #dfb9b0;
+}
+
+.title_h1 img {
+  width: 58px;
+  height: 58px;
+  vertical-align: middle;
+  position: relative;
+  transform: translateY(-10px);
+}
+/*# sourceMappingURL=title_h1.css.map */
