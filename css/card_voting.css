@@ -1,0 +1,96 @@
+.card_outline {
+  box-sizing: border-box;
+  background-color: #DFB9B0;
+  width: 350px;
+  height: 480px;
+  padding: 25px;
+  border-radius: 7px;
+}
+
+.card_outline .img_container {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.card_outline .img_container img {
+  height: 100%;
+  width: 100%;
+}
+
+.card_outline .down_block .cake_title {
+  margin: 15px 0;
+  text-align: left;
+  font-size: 20px;
+  line-height: 20px;
+  color: #515151;
+  font-weight: 400;
+}
+
+.card_outline .down_block .design_idea {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 16px;
+  color: #515151;
+}
+
+.card_outline .down_block .voting_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card_outline .down_block .voting_area .voting_num {
+  margin-top: 35px;
+}
+
+.card_outline .down_block .voting_area .voting_num .num {
+  font-size: 20px;
+  vertical-align: top;
+  line-height: 25px;
+  color: #515151;
+}
+
+.card_outline .down_block .voting_area .voting {
+  margin-top: 15px;
+  width: 180px;
+  height: 60px;
+  border-radius: 100px;
+  border: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  position: relative;
+  color: #515151;
+  cursor: pointer;
+  background-color: #EFE6E4;
+}
+
+.card_outline .down_block .voting_area .voting:hover {
+  background-color: #F4E9C9;
+}
+
+.card_outline .down_block .voting_area .voting:active span {
+  background-image: url(../../img/favorites_icon_h_1.svg);
+}
+
+.card_outline .down_block .voting_area .voting span {
+  position: absolute;
+  right: 15px;
+  top: 30px;
+  transform: translateY(-50%);
+}
+
+.card_outline .down_block .voting_area .voting_num .heart_icon, .card_outline .down_block .voting_area .voting span {
+  background-image: url(../../img/favorites_icon_1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+}
+/*# sourceMappingURL=card_voting.css.map */
