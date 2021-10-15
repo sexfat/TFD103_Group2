@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .button_h1 {
   width: 250px;
   height: 75px;
@@ -10,11 +14,11 @@
   transition: 0.2s;
 }
 
-.button_h1::after, .button_h1::before {
-  content: "";
+.button_h1 img {
   width: 30px;
   height: 30px;
-  background-image: url("");
+  position: relative;
+  transform: translateY(5px);
 }
 
 .button_h1 > span {
