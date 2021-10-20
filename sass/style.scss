@@ -21,6 +21,7 @@
 @import "components/searchbar";
 @import "components/title_h1";
 @import "components/watchmore";
+@import "components/page_selector";
 
 
 //modules
@@ -33,3 +34,4 @@
 //page 含手機版 平板 桌機版本
 @import "pages/index"; //首頁
 @import "pages/assign.scss";//會員登入頁
+@import "pages/vote.scss";//人氣投票頁

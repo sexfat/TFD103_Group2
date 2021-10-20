@@ -1,0 +1,21 @@
+.page_select{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    li{
+        margin:0 8px;
+        a{
+            font-size: 14px;
+            text-decoration: none;
+            color:#515151;
+            background-color: white;
+            padding:8px 10px;
+            border-radius: 50%;
+            &:hover{
+                background-color: black;
+                color:white;
+            }
+        }
+    }
+}

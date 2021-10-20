@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        />
+        <title>人氣投票</title>
+    </head>
+    <body>
+        <header></header>
+        <!--帶補充-->
+        <div id="vote_page_main_bar">
+            <div class="title_h1">
+                <span></span>
+                <img src="../../img/eggBeater.png" alt="" />
+                <h1>主廚推薦</h1>
+                <img src="../../img/eggBeater.png" alt="" />
+            </div>
+            <p>
+                <span>「老母辛苦了！！」母親節檔期活動</span>
+
+                對媽媽的愛要大聲說，一份專屬於媽媽特別的愛，快來秀出你的創意讓大家看到
+
+                <span>活動期間：2021/4/16~2021/6/15</span>
+            </p>
+        </div>
+        <main id="vote_page_main">
+            <input type="text" placeholder="搜尋..." class="search" />
+            <div id="select_test"></div>
+            <h1 class="vote_title"><img src="" alt="" />現在排名</h1>
+            <section id="topthree">
+                <div class="vote_topthree">
+                    <img src="" alt="" class="topthree_hat" />
+                    <img src="./img/cho_cake.jpeg" alt="" class="pic_cake" />
+                    <div>
+                        <h1>巧克力蛋糕</h1>
+                        <p>Chocolate cake</p>
+                    </div>
+                </div>
+                <div class="vote_topthree">
+                    <img src="" alt="" class="topthree_hat" />
+                    <img src="./img/cho_cake.jpeg" alt="" class="pic_cake" />
+                    <div>
+                        <h1>巧克力蛋糕</h1>
+                        <p>Chocolate cake</p>
+                    </div>
+                </div>
+                <div class="vote_topthree">
+                    <img src="" alt="" class="topthree_hat" />
+                    <img src="./img/cho_cake.jpeg" alt="" class="pic_cake" />
+                    <div>
+                        <h1>巧克力蛋糕</h1>
+                        <p>Chocolate cake</p>
+                    </div>
+                </div>
+            </section>
+            <h1 class="vote_title"><img src="" alt="" />候選名單</h1>
+            <section id="vote"></section>
+            <ul class="page_select">
+                <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-1"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-2"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-3"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-4"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-5"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
+            </ul>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: "#select_test",
+                data: {
+                    choose_total: [],
+                    total_cakebodys: [
+                        "原味鮮奶油",
+                        "巧克力奶油",
+                        "水果鮮奶油",
+                        "綜合口味",
+                        "其他糕體",
+                    ],
+                    total_ingredients: [
+                        "草莓",
+                        "藍莓",
+                        "櫻桃",
+                        "橘子",
+                        "檸檬",
+                        "奇異果",
+                        "其他水果",
+                    ],
+                    total_decorations: [
+                        "圓形立牌",
+                        "生日立牌",
+                        "奶油",
+                        "葉子",
+                        "迷迭香",
+                        "薄荷",
+                        "其他裝飾",
+                    ],
+                },
+                template: `
+            <div id="select_ingredients">
+            <div id="select_outline">
+            <div class="select">
+                <span>糕體：</span>
+                <span v-for="cakebody in total_cakebodys"><input type="checkbox" v-model="choose_total" :value="cakebody" :id="cakebody">{{cakebody}}</span>
+                
+            </div>
+            <div class="select">
+                <span>水果：</span>
+                <span v-for="ingredient in total_ingredients"><input type="checkbox" v-model="choose_total" :value="ingredient" :id="ingredient">{{ingredient}}</span>
+
+            </div>
+            <div class="select">
+                <span>裝飾：</span>
+                <span v-for="decoration in total_decorations"><input type="checkbox" v-model="choose_total" :value="decoration" :id="decoration">{{decoration}}</span>
+            </div>
+            </div>
+            <br>
+            <div id="choose_label">
+            <label v-for="choose in choose_total" :for="choose">{{choose}}<i class="fa-solid fa-xmark"></i></label>
+            </div>
+            <button class="clearall">清空選項</button>
+        </div>
+        `,
+            });
+            new Vue({
+                el: "#vote",
+                data: {
+                    cake_names:[1,2,3,4,5,6,7,8,9],
+                },
+                template: `
+                <section id="vote">
+                <div class="card_outline"  v-for="cakes in cake_names">
+                    <div class="img_container">
+                        <img src="../../img/cho_cake.jpeg" />
+                    </div>
+                    <div class="down_block">
+                        <h4 class="cake_title" >好吃大蛋糕</h4>
+                        <p class="design_idea">
+                            好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的蛋糕好吃的
+                        </p>
+                        <div class="voting_area">
+                            <div class="voting_num">
+                                <span class="heart_icon"></span>
+                                <span class="num">310</span>
+                            </div>
+                            <button class="voting">
+                                投票
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </section>
+                `,
+            });
+        </script>
+    </body>
+</html>

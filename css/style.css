@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -188,6 +189,7 @@
 
 input.search {
   width: 400px;
+  max-width: 100%;
   height: 50px;
   border-radius: 100px;
   border: none;
@@ -252,8 +254,26 @@ input.search:focus {
   background: white;
 }
 
-body {
-  background-color: #EFE6E4;
+.page_select {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.page_select li {
+  margin: 0 8px;
+}
+.page_select li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #515151;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 50%;
+}
+.page_select li a:hover {
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -261,73 +281,236 @@ header {
   height: 80px;
   margin: 0 auto;
   border: 1px solid red;
+  /*品涵這邊是留給你你隨意改*/
 }
 
-.title_h1_outline {
+body {
+  background-color: #EFE6E4;
+}
+
+.assign_page_title_h1_outline {
   width: 1200px;
   margin: 0 auto;
   display: flex;
   border: 1px solid blue;
 }
-.title_h1_outline > div {
+.assign_page_title_h1_outline > div {
   flex: 1;
   margin-top: 70px;
   margin-left: 40px;
   margin-bottom: 100px;
 }
-.title_h1_outline > div span {
+.assign_page_title_h1_outline > div span {
   display: none;
 }
 
-main {
+#assign_page_main {
   width: 1200px;
   border: 1px solid black;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-main section {
+#assign_page_main section {
   border: 1px solid red;
   margin-left: 70px;
   display: flex;
   flex-direction: column;
+  color: #515151;
 }
-main section label {
+#assign_page_main section label {
   font-size: 20px;
   margin-bottom: 5px;
 }
-main section input {
+#assign_page_main section input {
   font-size: 20px;
   margin-bottom: 10px;
   width: 460px;
   height: 45px;
   border-radius: 5px;
 }
-
-button {
+#assign_page_main button {
   width: 460px;
   height: 55px;
   border-radius: 5px;
   background-color: #F7EDD4;
   margin-top: 20px;
   font-size: 20px;
+  color: #515151;
 }
-
-#sign_in a {
+#assign_page_main button:hover {
+  cursor: pointer;
+  background-color: #DFB9B0;
+}
+#assign_page_main #sign_in a {
   margin-top: -10px;
   font-size: 14px;
   text-decoration: none;
   color: #515151;
 }
-#sign_in button:nth-child(6) {
+#assign_page_main #sign_in a:hover {
+  color: blue;
+}
+#assign_page_main #sign_in button:nth-child(6) {
   margin-top: 33px;
 }
-
-#register select {
+#assign_page_main #register select {
   width: 140px;
   height: 45px;
   margin-right: 16px;
   border-radius: 5px;
+}
+
+#vote_page_main_bar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#vote_page_main_bar > div {
+  margin-top: 100px;
+}
+#vote_page_main_bar p {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: 100px;
+}
+#vote_page_main_bar p span {
+  display: block;
+}
+
+#vote_page_main {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+#vote_page_main .search {
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+  margin-bottom: 50px;
+}
+
+#select_ingredients {
+  background-color: #F7EDD4;
+  border-radius: 5px;
+  padding: 40px 60px;
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+#select_ingredients #choose_label {
+  width: 800px;
+}
+#select_ingredients #choose_label label {
+  margin: 5px;
+  padding: 5px 15px;
+  background: burlywood;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 36px;
+}
+#select_ingredients .select {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 120px));
+}
+#select_ingredients .select input {
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+#select_ingredients .select span {
+  width: 120px;
+  font-size: 18px;
+}
+#select_ingredients .select span:last-child {
+  margin-bottom: 35px;
+}
+#select_ingredients .select span:first-child {
+  position: relative;
+  top: 4px;
+  width: 80px;
+}
+#select_ingredients button {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+  width: 100px;
+  height: 30px;
+  background-color: #515151;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vote_title {
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-bottom: 65px;
+}
+
+#topthree {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+#topthree div.vote_topthree {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  background-color: #F7EDD4;
+  color: #515151;
+}
+#topthree div.vote_topthree .topthree_hat {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border: 1px solid red;
+  left: -20px;
+  top: -50px;
+  transform: rotate(-15deg);
+}
+#topthree div.vote_topthree .pic_cake {
+  height: 260px;
+}
+#topthree div.vote_topthree > div {
+  padding: 10px;
+}
+#topthree div.vote_topthree > div h1 {
+  margin: 0;
+}
+#topthree div.vote_topthree > div p {
+  margin: 0;
+}
+
+section#vote {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 70px 35px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+section#vote .card_outline {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+section#vote .card_outline .img_container {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,13 +2,7 @@ $fontColor:#515151;
 body{
     background-color: #EFE6E4;
 }
-header{
-    width:1200px;
-    height:80px;
-    margin:0 auto;
-    border:1px solid red;
-}
-.title_h1_outline{
+.assign_page_title_h1_outline{
     width:1200px;
     margin:0 auto;
     display: flex;
@@ -23,7 +17,7 @@ header{
         }
     }
 }
-main{
+#assign_page_main{
     width:1200px;
     border:1px solid black;
     margin:0 auto;
@@ -34,6 +28,7 @@ main{
         margin-left:70px;
         display:flex;
         flex-direction: column;
+        color:#515151;
         label{
             font-size: 20px;
             margin-bottom:5px;
@@ -47,31 +42,39 @@ main{
             
         }
     }
-}
-button{
-    width:460px;
-    height:55px;
-    border-radius: 5px;
-    background-color:#F7EDD4;
-    margin-top: 20px;
-    font-size: 20px;
-}
-#sign_in{
-    a{
-        margin-top:-10px;
-        font-size: 14px;
-        text-decoration: none;
-        color:#515151;
-    }
-    button:nth-child(6){
-        margin-top:33px;
-    }
-}
-#register{
-    select{
-        width:140px;
-        height:45px;
-        margin-right:16px;
+    button{
+        width:460px;
+        height:55px;
         border-radius: 5px;
+        background-color:#F7EDD4;
+        margin-top: 20px;
+        font-size: 20px;
+        color:#515151;
+        &:hover{
+            cursor: pointer;
+            background-color: #DFB9B0;
+        }
+    }
+    #sign_in{
+        a{
+            margin-top:-10px;
+            font-size: 14px;
+            text-decoration: none;
+            color:#515151;
+            &:hover{
+                color:blue;
+            }
+        }
+        button:nth-child(6){
+            margin-top:33px;
+        }
+    }
+    #register{
+        select{
+            width:140px;
+            height:45px;
+            margin-right:16px;
+            border-radius: 5px;
+        }
     }
 }
