@@ -1,0 +1,77 @@
+$fontColor:#515151;
+body{
+    background-color: #EFE6E4;
+}
+header{
+    width:1200px;
+    height:80px;
+    margin:0 auto;
+    border:1px solid red;
+}
+.title_h1_outline{
+    width:1200px;
+    margin:0 auto;
+    display: flex;
+    border:1px solid blue;
+    >div{
+        flex:1;
+        margin-top: 70px;
+        margin-left:40px;
+        margin-bottom:100px;
+        span{
+            display: none;
+        }
+    }
+}
+main{
+    width:1200px;
+    border:1px solid black;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    section{
+        border:1px solid red;
+        margin-left:70px;
+        display:flex;
+        flex-direction: column;
+        label{
+            font-size: 20px;
+            margin-bottom:5px;
+        }
+        input{
+            font-size: 20px;
+            margin-bottom:10px;
+            width:460px;
+            height:45px;
+            border-radius: 5px;
+            
+        }
+    }
+}
+button{
+    width:460px;
+    height:55px;
+    border-radius: 5px;
+    background-color:#F7EDD4;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#sign_in{
+    a{
+        margin-top:-10px;
+        font-size: 14px;
+        text-decoration: none;
+        color:#515151;
+    }
+    button:nth-child(6){
+        margin-top:33px;
+    }
+}
+#register{
+    select{
+        width:140px;
+        height:45px;
+        margin-right:16px;
+        border-radius: 5px;
+    }
+}

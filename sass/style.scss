@@ -15,6 +15,13 @@
 //components 組件 >  按鈕 / 麵包屑 / 標題 / 表單 / 表格 的scss放置處
 @import "components/button";
 @import "components/filter";
+@import "components/button_h1";
+@import "components/card_voting";
+@import "components/sale_card";
+@import "components/searchbar";
+@import "components/title_h1";
+@import "components/watchmore";
+
 
 //modules
 @import "modules/rwd";
@@ -25,3 +32,4 @@
 
 //page 含手機版 平板 桌機版本
 @import "pages/index"; //首頁
+@import "pages/assign.scss";//會員登入頁
