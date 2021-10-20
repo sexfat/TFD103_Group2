@@ -278,6 +278,63 @@ input.search:focus {
   color: white;
 }
 
+#select_ingredients {
+  background-color: #F7EDD4;
+  border-radius: 5px;
+  padding: 40px 60px;
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+#select_ingredients #choose_label {
+  width: 800px;
+}
+#select_ingredients #choose_label label {
+  margin: 5px;
+  padding: 5px 15px;
+  background: burlywood;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 36px;
+}
+#select_ingredients .select {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 120px));
+}
+#select_ingredients .select input {
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+#select_ingredients .select span {
+  width: 120px;
+  font-size: 18px;
+}
+#select_ingredients .select span:last-child {
+  margin-bottom: 35px;
+}
+#select_ingredients .select span:first-child {
+  position: relative;
+  top: 4px;
+  width: 80px;
+}
+#select_ingredients button {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+  width: 100px;
+  height: 30px;
+  background-color: #515151;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 header {
   width: 1200px;
   height: 80px;
@@ -396,63 +453,6 @@ body {
   left: 100%;
   transform: translateX(-100%);
   margin-bottom: 50px;
-}
-
-#select_ingredients {
-  background-color: #F7EDD4;
-  border-radius: 5px;
-  padding: 40px 60px;
-  position: relative;
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-#select_ingredients #choose_label {
-  width: 800px;
-}
-#select_ingredients #choose_label label {
-  margin: 5px;
-  padding: 5px 15px;
-  background: burlywood;
-  border-radius: 10px;
-  cursor: pointer;
-  white-space: nowrap;
-  line-height: 36px;
-}
-#select_ingredients .select {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 120px));
-}
-#select_ingredients .select input {
-  margin: 10px 5px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.8);
-  position: relative;
-}
-#select_ingredients .select span {
-  width: 120px;
-  font-size: 18px;
-}
-#select_ingredients .select span:last-child {
-  margin-bottom: 35px;
-}
-#select_ingredients .select span:first-child {
-  position: relative;
-  top: 4px;
-  width: 80px;
-}
-#select_ingredients button {
-  position: absolute;
-  right: 60px;
-  bottom: 40px;
-  width: 100px;
-  height: 30px;
-  background-color: #515151;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .vote_title {
