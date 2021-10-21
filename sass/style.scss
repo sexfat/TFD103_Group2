@@ -34,5 +34,6 @@
 
 //page 含手機版 平板 桌機版本
 @import "pages/index"; //首頁
-@import "pages/assign.scss";//會員登入頁
-@import "pages/vote.scss";//人氣投票頁
+@import "pages/assign";//會員登入頁
+@import "pages/vote";//人氣投票頁
+@import "pages/shop";
