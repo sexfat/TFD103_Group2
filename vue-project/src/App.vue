@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
@@ -57,4 +58,18 @@ li {
 a {
   color: #42b983;
 }
+=======
+    <div>
+        
+    </div>
+</template>
+<script>
+export default {
+    
+}
+
+</script>
+<style scoped>
+    
+>>>>>>> fcf5d306856dfbf73c37e0cc8b21fd5e487a6d43
 </style>
