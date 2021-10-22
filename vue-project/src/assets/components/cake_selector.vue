@@ -1,55 +1,56 @@
 <template>
-<div id="treat">
-<div id="select_ingredients">
-    <div id="select_outline">
-    <div class="select">
-        <span>糕體：</span>
-        <span v-for="cakebody in total_cakebodys"
-        ><input
-            type="checkbox"
-            v-model="choose_total"
-            :value="cakebody"
-            :id="cakebody"
-        >{{ cakebody }}</span
-        >
+  <div id="treat">
+    <div id="select_ingredients">
+      <div id="select_outline">
+        <div class="select">
+          <span>糕體：</span>
+          <span v-for="cakebody in total_cakebodys">
+            <input
+              type="checkbox"
+              v-model="choose_total"
+              :value="cakebody"
+              :id="cakebody"
+            />{{ cakebody }}</span
+          >
+        </div>
+        <div class="select">
+          <span>水果：</span>
+          <span v-for="ingredient in total_ingredients"
+            ><input
+              type="checkbox"
+              v-model="choose_total"
+              :value="ingredient"
+              :id="ingredient"
+            />{{ ingredient }}</span
+          >
+        </div>
+        <div class="select">
+          <span>裝飾：</span>
+          <span v-for="decoration in total_decorations"
+            ><input
+              type="checkbox"
+              v-model="choose_total"
+              :value="decoration"
+              :id="decoration"
+            />{{ decoration }}</span
+          >
+        </div>
+      </div>
+      <br />
+      <div id="choose_label">
+        <label v-for="choose in choose_total" :for="choose"
+          >{{ choose }} <i class="fa-solid fa-xmark"></i
+        ></label>
+      </div>
+      <button class="clearall">ZXS</button>
     </div>
-    <div class="select">
-        <span>水果：</span>
-        <span v-for="ingredient in total_ingredients"
-        ><input
-            type="checkbox"
-            v-model="choose_total"
-            :value="ingredient"
-            :id="ingredient"
-        >{{ ingredient }}</span
-        >
-    </div>
-    <div class="select">
-        <span>裝飾：</span>
-        <span v-for="decoration in total_decorations"
-        ><input
-            type="checkbox"
-            v-model="choose_total"
-            :value="decoration"
-            :id="decoration"
-        >{{ decoration }}</span
-        >
-    </div>
-    </div>
-    <br >
-    <div id="choose_label">
-    <label v-for="choose in choose_total" :for="choose"
-        >{{ choose }} <i class="fa-solid fa-xmark"></i></label>
-    </div>
-    <button class="clearall">ZXS</button>
-    </div>
-</div>
+  </div>
 </template>
 <script>
 import $ from "jquery";
 export default {
   name: "button_h1",
-  props: ["total_cakebodys","total_ingredients","total_decorations"], //上層屬性用這三個
+  props: ["total_cakebodys", "total_ingredients", "total_decorations"], //上層屬性用這三個
   data() {
     return {
       choose_total: [],
@@ -89,7 +90,7 @@ export default {
 }
 label {
   margin: 5px;
-  line-height:36px;
+  line-height: 36px;
   padding: 5px 15px;
   background: burlywood;
   border-radius: 10px;
@@ -140,7 +141,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-#choose_label{
-    width:80%;
+#choose_label {
+  width: 80%;
 }
 </style>
