@@ -1,11 +1,16 @@
 <template>
-	    <button class="button_h1"><img src="../images/button_butter.png">進入投票<img src="../images/button_butter.png"><span>gogogo</span></button>
+	<button class="button_h1">
+        <img src="../images/button_butter.png">{{title}}
+        <img src="../images/button_butter.png">
+        <span>gogogo</span>
+    </button>
 </template>
 <script>
 // import "../font/fff.less";
 import $ from 'jquery'
 export default {
-    name:"button_h1",
+  name:"button_h1",
+  props:["title"],
 }
 </script>
 <style scoped lang="scss">
