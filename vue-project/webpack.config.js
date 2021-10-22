@@ -67,6 +67,17 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
+
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/,
+        use: {
+            loader:'url-loader',
+            options: {
+              name: '[name].[ext]?[hash]'
+           }
+        }
+      }
+
     ]
   },
   resolve: {
