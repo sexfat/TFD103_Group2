@@ -1,6 +1,6 @@
 <template>
-  <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <div>
+  <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <!-- <cardVote></cardVote> -->
     <!-- <router-view> -->
     <!-- </router-view> -->
@@ -8,11 +8,12 @@
     <!-- <buttontest v-for="asd in 3"></buttontest> -->
     <!-- <card-vote v-for="asd in 3"></card-vote> -->
     <!-- <pageSelector></pageSelector> -->
-    <!-- <saleCard></saleCard>
-    <searchBar></searchBar> -->
+    <!-- <saleCard></saleCard> -->
+    <!-- <searchBar></searchBar> -->
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
-    <watchmore title="ASSSD"></watchmore>
+    <!-- <watchmore title="自訂文字"></watchmore> -->
+    <assign-page></assign-page>
   </div>
 </template>
 <script>
@@ -24,7 +25,10 @@ import searchBar from "./assets/components/search_bar.vue";
 import cakeSelector from "./assets/components/cake_selector.vue";
 import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
-
+import assignPage from "./assets/page/assign.vue";
+import '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/free-brands-svg-icons'
+import '@fortawesome/free-solid-svg-icons'
 import $ from "jquery";
 export default {
   name: "test",
@@ -37,11 +41,11 @@ export default {
     cakeSelector,
     titleh1,
     watchmore,
+    assignPage,
 
   },
   data(){
     return{
-      totalCake:["蛋糕","你好"]
 
     }
   }
