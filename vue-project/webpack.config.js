@@ -67,10 +67,7 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
       {
         test: /\.(woff2?|eot|ttf|otf)$/,
         use: {
@@ -80,8 +77,7 @@ module.exports = {
            }
         }
       }
->>>>>>> cd73c768876750320e2db037ce928ff4cfd9f031
->>>>>>> cty
+
     ]
   },
   resolve: {
