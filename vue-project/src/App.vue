@@ -1,28 +1,13 @@
-
 <template>
-	<div>
-    	<p @click="add">asd
-        <span>ERT</span>
-      </p>
-    </div>
+<buttontest></buttontest>
 </template>
 <script>
+import buttontest from './assets/components/button_h1.vue';
 import $ from 'jquery'
 export default {
-  methods: {
-    add(){
-      $("p").css("fontSize",50);
-    }
-  },
+    name:'test',
+  components:{
+      buttontest,
+  }
 }
 </script>
-<style lang="scss">
-@import './assets/style/var.scss';
-$maincolor:red;
-  p{
-    color:$mainColor;
-    span{
-      color:blue;
-    }
-  }
-</style>
