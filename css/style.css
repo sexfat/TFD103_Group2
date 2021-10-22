@@ -415,7 +415,7 @@ body {
 
 #assign_page_main section {
   border: 1px solid red;
-  margin-left: 70px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   color: #515151;
