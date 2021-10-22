@@ -6,6 +6,7 @@
     </button>
 </template>
 <script>
+// import "../font/fff.less";
 import $ from 'jquery'
 export default {
   name:"button_h1",
@@ -18,6 +19,7 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
 }
 .button_h1 {
+    font-family: "EB Garamond";
     width: 250px;
     height: 75px;
     border-radius: 5px;
