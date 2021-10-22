@@ -2,9 +2,10 @@
 	    <button class="button_h1"><img src="../images/button_butter.png">進入投票<img src="../images/button_butter.png"><span>gogogo</span></button>
 </template>
 <script>
+// import "../font/fff.less";
 import $ from 'jquery'
 export default {
-  name:"button_h1",
+    name:"button_h1",
 }
 </script>
 <style scoped lang="scss">
@@ -13,6 +14,7 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
 }
 .button_h1 {
+    font-family: "EB Garamond";
     width: 250px;
     height: 75px;
     border-radius: 5px;
