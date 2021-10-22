@@ -3,6 +3,6 @@ import App from '../../App'
 export default[{
     
     path:'',
-    component:App,
-    // children:[App],
+    component:App, //將App改成你上面設定的變數
+    // children:[],
 }]
