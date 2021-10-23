@@ -1,5 +1,5 @@
 <template>
-    <div style="backgroundColor:#EFE6E4">
+    <div>
         <header></header>
         <!--等header補充-->
         <div class="assign_page_main_bar">
@@ -59,14 +59,20 @@
     </div>
 </template>
 <script>
+import $ from 'jquery'
     import titleh1 from "../components/title_h1.vue";
 export default {
     name:'assignPage',
     components:{
         titleh1,
+        methods:{
+            
+        },
+        
     }
     
 }
+
 </script>
 <style scoped lang="scss">
 @import "../style/var.scss";
