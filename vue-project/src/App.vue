@@ -14,7 +14,7 @@
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
     <!-- <footercom></footercom> -->
-    <headercom></headercom>
+    <!-- <headercom></headercom> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assign-page></assign-page> -->
     <!-- <employee></employee> -->
@@ -63,6 +63,8 @@ export default {
     switchButton,
     confirm,
     confirmReason,
+    footercom,
+    headercom,
 
   },
   mounted(){
