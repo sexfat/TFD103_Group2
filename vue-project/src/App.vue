@@ -12,7 +12,9 @@
     <searchBar></searchBar> -->
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
-    <watchmore title="ASSSD"></watchmore>
+    <!-- <watchmore title="ASSSD"></watchmore> -->
+    <!-- <footercom></footercom> -->
+    <headercom></headercom>
   </div>
 </template>
 <script>
@@ -24,6 +26,8 @@ import searchBar from "./assets/components/search_bar.vue";
 import cakeSelector from "./assets/components/cake_selector.vue";
 import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
+import footercom from "./assets/components/footercom.vue";
+import headercom from "./assets/components/headercom.vue";
 
 import $ from "jquery";
 export default {
@@ -37,15 +41,21 @@ export default {
     cakeSelector,
     titleh1,
     watchmore,
+    footercom,
+    headercom,
 
+  },
+  mounted() {
+    $("body").css({"margin":0,"padding":0,"height":1000})
   },
   data(){
     return{
-      totalCake:["蛋糕","你好"]
+      totalCake:["原味鮮奶油","巧克力奶油","水果鮮奶油"]
 
     }
   }
 };
+
 </script>
 <style scoped lang="scss">
 @import "./assets/style/var.scss";
