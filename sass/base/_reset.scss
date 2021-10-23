@@ -1,1 +1,8 @@
 // 若要更改HTML元素的預設樣式寫在這裡
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
