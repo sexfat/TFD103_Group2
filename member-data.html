@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+     <!-- favion -->
+     <link rel="shortcut icon" href="../../img/logo_img.ico"/>
+
+     <!-- 引入font-awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>會員中心｜會員資料</title>
+</head>
+<body>
+
+    <!-- header here  -->
+
+    <main id="member_data_page">
+
+        <!-- 會員頁共用開始 -->
+        <div class="main_bar">
+            <div id="avatar_container">
+                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
+            </div>
+            <div id="member_page_nav">
+                <div id="member_data" class="member_page_nav_link -on">
+                    <img src="http://via.placeholder.com/50x50" alt="" id="member_data_icon" >
+                    <span id="member_data_span">會員資料</span>
+                </div>
+                <div id="member_order" class="member_page_nav_link">
+                    <img src="http://via.placeholder.com/50x50" alt="" id="member_order_icon">
+                    <span id="member_order_span">訂單查詢</span>
+                </div>
+                <div id="member_fav" class="member_page_nav_link">
+                    <img src="http://via.placeholder.com/50x50" alt="" id="member_fav_icon">
+                    <span id="member_fav_span">我的最愛</span>
+                </div>
+            </div>
+        </div>
+        <!-- 會員頁共用結束 -->
+        
+        <section id="member_name_block">
+            <form action="" method="post">
+                <div id="member_name">
+                    <span>姓名: </span>
+                    <input type="text" name="member_name" class="data-input">
+                    <span class="data_input_span">王大涵</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+                <div id="member_nickname">
+                    <span>暱稱: </span>
+                    <input type="text" name="member_nickname" class="data-input">
+                    <span class="data_input_span">王小涵</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+                <div id="member_birthday">
+                    <span>生日: </span>
+                    <input type="text" name="member_birthday_year" class="data-input">
+                    <input type="text" name="member_birthday_month" class="data-input">
+                    <input type="text" name="member_birthday_date" class="data-input">
+                    <span id="data_input_span">88/06/12</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+            </form>
+        </section>
+
+        <section id="member_data_block">
+            <form action="" method="">
+                <div id="member_email">
+                    <span>E-mail: </span>
+                    <input type="email" name="member_email" class="data-input">
+                    <span class="data_input_span">mmm@gmail.com</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+                <div id="member_address">
+                    <span>地址: </span>
+                    <input type="text" name="member_address" class="data-input">
+                    <span class="data_input_span">台北市中山區南京東路三段219號4-5F</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+                <div id="member_phone">
+                    <span>電話: </span>
+                    <input type="text" name="member_phone" class="data-input">
+                    <span class="data_input_span">0912234456</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+                <div id="member_password">
+                    <span>密碼: </span>
+                    <input type="text" name="member_password" class="data-input">
+                    <span class="data_input_span">******336</span>
+                    <img src="http://via.placeholder.com/20x20" alt="">
+                </div>
+            </form>
+        </section>
+
+        <section id="cake_design">
+
+            <!-- h1組件 -->
+            <div class="title_h1">
+                <span></span>
+                <img src="../../img/eggBeater.png" alt="">
+                <h1>蛋糕庫設計</h1>
+                <img src="../../img/eggBeater.png" alt="">
+            </div>
+
+            <div id="cake_design_cards">
+
+                <div class="card_outline">
+                    <div class="img_container">
+                        <img src="./img/cho_cake.jpeg">
+                    </div>
+                    <div class="description_block">
+                        <h4 class="cake_title">無敵大蛋糕</h4>
+                        <p class="design_idea">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                        <div class="status_area">
+                            <div class="verify">
+                                <i class="fas fa-circle status_ball"></i>
+                                <span class="status_text">人氣投票審核通過</span>
+                            </div>
+                            <button class="checking">
+                                查看
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 排版用重複組件開始 -->
+
+                <div class="card_outline">
+                    <div class="img_container">
+                        <img src="./img/cho_cake.jpeg">
+                    </div>
+                    <div class="description_block">
+                        <h4 class="cake_title">無敵大蛋糕</h4>
+                        <p class="design_idea">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                        <div class="status_area">
+                            <div class="verify">
+                                <i class="fas fa-circle status_ball"></i>
+                                <span class="status_text">人氣投票審核通過</span>
+                            </div>
+                            <button class="checking">
+                                查看
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_outline">
+                    <div class="img_container">
+                        <img src="./img/cho_cake.jpeg">
+                    </div>
+                    <div class="description_block">
+                        <h4 class="cake_title">無敵大蛋糕</h4>
+                        <p class="design_idea">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+                        <div class="status_area">
+                            <div class="verify">
+                                <i class="fas fa-circle status_ball"></i>
+                                <span class="status_text">人氣投票審核通過</span>
+                            </div>
+                            <button class="checking">
+                                查看
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 排版用重複組件結束 -->
+
+            </div>
+
+            <div id="view_all_design_area">
+                <button id="view_all_design_button">查看全部</button>
+            </div>
+
+        </section>
+
+        <section id="coupon_block">
+
+            <!-- h1組件 -->
+            <div class="title_h1">
+                <span></span>
+                <img src="../../img/eggBeater.png" alt="">
+                <h1>折價券</h1>
+                <img src="../../img/eggBeater.png" alt="">
+            </div>
+
+            <div id="coupon_area">
+
+                <div id="coupon">
+                    <div id="coupon_left_block">
+                        <div id="discount_amout">$<span>150</span></div>
+                        <div id="A_cake_text_logo">
+                            <img src="http://via.placeholder.com/60x13" alt="">
+                            <span>customize <br>private kitchen</span>
+                        </div>
+                        <div id="coupon_left_decoration_img">
+                            <img src="http://via.placeholder.com/40x0" alt="">
+                        </div>
+                        <div id="use_threshold">消費滿<span>1000</span>即可折抵</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.01 0.45"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="圖層_1-2" data-name="圖層 1"><path id="Path_113" data-name="Path 113" class="cls-1" d="M1752.65-152a9.3,9.3,0,0,0-1.6,0,21.65,21.65,0,0,1-3.27,0,32.87,32.87,0,0,0-5.41.07c-.69,0-2.6-.07-3-.08s-1.74.08-1.74.08v-.45h15Z" transform="translate(-1737.63 152.38)"/></g></g></svg>
+                    </div>
+                    <div id="coupon_right_block">
+                        <div id="expiration">
+                            <span>使用期限</span>
+                            <span id="expiration_date">2021/10/31</span>
+                        </div>
+                        <div id="coupon_right_decoration_img">
+                            <img src="http://via.placeholder.com/39x39" alt="">
+                        </div>
+                        <div id="expiration_countdown">
+                            即將失效：剩下<span>10</span>天
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 排版用重複組件開始 -->
+                <div id="coupon">
+                    <div id="coupon_left_block">
+                        <div id="discount_amout">$<span>150</span></div>
+                        <div id="A_cake_text_logo">
+                            <img src="http://via.placeholder.com/60x13" alt="">
+                            <span>customize <br>private kitchen</span>
+                        </div>
+                        <div id="coupon_left_decoration_img">
+                            <img src="http://via.placeholder.com/40x0" alt="">
+                        </div>
+                        <div id="use_threshold">消費滿<span>1000</span>即可折抵</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.01 0.45"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="圖層_1-2" data-name="圖層 1"><path id="Path_113" data-name="Path 113" class="cls-1" d="M1752.65-152a9.3,9.3,0,0,0-1.6,0,21.65,21.65,0,0,1-3.27,0,32.87,32.87,0,0,0-5.41.07c-.69,0-2.6-.07-3-.08s-1.74.08-1.74.08v-.45h15Z" transform="translate(-1737.63 152.38)"/></g></g></svg>
+                    </div>
+                    <div id="coupon_right_block">
+                        <div id="expiration">
+                            <span>使用期限</span>
+                            <span id="expiration_date">2021/10/31</span>
+                        </div>
+                        <div id="coupon_right_decoration_img">
+                            <img src="http://via.placeholder.com/39x39" alt="">
+                        </div>
+                        <div id="expiration_countdown">
+                            即將失效：剩下<span>10</span>天
+                        </div>
+                    </div>
+                </div>
+                <div id="coupon">
+                    <div id="coupon_left_block">
+                        <div id="discount_amout">$<span>150</span></div>
+                        <div id="A_cake_text_logo">
+                            <img src="http://via.placeholder.com/60x13" alt="">
+                            <span>customize <br>private kitchen</span>
+                        </div>
+                        <div id="coupon_left_decoration_img">
+                            <img src="http://via.placeholder.com/40x0" alt="">
+                        </div>
+                        <div id="use_threshold">消費滿<span>1000</span>即可折抵</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.01 0.45"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="圖層_1-2" data-name="圖層 1"><path id="Path_113" data-name="Path 113" class="cls-1" d="M1752.65-152a9.3,9.3,0,0,0-1.6,0,21.65,21.65,0,0,1-3.27,0,32.87,32.87,0,0,0-5.41.07c-.69,0-2.6-.07-3-.08s-1.74.08-1.74.08v-.45h15Z" transform="translate(-1737.63 152.38)"/></g></g></svg>
+                    </div>
+                    <div id="coupon_right_block">
+                        <div id="expiration">
+                            <span>使用期限</span>
+                            <span id="expiration_date">2021/10/31</span>
+                        </div>
+                        <div id="coupon_right_decoration_img">
+                            <img src="http://via.placeholder.com/39x39" alt="">
+                        </div>
+                        <div id="expiration_countdown">
+                            即將失效：剩下<span>10</span>天
+                        </div>
+                    </div>
+                </div>
+                <div id="coupon">
+                    <div id="coupon_left_block">
+                        <div id="discount_amout">$<span>150</span></div>
+                        <div id="A_cake_text_logo">
+                            <img src="http://via.placeholder.com/60x13" alt="">
+                            <span>customize <br>private kitchen</span>
+                        </div>
+                        <div id="coupon_left_decoration_img">
+                            <img src="http://via.placeholder.com/40x0" alt="">
+                        </div>
+                        <div id="use_threshold">消費滿<span>1000</span>即可折抵</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.01 0.45"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="圖層_1-2" data-name="圖層 1"><path id="Path_113" data-name="Path 113" class="cls-1" d="M1752.65-152a9.3,9.3,0,0,0-1.6,0,21.65,21.65,0,0,1-3.27,0,32.87,32.87,0,0,0-5.41.07c-.69,0-2.6-.07-3-.08s-1.74.08-1.74.08v-.45h15Z" transform="translate(-1737.63 152.38)"/></g></g></svg>
+                    </div>
+                    <div id="coupon_right_block">
+                        <div id="expiration">
+                            <span>使用期限</span>
+                            <span id="expiration_date">2021/10/31</span>
+                        </div>
+                        <div id="coupon_right_decoration_img">
+                            <img src="http://via.placeholder.com/39x39" alt="">
+                        </div>
+                        <div id="expiration_countdown">
+                            即將失效：剩下<span>10</span>天
+                        </div>
+                    </div>
+                </div>
+                <!-- 排版用重複組件結束 -->
+
+            </div>
+
+            <button id="view_all_coupon">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+        </section>
+
+        
+    </main>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.01 0.45"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="圖層_1-2" data-name="圖層 1"><path id="Path_113" data-name="Path 113" class="cls-1" d="M1752.65-152a9.3,9.3,0,0,0-1.6,0,21.65,21.65,0,0,1-3.27,0,32.87,32.87,0,0,0-5.41.07c-.69,0-2.6-.07-3-.08s-1.74.08-1.74.08v-.45h15Z" transform="translate(-1737.63 152.38)"/></g></g></svg>
+
+    <!-- footer here -->
+</body>
+</html>
