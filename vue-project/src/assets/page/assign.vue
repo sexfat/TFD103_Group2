@@ -1,4 +1,4 @@
-<template>
+<template  >
     <div>
         <header></header>
         <!--等header補充-->

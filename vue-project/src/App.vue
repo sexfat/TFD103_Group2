@@ -14,7 +14,8 @@
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assign-page></assign-page> -->
-    <employee></employee>
+    <!-- <employee></employee> -->
+    <memberData></memberData>
   </div>
 </template>
 <script>
@@ -27,6 +28,7 @@ import cakeSelector from "./assets/components/cake_selector.vue";
 import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
 import employee from "./assets/components/employee.vue";
+import memberData from "./assets/components/member_data.vue";
 import assignPage from "./assets/page/assign.vue";
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/free-brands-svg-icons'
@@ -45,6 +47,7 @@ export default {
     watchmore,
     assignPage,
     employee,
+    memberData,
 
   },
   mounted(){

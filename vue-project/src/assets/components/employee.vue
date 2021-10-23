@@ -1,11 +1,11 @@
 <template>
-  <div>
+    <div>
     <div class="outline">
-      <div class='img_outline'>
+        <div class='img_outline'>
         <img src="" alt="" />
         <button>修改照片</button>
-      </div>
-      <div class="flex">
+        </div>
+        <div class="flex">
         <div>
             <label for="">員工編號</label>
             <span><input type="text"></span>
@@ -18,8 +18,8 @@
             <label for="">員工姓名</label>
             <span><input type="text"></span>
         </div>
-      </div>
-      <div class="flex">
+        </div>
+        <div class="flex">
         <div>
             <label for="">創建員工</label>
             <span><input type="text"></span>
@@ -32,8 +32,8 @@
             <span for="">權限</span>
             <select name="" id=""><option value="">1</option></select>
         </div>
-      </div>
-      <div class="flex">
+        </div>
+        <div class="flex">
         <span>狀態
             <span class="switch_button">
                 <span class="switch"></span> <!--按鈕開關-->
@@ -41,9 +41,9 @@
         </span>
         <button>修改</button>
         <button>確認</button>
-      </div>
+        </div>
     </div>
-  </div>
+    </div>
 </template>
 <script>
 import $ from "jquery";
@@ -71,6 +71,7 @@ export default {
         background: blue;
         flex:1;
         position:relative;
+        
         button{
             position:absolute;
             right:0px;
