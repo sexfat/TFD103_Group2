@@ -15,9 +15,10 @@
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assign-page></assign-page> -->
     <!-- <employee></employee> -->
-    <memberData></memberData>
-    <employee></employee>
+    <!-- <memberData></memberData> -->
+    <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
+    <confirmReason></confirmReason>
   </div>
 </template>
 <script>
@@ -32,6 +33,8 @@ import watchmore from "./assets/components/watchmore.vue";
 import switchButton from "./assets/components/switch_button.vue";
 import employee from "./assets/components/employee.vue";
 import memberData from "./assets/components/member_data.vue";
+import confirm from "./assets/components/confirm.vue";
+import confirmReason from "./assets/components/confirm_reason.vue";
 import assignPage from "./assets/page/assign.vue";
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/free-brands-svg-icons'
@@ -52,6 +55,8 @@ export default {
     employee,
     memberData,
     switchButton,
+    confirm,
+    confirmReason,
 
   },
   mounted(){

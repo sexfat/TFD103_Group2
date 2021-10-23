@@ -8,8 +8,8 @@
             <div class="text_outline">
                 <div class="forPosition">
                     <span>
-
-                    <font-awesome-icon icon="fa-solid fa-xmark" style="fontSize:24px" />
+                        <switchButton title="狀態" style="marginRight:30px"></switchButton>
+                    <font-awesome-icon icon="fa-solid fa-xmark" style="fontSize:24px;cursor:pointer" />
                     </span>
                 </div>
                 <div class="text">
@@ -34,9 +34,13 @@
 </template>
 <script>
 import $ from "jquery";
+import switchButton from "./switch_button"
 export default {
   name: "member_data",
   methods: {},
+  components:{
+      switchButton
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -49,6 +53,9 @@ export default {
     width:775px;
     height:250px;
     padding:20px;
+    background: #F7DCDC;
+    border-radius:5px;
+    // transform:scale(2);
     .img_outline{
         flex:.5;
         img{
@@ -90,7 +97,14 @@ export default {
     }
 }
 .forPosition{
-    display:flex;
+    // display:flex;
     justify-content: flex-end;
+    display:none;
+    span{
+        display: flex;
+    }
+}
+.open{
+    display: flex;
 }
 </style>
