@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,gCAAgC,CAAA,kBAAkB;;;AAE3D,AAAA,CAAC,CAAA;EACG,WAAW,EAAE,yBAAyB;CACzC",
     "sources": [
         "../vue-project/src/assets/style/var.scss"
     ],
