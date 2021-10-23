@@ -1,14 +1,14 @@
 <template>
 	<ul class="page_select">
-        <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-1"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-2"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-3"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-4"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-5"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-left" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-left" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-1" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-2" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-3" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-4" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-5" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-right" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-right" /></a></li>
     </ul>
 </template>
 <script>

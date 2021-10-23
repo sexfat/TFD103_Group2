@@ -1,6 +1,6 @@
 <template>
-  <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <div>
+  <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <!-- <cardVote></cardVote> -->
     <!-- <router-view> -->
     <!-- </router-view> -->
@@ -8,13 +8,20 @@
     <!-- <buttontest v-for="asd in 3"></buttontest> -->
     <!-- <card-vote v-for="asd in 3"></card-vote> -->
     <!-- <pageSelector></pageSelector> -->
-    <!-- <saleCard></saleCard>
-    <searchBar></searchBar> -->
+    <!-- <saleCard></saleCard> -->
+    <!-- <searchBar></searchBar> -->
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
     <!-- <footercom></footercom> -->
     <headercom></headercom>
+    <!-- <watchmore title="自訂文字"></watchmore> -->
+    <!-- <assign-page></assign-page> -->
+    <!-- <employee></employee> -->
+    <!-- <memberData></memberData> -->
+    <!-- <employee></employee> -->
+    <!-- <switchButton></switchButton> -->
+    <confirmReason></confirmReason>
   </div>
 </template>
 <script>
@@ -29,6 +36,15 @@ import watchmore from "./assets/components/watchmore.vue";
 import footercom from "./assets/components/footercom.vue";
 import headercom from "./assets/components/headercom.vue";
 
+import switchButton from "./assets/components/switch_button.vue";
+import employee from "./assets/components/employee.vue";
+import memberData from "./assets/components/member_data.vue";
+import confirm from "./assets/components/confirm.vue";
+import confirmReason from "./assets/components/confirm_reason.vue";
+import assignPage from "./assets/page/assign.vue";
+import '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/free-brands-svg-icons'
+import '@fortawesome/free-solid-svg-icons'
 import $ from "jquery";
 export default {
   name: "test",
@@ -41,17 +57,20 @@ export default {
     cakeSelector,
     titleh1,
     watchmore,
-    footercom,
-    headercom,
+    assignPage,
+    employee,
+    memberData,
+    switchButton,
+    confirm,
+    confirmReason,
 
   },
-  mounted() {
-    $("body").css({"margin":0,"padding":0,"height":1000})
+  mounted(){
+    $("body").css({"margin":0,"padding":0,"backgroundColor":"#EFE6E4"})
   },
   data(){
     return{
-      totalCake:["原味鮮奶油","巧克力奶油","水果鮮奶油"]
-
+      totalCake:[1,2,3,4]
     }
   }
 };

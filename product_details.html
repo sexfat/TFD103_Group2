@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        />
+        <title>商品詳細</title>
+    </head>
+    <body>
+        <header></header>
+        <!--  還沒寫  -->
+        <main id="product_details">
+            <section id="product_details_combination1">
+                <div class="combination_titlebar">
+                    <div class="title">組合一</div>
+                    <img src="" alt="">
+                </div>
+                <div id="cake_information"> 
+                    <div id="cake_img"> 
+                        <img src="./img/cho_cake.jpeg" alt="">
+                    </div>
+                    <div id="cake_details">
+                        <div id="cake_titlebar">
+                            <div id="cake_title">巧克力蛋糕<img src="./img/favorites_icon.png" alt=""></div>
+                            <div id="cake_clear">
+                                <button id="">清空選項</button>
+                            </div>
+                        </div>
+                        <div id="cake_content">文字文字文字文字文字文字文字文文字文字
+                            文字文字文字文字文字文字文字文文字文字文字文字文字文字文字
+                            文字文字文字文字文字文字文字文文字文字文字文字文字文字文字
+                            文字文字文字文字文字文字文字文文字文字文字文字文字文字文字
+                            文字文字文字文字文字文字文字文文字文字文字文字文字文字文字
+                            文字文字文字文字文字文字文字文文字文字文字文字文字文字文字
+                        </div>
+                        <div id="cake_size_quantity">
+                            <form id='cake_quantity' method='POST' action='#'>
+                                <input type='button' value='-' class='qtyminus' field='quantity' />
+                                <input type='text' name='quantity' value='數量' class='qty'/>
+                                <input type='button' value='+' class='qtyplus' field='quantity'/>
+                            </form>
+                            <div id="cake_size">
+                                <label for="">
+                                    <select>
+                                        <option>6吋</option>
+                                        <option>8吋</option>
+                                        <option>10吋</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addenda_titlebar">
+                    <div class="addenda_title">包裝</div>
+                    <div class="addenda_cancel_icon">
+                        <img src="" alt="">
+                    </div>
+                    <div class="addenda_details">
+                        <div class="addenda_img">
+                            <img src="./img/cho_cake.jpeg" alt="">   
+                        </div>
+                        <div class="addenda_describe">這只是普通的包裝</div>
+                        <div class="addenda_amount">
+                            <label for="">
+                                <select>
+                                    <option>普通包裝</option>
+                                    <option>高級包裝</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="addenda_price">NT$0</div>
+                    </div>
+                    <!-- <span></span> -->
+                </div>
+                <div class="addenda_block">
+                    <div class="addenda_titlebar">
+                        <div class="addenda_title">造型卡片1</div>
+                        <div class="addenda_cancel_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="addenda_details">
+                            <div class="addenda_img">
+                                <img src="./img/cho_cake.jpeg" alt="">   
+                            </div>
+                            <div class="addenda_describe">這是贈送的卡片</div>
+                            <div class="addenda_amount">
+                                <label for="">
+                                    <select>
+                                        <option>普通卡片</option>
+                                        <option>情人節卡片</option>
+                                        <option>聖誕節卡片</option>
+                                        <option>生日卡片</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="addenda_price">NT$0</div>
+                        </div>
+                        <!-- <span></span> -->
+                    </div>
+                    <div class="addenda_titlebar">
+                        <div class="addenda_title">蠟燭</div>
+                        <div class="addenda_cancel_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="addenda_details">
+                            <div class="addenda_img">
+                                <img src="./img/cho_cake.jpeg" alt="">   
+                            </div>
+                            <div class="addenda_describe">這是贈送的蠟燭</div>
+                            <div class="addenda_amount">
+                                <label for="">
+                                    <select>
+                                        <option>一般蠟燭</option>
+                                        <option>數字蠟燭0</option>
+                                        <option>數字蠟燭1</option>
+                                        <option>數字蠟燭2</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="addenda_price">NT$0</div>
+                        </div>
+                        <!-- <span></span> -->
+                    </div>
+                    <span id="block_line"></span>
+                    <div id="new_addenda">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <button id="product_details_combination1_commit">確認</button>
+            </section>
+            <section id="product_details_combination2">
+                <span>新增組合</span>
+                <img src="" alt="">
+            </section>
+            <section id="product_details_combination3">
+                <combination id="product_details_total">
+                    <div id="combination_titlebar">
+                        <div id="combination_title">組合一:</div>
+                    </div>
+                    <div id="combination_contentbar">
+                        <div class="product_contentbar">
+                            <div class="product">巧克力蛋糕</div>
+                            <div class="product_price">NT$500</div>
+                        </div>
+                        <div class="product_contentbar">
+                            <div class="product">豪華包裝</div>
+                            <div class="product_price">$60</div>
+                        </div>
+                        <div class="product_contentbar">
+                            <div class="product">生日卡片</div>
+                            <div class="product_price">$50</div>
+                        </div>
+                        <div class="product_contentbar">
+                            <div class="product">小計:</div>
+                            <div class="product_price">NT$610</div>
+                        </div>
+                    </div>
+                </combination>
+            </section>
+            <section id="product_details_combination4">
+                <button id="product_details_combination_checkout">前往購物車$610</button>
+            </section>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script>
+        </script>
+    </body>
+</html>
