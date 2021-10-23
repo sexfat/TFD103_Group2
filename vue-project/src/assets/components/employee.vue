@@ -1,55 +1,57 @@
 <template>
-  <div>
-    <div class="outline">
-      <div class='img_outline'>
+    <div class="manager_list">
+      <div class='manager_img_outline'>
         <img src="" alt="" />
         <button>修改照片</button>
       </div>
-      <div class="flex">
-        <div>
+      <div class="manager_list_content">
+        <div class="manager_details">
             <label for="">員工編號</label>
-            <span><input type="text"></span>
+            <input class="authority" type="text">
         </div>
-        <div>
+        <div class="manager_details">
             <label for="">員工密碼</label>
-            <span><input type="text"></span>
+            <input class="authority" type="password">
         </div>
-        <div>
+       <div class="manager_details">
             <label for="">員工姓名</label>
-            <span><input type="text"></span>
+            <input class="authority" type="text">
         </div>
       </div>
-      <div class="flex">
-        <div>
-            <label for="">創建員工</label>
-            <span><input type="text"></span>
-        </div>
-        <div>
-            <label for="">創建日期</label>
-            <span><input type="text"></span>
-        </div>
-        <div>
-            <span for="">權限</span>
-            <select name="" id=""><option value="">1</option></select>
-        </div>
+      <div class="manager_list_content">
+          <div class="manager_details">
+              <label for="">創建員工</label>
+              <input class="authority" type="text">
+          </div>
+          <div class="manager_details">
+              <label for="">創建日期</label>
+              <input class="authority" type="date">
+          </div>
+          <div class="manager_details">
+            <label for="">權限</label>
+            <select name="" class="authority">
+              <option value="">1</option>
+            </select>
+          </div>
       </div>
-      <div class="flex">
-        <span>狀態
-            <span class="switch_button">
-                <span class="switch"></span> <!--按鈕開關-->
-            </span>
-        </span>
+      <div class="manager_list_button">
+          <switchButton></switchButton>
+          <span></span>
+          <span></span>
         <button>修改</button>
         <button>確認</button>
       </div>
     </div>
-  </div>
 </template>
 <script>
 import $ from "jquery";
+import switchButton from "./switch_button"
 export default {
   name: "employee",
   methods: {},
+  components:{
+    switchButton,
+  }
 };
 </script>
 <style scoped lang="scss">
@@ -57,20 +59,23 @@ export default {
 *{
     box-sizing: border-box;
 }
-.outline{
+.manager_list{
     width:1000px;
     height:250px;
     display: flex;
-    flex-direction:row;
     justify-content: space-between;
     align-items: center;
     padding:20px;
-    .img_outline{
-        // width:100%;
-        height:100%;
-        background: blue;
-        flex:1;
-        position:relative;
+    background-color: #F0D5CE;
+    .manager_img_outline{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        img{
+          width: 200px;
+          height: 200px;
+        }
         button{
             position:absolute;
             right:0px;
@@ -86,37 +91,66 @@ export default {
             box-shadow: $shadow;
         }
     }
-    .flex{
-        flex:1;
+    .manager_list_content{
         display:flex;
         flex-direction: column;
-        height:100%;
+        height:200px;
         justify-content: space-between;
         align-items: center;
         font-size:0;
-        div{
-            flex:1;
-            font-size:20px;
-            display:flex;
-        }
+    }
+    .manager_details{
+      width: 280px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    label{
+      font-size: 20px;
+      width: 90px;
+    }
+    .authority{
+      width: 180px;
+      text-align: center;
     }
 }
-
-.switch_button{
-    width:100px;
-    height:20px;
-    border-radius:10px;
-    display:inline-block;
-    position:relative;
-    vertical-align: sub;
-    margin-left:5px;
-    span{
-        width:10px;
-        height:20px;
-        display:inline-block;
-        position:absolute;
-        border-radius:50%;
-        left:90px;
+.manager_list_button{
+  width:115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  .switch_button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .switch{
+      width:40px;
+      height:25px;
+      border-radius:10px;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      background-color: #454545;
+      position: relative;
+      
+    .circle{
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+      background-color: white;
+      display: inline-block;
+      position: relative;
+      left: 2px;
+      // left: 14px;
     }
+  }
+  button{
+    background-color: #454545;
+    border-radius: 10px;
+    color: white;
+  }
 }
 </style>
