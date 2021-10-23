@@ -15,6 +15,7 @@
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assign-page></assign-page> -->
     <employee></employee>
+    <!-- <switchButton></switchButton> -->
   </div>
 </template>
 <script>
@@ -26,6 +27,7 @@ import searchBar from "./assets/components/search_bar.vue";
 import cakeSelector from "./assets/components/cake_selector.vue";
 import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
+import switchButton from "./assets/components/switch_button.vue";
 import employee from "./assets/components/employee.vue";
 import assignPage from "./assets/page/assign.vue";
 import '@fortawesome/fontawesome-svg-core'
@@ -45,6 +47,7 @@ export default {
     watchmore,
     assignPage,
     employee,
+    switchButton,
 
   },
   mounted(){
