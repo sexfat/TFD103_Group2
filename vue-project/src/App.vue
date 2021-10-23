@@ -16,19 +16,6 @@
   </div>
 </template>
 <script>
-<<<<<<< HEAD
-import $ from "jquery";
-export default {
-  // methods: {
-  //   add(){
-  //     $("h1").hide();
-  //   }
-  // },
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-=======
 import buttontest from "./assets/components/button_h1.vue";
 import cardVote from "./assets/components/card_voting.vue";
 import pageSelector from "./assets/components/page_selector.vue";
@@ -56,44 +43,13 @@ export default {
     return{
       totalCake:["蛋糕","你好"]
 
->>>>>>> dev
     }
   }
 };
 </script>
-<<<<<<< HEAD
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-=======
 <style scoped lang="scss">
 @import "./assets/style/var.scss";
 *{
   font-family: 'EB Garamond', serif;
->>>>>>> dev
 }
 </style>
