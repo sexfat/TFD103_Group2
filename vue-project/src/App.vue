@@ -16,12 +16,12 @@
     <!-- <footercom></footercom> -->
     <!-- <headercom></headercom> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
-    <!-- <assign-page></assign-page> -->
+    <assignPage></assignPage>
     <!-- <employee></employee> -->
     <!-- <memberData></memberData> -->
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
-    <confirmReason></confirmReason>
+    <!-- <confirmReason></confirmReason> -->
   </div>
 </template>
 <script>
@@ -72,7 +72,7 @@ export default {
   },
   data(){
     return{
-      totalCake:[1,2,3,4]
+      show:true,
     }
   }
 };
