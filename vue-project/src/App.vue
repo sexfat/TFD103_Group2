@@ -13,15 +13,18 @@
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
-    <!-- <footercom></footercom> -->
-    <!-- <headercom></headercom> -->
+    <headercom></headercom>
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <assignPage></assignPage>
     <!-- <employee></employee> -->
-    <!-- <memberData></memberData> -->
+    <memberData></memberData>
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
     <!-- <confirmReason></confirmReason> -->
+<<<<<<< HEAD
+=======
+    <footercom></footercom>
+>>>>>>> Melody
   </div>
 </template>
 <script>
