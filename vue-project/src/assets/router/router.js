@@ -7,8 +7,9 @@ export default[{
     path:'/',
     component:App,   //component: r => require.ensure([], () => r(require('../page/home')), 'home')
     children:[
-        {path:'', component: r => require.ensure([], () => r(require('../components/title_h1')), 'title_h1')},
-        {path:'123', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
+        
+        {path:'assign', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
+        {path:'vote', component: r => require.ensure([], () => r(require('../page/vote_page')), 'vote_page')},
     ],
     data(){
         return{

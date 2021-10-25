@@ -19,6 +19,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+*{
+    box-sizing: border-box;
+}
 @import "../style/var.scss";
 
 .page_select{
@@ -26,6 +29,7 @@ export default {
     list-style: none;
     justify-content: center;
     align-items: center;
+    width:100%;
     li{
         margin:0 8px;
         a{
@@ -40,6 +44,14 @@ export default {
                 background-color: black;
                 color:white;
             }
+        }
+    }
+}
+@media (max-width:576px){
+    .page_select{
+        justify-content: space-between;
+        li{
+            margin:auto;
         }
     }
 }
