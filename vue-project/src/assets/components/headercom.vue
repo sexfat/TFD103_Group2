@@ -269,11 +269,20 @@ export default {
     }
     @media all and (max-width: 576px){
         header.header{
+            padding-top: 0;
+            padding-bottom: 0;
             a#logo{
                 height: 60px;
                 display: flex;
                 align-items: center;
                 padding: 5px 0px;
+            }
+        }
+        div#header_div_two_two{
+            li.nav_icon,a.hamburger{
+                display: flex;
+                text-align: center;
+                justify-content: center;
             }
         }
         div#header_div_two_two::before{
