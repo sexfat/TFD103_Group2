@@ -1,0 +1,70 @@
+#shopping_banner{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 350px;
+    max-width: 1200px;
+    width: 100%;
+    // background-color: #;
+    .shopping_title{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+#shopping_cart_bread{
+    width: 60%;
+    justify-content: space-around;
+    display: flex;
+    margin: 0 auto;
+    font-size: 36px;
+}
+#bill_list_outline{
+    width: 100%;
+    max-width: 1120px;
+    #bill_list_titlebar{
+        background-color: $palePike;;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px 10px 0 0 ;
+        height: 140px;
+        align-items: center;
+        font-size: 28px;
+        #list_id,#member_id,#order_date{
+            align-items: center;
+            display: flex;
+            justify-content: space-around;
+            width: 25%;
+        }
+    }
+    #bill_list_contentbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        #bill_individual_outline{
+            width: 70%;
+            background-color: #F7F2F1;
+            #bill_individual{
+                width: 100%;
+                margin-top: 40px;
+                margin-left: 40px;
+                flex-direction: column;
+                justify-content: space-between;
+                display: flex;
+                title{
+                    font-size: 24px;
+                }
+            }
+        }
+        #bill_details_outline{
+            width: 30%;
+            background-color: $lightYellow;
+        }
+    }
+}
+
+$darkGrey : #515151;
+$palePike : #DFB9B0;
+$lightPike : #EFE6E4;
+$lightYellow : #F4E9C9;

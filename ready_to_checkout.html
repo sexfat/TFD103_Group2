@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        />
+        <title>購物車</title>
+    </head>
+    <body>
+        <header></header>
+        <!--  還沒寫  -->
+        <main id="shopping_cart_list">
+            <section id="shopping_banner">
+                <div class="shopping_title">
+                    <div class="title_h1">
+                        <span></span>
+                        <img src="../../img/eggBeater.png" alt="">
+                        <h1>購物車</h1>
+                        <img src="../../img/eggBeater.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="shopping_cart_bread">
+                <span id="shopping_cart_page">購物車</span>
+                <span>></span>
+                <span id="prepare_checkout_page">準備結帳</span>
+                <span>></span>
+                <span id="checkout_page">結帳完成</span>
+            </section>
+
+            
+            <section id="bill_list_outline">
+                <div id="bill_list_titlebar">
+                    <div id="list_id">
+                        <label>訂單編號</label>
+                        <span>0000085</span>
+                    </div>
+                    <div id="member_id">
+                        <label for="">會員ID</label>
+                        <span>0075245</span>
+                    </div>
+                    <div id="order_date">
+                        <label for="">下單日期</label>                
+                        <span>2021/11/21</span>
+                    </div>
+                </div>
+                <div id="bill_list_contentbar">
+                    <div id="bill_individual_outline">
+                        <form id="bill_individual">
+                            <div class="title">帳單資訊</div>
+                            <div class="recipient">
+                                <label>收件人</label>
+                                <input type="text" name="" id="" placeholder="請輸入收件人名稱">
+                            </div>
+                            <div class="phone">
+                                <label>連絡電話</label>
+                                <input type="tel" name="" id="" placeholder="請輸入能與您聯繫的電話">
+                            </div>
+                            <div class="preset_address">
+                                <input type="radio"  name="address" id="" checked>預設地址
+                                <input type="textarea">
+                            </div>
+                            <div class="new_address">
+                                <input type="radio" name="address" id="">運送到不同地址
+                                <input type="textarea">
+                            </div>
+                            <div class="send_date">
+                                <label></label>
+                                <input type="date" name="" id="" placeholder="請輸入能與您聯繫的電話">
+                            </div>
+                            <div class="mark">
+                                <label>註記(選擇宅配需在下方留下您當日方便收件時間)</label>
+                                <input type="text" name="" id="" placeholder="請輸入能與您聯繫的電話">
+                            </div>
+                            
+                            <div class="coupon">
+                                <input type="checkbox" name="" id="" checked>使用折價卷
+                                <img src="" alt="">
+                            </div>
+                        </form>
+                    </div>
+                    <div id="bill_details_outline">
+                        <form action="" id="bill_details">
+                            <div class="title"></div>
+                            <div class="product">
+                                <div class="hr"></div>
+                                <div class="combination1">
+                                    <div class="product_cake">
+                                        <label for="">巧克力蛋糕(6吋)x1</label>
+                                        <span>NT$600</span>
+                                    </div>
+                                    <div class="product_package">
+                                        <label for="">一般包裝</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                    <div class="addenda_candle">
+                                        <label for="">一般蠟燭</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                    <div class="addenda_card">
+                                        <label for="">一般卡片</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="combination1">
+                                    <div class="product_cake">
+                                        <label for="">巧克力蛋糕(6吋)x1</label>
+                                        <span>NT$600</span>
+                                    </div>
+                                    <div class="product_package">
+                                        <label for="">一般包裝</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                    <div class="addenda_candle">
+                                        <label for="">一般蠟燭</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                    <div class="addenda_card">
+                                        <label for="">一般卡片</label>
+                                        <span>$NT0</span>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="subtotal">
+                                    <label for="">小計</label>
+                                    <span>NT$1930</span>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="couple_cost">
+                                    <label for="">折價卷</label>
+                                    <span>-NT$150</span>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="shipping_method">
+                                    <label for="">運送方式</label>
+                                    <input type="radio" name="shipping_style" id="">宅配
+                                    <span>NT$120</span>
+                                    <input type="radio" name="shipping_style" id="">超商取貨(全家)
+                                    <span>NT$60</span>
+                                    <input type="radio" name="shipping_style" id="">超商取貨(7-11)
+                                    <span>NT$60</span>
+                                    <input type="radio" name="shipping_style" id="">黑貓宅急便
+                                    <span>NT$180</span>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="total">
+                                    <label for="">總計</label>
+                                    <span>NT$1780</span>
+                                </div>
+                                <div class="payment_method">付款方式
+                                    <input type="radio" name="payment" id="">信用卡付款/ATM轉帳
+                                    <img src="" alt="">
+                                    <input type="radio" name="payment" id="">貨到付款
+                                    <input type="radio" name="payment" id="">LinePay
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <button id="sumbit">下單購買</button>
+                            <span>您的個人數據將用於處理您的訂單，支持您在整個網站的體驗，以及我們的隱私權政策中描述的其他目的</span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script>
+        </script>
+    </body>
+</html>
