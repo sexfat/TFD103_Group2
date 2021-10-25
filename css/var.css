@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'EB Garamond';
-  src: url("/src/assets/style/EBG.ttf") format("truetype");
-}
-
-* {
-  font-family: 'EB Garamond', Sans-serif;
-}
-/*# sourceMappingURL=var.css.map */

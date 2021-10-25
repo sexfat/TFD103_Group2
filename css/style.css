@@ -1079,7 +1079,8 @@ section#product_items .card_outline .img_container {
 
 #member_data_page {
   max-width: 1200px;
-  margin: 0 auto 32px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 
 #member_data_page .main_bar {
@@ -1098,7 +1099,7 @@ section#product_items .card_outline .img_container {
   display: flex;
   justify-content: space-between;
   width: 410px;
-  margin: 0 auto 100px;
+  margin: 0 auto 110px;
 }
 
 #member_data_page .main_bar #member_page_nav .member_page_nav_link {
@@ -1135,7 +1136,7 @@ section#product_items .card_outline .img_container {
 #member_data_page #member_name_block {
   width: 535px;
   font-size: 0px;
-  margin: 0 auto 70px;
+  margin: 40px auto 70px;
   color: #515151;
 }
 
@@ -1211,6 +1212,7 @@ section#product_items .card_outline .img_container {
 
 #member_data_page #cake_design .title_h1 > h1 {
   margin-top: 50px;
+  font-weight: normal;
 }
 
 #member_data_page #cake_design #cake_design_cards {
@@ -1297,10 +1299,16 @@ section#product_items .card_outline .img_container {
   border-radius: 7px;
   margin: 50px 0;
   font-size: 24px;
+  box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+#member_data_page #cake_design #view_all_design_area #view_all_design_button:hover {
+  background-color: #F4E9C9;
+  color: #515151;
 }
 
 #member_data_page #coupon_block {
-  margin: 0 40px;
+  margin: 0 40px 32px;
   background-color: #DFB9B0;
   border-radius: 5px;
   text-align: center;
@@ -1308,6 +1316,7 @@ section#product_items .card_outline .img_container {
 
 #member_data_page #coupon_block .title_h1 > h1 {
   margin-bottom: 32px;
+  font-weight: normal;
 }
 
 #member_data_page #coupon_block #coupon_area {
@@ -1346,12 +1355,11 @@ section#product_items .card_outline .img_container {
   position: absolute;
   top: 33px;
   right: 34px;
-  font-size: 0;
+  overflow: hidden;
 }
 
 #member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #A_cake_text_logo > img {
-  width: 60px;
-  height: 13px;
+  width: 100%;
 }
 
 #member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #A_cake_text_logo > span {
@@ -1372,6 +1380,14 @@ section#product_items .card_outline .img_container {
   position: absolute;
   bottom: 30px;
   right: 34px;
+}
+
+#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #bottom_decoration_img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
 }
 
 #member_data_page #coupon_block #coupon_area #coupon #coupon_left_block > svg {
@@ -1413,7 +1429,9 @@ section#product_items .card_outline .img_container {
 
 #member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration > span:first-child {
   align-self: flex-start;
-  font-size: 10px;
+  font-size: 12px;
+  transform: scale(0.83);
+  transform-origin: center left;
   line-height: 14px;
   color: #515151;
   margin-bottom: 3px;
@@ -1441,7 +1459,10 @@ section#product_items .card_outline .img_container {
 
 #member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration_countdown {
   color: #E8542E;
-  font-size: 7px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform: scale(0.6);
+  transform-origin: center left;
   position: absolute;
   line-height: 10px;
   left: 28px;
@@ -1469,9 +1490,414 @@ section#product_items .card_outline .img_container {
   line-height: 3px;
 }
 
-body > svg {
+#member_data_page #bottom_snow_img {
   display: block;
   width: 100vw;
-  transform: rotate(180deg);
+  position: relative;
+  left: 50%;
+  transform: rotate(180deg) translateX(50%);
+  overflow: hidden;
+}
+
+#member_data_page #bottom_snow_img > img {
+  min-width: 1200px;
+}
+
+#member_fav_page {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+#member_fav_page .main_bar {
+  border: 1px solid red;
+}
+
+#member_fav_page .main_bar #avatar_container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 70px auto 50px;
+}
+
+#member_fav_page .main_bar #member_page_nav {
+  display: flex;
+  justify-content: space-between;
+  width: 410px;
+  margin: 0 auto 110px;
+}
+
+#member_fav_page .main_bar #member_page_nav .member_page_nav_link {
+  width: 82px;
+  height: 92px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#member_fav_page .main_bar #member_page_nav .member_page_nav_link > img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#member_fav_page .main_bar #member_page_nav .member_page_nav_link > span {
+  width: 82px;
+  height: 32px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 32px;
+  color: #9F746B;
+  cursor: pointer;
+}
+
+#member_fav_page .main_bar #member_page_nav .member_page_nav_link.-on > span {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+#member_fav_page #fav_folder {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+#member_fav_page #fav_folder #folder_area {
+  margin: 33px 40px 5px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: auto;
+  grid-gap: 65px;
+  width: auto;
+}
+
+@media (max-width: 1199.98px) {
+  #member_fav_page #fav_folder #folder_area {
+    grid-template-columns: auto auto;
+    margin: 33px 25px 5px;
+    grid-gap: 55px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #member_fav_page #fav_folder #folder_area {
+    grid-template-columns: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    width: 100vw;
+    overflow-y: scroll;
+    grid-template-areas: "first .";
+  }
+}
+
+#member_fav_page #fav_folder #folder_area #folder {
+  width: 330px;
+  height: 330px;
+  background-color: #DFB9B0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#member_fav_page #fav_folder #folder_area #folder::before {
+  content: "";
+  width: 110px;
+  height: 40px;
+  display: inline-block;
+  background-color: #EFE6E4;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_title_tag {
+  padding-left: 7px;
+  padding-top: 7px;
+  text-align: left;
+  position: relative;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #folder_title {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 120px;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder > i {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_img_outline {
+  width: 290px;
+  height: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#member_fav_page #fav_folder #folder_area #folder #folder_img_outline > img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#member_fav_page #fav_folder #folder_area #folder_last {
+  width: 330px;
+  height: 330px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767.98px) {
+  #member_fav_page #fav_folder #folder_area #folder_last {
+    grid-area: first;
+  }
+}
+
+#member_fav_page #fav_folder #folder_area #folder_last #add_folder {
+  width: 100px;
+  height: 100px;
+  background-color: #DFB9B0;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#member_fav_page #fav_folder #folder_area #folder_last #add_folder > i {
+  color: #EFE6E4;
+  font-size: 85px;
+}
+
+#member_fav_page #bottom_snow_img {
+  display: block;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: rotate(180deg) translateX(50%);
+  overflow: hidden;
+}
+
+#member_fav_page #bottom_snow_img > img {
+  min-width: 1200px;
+}
+
+#member_fav_detail_page {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+#member_fav_detail_page .main_bar {
+  border: 1px solid red;
+}
+
+#member_fav_detail_page .main_bar #avatar_container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 70px auto 50px;
+}
+
+#member_fav_detail_page .main_bar #member_page_nav {
+  display: flex;
+  justify-content: space-between;
+  width: 410px;
+  margin: 0 auto 110px;
+}
+
+#member_fav_detail_page .main_bar #member_page_nav .member_page_nav_link {
+  width: 82px;
+  height: 92px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#member_fav_detail_page .main_bar #member_page_nav .member_page_nav_link > img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#member_fav_detail_page .main_bar #member_page_nav .member_page_nav_link > span {
+  width: 82px;
+  height: 32px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 32px;
+  color: #9F746B;
+  cursor: pointer;
+}
+
+#member_fav_detail_page .main_bar #member_page_nav .member_page_nav_link.-on > span {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+#member_fav_detail_page #fav_folder {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+#member_fav_detail_page #fav_folder #folder_area {
+  margin: 33px 40px 5px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: auto;
+  grid-gap: 65px;
+  width: auto;
+}
+
+@media (max-width: 1199.98px) {
+  #member_fav_detail_page #fav_folder #folder_area {
+    grid-template-columns: auto auto;
+    margin: 33px 25px 5px;
+    grid-gap: 55px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #member_fav_detail_page #fav_folder #folder_area {
+    grid-template-columns: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    width: 100vw;
+    overflow-y: scroll;
+    grid-template-areas: "first .";
+  }
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder {
+  width: 330px;
+  height: 330px;
+  background-color: #DFB9B0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder::before {
+  content: "";
+  width: 110px;
+  height: 40px;
+  display: inline-block;
+  background-color: #EFE6E4;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_title_tag {
+  padding-left: 7px;
+  padding-top: 7px;
+  text-align: left;
+  position: relative;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_title_tag #folder_title {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 120px;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder > i {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_img_outline {
+  width: 290px;
+  height: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder #folder_img_outline > img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder_last {
+  width: 330px;
+  height: 330px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767.98px) {
+  #member_fav_detail_page #fav_folder #folder_area #folder_last {
+    grid-area: first;
+  }
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder_last #add_folder {
+  width: 100px;
+  height: 100px;
+  background-color: #DFB9B0;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#member_fav_detail_page #fav_folder #folder_area #folder_last #add_folder > i {
+  color: #EFE6E4;
+  font-size: 85px;
+}
+
+#member_fav_detail_page #bottom_snow_img {
+  display: block;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: rotate(180deg) translateX(50%);
+  overflow: hidden;
+}
+
+#member_fav_detail_page #bottom_snow_img > img {
+  min-width: 1200px;
 }
 /*# sourceMappingURL=style.css.map */
