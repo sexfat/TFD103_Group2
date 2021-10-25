@@ -17,30 +17,7 @@
             <div id="select_test"></div>
             <h1 class="vote_title"><img src="" alt="" />現在排名</h1>
             <section id="topthree">
-                <div class="vote_topthree">
-                    <img src="" alt="" class="topthree_hat" />
-                    <img src="../images/cho_cake.jpg" alt="" class="pic_cake" />
-                    <div>
-                        <h1>巧克力蛋糕</h1>
-                        <p>Chocolate cake</p>
-                    </div>
-                </div>
-                <div class="vote_topthree">
-                    <img src="" alt="" class="topthree_hat" />
-                    <img src="../images/cho_cake.jpg" alt="" class="pic_cake" />
-                    <div>
-                        <h1>巧克力蛋糕</h1>
-                        <p>Chocolate cake</p>
-                    </div>
-                </div>
-                <div class="vote_topthree">
-                    <img src="" alt="" class="topthree_hat" />
-                    <img src="../images/cho_cake.jpg" alt="" class="pic_cake" />
-                    <div>
-                        <h1>巧克力蛋糕</h1>
-                        <p>Chocolate cake</p>
-                    </div>
-                </div>
+                <card-topthree v-for="(test,index) in 3" :key="index"></card-topthree>
             </section>
             <h1 class="vote_title"><img src="" alt="" />候選名單</h1>
             <section id="vote">
@@ -58,10 +35,12 @@ import pageSelect from '../components/page_selector'
 import headercom from '../components/headercom'
 import footercom from '../components/footercom'
 import searchBar from '../components/search_bar'
+import cardTopthree from '../components/card_topthree'
 import titleh1 from "../components/title_h1.vue";
 import Search_bar from '../components/search_bar.vue'
 import cakeSelector from '../components/cake_selector.vue'
 import cardVoting from '../components/card_voting.vue'
+import Card_topthree from '../components/card_topthree.vue'
 export default {
     name:'assignPage',
     components:{
@@ -72,7 +51,9 @@ export default {
         searchBar,
         Search_bar,
         cakeSelector,
-        cardVoting
+        cardVoting,
+        cardTopthree,
+        Card_topthree,
     },
    data(){
     return{

@@ -4,24 +4,24 @@
       <div id="select_outline">
         <div class="select">
           <span>糕體：</span>
-          <template>
+          
             <span v-for="(cakebody,index) in total_cakebodys" :key="index">
             <input type="checkbox" v-model="choose_total" :value="cakebody" :id="cakebody"/>{{ cakebody }}
             </span>
-          </template>
+          
         </div>
         <div class="select">
           <span>水果：</span>
-          <template>
+          
           <span v-for="(ingredient,index) in total_ingredients" :key="index"><input type="checkbox"
               v-model="choose_total"
               :value="ingredient"
               :id="ingredient"
             />{{ ingredient }}</span
-          ></template>
+          >
         </div>
         <div class="select">
-          <span>裝飾：</span><template>
+          <span>裝飾：</span>
           <span v-for="(decoration,index) in total_decorations" :key="index"
             ><input
               type="checkbox"
@@ -29,14 +29,14 @@
               :value="decoration"
               :id="decoration"
             />{{ decoration }}</span
-          ></template>
+          >
         </div>
       </div>
       <br />
-      <div id="choose_label"><template>
+      <div id="choose_label">
         <label v-for="(choose,index) in choose_total"  :key="index" :for="choose"
           >{{ choose }} <i class="fa-solid fa-xmark"></i
-        ></label></template>
+        ></label>
       </div>
       <button class="clearall">ZXS</button>
     </div>
