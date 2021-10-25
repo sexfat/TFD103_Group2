@@ -21,10 +21,7 @@
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
     <!-- <confirmReason></confirmReason> -->
-<<<<<<< HEAD
-=======
     <footercom></footercom>
->>>>>>> Melody
   </div>
 </template>
 <script>
