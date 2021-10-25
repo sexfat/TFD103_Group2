@@ -1,5 +1,6 @@
 <template>
     <header class="header">
+        <div class="header_box">
             <a href="" id="logo">
                 <img src="../images/logo.png">
             </a>
@@ -23,14 +24,15 @@
             <div id="header_div_two_two">
                 <li class="nav_icon"><a href=""><img src="../images/member.svg" alt=""></a></li>
                 <li class="nav_icon"><a href=""><img src="../images/shoppingCar.svg" alt=""></a></li>
-            </div>
             <!-- RWD漢堡選單 -->
             <a class="hamburger" href="">
                 <span class="hamburger_icon"></span>
                 <span class="hamburger_icon"></span>
                 <span class="hamburger_icon"></span>
             </a>
-        </header>
+            </div>
+        </div>
+    </header>
 </template>
 <script>
 import $ from 'jquery'
@@ -68,16 +70,16 @@ export default {
 </script>
 <style scoped lang="scss">
     @import "../style/var.scss";
-    *{
-     box-sizing: border-box;
-     list-style-type: none;
-    }
-    body{
-        margin: 0;
-        position: relative;
-        background-color: #EFE6E4;
-        height: 1000px;
-    }
+    // *{
+    //  box-sizing: border-box;
+    //  list-style-type: none;
+    // }
+    // body{
+    //     margin: 0;
+    //     position: relative;
+    //     background-color: #EFE6E4;
+    //     height: 1000px;
+    // }
     // header陰影
     header.header.shadow{
             box-shadow: 0px 3px 5px 0px hsla(0, 0%, 0%, .2);
@@ -87,42 +89,46 @@ export default {
         background-color: #DFB9B0;
         padding:5px 30px;
         position: fixed;
-        display: flex;
-        justify-content: space-between;
         top: 0;
         right: 0;
         left: 0;
-        a#logo{
-            height: 70px;
-            display: flex;
-            align-items: center;
-            img{
-                 height: 100%;
-            }
-        }
-        ul.header_nav{
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            overflow: hidden;
-            div#header_div_one{
+        // 無條件最上層
+        z-index: 9999;
+        div.header_box{
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+            a#logo{
+                height: 70px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                li.nav_item{
-                    text-align: center;
-                    list-style-type: none;
-                    margin: 0px 16px;
-                    a{
-                        color: #515151;
-                        text-decoration: none;
-                        font-size: 18px;
-                        &:hover{
-                            color: #9F746B;
+                img{
+                    height: 100%;
+                }
+            }
+            ul.header_nav{
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                overflow: hidden;
+                div#header_div_one{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    li.nav_item{
+                        text-align: center;
+                        list-style-type: none;
+                        margin: 0px 16px;
+                        a{
+                            color: #515151;
+                            text-decoration: none;
+                            font-size: 18px;
+                            &:hover{
+                                color: #9F746B;
+                            }
                         }
-                        // img{
-                        //     display: none;
-                        // }
                     }
                 }
             }
@@ -160,27 +166,33 @@ export default {
                 display:none;
             }
             /* RWD漢堡選單 */
-            a.hamburger{
-                display: none;
-                width: 46px;
-                height: 46px;
-                align-items: center;
-                justify-content: flex-end;
-            }
+            
             div#header_div_two_two{
                 display: none;
+                a.hamburger{
+                    display: none;
+                    width: 46px;
+                    align-items: center;
+                    text-align: center;
+                    margin: 0px 10px;
+                }
+                div#header_div_two_two{
+                    display: none;
+                }
             }
     // RWD
     @media all and (max-width: 768px){
-        a.hamburger{
-            display: flex;
-            flex-direction: column;
-            span.hamburger_icon{
-                width: 30px;
-                height: 4px;
-                background-color: #515151;
-                border-radius: 4px;
-                margin: 3px 0;
+        div#header_div_two_two{
+            a.hamburger{
+                display: flex;
+                flex-direction: column;
+                span.hamburger_icon{
+                    width: 30px;
+                    height: 4px;
+                    background-color: #515151;
+                    border-radius: 4px;
+                    margin: 3px 0;
+                }
             }
         }
         img#hamburger_img{
@@ -199,7 +211,7 @@ export default {
             right: 0;
             bottom:0;
             flex-direction: column;
-            transform:translateY(105%);
+            transform:translateY(calc(100% + 15px));
             background-color: #EFE6E4;
             height: 0px;
             overflow:hidden;
@@ -228,6 +240,7 @@ export default {
         }
         div#header_div_two_two{
             margin: 20px;
+            margin-right: 0px;
             display: flex;
             li.nav_icon{
                     text-align: center;
@@ -260,13 +273,11 @@ export default {
                 height: 60px;
                 display: flex;
                 align-items: center;
-                padding-top: 10px;
+                padding: 5px 0px;
             }
         }
-        ul.header_nav{
-            div#header_div_two_two::before{
+        div#header_div_two_two::before{
                 display: none;
-            }
         }
     }
 </style>

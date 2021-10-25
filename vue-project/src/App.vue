@@ -13,15 +13,15 @@
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
-    <!-- <footercom></footercom> -->
-    <!-- <headercom></headercom> -->
+    <headercom></headercom>
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assign-page></assign-page> -->
     <!-- <employee></employee> -->
-    <!-- <memberData></memberData> -->
+    <memberData></memberData>
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
-    <confirmReason></confirmReason>
+    <!-- <confirmReason></confirmReason> -->
+    <footercom></footercom>
   </div>
 </template>
 <script>
