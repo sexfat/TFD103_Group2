@@ -1,6 +1,6 @@
 <template>
 <span class="switch_button" @click="myfunc">
-    <label for="">狀態</label>
+    <label for="">{{title}}&nbsp</label>
     <div class="switch">
     <span class="circle"></span>
     </div>
@@ -17,6 +17,7 @@ methods: {
         $('.switch').toggleClass('-on');
     },
 },
+props:['title'],
 };
 </script>
 <style scoped lang="scss">
