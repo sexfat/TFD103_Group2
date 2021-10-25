@@ -14,15 +14,16 @@
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
-    <headercom></headercom>
+    <!-- <headercom></headercom> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assignPage></assignPage> -->
     <!-- <employee></employee> -->
-    <memberData></memberData>
+    <!-- <memberData></memberData> -->
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
     <!-- <confirmReason></confirmReason> -->
-    <footercom></footercom>
+    <!-- <footercom></footercom> -->
+    <!-- <votePage></votePage> -->
   </div>
 </template>
 <script>
@@ -43,6 +44,7 @@ import memberData from "./assets/components/member_data.vue";
 import confirm from "./assets/components/confirm.vue";
 import confirmReason from "./assets/components/confirm_reason.vue";
 import assignPage from "./assets/page/assign.vue";
+import votePage from "./assets/page/vote_page.vue";
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/free-solid-svg-icons'
@@ -66,6 +68,7 @@ export default {
     confirmReason,
     footercom,
     headercom,
+    votePage,
 
   },
   mounted(){

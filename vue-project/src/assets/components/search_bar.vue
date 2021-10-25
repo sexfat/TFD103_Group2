@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name:"button_h1",
+  name:"search_bar",
   props:["title"],
 }
 </script>

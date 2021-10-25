@@ -5,7 +5,7 @@
         <div class="select">
           <span>糕體：</span>
           <template>
-            <span v-for="cakebody in total_cakebodys">
+            <span v-for="(cakebody,index) in total_cakebodys" :key="index">
             <input type="checkbox" v-model="choose_total" :value="cakebody" :id="cakebody"/>{{ cakebody }}
             </span>
           </template>
@@ -13,9 +13,7 @@
         <div class="select">
           <span>水果：</span>
           <template>
-          <span v-for="ingredient in total_ingredients"
-            ><input
-              type="checkbox"
+          <span v-for="(ingredient,index) in total_ingredients" :key="index"><input type="checkbox"
               v-model="choose_total"
               :value="ingredient"
               :id="ingredient"
@@ -24,7 +22,7 @@
         </div>
         <div class="select">
           <span>裝飾：</span><template>
-          <span v-for="decoration in total_decorations"
+          <span v-for="(decoration,index) in total_decorations" :key="index"
             ><input
               type="checkbox"
               v-model="choose_total"
@@ -36,7 +34,7 @@
       </div>
       <br />
       <div id="choose_label"><template>
-        <label v-for="choose in choose_total" :for="choose"
+        <label v-for="(choose,index) in choose_total"  :key="index" :for="choose"
           >{{ choose }} <i class="fa-solid fa-xmark"></i
         ></label></template>
       </div>
@@ -47,36 +45,12 @@
 <script>
 import $ from "jquery";
 export default {
-  name: "button_h1",
+  name: "cake_selector",
   props: ["total_cakebodys", "total_ingredients", "total_decorations"], //上層屬性用這三個
   data() {
     return {
       choose_total: [],
-      // total_cakebodys: [
-      //   "原味鮮奶油",
-      //   "巧克力奶油",
-      //   "水果鮮奶油",
-      //   "綜合口味",
-      //   "其他糕體",
-      // ],
-      // total_ingredients: [
-      //   "草莓",
-      //   "藍莓",
-      //   "櫻桃",
-      //   "橘子",
-      //   "檸檬",
-      //   "奇異果",
-      //   "其他水果",
-      // ],
-      // total_decorations: [
-      //   "圓形立牌",
-      //   "生日立牌",
-      //   "奶油",
-      //   "葉子",
-      //   "迷迭香",
-      //   "薄荷",
-      //   "其他裝飾",
-      // ],
+      
     };
   },
 };
@@ -104,7 +78,8 @@ input {
   outline: none;
   box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.8);
   position: relative;
-  top: 4px;
+  vertical-align:sub
+  // top: 4px;
 }
 #treat {
   background-color: #f7edd4;
@@ -125,8 +100,8 @@ input {
 }
 .select span:first-child {
   position: relative;
-  top: 4px;
   width: 80px;
+  line-height:30px
 }
 button {
   position: absolute;
