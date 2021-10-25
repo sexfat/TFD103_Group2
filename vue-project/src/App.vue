@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-view></router-view>
   <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <!-- <cardVote></cardVote> -->
     <!-- <router-view> -->
@@ -15,7 +16,7 @@
     <!-- <watchmore title="ASSSD"></watchmore> -->
     <headercom></headercom>
     <!-- <watchmore title="自訂文字"></watchmore> -->
-    <assignPage></assignPage>
+    <!-- <assignPage></assignPage> -->
     <!-- <employee></employee> -->
     <memberData></memberData>
     <!-- <employee></employee> -->
