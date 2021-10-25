@@ -87,7 +87,7 @@ export default {
     header.header{
         height: 80px;
         background-color: #DFB9B0;
-        padding:5px 30px;
+        padding:0px 30px;
         position: fixed;
         top: 0;
         right: 0;
@@ -95,11 +95,14 @@ export default {
         // 無條件最上層
         z-index: 9999;
         div.header_box{
+        height: 80px;
         max-width: 1200px;
         display: flex;
         justify-content: space-between;
-        margin-left: auto;
-        margin-right: auto;
+        align-items: center;
+        margin: 0 auto;
+        // margin-left: auto;
+        // margin-right: auto;
             a#logo{
                 height: 70px;
                 display: flex;
