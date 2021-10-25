@@ -12,9 +12,16 @@
     <!-- <searchBar></searchBar> -->
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
+    <!-- <watchmore title="ASSSD"></watchmore> -->
+    <!-- <footercom></footercom> -->
+    <!-- <headercom></headercom> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
-    <!-- <assign-page></assign-page> -->
-    <employee></employee>
+    <assignPage></assignPage>
+    <!-- <employee></employee> -->
+    <!-- <memberData></memberData> -->
+    <!-- <employee></employee> -->
+    <!-- <switchButton></switchButton> -->
+    <!-- <confirmReason></confirmReason> -->
   </div>
 </template>
 <script>
@@ -26,7 +33,14 @@ import searchBar from "./assets/components/search_bar.vue";
 import cakeSelector from "./assets/components/cake_selector.vue";
 import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
+import footercom from "./assets/components/footercom.vue";
+import headercom from "./assets/components/headercom.vue";
+
+import switchButton from "./assets/components/switch_button.vue";
 import employee from "./assets/components/employee.vue";
+import memberData from "./assets/components/member_data.vue";
+import confirm from "./assets/components/confirm.vue";
+import confirmReason from "./assets/components/confirm_reason.vue";
 import assignPage from "./assets/page/assign.vue";
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/free-brands-svg-icons'
@@ -45,6 +59,12 @@ export default {
     watchmore,
     assignPage,
     employee,
+    memberData,
+    switchButton,
+    confirm,
+    confirmReason,
+    footercom,
+    headercom,
 
   },
   mounted(){
@@ -52,10 +72,11 @@ export default {
   },
   data(){
     return{
-      totalCake:[1,2,3,4]
+      show:true,
     }
   }
 };
+
 </script>
 <style scoped lang="scss">
 @import "./assets/style/var.scss";
