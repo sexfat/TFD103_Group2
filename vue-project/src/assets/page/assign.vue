@@ -78,7 +78,7 @@ export default {
     },
     data(){
         return{
-            
+            asd:123546
         }
     },
     methods:{
