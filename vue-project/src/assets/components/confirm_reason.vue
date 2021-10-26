@@ -13,7 +13,7 @@
 <script>
 import $ from "jquery";
 export default {
-  name: "confirm",
+  name: "confirm_reason",
   methods: {},
   components:{
   },

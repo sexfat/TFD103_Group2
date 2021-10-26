@@ -15,7 +15,7 @@
 <script>
 import $ from 'jquery'
 export default {
-  name:"button_h1",
+  name:"sale_card",
   props:["title"],
 }
 </script>

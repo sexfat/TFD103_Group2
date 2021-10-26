@@ -1,8 +1,8 @@
 <template>
 <span class="switch_button" @click="myfunc">
-    <label for="">{{title}}&nbsp</label>
-    <div class="switch">
-    <span class="circle"></span>
+    <label for="">{{title}}</label>
+    <div class="switch" id="outline">
+    <span class="circle" id="circle"></span>
     </div>
     <!--按鈕開關-->
 </span>
@@ -10,11 +10,17 @@
 <script>
 import $ from "jquery";
 export default {
-name: "employee",
+name: "switch_button",
 methods: {
-    myfunc:　function(){
-        $('.circle').toggleClass('-on');
-        $('.switch').toggleClass('-on');
+    myfunc:　function(e){
+        if($(e.target).attr("id") =="outline"){
+            $(e.target).toggleClass("-on");
+            $(e.target).children().toggleClass("-on");
+        };
+        if($(e.target).attr("id") == "circle"){
+            $(e.target).parent().toggleClass("-on");
+            $(e.target).toggleClass("-on");
+        }
     },
 },
 props:['title'],

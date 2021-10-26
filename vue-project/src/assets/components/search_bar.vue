@@ -19,6 +19,7 @@ input.search{
     border:none;
     padding:0 30px;
     opacity:70%;
+    background:rgba(255,255,255,1);
     box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     font-size: 20px;
     cursor: text;

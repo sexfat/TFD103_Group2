@@ -25,6 +25,7 @@
             </section>
             <pageSelect style="margin-bottom:70px;"></pageSelect>
         </main>
+        
         <footercom></footercom>
         
     </div>
@@ -40,9 +41,9 @@ import titleh1 from "../components/title_h1.vue";
 import Search_bar from '../components/search_bar.vue'
 import cakeSelector from '../components/cake_selector.vue'
 import cardVoting from '../components/card_voting.vue'
-import Card_topthree from '../components/card_topthree.vue'
+import card_topthree from '../components/card_topthree.vue'
 export default {
-    name:'assignPage',
+    name:'votePage',
     components:{
         titleh1,
         headercom,
@@ -53,7 +54,7 @@ export default {
         cakeSelector,
         cardVoting,
         cardTopthree,
-        Card_topthree,
+        card_topthree,
     },
    data(){
     return{

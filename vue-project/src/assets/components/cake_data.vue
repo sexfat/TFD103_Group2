@@ -26,7 +26,7 @@
                 </div>
                 <div class="adress">
                     <label for="">地址</label>
-                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                    <textarea name="" id="" cols="55" rows="3"></textarea>
                 </div>
             </div>
         </div>
@@ -36,10 +36,10 @@
 import $ from "jquery";
 import switchButton from "./switch_button"
 export default {
-  name: "member_data",
+  name: "upload_vote",
   methods: {},
   components:{
-      switchButton,
+      
   },
 };
 </script>
@@ -94,20 +94,18 @@ export default {
         vertical-align: top;
         width:100%;
         resize:none;
+        border:2px solid black;
     }
 }
 .forPosition{
-    display:flex;
+    // display:flex;
     justify-content: flex-end;
-    // flex-direction: column;
     display:none;
     span{
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
-.forPosition.open{
+.open{
     display: flex;
 }
 </style>
