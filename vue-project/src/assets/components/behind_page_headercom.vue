@@ -7,12 +7,12 @@
       </router-link>
       <ul class="header_nav">
         <div id="header_div_one">
-          <li class="nav_item"><router-link to="/employee" >員工管理</router-link></li>
-          <li class="nav_item"><router-link to="/memberManager" >會員資料管理</router-link></li>
-          <li class="nav_item"><router-link to="/cakeManager" >蛋糕製作管理</router-link></li>
-          <li class="nav_item"><router-link to="/assign" >投票系統管理</router-link></li>
-          <li class="nav_item"><router-link to="/vote" >商城管理</router-link></li>
-          <li class="nav_item"><router-link to="/assign" >客服回復</router-link></li>
+          <li class="nav_item"><router-link to="/employee" id="employee">員工管理</router-link></li>
+          <li class="nav_item"><router-link to="/memberManager" id="member">會員資料管理</router-link></li>
+          <li class="nav_item"><router-link to="/cakeManager" id="cake">蛋糕製作管理</router-link></li>
+          <li class="nav_item"><router-link to="/voteManager" id="vote">投票系統管理</router-link></li>
+          <li class="nav_item"><router-link to="/vote" id="sale">商城管理</router-link></li>
+          <li class="nav_item"><router-link to="/assign" id="request">客服回復</router-link></li>
           <li class="nav_item"><router-link to="/vote" >登出</router-link></li>
         </div>
       </ul>
@@ -99,6 +99,9 @@ header.header {
             &:hover {
               color: #9f746b;
             }
+          }
+          a.target{
+            color:#9f746b;
           }
         }
       }

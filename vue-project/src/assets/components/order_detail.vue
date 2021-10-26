@@ -122,6 +122,10 @@ export default {
     },
   },
   components: {},
+  mounted(){
+    $("#order").siblings().removeClass("target")
+      $("#order").addClass("target")
+  }
 };
 </script>
 <style scoped lang="scss">
@@ -137,7 +141,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width:800px;
+  width:775px;
   padding:20px;
   background: #F7DCDC;
   border-radius: 10px;
@@ -285,6 +289,7 @@ export default {
         flex:7;
         margin:0;
         background: white;
+        margin-right:15px;
     }
     .button_zone{
         flex:1;

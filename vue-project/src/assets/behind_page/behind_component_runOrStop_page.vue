@@ -1,11 +1,11 @@
 <template>
  <section id="right_section">
         <div class="title">
-          <h1>訂單查詢</h1>
+          <h1>活動內容管理</h1>
           <searchBar></searchBar>
         </div>
         <div class="cake">
-            <order v-for="(test,index) in 5" :key="index"></order>
+          <run-event v-for="(test,index) in 5" :key="index"></run-event>
        </div>
       </section>
 </template>
@@ -14,16 +14,17 @@
 import $ from "jquery";
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
-import order from '../components/order_detail';
+import runEvent from "../components/run_event";
 export default {
-  name: "order_detail",
+  name: "runOrStop",
   components: {
     behindHeader,
     searchBar,
-    order,
+    runEvent,
   },
   data() {
     return {
+      showWhat: [],
     };
   },
   methods: {},
