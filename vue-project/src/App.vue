@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <headercom></headercom> -->
     <router-view></router-view>
   <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <!-- <cardVote></cardVote> -->
@@ -14,15 +15,17 @@
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
     <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
-    <headercom></headercom>
+    <!-- <headercom></headercom> -->
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assignPage></assignPage> -->
     <!-- <employee></employee> -->
-    <memberData></memberData>
+    <!-- <memberData></memberData> -->
     <!-- <employee></employee> -->
     <!-- <switchButton></switchButton> -->
     <!-- <confirmReason></confirmReason> -->
-    <footercom></footercom>
+    <!-- <footercom></footercom> -->
+    <!-- <votePage></votePage> -->
+    <!-- <behindheadercom></behindheadercom> -->
   </div>
 </template>
 <script>
@@ -36,6 +39,7 @@ import titleh1 from "./assets/components/title_h1.vue";
 import watchmore from "./assets/components/watchmore.vue";
 import footercom from "./assets/components/footercom.vue";
 import headercom from "./assets/components/headercom.vue";
+import behindheadercom from "./assets/components/behind_page_headercom.vue";
 
 import switchButton from "./assets/components/switch_button.vue";
 import employee from "./assets/components/employee.vue";
@@ -43,12 +47,13 @@ import memberData from "./assets/components/member_data.vue";
 import confirm from "./assets/components/confirm.vue";
 import confirmReason from "./assets/components/confirm_reason.vue";
 import assignPage from "./assets/page/assign.vue";
+import votePage from "./assets/page/vote_page.vue";
 import '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/free-solid-svg-icons'
 import $ from "jquery";
 export default {
-  name: "test",
+  name: "AppVue",
   components: {
     buttontest,
     cardVote,
@@ -66,7 +71,8 @@ export default {
     confirmReason,
     footercom,
     headercom,
-
+    votePage,
+  behindheadercom,
   },
   mounted(){
     $("body").css({"margin":0,"padding":0,"backgroundColor":"#EFE6E4"})

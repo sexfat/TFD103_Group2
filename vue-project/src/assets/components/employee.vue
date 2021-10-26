@@ -35,7 +35,7 @@
           </div>
       </div>
       <div class="manager_list_button">
-          <switchButton></switchButton>
+          <switchButton :title=thistitle></switchButton>
           <span></span>
           <span></span>
         <button>修改</button>
@@ -49,6 +49,12 @@ import $ from "jquery";
 import switchButton from "./switch_button"
 export default {
   name: "employee",
+  props:['thistitle'],
+  data(){
+    return{
+      
+    }
+  },
   methods: {},
   components:{
     switchButton,
@@ -125,7 +131,7 @@ export default {
   .switch_button{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .switch{
       width:40px;
