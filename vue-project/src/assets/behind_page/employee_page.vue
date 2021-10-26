@@ -1,12 +1,18 @@
 <template>
   <div>
     <behind-header thistitle="員工管理"></behind-header>
-    <section class="first_site">
-      <h1>員工資料</h1>
-      <search-bar></search-bar>
-    </section>
-    <div id="employee">
-      <employee  thistitle="狀態" v-for="(sss,index) in 5" :key="index"></employee>
+    <div class="forPosition">
+      <section class="first_site">
+        <h1>員工資料</h1>
+        <search-bar></search-bar>
+      </section>
+      <div id="employee">
+        <employee
+          thistitle="狀態"
+          v-for="(sss, index) in 5"
+          :key="index"
+        ></employee>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +29,11 @@ export default {
     searchBar,
     employee,
   },
+  mounted(){
+    $("#employee").siblings().removeClass("target");
+    $("#employee").addClass("target");
+
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -32,19 +43,24 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .first_site {
-  margin: 0 auto;
-  width: 1200px;
+  width: 1000px;
   display: flex;
   justify-content: space-between;
-  position:sticky;
-  top:350px;
-  z-index:99;
+  align-items: center;
+  margin-bottom: 70px;
+  margin-top:70px;
 }
-#employee{
-    display:grid;
-    gap:30px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+#employee {
+  display: grid;
+  gap: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.forPosition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

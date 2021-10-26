@@ -24,10 +24,11 @@ export default {
   },
   data() {
     return {
-      showWhat: [],
     };
   },
   methods: {},
+  mounted(){
+  }
 };
 </script>
 <style scoped lang="scss">

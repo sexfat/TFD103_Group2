@@ -15,7 +15,6 @@ import $ from "jquery";
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
 import uploadVote from "../components/upload_vote";
-import cakeData from '../components/cake_data';
 export default {
   name: "upload_vote",
   components: {
