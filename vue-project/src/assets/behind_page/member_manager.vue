@@ -18,7 +18,7 @@
         >
           <h1>修查會員資格與權限</h1>
         </div>
-        <div id="kupon" class="select_option" @click="showWhat = 'kupon'">
+        <div id="coupon" class="select_option" @click="showWhat = 'coupon'">
           <h1>給予折扣券</h1>
         </div>
         <div id="order" class="select_option" @click="showWhat = 'order'">
@@ -41,6 +41,7 @@ import searchBar from "../components/search_bar";
 import votePage from './behind_component_upload_vote_page'
 import membership from './behind_component_member_ship_page'
 import order from './behind_component_order_page'
+import coupon from './behind_component_coupon_page'
 export default {
   name: "member_manager",
   components: {
@@ -49,6 +50,7 @@ export default {
     votePage,
     membership,
     order,
+    coupon,
   },
   data() {
     return {

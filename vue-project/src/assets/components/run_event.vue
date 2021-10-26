@@ -36,14 +36,14 @@
 </template>
 <script>
 import $ from "jquery";
-import switchButton from "./switch_button";
 export default {
   name: "upload_vote",
   methods: {},
   components: {},
   props: ["title", "author", "text"],
   mounted(){
-    //   console.log(2)
+      $("#runOrStop").siblings().removeClass("target")
+      $("#runOrStop").addClass("target")
   }
 };
 </script>
@@ -84,7 +84,7 @@ export default {
         align-items: center;
         white-space: nowrap;
         p {
-          margin: 0 5px;
+          margin: 0 8px 0 0;
           font-size: 18px;
           color:#515151;
         }
@@ -109,6 +109,12 @@ export default {
         background:#F4E9C9 ;
         cursor: pointer;
         color:#515151;
+        border:none;
+        padding:5px;
+        margin:0 5px;
+        &:active{
+            box-shadow: inset $shadow;
+        }
     }
   }
 }

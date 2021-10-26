@@ -27,6 +27,10 @@ export default {
     };
   },
   methods: {},
+  mounted(){
+    $("#order").siblings().removeClass("target")
+      $("#order").addClass("target")
+  }
 };
 </script>
 <style scoped lang="scss">

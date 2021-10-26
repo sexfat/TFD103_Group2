@@ -11,7 +11,7 @@
           <li class="nav_item"><router-link to="/memberManager" id="member">會員資料管理</router-link></li>
           <li class="nav_item"><router-link to="/cakeManager" id="cake">蛋糕製作管理</router-link></li>
           <li class="nav_item"><router-link to="/voteManager" id="vote">投票系統管理</router-link></li>
-          <li class="nav_item"><router-link to="/vote" id="sale">商城管理</router-link></li>
+          <li class="nav_item"><router-link to="/shopManager" id="shop">商城管理</router-link></li>
           <li class="nav_item"><router-link to="/assign" id="request">客服回復</router-link></li>
           <li class="nav_item"><router-link to="/vote" >登出</router-link></li>
         </div>
@@ -120,7 +120,7 @@ header.header {
     position:absolute;
     width:100%;
     height:100%;
-    object-fit: fill;
+    object-fit: cover;
   }
 }
 </style>

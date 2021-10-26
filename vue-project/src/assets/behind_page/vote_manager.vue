@@ -5,16 +5,16 @@
       <section id="left_section">
         <!-- <div class="select_option"></div> -->
         <div
-          id="upload_votePic"
+          id="runOrStop"
           class="select_option"
           @click="showWhat = 'runOrStop'" style="margin-top:75px"
         >
           <h1>舉辦或取消票選活動</h1>
         </div>
         <div
-          id="member_ship_manager"
+          id="modifyVoteCake"
           class="select_option"
-          @click="showWhat = 'modify'"
+          @click="showWhat = 'modifyVoteCake'"
         >
           <h1>修改人氣票選的貼文</h1>
         </div>
@@ -34,6 +34,7 @@ import $ from "jquery";
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
 import runOrStop from './behind_component_runOrStop_page';
+import modifyVoteCake from './behind_component_modify_vote_cake_page';
 
 export default {
   name: "vote_manager",
@@ -41,6 +42,7 @@ export default {
     behindHeader,
     searchBar,
     runOrStop,
+    modifyVoteCake,
   },
   data() {
     return {
@@ -49,9 +51,8 @@ export default {
   },
   methods: {},
   mounted(){
-    $("#vote").siblings().removeClass("target");
+      $("#vote").siblings().removeClass("target");
     $("#vote").addClass("target");
-
   },
 };
 </script>
@@ -102,6 +103,9 @@ main {
     }
     }
   }
+    .select_option.target{
+        background: #DFB9B0;
+    }
 }
 #right_section {
   padding:70px 100px;

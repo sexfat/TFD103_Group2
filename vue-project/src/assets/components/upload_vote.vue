@@ -24,10 +24,7 @@ export default {
   },
   props:['title','author','text'],
   
-  mounted(){
-    $("#upload_votePic").siblings().removeClass("target")
-      $("#upload_votePic").addClass("target")
-  }
+  
 };
 </script>
 <style scoped lang="scss">

@@ -41,10 +41,7 @@ export default {
   components:{
       switchButton,
   },
-  mounted(){
-      $("#member_ship_manager").siblings().removeClass("target")
-      $("#member_ship_manager").addClass("target")
-  },
+  
 };
 </script>
 <style scoped lang="scss">

@@ -28,6 +28,10 @@ export default {
     };
   },
   methods: {},
+  mounted(){
+    $("#upload_votePic").siblings().removeClass("target")
+      $("#upload_votePic").addClass("target")
+  }
 };
 </script>
 <style scoped lang="scss">

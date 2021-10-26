@@ -122,10 +122,7 @@ export default {
     },
   },
   components: {},
-  mounted(){
-    $("#order").siblings().removeClass("target")
-      $("#order").addClass("target")
-  }
+  
 };
 </script>
 <style scoped lang="scss">

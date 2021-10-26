@@ -1,6 +1,6 @@
 <template>
 <span class="switch_button" @click="myfunc">
-    <label for="">{{title}}</label>
+    <label for="" style="margin-right:3px;">{{title}}</label>
     <div class="switch" id="outline">
     <span class="circle" id="circle"></span>
     </div>
@@ -31,10 +31,11 @@ props:['title'],
 * {
 box-sizing: border-box;
 }
-.switch_button {
-display: flex;
-align-items: center;
-}
+.switch_button{
+    display: flex;
+    align-items: center;
+    // justify-content: space-evenly;
+  }
 .switch {
 width: 40px;
 height: 25px;

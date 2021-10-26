@@ -28,6 +28,10 @@ export default {
     };
   },
   methods: {},
+  mounted(){
+      $("#runOrStop").siblings().removeClass("target");
+    $("#runOrStop").addClass("target");
+  }
 };
 </script>
 <style scoped lang="scss">

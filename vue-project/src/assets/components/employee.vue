@@ -128,11 +128,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  .switch_button{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
+  
   .switch{
       width:40px;
       height:25px;
