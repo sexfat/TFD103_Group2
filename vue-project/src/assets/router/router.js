@@ -16,6 +16,7 @@ export default[{
         {path:'memberManager', component: r => require.ensure([], () => r(require('../behind_page/member_manager')), 'member_manager')},
         {path:'voteManager', component: r => require.ensure([], () => r(require('../behind_page/vote_manager')), 'vote_manager')},
         {path:'shopManager', component: r => require.ensure([], () => r(require('../behind_page/behind_shop_page')), 'behind_shop')},
+        {path:'cakeMakeManager', component: r => require.ensure([], () => r(require('../behind_page/behind_cake_make_page')), 'behind__cake_make')},
     ],
     data(){
         return{
