@@ -79,7 +79,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../style/var.scss";
+@import "../assets/style/var.scss";
 *{
     box-sizing: border-box;
 }

@@ -9,7 +9,7 @@
         <img src="http://via.placeholder.com/40x0" alt="" />
       </div>
       <div id="use_threshold">消費滿 <span>1000 </span>即可折抵</div>
-      <img id="bottom_decoration_img" src="../images/snowRWD.svg" />
+      <img id="bottom_decoration_img" src="../assets/images/snowRWD.svg" />
     </div>
     <div id="coupon_right_block">
       <div id="expiration">
@@ -35,7 +35,7 @@ export default {
 * {
   box-sizing: border-box;
 }
-@import "../style/var.scss";
+@import "../assets/style/var.scss";
 
 #coupon {
   display: inline-flex;

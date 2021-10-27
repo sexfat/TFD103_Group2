@@ -20,10 +20,8 @@
     </div>
 </template>
 <script>
-import $ from 'jquery'
 export default {
     name:"card_voting",
-    // props:["title"],
 }
 </script>
 <style scoped lang="scss">
@@ -100,7 +98,7 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
                 }
                 &:active{
                     span{
-                        background-image: url(../images/favorites_icon_h_1.svg);
+                        background-image: url('../assets/images/favorites_icon_h_1.svg');
                     }
                 }
                 span{
@@ -117,7 +115,7 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 
 // 設定愛心的背景圖
 %heart_icon{
-    background-image: url(../images/favorites_icon_1.svg);
+    background-image: url('../assets/images/favorites_icon_1.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;

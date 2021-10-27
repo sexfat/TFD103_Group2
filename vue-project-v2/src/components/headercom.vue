@@ -7,7 +7,7 @@
             <ul class="header_nav">
                 <div id="header_div_one">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->
-                    <img id="hamburger_img" src="../images/snowRWD.svg" alt="">
+                    <img id="hamburger_img" src="../assets/images/snowRWD.svg" alt="">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->   
                     <li class="nav_item"><a href="">蛋糕設計</a></li>
                     <li class="nav_item"><a href="">人氣票選</a></li>
@@ -69,7 +69,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-    @import "../style/var.scss";
+    @import "../assets/style/var.scss";
     // *{
     //  box-sizing: border-box;
     //  list-style-type: none;

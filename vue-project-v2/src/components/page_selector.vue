@@ -22,7 +22,7 @@ export default {
 *{
     box-sizing: border-box;
 }
-@import "../style/var.scss";
+@import "../assets/style/var.scss";
 
 .page_select{
     display: flex;
