@@ -48,6 +48,7 @@ export default {
 @import "../style/var.scss";
 *{
     box-sizing: border-box;
+   
 }
 .outline{
     display:flex;

@@ -1,5 +1,5 @@
 <template>
-  <div class="outline">
+  <div class="outline close">
     <div class="img_outline">
       <img src="../images/cho_cake.jpg" alt="" />
     </div>
@@ -77,6 +77,7 @@ export default {
   height: 180px;
   padding: 20px;
   background: #f7dcdc;
+  position:relative;
   border-radius: 5px;
   transition: 0.3s;
   .img_outline {
@@ -126,6 +127,10 @@ export default {
       cursor: pointer;
       transform: rotate(180deg);
       transition: 0.3s;
+    //   margin-top:10px;
+    position:absolute;
+    right:20px;
+    font-size:24px;
     }
   }
   .button_downsite {
@@ -151,7 +156,7 @@ export default {
 .outline.close {
   height: 50px;
   overflow: hidden;
-  line-height: 30px;
+  line-height: 32px;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px;
@@ -167,6 +172,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     .open_button {
+        margin-bottom:10px;
       transform: rotate(0deg);
     }
   }

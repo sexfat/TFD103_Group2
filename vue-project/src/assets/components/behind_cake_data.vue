@@ -67,7 +67,7 @@ export default {
   name: "member_data",
   methods: {
     open:　function(e){
-        console.log($(e.target).parents('.outline').siblings())
+        // console.log($(e.target).parents('.outline').siblings())
         $(e.target).parents('.outline').siblings().addClass('close');
         $(e.target).parents('.outline').toggleClass('close');
     },

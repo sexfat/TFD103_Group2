@@ -12,7 +12,7 @@
           <li class="nav_item"><router-link to="/cakeMakeManager" id="cake">蛋糕製作管理</router-link></li>
           <li class="nav_item"><router-link to="/voteManager" id="vote">投票系統管理</router-link></li>
           <li class="nav_item"><router-link to="/shopManager" id="shop">商城管理</router-link></li>
-          <li class="nav_item"><router-link to="/assign" id="request">客服回復</router-link></li>
+          <li class="nav_item"><router-link to="/messageManager" id="request">客服回覆</router-link></li>
           <li class="nav_item"><router-link to="/vote" >登出</router-link></li>
         </div>
       </ul>

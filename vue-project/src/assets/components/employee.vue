@@ -156,4 +156,7 @@ export default {
     color: white;
   }
 }
+select{
+  border:2px solid ;
+}
 </style>
