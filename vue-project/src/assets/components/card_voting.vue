@@ -140,7 +140,7 @@ section#vote{
         margin:0 auto;
         .img_container{
             width:100%;
-            height:auto;
+            // height:auto;
         }
     }
     

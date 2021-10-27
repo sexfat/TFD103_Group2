@@ -23,7 +23,7 @@ export default {
 *{
     box-sizing: border-box;
 };
-@import "../style/var.scss";
+@import "../assets/style/var.scss";
 
 .sale_card_outline {
     font-family: "Noto Sans TC", sans-serif;

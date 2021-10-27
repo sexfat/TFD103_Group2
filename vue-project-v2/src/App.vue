@@ -4,9 +4,9 @@
   </div>
 </template>
 <script>
-import '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/free-brands-svg-icons'
-import '@fortawesome/free-solid-svg-icons'
+// import '@fortawesome/fontawesome-svg-core'
+// import '@fortawesome/free-brands-svg-icons'
+// import '@fortawesome/free-solid-svg-icons'
 import $ from "jquery";
 export default {
   name: "App",

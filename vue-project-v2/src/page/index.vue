@@ -34,7 +34,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-    @import "../style/var.scss";
+    @import "../assets/style/var.scss";
     body{
         margin: 0;
         position: relative;
