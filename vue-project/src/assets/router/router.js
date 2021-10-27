@@ -1,7 +1,4 @@
 import App from '../../App'
-import assignPage from '../page/assign'
-import title_h1 from '../components/title_h1'
-import behindHead from '../components/behind_page_headercom'
 // const login = r => require.ensure([], () => r(require('@/page/login')), 'login'); 之後用來定義router頁面component，改用下面的方法動態加載
 export default[{
     mode:"history",
