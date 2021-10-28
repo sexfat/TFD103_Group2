@@ -26,9 +26,12 @@
         </div>
       </section>
       <diV id="content">
+       
+        
       <section id="right_section" :is="showWhat">
         
       </section>
+        
       </diV>
     </main>
   </div>
