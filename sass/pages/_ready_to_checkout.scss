@@ -1,12 +1,28 @@
+#shopping_cart_list{
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    // font-size: 0;
+}
 #shopping_banner{
+    font-size: 0;
     margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     height: 350px;
     max-width: 1200px;
     width: 100%;
+    margin-bottom: 60px;
+    // position: relative;
     // background-color: #;
+    // #banner{
+    //     height: 350px;
+    //     background-color: yellow;
+    //     opacity: .8;
+    //     z-index: 5;
+    // }
     .shopping_title{
         margin: 0 auto;
         display: flex;
@@ -19,36 +35,45 @@
     display: flex;
     margin: 0 auto;
     font-size: 36px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    
 }
 #bill_list_outline{
+    box-sizing: border-box;
     width: 100%;
     max-width: 1120px;
     #bill_list_titlebar{
         background-color: $palePike;;
+        max-width: 1120px;
+        width: 100%;
         display: flex;
-        justify-content: space-around;
         border-radius: 10px 10px 0 0 ;
         height: 140px;
         align-items: center;
         font-size: 28px;
-        #list_id,#member_id,#order_date{
+        #list_id{
             align-items: center;
             display: flex;
-            justify-content: space-around;
-            width: 25%;
+            // justify-content: space-around;
+            max-width: 1050px;
+            width: 100%;
+            margin: 0 auto;
+            
         }
     }
     #bill_list_contentbar{
         width: 100%;
+        max-width: 1120px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         #bill_individual_outline{
             width: 70%;
+            max-width: 1120px;
             background-color: #F7F2F1;
             #bill_individual{
                 width: 100%;
-                margin-top: 40px;
-                margin-left: 40px;
+                max-width: 735px;
                 flex-direction: column;
                 justify-content: space-between;
                 display: flex;
@@ -59,6 +84,7 @@
         }
         #bill_details_outline{
             width: 30%;
+            max-width: 1150px;
             background-color: $lightYellow;
         }
     }
