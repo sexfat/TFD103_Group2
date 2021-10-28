@@ -1,12 +1,11 @@
 import App from '../App';
-console.log(App)
 // Vue.use(Router)
 export default[{
-    mode:"history",
     path:'',
     component:App,   //component: r => require.ensure([], () => r(require('../page/home')), 'home')
     children:[
-        {path:'', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
+        // {path:'dm', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_pages')},
+        {path:'assign', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
         {path:'vote', component: r => require.ensure([], () => r(require('../page/vote_page')), 'vote_page')},
         {path:'employee', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
         {path:'memberManager', component: r => require.ensure([], () => r(require('../behind_page/member_manager')), 'member_manager')},
