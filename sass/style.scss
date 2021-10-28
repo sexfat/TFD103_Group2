@@ -1,16 +1,13 @@
 //base
 //轉譯CSS sass --watch sass/style.scss:css/style.css
-@import "base/variables";
 @import "base/reset";
-@import "base/typography";
 @import "base/color";
-
-//mixin
-@import "mixins/mixin";
+@import "base/font";
 
 
 //vendors
 // 套件放置處 例如owl 一些常用套件的css 
+
 
 //components 組件 >  按鈕 / 麵包屑 / 標題 / 表單 / 表格 的scss放置處
 @import "components/button";
@@ -23,14 +20,13 @@
 @import "components/watchmore";
 @import "components/page_selector";
 @import "components/select_food";
+@import "components/card_design_detail";
 
-
-//modules
-@import "modules/rwd";
 
 //layout
 @import "layouts/header";
 @import "layouts/footer";
+
 
 //page 含手機版 平板 桌機版本
 @import "pages/index"; //首頁
@@ -43,3 +39,4 @@
 @import "pages/member-data"; //會員資料頁
 @import "pages/member-fav"; //會員最愛分類頁
 @import "pages/member-fav-detail"; //會員最愛詳細頁
+@import "pages/member-order"; //會員訂單查詢頁

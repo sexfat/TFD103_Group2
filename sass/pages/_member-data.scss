@@ -1,17 +1,30 @@
+#main-bar-img{
+    height: 500px;
+    background-image: url("../../img/background_img500.png");
+    background-size: auto 100%;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 #member_data_page{
     max-width: 1200px;
     min-width: 320px;
     margin: 0 auto;
 
     .main_bar{
-        border: 1px solid red;
+        height: 500px;
+        padding-top: 150px;
         
         #avatar_container{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 70px auto 50px;
+            margin: 0px auto 50px;
         }
         #member_page_nav{
             // border: 1px solid blue;
@@ -43,7 +56,7 @@
                     background-color: #FFFFFF;
                     border-radius: 15px;
                     text-align: center;
-                    font-size: 16px;
+                    font-size: $p;
                     line-height: 32px;
                     color: #9F746B;
                     cursor: pointer;
@@ -68,13 +81,13 @@
             justify-content: space-between;
 
             span{
-                font-size: 20px;
+                font-size: $h4;
             }
 
             .data-input{
                 border: 1px solid #515151;
                 outline: none;
-                font-size: 20px;
+                font-size: $h4;
 
                 display: none;
             }
@@ -109,7 +122,7 @@
                 padding: 10px 0;
 
                 span{
-                    font-size: 20px;
+                    font-size: $h4;
                 }
 
                 img{
@@ -121,7 +134,7 @@
                 .data-input{
                     border: 1px solid #515151;
                     outline: none;
-                    font-size: 20px;
+                    font-size: $h4;
 
                     display: none;
                 }
@@ -151,77 +164,82 @@
             display: flex;
             justify-content: space-between;
 
-            .description_block{
-                
-                .cake_title{
-                    margin: 15px 0;
-                    text-align: left;
-                    font-size: 20px;
-                    line-height: 20px;
-                    color: #515151;
-                    font-weight: 400;
-                }
+            .card_outline{
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 
-                .design_idea{
-                    margin: 0;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    font-size: 16px;
-                    line-height: 16px;
-                    color: #515151;
-                }
-
-                .status_area{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-
-                    .verify{
-                        margin-top: 35px;
-                        color: #5A9308;
-                        font-size: 0px;
-
-                        .status_ball{
-                            vertical-align: middle;
-                            font-size: 16px;
-                            margin-right: 3px;
-                        }
-
-                        .status_text{
-                            font-size: 12px;
-                            vertical-align: middle;
-                        }
-
-                    }
-
-                    .checking{
-                        margin-top: 15px;
-                        width: 180px;
-                        height: 60px;
-                        border-radius: 100px;
-                        border: 0;
-                        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-                        font-size: 20px;
-                        position: relative;
+                .description_block{
+                    
+                    .cake_title{
+                        margin: 15px 0;
+                        text-align: left;
+                        font-size: $h4;
+                        line-height: 20px;
                         color: #515151;
-                        cursor: pointer;
-                        background-color: #EFE6E4;
-                        &:hover{
-                            background-color: #F4E9C9;
+                        font-weight: 400;
+                    }
+
+                    .design_idea{
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: $p;
+                        line-height: 16px;
+                        color: #515151;
+                    }
+
+                    .status_area{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+                        .verify{
+                            margin-top: 35px;
+                            color: #5A9308;
+                            font-size: 0px;
+
+                            .status_ball{
+                                vertical-align: middle;
+                                font-size: $p;
+                                margin-right: 3px;
+                            }
+
+                            .status_text{
+                                font-size: 12px;
+                                vertical-align: middle;
+                            }
+
                         }
 
-                        > i{
-                            position: absolute;
-                            right: 15px;
-                            top: 30px;
-                            transform: translateY(-50%);
+                        .checking{
+                            margin-top: 15px;
+                            width: 180px;
+                            height: 60px;
+                            border-radius: 100px;
+                            border: 0;
+                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                            font-size: $h4;
+                            position: relative;
+                            color: #515151;
+                            cursor: pointer;
+                            background-color: #EFE6E4;
+                            &:hover{
+                                background-color: #F4E9C9;
+                            }
+
+                            > i{
+                                position: absolute;
+                                right: 15px;
+                                top: 30px;
+                                transform: translateY(-50%);
+                            }
+
                         }
 
                     }
 
                 }
-
+            
             }
 
         }
@@ -238,7 +256,7 @@
                 cursor: pointer;
                 border-radius: 7px;
                 margin: 50px 0;
-                font-size: 24px;
+                font-size: $h3;
                 box-shadow: $shadow;
                 &:hover{
                     background-color: $lightYellow;
@@ -257,6 +275,11 @@
 
         .title_h1{
 
+            >span{
+                // 顏色不搭，讓品涵確認一下
+                // background-color: #F0D5CE;
+            }
+
             > h1{
                 margin-bottom: 32px;
                 font-weight: normal;
@@ -272,10 +295,6 @@
             #coupon{
                 display: inline-flex;
                 margin: 0 15px 30px;
-                // margin-bottom: 40px;
-                // &:nth-child(2n - 1){
-                //     margin-right: 30px;
-                // }
 
                 #coupon_left_block{
                     width: 300px;
@@ -324,7 +343,7 @@
                     }
 
                     #use_threshold{
-                        font-size: 16px;
+                        font-size: $p;
                         color: #515151;
                         position: absolute;
                         bottom: 30px;
@@ -446,6 +465,7 @@
                 font-size: 30px;
                 line-height: 3px;
             }
+            
         }
 
     }
@@ -465,3 +485,7 @@
     }
 
 }
+
+//
+// 折價券h1組件的底線顏色不搭(可搜尋"品涵"前往該樣式)
+// 折價券展開的按鈕view_all_coupon要往下一點嗎
