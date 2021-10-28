@@ -1,23 +1,31 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
+// import '@fortawesome/fontawesome-svg-core'
+// import '@fortawesome/free-brands-svg-icons'
+// import '@fortawesome/free-solid-svg-icons'
+import $ from "jquery";
 export default {
-  name: 'App'
-}
-</script>
+  name: "App",
+  components: {
+  },
+  mounted(){
+    $("body").css({"margin":0,"padding":0,"backgroundColor":"#EFE6E4"})
+  },
+  data(){
+    return{
+      show:true,
+    }
+  }
+};
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+</script>
+<style scoped lang="scss">
+@import "./assets/style/var.scss";
+*{
+  font-family: 'EB Garamond', serif;
 }
 </style>

@@ -12,12 +12,17 @@
         <title>商城</title>
     </head>
     <body>
-        <header></header>
+        <!-- <header></header> -->
         <!--  還沒寫  -->
         <div id="product_page_main_bar">
-            <div></div>
+            <div id="change_page">
+                <div id="chef_cake">主廚推薦</div>         
+                <div id="designer_cake">創意點子</div>         
+            </div>
+            <!-- <div id="search_bar"> -->
             <!-- 頁面選擇器 -->
-            <input type="text" placeholder="搜尋..." class="search"/>
+                <input type="text" placeholder="搜尋..." class="search"/>
+            <!-- </div> -->
             <div id="select_test"></div>
         </div>
         <main id="product_page_main">
@@ -29,17 +34,30 @@
             </div>
             </section>
             <section id="product_items"></section>
-            <ul class="page_select">
-                <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-1"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-2"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-3"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-4"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-5"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
-            </ul>
+            <!-- <ul class="page_select">
+                <li class="page_back"><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-1"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-2"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-3"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-4"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-5"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                <li class="page_back"><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
+            </ul> -->
+            <!-- <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav> -->
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -75,56 +93,55 @@
                         "其他裝飾",
                     ],
                 },
-                template: `
-            <div id="select_ingredients">
-            <div id="select_outline">
-            <div class="select">
-                <span>糕體：</span>
-                <span v-for="cakebody in total_cakebodys"><input type="checkbox" v-model="choose_total" :value="cakebody" :id="cakebody">{{cakebody}}</span>
-                
-            </div>
-            <div class="select">
-                <span>水果：</span>
-                <span v-for="ingredient in total_ingredients"><input type="checkbox" v-model="choose_total" :value="ingredient" :id="ingredient">{{ingredient}}</span>
+                template: 
+                    `
+                        <div id="select_ingredients">
+                            <div id="select_outline">
+                            <div class="select">
+                                <span>糕體：</span>
+                                <span v-for="cakebody in total_cakebodys"><input type="checkbox" v-model="choose_total" :value="cakebody" :id="cakebody">{{cakebody}}</span>
+                                
+                            </div>
+                            <div class="select">
+                                <span>水果：</span>
+                                <span v-for="ingredient in total_ingredients"><input type="checkbox" v-model="choose_total" :value="ingredient" :id="ingredient">{{ingredient}}</span>
 
-            </div>
-            <div class="select">
-                <span>裝飾：</span>
-                <span v-for="decoration in total_decorations"><input type="checkbox" v-model="choose_total" :value="decoration" :id="decoration">{{decoration}}</span>
-            </div>
-            </div>
-            <br>
-            <div id="choose_label">
-            <label v-for="choose in choose_total" :for="choose">{{choose}}<i class="fa-solid fa-xmark"></i></label>
-            </div>
-            <button class="clearall">清空選項</button>
-        </div>
-        `,
-            });
+                            </div>
+                            <div class="select">
+                                <span>裝飾：</span>
+                                <span v-for="decoration in total_decorations"><input type="checkbox" v-model="choose_total" :value="decoration" :id="decoration">{{decoration}}</span>
+                            </div>
+                            </div>
+                            <br>
+                            <div id="choose_label">
+                            <label v-for="choose in choose_total" :for="choose">{{choose}}<i class="fa-solid fa-xmark"></i></label>
+                            </div>
+                            <button class="clearall">清空選項</button>
+                        </div>
+                    `,
+                });
             new Vue({
                 el: "#product_items",
                 data: {
                     cake_names:[1,2,3,4,5,6,7,8,9,10,11,12],
                 },
                 template: `
-                <section id="product_items">
-                <div class="card_outline"  v-for="cakes in cake_names">
-                    <div class="img_container">
-                        <img src="../../img/cho_cake.jpeg" />
-                    </div>
-                    <div class="down_block">
-                        <h4 class="cake_title" >巧克力蛋糕</h4>
-                            <div class="voting_num">
-                                <span class="heart_icon"></span>
-                                <span class="num">NT$800</span>
+                <section id="product_cakecard">
+                    <div class="product_card_outline"  v-for="cakes in cake_names">
+                        <div class="product_img_container">
+                            <img src="../../img/cho_cake.jpeg" />
+                        </div>
+                        <div class="product_introduce">
+                            <div class="product_detail">
+                                <div class="product_cake_title" >巧克力蛋糕</div>
+                                <span class="price">NT$800</span>
                             </div>
-                            <button class="voting">
+                            <button class="like_button">
                                 加入我的最愛
-                                <span></span>
+                                <img src="../../img/favorites_icon.png"></img>
                             </button>
                         </div>
                     </div>
-                </div>
                 </section>
                 `,
             });

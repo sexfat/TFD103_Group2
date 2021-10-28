@@ -6,6 +6,10 @@
         "../sass/base/_reset.scss",
         "../sass/base/_color.scss",
         "../sass/base/_font.scss",
+<<<<<<< HEAD
+=======
+        "../sass/mixins/_mixin.scss",
+>>>>>>> b74d44cf3b35f28cb6f1221e70ced7f4c40e962f
         "../sass/components/_button.scss",
         "../sass/components/_filter.scss",
         "../sass/components/_button_h1.scss",
@@ -23,7 +27,7 @@
         "../sass/pages/_assign.scss",
         "../sass/pages/_vote.scss",
         "../sass/pages/_product.scss",
-        "../sass/pages/_product_details.scss",
+        "../sass/pages/_product_detail.scss",
         "../sass/pages/_shopping_cart.scss",
         "../sass/pages/_ready_to_checkout.scss",
         "../sass/pages/_member-data.scss",

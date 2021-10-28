@@ -4,6 +4,9 @@
 @import "base/color";
 @import "base/font";
 
+//mixin
+@import "mixins/mixin";
+
 
 //vendors
 // 套件放置處 例如owl 一些常用套件的css 
@@ -33,7 +36,7 @@
 @import "pages/assign";//會員登入頁
 @import "pages/vote";//人氣投票頁
 @import "pages/product";//商城頁
-@import "pages/product_details";//商城頁
+@import "pages/product_detail";//商城頁
 @import "pages/shopping_cart";//購物車
 @import "pages/ready_to_checkout";//準備結帳
 @import "pages/member-data"; //會員資料頁
