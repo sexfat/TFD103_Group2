@@ -1,17 +1,30 @@
+#main-bar-img{
+    height: 500px;
+    background-image: url("../../img/background_img500.png");
+    background-size: auto 100%;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 #member_data_page{
     max-width: 1200px;
     min-width: 320px;
     margin: 0 auto;
 
     .main_bar{
-        border: 1px solid red;
+        height: 500px;
+        padding-top: 150px;
         
         #avatar_container{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 70px auto 50px;
+            margin: 0px auto 50px;
         }
         #member_page_nav{
             // border: 1px solid blue;
@@ -43,7 +56,7 @@
                     background-color: #FFFFFF;
                     border-radius: 15px;
                     text-align: center;
-                    font-size: 16px;
+                    font-size: $p;
                     line-height: 32px;
                     color: #9F746B;
                     cursor: pointer;
@@ -68,13 +81,13 @@
             justify-content: space-between;
 
             span{
-                font-size: 20px;
+                font-size: $h4;
             }
 
             .data-input{
                 border: 1px solid #515151;
                 outline: none;
-                font-size: 20px;
+                font-size: $h4;
 
                 display: none;
             }
@@ -109,7 +122,7 @@
                 padding: 10px 0;
 
                 span{
-                    font-size: 20px;
+                    font-size: $h4;
                 }
 
                 img{
@@ -121,7 +134,7 @@
                 .data-input{
                     border: 1px solid #515151;
                     outline: none;
-                    font-size: 20px;
+                    font-size: $h4;
 
                     display: none;
                 }
@@ -151,77 +164,82 @@
             display: flex;
             justify-content: space-between;
 
-            .description_block{
-                
-                .cake_title{
-                    margin: 15px 0;
-                    text-align: left;
-                    font-size: 20px;
-                    line-height: 20px;
-                    color: #515151;
-                    font-weight: 400;
-                }
+            .card_outline{
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 
-                .design_idea{
-                    margin: 0;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    font-size: 16px;
-                    line-height: 16px;
-                    color: #515151;
-                }
-
-                .status_area{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-
-                    .verify{
-                        margin-top: 35px;
-                        color: #5A9308;
-                        font-size: 0px;
-
-                        .status_ball{
-                            vertical-align: middle;
-                            font-size: 16px;
-                            margin-right: 3px;
-                        }
-
-                        .status_text{
-                            font-size: 12px;
-                            vertical-align: middle;
-                        }
-
-                    }
-
-                    .checking{
-                        margin-top: 15px;
-                        width: 180px;
-                        height: 60px;
-                        border-radius: 100px;
-                        border: 0;
-                        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-                        font-size: 20px;
-                        position: relative;
+                .description_block{
+                    
+                    .cake_title{
+                        margin: 15px 0;
+                        text-align: left;
+                        font-size: $h4;
+                        line-height: 20px;
                         color: #515151;
-                        cursor: pointer;
-                        background-color: #EFE6E4;
-                        &:hover{
-                            background-color: #F4E9C9;
+                        font-weight: 400;
+                    }
+
+                    .design_idea{
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: $p;
+                        line-height: 16px;
+                        color: #515151;
+                    }
+
+                    .status_area{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+                        .verify{
+                            margin-top: 35px;
+                            color: #5A9308;
+                            font-size: 0px;
+
+                            .status_ball{
+                                vertical-align: middle;
+                                font-size: $p;
+                                margin-right: 3px;
+                            }
+
+                            .status_text{
+                                font-size: 12px;
+                                vertical-align: middle;
+                            }
+
                         }
 
-                        > i{
-                            position: absolute;
-                            right: 15px;
-                            top: 30px;
-                            transform: translateY(-50%);
+                        .checking{
+                            margin-top: 15px;
+                            width: 180px;
+                            height: 60px;
+                            border-radius: 100px;
+                            border: 0;
+                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                            font-size: $h4;
+                            position: relative;
+                            color: #515151;
+                            cursor: pointer;
+                            background-color: #EFE6E4;
+                            &:hover{
+                                background-color: #F4E9C9;
+                            }
+
+                            > i{
+                                position: absolute;
+                                right: 15px;
+                                top: 30px;
+                                transform: translateY(-50%);
+                            }
+
                         }
 
                     }
 
                 }
-
+            
             }
 
         }
@@ -238,7 +256,7 @@
                 cursor: pointer;
                 border-radius: 7px;
                 margin: 50px 0;
-                font-size: 24px;
+                font-size: $h3;
                 box-shadow: $shadow;
                 &:hover{
                     background-color: $lightYellow;
@@ -257,6 +275,11 @@
 
         .title_h1{
 
+            >span{
+                // 顏色不搭，讓品涵確認一下
+                // background-color: #F0D5CE;
+            }
+
             > h1{
                 margin-bottom: 32px;
                 font-weight: normal;
@@ -269,15 +292,11 @@
             justify-content: center;
             padding: 0 40px;
 
-            #coupon{
+            .coupon{
                 display: inline-flex;
                 margin: 0 15px 30px;
-                // margin-bottom: 40px;
-                // &:nth-child(2n - 1){
-                //     margin-right: 30px;
-                // }
 
-                #coupon_left_block{
+                .coupon_left_block{
                     width: 300px;
                     height: 150px;
                     background-color: #F0D5CE;
@@ -285,7 +304,7 @@
                     border-right: 1px solid $palePike;
                     border-top-left-radius: 5px;
 
-                    #discount_amout{
+                    .discount_amout{
                         font-size: 50px;
                         line-height: 56px;
                         position: absolute;
@@ -294,7 +313,7 @@
                         color: #515151;
                     }
 
-                    #A_cake_text_logo{
+                    .A_cake_text_logo{
                         width: 60px;
                         height: 22px;
                         position: absolute;
@@ -316,22 +335,22 @@
 
                     }
 
-                    #coupon_left_decoration_img{
+                    .coupon_left_decoration_img{
                         // 此處樣式未確定
                         position: absolute;
                         left: 27px;
                         bottom: 20px;
                     }
 
-                    #use_threshold{
-                        font-size: 16px;
+                    .use_threshold{
+                        font-size: $p;
                         color: #515151;
                         position: absolute;
                         bottom: 30px;
                         right: 34px;
                     }
 
-                    #bottom_decoration_img{
+                    .bottom_decoration_img{
                         width: 100%;
                         position: absolute;
                         bottom: 0;
@@ -348,7 +367,7 @@
 
                 }
 
-                #coupon_right_block{
+                .coupon_right_block{
                     background-color: #F7EDD4;
                     position: relative;
                     width: 120px;
@@ -367,7 +386,7 @@
                         border-bottom-left-radius: 5px;
                     }
 
-                    #expiration{
+                    .expiration{
                         width: 80px;
                         height: 31px;
                         position: absolute;
@@ -386,7 +405,7 @@
                             margin-bottom: 3px;
                         }
 
-                        #expiration_date{
+                        .expiration_date{
                             align-self: flex-end;
                             font-size: 12px;
                             line-height: 14px;
@@ -395,7 +414,7 @@
 
                     }
 
-                    #coupon_right_decoration_img{
+                    .coupon_right_decoration_img{
                         position: absolute;
                         top: 65px;
                         left: 10px;
@@ -409,7 +428,7 @@
 
                     }
 
-                    #expiration_countdown{
+                    .expiration_countdown{
                         color: #E8542E;
                         font-size: 12px;
                         white-space: nowrap;
@@ -446,6 +465,7 @@
                 font-size: 30px;
                 line-height: 3px;
             }
+            
         }
 
     }
@@ -465,3 +485,7 @@
     }
 
 }
+
+//
+// 折價券h1組件的底線顏色不搭(可搜尋"品涵"前往該樣式)
+// 折價券展開的按鈕view_all_coupon要往下一點嗎

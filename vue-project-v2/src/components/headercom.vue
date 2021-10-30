@@ -16,7 +16,10 @@
                 </div>
 
                 <div id="header_div_two">
-                    <li class="nav_icon"><a href=""><img src="../assets/images/member.svg" alt=""></a></li>
+                    <router-link to="/member_data">
+                        <!-- 此處僅先測試路由連結，實際要依是否登入會員來導向 -->
+                        <li class="nav_icon"><a href=""><img src="../assets/images/member.svg" alt=""></a></li>
+                    </router-link>
                     <li class="nav_icon"><a href=""><img src="../assets/images/shoppingCar.svg" alt=""></a></li>
                 </div>
             </ul>
@@ -40,7 +43,7 @@ export default {
     name:"headercom",
     mounted() {
         // header陰影
-        console.log(window);
+        // console.log(window);
 
         $(document).ready(function(){
             $(window).bind('scroll',function(){

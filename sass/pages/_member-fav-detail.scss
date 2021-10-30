@@ -1,3 +1,15 @@
+#main-bar-img{
+    height: 500px;
+    background-image: url("../../img/background_img500.png");
+    background-size: auto 100%;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 #member_fav_detail_page{
     max-width: 1200px;
     min-width: 320px;
@@ -5,14 +17,15 @@
     font-size: 0;
 
     .main_bar{
-        border: 1px solid red;
+        height: 500px;
+        padding-top: 150px;
         
         #avatar_container{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 70px auto 50px;
+            margin: 0px auto 50px;
         }
         #member_page_nav{
             // border: 1px solid blue;
@@ -44,7 +57,7 @@
                     background-color: #FFFFFF;
                     border-radius: 15px;
                     text-align: center;
-                    font-size: 16px;
+                    font-size: $p;
                     line-height: 32px;
                     color: #9F746B;
                     cursor: pointer;
@@ -62,130 +75,91 @@
         text-align: center;
         margin-bottom: 32px;
 
-        #folder_area{
-            margin: 33px 40px 5px;
+        #fav_area{
+            margin: 33px 25px 5px;
             display: inline-grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
-            grid-gap: 65px;
+            grid-gap: 70px 50px;
             width: auto;
             
             @media (max-width: 1199.98px){
                 grid-template-columns: auto auto;
-                margin: 33px 25px 5px;
-                grid-gap: 55px;
+                margin: 33px 19px 5px;
+                grid-gap: 42px 30px;
             }
 
             @media (max-width: 767.98px){
                 grid-template-columns: auto;
-                grid-auto-columns: auto;
-                grid-auto-flow: column;
-                width: 100vw;
-                overflow-y: scroll;
-                grid-template-areas: "first .";
+                grid-auto-rows: auto;
+                grid-auto-flow: row;
+                grid-column-gap: 65px;
+                margin: 33px 10px 5px;
             }
 
-            #folder{
-                width: 330px;
-                height: 330px;
-                background-color: $palePike;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding-bottom: 20px;
-                position: relative;
-                &::before{
-                    content: "";
-                    width: 110px;
-                    height: 40px;
-                    display: inline-block;
-                    background-color: #EFE6E4;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
+            .card_outline{
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 
-                #folder_title_tag{
-                    padding-left: 7px;
-                    padding-top: 7px;
-                    text-align: left;
-                    position: relative;
-
-                    #folder_title{
-                        font-size: 20px;
-                        line-height: 27px;
+                .description_block{
+                    
+                    .cake_title{
+                        margin: 15px 0;
+                        text-align: left;
+                        font-size: $h4;
+                        line-height: 20px;
+                        color: #515151;
+                        font-weight: 400;
                     }
 
-                    #delete_folder{
-                        background-color: transparent;
-                        width: 20px;
-                        height: 20px;
-                        padding: 0;
-                        font-size: 0;
-                        border: 0;
-                        outline: 0;
-                        cursor: pointer;
-                        position: absolute;
-                        top: 10px;
-                        right: 120px;
-
-                        > i{
-                            font-size: 30px;
-                            line-height: 20px;
-                        }
-                        
-                    }
-
-                }
-
-                #folder_img_outline{
-                    width: 290px;
-                    height: 250px;
-                    margin: 0 auto;
-                    cursor: pointer;
-
-                    > img{
-                        width: 100%;
-                        height: 100%;
+                    .design_idea{
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
                         overflow: hidden;
+                        font-size: $p;
+                        line-height: 16px;
+                        color: #515151;
+                    }
+
+                    .interact_area{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+
+                        .go_shopping{
+                            margin-top: 15px;
+                            width: 180px;
+                            height: 60px;
+                            border-radius: 100px;
+                            border: 0;
+                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                            font-size: $h4;
+                            position: relative;
+                            color: #515151;
+                            cursor: pointer;
+                            background-color: #EFE6E4;
+                            &:hover{
+                                background-color: #F4E9C9;
+                            }
+
+                        }
+
+                        .delete{
+                            display: inline-block;
+                            cursor: pointer;
+                            margin-bottom: 3px;
+
+                            > i{
+                                font-size: 30px;
+                                color: #515151;
+                            }
+
+                        }
+
                     }
 
                 }
-
-            }
-
-            #folder_last{
-                width: 330px;
-                height: 330px;
-                background-color: transparent;
-                // border: 1px solid red;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                @media (max-width: 767.98px){
-                    grid-area: first;
-                }
-
-                #add_folder{
-                    width: 100px;
-                    height: 100px;
-                    background-color: $palePike;
-                    border: 0;
-                    outline: 0;
-                    border-radius: 10px;
-                    cursor: pointer;
-
-                    @media (max-width: 767.98px){
-                        // margin-left: 100px;
-                    }
-
-                    > i{
-                        color: $lightPike;
-                        font-size: 85px;
-                    }
-
-                }
+            
             }
 
         }
@@ -203,6 +177,7 @@
         > img{
             min-width: 1200px;
         }
+
     }
 
 }
@@ -211,4 +186,3 @@
 // RWD
 // 1. 手機版各元件要縮小
 // 2. 手機版.title_h1組件要使用嗎?
-// 3. 手機版的增加資料夾按鈕要如何顯現

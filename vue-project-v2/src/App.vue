@@ -1,20 +1,21 @@
 <template>
   <div id="app">
+    
     <router-view></router-view>
+    
   </div>
 </template>
 <script>
-// import '@fortawesome/fontawesome-svg-core'
-// import '@fortawesome/free-brands-svg-icons'
-// import '@fortawesome/free-solid-svg-icons'
 import $ from "jquery";
 export default {
   name: "App",
   components: {
   },
   mounted(){
-    $("body").css({"margin":0,"padding":0,"backgroundColor":"#EFE6E4"})
+    $("body").css({"margin":0,"padding":0,"backgroundColor":"#EFE6E4"});
+    // console.log(1)
   },
+  
   data(){
     return{
       show:true,
@@ -24,8 +25,5 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "./assets/style/var.scss";
-*{
-  font-family: 'EB Garamond', serif;
-}
+
 </style>
