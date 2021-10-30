@@ -87,7 +87,7 @@ export default {
                 $("#sign_in").removeClass('close');
                 $("#register").addClass('close');
             }else{
-                console.log($ ("#register").hasClass('close'))
+                // console.log($ ("#register").hasClass('close'))
                 $("#sign_in").addClass('close');
                 $("#register").removeClass('close');
             }
@@ -122,7 +122,7 @@ export default {
 
 </script>
 <style scoped lang="scss">
-@import "../assets/style/var.scss";
+// @import "../assets/style/var.scss";
 *{
     box-sizing: border-box;
 }

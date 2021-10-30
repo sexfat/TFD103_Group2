@@ -43,7 +43,7 @@ export default {
     name:"headercom",
     mounted() {
         // header陰影
-        console.log(window);
+        // console.log(window);
 
         $(document).ready(function(){
             $(window).bind('scroll',function(){
