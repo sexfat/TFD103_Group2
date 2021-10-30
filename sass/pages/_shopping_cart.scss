@@ -1,4 +1,4 @@
-#shopping_banner{
+.shopping_banner{
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -6,24 +6,53 @@
     height: 350px;
     max-width: 1200px;
     width: 100%;
-    // background-color: #;
     .shopping_title{
         margin: 0 auto;
         display: flex;
         justify-content: center;
     }
 }
-#shopping_cart_bread{
+
+// 購物車麵包屑
+.shopping_cart_bread{
     width: 60%;
     justify-content: space-around;
     display: flex;
     margin: 0 auto;
     font-size: 36px;
-    #prepare_checkout_page,#checkout_page{
+    .prepare_checkout_page,.checkout_page{
         opacity: .2;
+       
     }
 }
-#shopping_cart_list{
+.shopping_cart_bread_arrow_img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+// 購物車麵包屑RWD768
+@media screen and (max-width:767.98px){ 
+    .shopping_cart_bread{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .shopping_cart_bread_arrow_img{
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        transform: rotate(90deg);
+    }
+    .shopping_cart_page,.prepare_checkout_page,.checkout_page{
+        font-size: $h4;
+
+    }
+}
+
+
+
+
+.shopping_cart_list{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,7 +60,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
 ;
-    #shopping_cart_list_outline{
+    .shopping_cart_list_outline{
         padding-top: 40px;
         padding-bottom: 40px;
         width: 90%;
@@ -45,8 +74,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
-            max-width: 1080px;
+            width: 90%;
+            max-width: 1050px;
             .choose_cakeandimg{
                 display: flex;
                 align-items: center;
@@ -54,7 +83,7 @@
                 width: 100%;
                 justify-content: space-between;
             }
-            #shopping_cart_check{
+            .shopping_cart_check{
                 width: 30px;   
                 height: 30px;
                 cursor: pointer;
@@ -67,10 +96,11 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                max-width: 830px;
+                max-width: 800px;
                 width: 100%;
+                margin-left: 50px;
                 .choose_content{
-                    max-width: 600px;
+                    max-width: 750px;
                     width: 100%;
                 }
                 .cancel_logo{
@@ -82,29 +112,31 @@
         }
     }
 }
-#shopping_cart_button{
+@media screen and (max-width:767.98px){ 
+
+}
+.shopping_cart_button{
     width: 50%;
     margin: 0 auto;
     margin-bottom: 100px;
     margin-top: 35px;
     display: flex;
     justify-content: space-around;
-    #return_shopping,#goto_checkout{
+    .return_shopping,.goto_checkout{
         width: 120px;
         height: 60px;
         font-size: 20px;
         text-align: center;
         align-items: center;
-        background-color: #707070;
         color: white;
+        background-color: $darkGrey;
         cursor: pointer;
         border-radius: 10px;
     }
-    #goto_checkout:hover{
+    .goto_checkout:hover{
         color: $lightYellow;
     }
-    #return_shopping:hover{
+    .return_shopping:hover{
         color: $lightYellow;
-
     }
 }

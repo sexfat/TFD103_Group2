@@ -1,0 +1,107 @@
+.qa_searchbar{
+    max-width: 1120px;
+    width: 100%;
+    margin: auto;
+}
+.qa_question_block{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.qa_question_bar{
+    max-width: 1120px;
+    width: 100%;
+    height: 100px;
+    background-color: $palePike;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+.qa_maxtitlebar{
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+    width: 100%;
+    margin-left: 100px;
+    font-size: $h2;
+    align-items: center;
+}
+.qa_maxopenclose{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    background-color: black;
+}
+.qa_question_answer_block_outline{
+    max-width: 1120px;
+    width: 95%;
+    height: 400px;
+    background-color: $lightPike;
+    display: flex;
+    align-items: center;
+}
+.qa_question_answer_block_insideblock{
+    height: 300px;
+    max-width: 900px;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.qa_common_question_answerblock{
+    // height: 120px;
+    width: 100%;
+    max-width: 900px;
+    // margin-bottom: 40px;
+}
+.qa_common_question_titlebar{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+}
+.qa_common_question_titleimg{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    background-color: black;
+    margin-right: 30px;
+}
+.qa_common_question_title{
+    font-size: $h3;
+}
+.qa_hr{
+    margin: auto;
+    width: 100%;
+    max-width: 900px;
+    border-top: 2px solid rgb(119, 119, 119);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.qa_common_answer{
+    max-width: 750px;
+    width: 100%;
+    margin-left: 85px;
+    margin-top: 15px;
+}
+.qa_question_blockother{
+    max-width: 1120px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.qa_question_blockother2{
+    max-width: 1120px;
+    width: 100%;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}
+.qa_question_barother{
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width:767.98px){ 
+    
+}
