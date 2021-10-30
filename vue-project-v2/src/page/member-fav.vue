@@ -1,6 +1,149 @@
+<template>
+    <div>
+
+
+    <div id="main-bar-img"></div>
+
+    <!-- header here  -->
+    <headercomp></headercomp>
+
+    <div id="main-bar-img"></div>
+
+    <main id="member_fav_page">
+
+        <!-- 會員頁共用開始 -->
+        <div class="main_bar">
+            <div id="avatar_container">
+                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
+            </div>
+            <div id="member_page_nav">
+                <div id="member_data" class="member_page_nav_link">
+                    <img src="../assets/images/member_member.svg" alt="" id="member_data_icon" >
+                    <span id="member_data_span">會員資料</span>
+                </div>
+                <div id="member_order" class="member_page_nav_link">
+                    <img src="../assets/images/member_shoppingBag.svg" alt="" id="member_order_icon">
+                    <span id="member_order_span">訂單查詢</span>
+                </div>
+                <div id="member_fav" class="member_page_nav_link -on">
+                    <img src="../assets/images/member_favorites_hover.svg" alt="" id="member_fav_icon">
+                    <span id="member_fav_span">我的最愛</span>
+                </div>
+            </div>
+        </div>
+        <!-- 會員頁共用結束 -->
+
+        <section id="fav_folder">
+
+            <!-- h1組件 -->
+            <div id="title_h1_outline">
+                <div class="title_h1">
+                    <span></span>
+                    <img src="../assets/images/eggBeater.png" alt="">
+                    <h1>資料夾分類</h1>
+                    <img src="../assets/images/eggBeater.png" alt="">
+                </div>
+            </div>
+
+            <div id="folder_area">
+
+                <div class="folder">
+                    <div class="folder_title_tag">
+                        <span class="folder_title">我的最愛</span>
+                        <button class="delete_folder">
+                            <font-awesome-icon icon="fa-solid fa-xmark" class="close_icon" />
+                        </button>
+                    </div>
+                    <div class="folder_img_outline">
+                        <img src="../assets/images/cho_cake.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- 排版用重複組件開始 -->
+                <div class="folder">
+                    <div class="folder_title_tag">
+                        <span class="folder_title">我的最愛</span>
+                        <button class="delete_folder">
+                            <font-awesome-icon icon="fa-solid fa-xmark" class="close_icon" />
+                        </button>
+                    </div>
+                    <div class="folder_img_outline">
+                        <img src="../assets/images/cho_cake.jpg" alt="">
+                    </div>
+                </div>
+                <div class="folder">
+                    <div class="folder_title_tag">
+                        <span class="folder_title">我的最愛</span>
+                        <button class="delete_folder">
+                            <font-awesome-icon icon="fa-solid fa-xmark" class="close_icon" />
+                        </button>
+                    </div>
+                    <div class="folder_img_outline">
+                        <img src="../assets/images/cho_cake.jpg" alt="">
+                    </div>
+                </div>
+                <div class="folder">
+                    <div class="folder_title_tag">
+                        <span class="folder_title">我的最愛</span>
+                        <button class="delete_folder">
+                            <font-awesome-icon icon="fa-solid fa-xmark" class="close_icon" />
+                        </button>
+                    </div>
+                    <div class="folder_img_outline">
+                        <img src="../assets/images/cho_cake.jpg" alt="">
+                    </div>
+                </div>
+                <!-- 排版用重複組件結束 -->
+                
+
+                <!-- 排在最後一個的add_folder按鈕 -->
+                <div id="folder_last">
+                    <button id="add_folder">
+                        <font-awesome-icon icon="fa-solid fa-plus" class="add_icon" />
+                    </button>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <div id="bottom_snow_img">
+            <img src="../assets/images/snowRWD.svg">
+        </div>
+
+    </main>
+
+    <!-- footer here -->
+    <footercomp></footercomp>
+
+    </div>
+</template>
+
+
+<script>
+    import headercomp from "../components/headercom";
+    import footercomp from "../components/footercom";
+
+    export default {
+        components: {
+            headercomp,
+            footercomp,
+        },
+        data(){
+            return{};
+        },
+    }
+</script>
+
+
+<style  scoped lang="scss">
+@import "../assets/style/var.scss";
+
+
+// ===== 頁面的scss開始 =====
 #main-bar-img{
     height: 500px;
-    background-image: url("../../img/background_img500.png");
+    background-image: url("../assets/images/background_img500.png");
     background-size: auto 100%;
     background-position: center center;
     position: absolute;
@@ -155,7 +298,7 @@
                         top: 10px;
                         right: 120px;
 
-                        > i{
+                        .close_icon{
                             font-size: 30px;
                             line-height: 20px;
                         }
@@ -208,7 +351,7 @@
                         // margin-left: 100px;
                     }
 
-                    > i{
+                    .add_icon{
                         color: $lightPike;
                         font-size: 85px;
                     }
@@ -240,3 +383,45 @@
 // 1. 手機版各元件要縮小
 // 2. 手機版.title_h1組件要使用嗎?
 // 3. 手機版的增加資料夾按鈕要如何顯現
+
+// ===== 頁面的scss結束 =====
+
+
+
+// ===== 組件title_h1的scss開始 =====
+.title_h1 {
+    display: inline-block;
+    position: relative;
+    h1 {
+        display: inline-block;
+        font-size: 36px;
+        color: #515151;
+    }
+    span {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #dfb9b0;
+    }
+    img {
+        width: 58px;
+        height: 58px;
+        vertical-align: middle;
+        position: relative;
+        transform: translateY(-10px);
+    }
+}
+@media (max-width:576px){
+    .title_h1 h1{
+        font-size:24px;
+        position:relative;
+        line-height:48px;
+    }
+}
+// ===== 組件title_h1的scss結束 =====
+
+</style>

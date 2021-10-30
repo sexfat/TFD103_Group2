@@ -1853,12 +1853,12 @@ section#vote .card_outline .img_container {
   padding: 0 40px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon {
+#member_data_page #coupon_block #coupon_area .coupon {
   display: inline-flex;
   margin: 0 15px 30px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block {
   width: 300px;
   height: 150px;
   background-color: #F0D5CE;
@@ -1867,7 +1867,7 @@ section#vote .card_outline .img_container {
   border-top-left-radius: 5px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #discount_amout {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .discount_amout {
   font-size: 50px;
   line-height: 56px;
   position: absolute;
@@ -1876,7 +1876,7 @@ section#vote .card_outline .img_container {
   color: #515151;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #A_cake_text_logo {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .A_cake_text_logo {
   width: 60px;
   height: 22px;
   position: absolute;
@@ -1885,23 +1885,23 @@ section#vote .card_outline .img_container {
   overflow: hidden;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #A_cake_text_logo > img {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .A_cake_text_logo > img {
   width: 100%;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #A_cake_text_logo > span {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .A_cake_text_logo > span {
   font-size: 5px;
   line-height: 4px;
   color: #515151;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #coupon_left_decoration_img {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .coupon_left_decoration_img {
   position: absolute;
   left: 27px;
   bottom: 20px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #use_threshold {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .use_threshold {
   font-size: 16px;
   color: #515151;
   position: absolute;
@@ -1909,7 +1909,7 @@ section#vote .card_outline .img_container {
   right: 34px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block #bottom_decoration_img {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block .bottom_decoration_img {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -1917,14 +1917,14 @@ section#vote .card_outline .img_container {
   transform: rotate(180deg);
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_left_block > svg {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_left_block > svg {
   position: absolute;
   bottom: 0;
   left: 0;
   transform: rotate(180deg);
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block {
   background-color: #F7EDD4;
   position: relative;
   width: 120px;
@@ -1932,7 +1932,7 @@ section#vote .card_outline .img_container {
   border-bottom-right-radius: 5px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block::after {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block::after {
   content: "";
   display: inline-block;
   width: 42px;
@@ -1944,7 +1944,7 @@ section#vote .card_outline .img_container {
   border-bottom-left-radius: 5px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .expiration {
   width: 80px;
   height: 31px;
   position: absolute;
@@ -1954,7 +1954,7 @@ section#vote .card_outline .img_container {
   flex-direction: column;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration > span:first-child {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .expiration > span:first-child {
   align-self: flex-start;
   font-size: 12px;
   transform: scale(0.83);
@@ -1964,14 +1964,14 @@ section#vote .card_outline .img_container {
   margin-bottom: 3px;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration #expiration_date {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .expiration .expiration_date {
   align-self: flex-end;
   font-size: 12px;
   line-height: 14px;
   color: #515151;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #coupon_right_decoration_img {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .coupon_right_decoration_img {
   position: absolute;
   top: 65px;
   left: 10px;
@@ -1980,11 +1980,11 @@ section#vote .card_outline .img_container {
   overflow: hidden;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #coupon_right_decoration_img > img {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .coupon_right_decoration_img > img {
   width: 100%;
 }
 
-#member_data_page #coupon_block #coupon_area #coupon #coupon_right_block #expiration_countdown {
+#member_data_page #coupon_block #coupon_area .coupon .coupon_right_block .expiration_countdown {
   color: #E8542E;
   font-size: 12px;
   white-space: nowrap;
@@ -2133,7 +2133,7 @@ section#vote .card_outline .img_container {
   }
 }
 
-#member_fav_page #fav_folder #folder_area #folder {
+#member_fav_page #fav_folder #folder_area .folder {
   width: 290px;
   height: 330px;
   background-color: #DFB9B0;
@@ -2145,7 +2145,7 @@ section#vote .card_outline .img_container {
   border-radius: 5px;
 }
 
-#member_fav_page #fav_folder #folder_area #folder::before {
+#member_fav_page #fav_folder #folder_area .folder::before {
   content: "";
   width: 110px;
   height: 40px;
@@ -2156,7 +2156,7 @@ section#vote .card_outline .img_container {
   right: 0;
 }
 
-#member_fav_page #fav_folder #folder_area #folder::after {
+#member_fav_page #fav_folder #folder_area .folder::after {
   content: "";
   display: inline-block;
   width: 290px;
@@ -2169,19 +2169,19 @@ section#vote .card_outline .img_container {
   border-radius: 5px;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_title_tag {
+#member_fav_page #fav_folder #folder_area .folder .folder_title_tag {
   padding-left: 7px;
   padding-top: 7px;
   text-align: left;
   position: relative;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #folder_title {
+#member_fav_page #fav_folder #folder_area .folder .folder_title_tag .folder_title {
   font-size: 20px;
   line-height: 27px;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder {
+#member_fav_page #fav_folder #folder_area .folder .folder_title_tag .delete_folder {
   background-color: transparent;
   width: 20px;
   height: 20px;
@@ -2195,12 +2195,12 @@ section#vote .card_outline .img_container {
   right: 120px;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_title_tag #delete_folder > i {
+#member_fav_page #fav_folder #folder_area .folder .folder_title_tag .delete_folder > i {
   font-size: 30px;
   line-height: 20px;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_img_outline {
+#member_fav_page #fav_folder #folder_area .folder .folder_img_outline {
   width: 240px;
   height: 240px;
   margin: 0 auto;
@@ -2208,7 +2208,7 @@ section#vote .card_outline .img_container {
   overflow: hidden;
 }
 
-#member_fav_page #fav_folder #folder_area #folder #folder_img_outline > img {
+#member_fav_page #fav_folder #folder_area .folder .folder_img_outline > img {
   width: 100%;
   position: relative;
   top: 50%;

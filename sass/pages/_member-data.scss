@@ -292,11 +292,11 @@
             justify-content: center;
             padding: 0 40px;
 
-            #coupon{
+            .coupon{
                 display: inline-flex;
                 margin: 0 15px 30px;
 
-                #coupon_left_block{
+                .coupon_left_block{
                     width: 300px;
                     height: 150px;
                     background-color: #F0D5CE;
@@ -304,7 +304,7 @@
                     border-right: 1px solid $palePike;
                     border-top-left-radius: 5px;
 
-                    #discount_amout{
+                    .discount_amout{
                         font-size: 50px;
                         line-height: 56px;
                         position: absolute;
@@ -313,7 +313,7 @@
                         color: #515151;
                     }
 
-                    #A_cake_text_logo{
+                    .A_cake_text_logo{
                         width: 60px;
                         height: 22px;
                         position: absolute;
@@ -335,14 +335,14 @@
 
                     }
 
-                    #coupon_left_decoration_img{
+                    .coupon_left_decoration_img{
                         // 此處樣式未確定
                         position: absolute;
                         left: 27px;
                         bottom: 20px;
                     }
 
-                    #use_threshold{
+                    .use_threshold{
                         font-size: $p;
                         color: #515151;
                         position: absolute;
@@ -350,7 +350,7 @@
                         right: 34px;
                     }
 
-                    #bottom_decoration_img{
+                    .bottom_decoration_img{
                         width: 100%;
                         position: absolute;
                         bottom: 0;
@@ -367,7 +367,7 @@
 
                 }
 
-                #coupon_right_block{
+                .coupon_right_block{
                     background-color: #F7EDD4;
                     position: relative;
                     width: 120px;
@@ -386,7 +386,7 @@
                         border-bottom-left-radius: 5px;
                     }
 
-                    #expiration{
+                    .expiration{
                         width: 80px;
                         height: 31px;
                         position: absolute;
@@ -405,7 +405,7 @@
                             margin-bottom: 3px;
                         }
 
-                        #expiration_date{
+                        .expiration_date{
                             align-self: flex-end;
                             font-size: 12px;
                             line-height: 14px;
@@ -414,7 +414,7 @@
 
                     }
 
-                    #coupon_right_decoration_img{
+                    .coupon_right_decoration_img{
                         position: absolute;
                         top: 65px;
                         left: 10px;
@@ -428,7 +428,7 @@
 
                     }
 
-                    #expiration_countdown{
+                    .expiration_countdown{
                         color: #E8542E;
                         font-size: 12px;
                         white-space: nowrap;
