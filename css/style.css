@@ -700,9 +700,9 @@ section#vote .card_outline .img_container {
   width: 100%;
 }
 
-#product_cakecard .product_card_outline .product_img_container img {
-  width: 300px;
-  height: 300px;
+#product_cakecard .product_card_outline .product_img_container .product_img_container_img {
+  object-fit: cover;
+  width: 100%;
 }
 
 #product_cakecard .product_card_outline .product_introduce {
@@ -741,6 +741,10 @@ section#vote .card_outline .img_container {
   height: 20px;
 }
 
+.like_button {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 767.98px) {
   .product_page_main_bar {
     display: flex;
@@ -770,9 +774,6 @@ section#vote .card_outline .img_container {
     max-width: 576px;
     width: 95%;
   }
-  #product_cakecard {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
   .title_h1 {
     max-width: 576px;
     width: 95%;
@@ -796,6 +797,30 @@ section#vote .card_outline .img_container {
     flex-direction: column;
     align-items: center;
     margin: auto;
+  }
+  #product_cakecard {
+    margin-bottom: 70px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 70px 30px;
+    max-width: 576px;
+    width: 100%;
+  }
+  #product_cakecard .product_card_outline {
+    background-color: #DFB9B0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    max-width: 320px;
+  }
+  .product_img_container_img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
   }
 }
 
@@ -1425,12 +1450,12 @@ section#vote .card_outline .img_container {
 }
 
 .shopping_cart_button {
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 100px;
   margin-top: 35px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .shopping_cart_button .return_shopping, .shopping_cart_button .goto_checkout {
