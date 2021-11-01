@@ -31,14 +31,10 @@
         </div>
         <!-- 會員頁共用結束 -->
 
-
         <section id="title_h1_block">
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>我的訂單</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container">
+                <title_h1 :title="title" class="title_h1"></title_h1>
             </div>
         </section>
 
@@ -207,13 +203,18 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
     
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                title: "我的訂單",
+            };
         },
     }
 </script>
@@ -261,6 +262,10 @@
             width: 410px;
             margin: 0 auto 110px;
 
+            @media (max-width: 575.98px){
+                transform: scale(0.8);
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -299,11 +304,15 @@
 
     #title_h1_block{
         text-align: center;
+        .title_h1_container{
+            margin: 0 auto;
+            padding: 27px 0 50px;
+        }
     }
 
     #switch_tab_block{  // 佔位用的樣式大小
         height: 50px;
-        margin: 40px auto 55px;
+        margin: 0 auto 55px;
     }
     
     #filter_block{
@@ -366,7 +375,7 @@
                     .order_number{
                         font-size: $h2;
                         color: $darkGrey;
-                        margin-left: 40px;
+                        margin-left: 45px;
                     }
 
                     .order_status{
@@ -380,7 +389,7 @@
                         color: #848484;
                         position: absolute;
                         line-height: 16px;
-                        left: 40px;
+                        left: 45px;
                         bottom: -17px;
                     }
 
@@ -526,13 +535,9 @@
 
 //版面問題
 // 1. 下拉選單預設選項的設置方式需要優化
-// 2. 訂單展開後下方margin要改成100px嗎(現在都是50px)
-// 3. 訂單收合的+與-按鈕要用font-awesome的嗎
-// 4. 下拉選單的樣式要再調整
-// 5. 下拉選單的寬高設定在safari似乎不起作用
-// 6. 訂單標題字對齊下面的圖片
-// 7. 金額計算個位數要對齊
-// 8. 折價券排版修改 奇數個時有問題
+// 2. 下拉選單的樣式要再調整
+// 3. 下拉選單的寬高設定在safari似乎不起作用
+// 4. 金額計算個位數要對齊
 
 // ===== 頁面的scss結束 =====
 
@@ -542,8 +547,12 @@
 .title_h1 {
     display: inline-block;
     position: relative;
+    .outline{
+        display:flex;
+    }
     h1 {
         display: inline-block;
+        margin:0;
         font-size: 36px;
         color: #515151;
     }
@@ -551,18 +560,20 @@
         display: inline-block;
         position: absolute;
         left: 0;
-        bottom: 10px;
+        bottom: 0;
         width: 100%;
         height: 5px;
         border-radius: 5px;
         background-color: #dfb9b0;
     }
     img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
+        max-width: 58px;
+        max-height: 58px;
+        width:100%;
+        height:100%;
+        // vertical-align: middle;
+        // position: relative;
+        // transform: translateY(-10px);
     }
 }
 @media (max-width:576px){

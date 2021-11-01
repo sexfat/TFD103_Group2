@@ -34,13 +34,8 @@
         <section id="fav_folder">
 
             <!-- h1組件 -->
-            <div id="title_h1_outline">
-                <div class="title_h1">
-                    <span></span>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                    <h1>我的最愛</h1>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                </div>
+            <div class="title_h1_container">
+                <title_h1 :title="title" class="title_h1"></title_h1>
             </div>
 
             <div id="fav_area">
@@ -145,13 +140,18 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
 
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                title: "我的最愛",
+            };
         },
     }
 </script>
@@ -199,6 +199,10 @@
             width: 410px;
             margin: 0 auto 110px;
 
+            @media (max-width: 575.98px){
+                transform: scale(0.8);
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -239,8 +243,13 @@
         text-align: center;
         margin-bottom: 32px;
 
+        .title_h1_container{
+            margin: 0 auto;
+            padding: 32px 0 45px;
+        }
+
         #fav_area{
-            margin: 33px 25px 5px;
+            margin: 0 25px 5px;
             display: inline-grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
@@ -349,48 +358,8 @@
 //版面問題
 // RWD
 // 1. 手機版各元件要縮小
-// 2. 手機版.title_h1組件要使用嗎?
 
 // ===== 頁面的scss結束 =====
-
-
-
-// ===== 組件title_h1的scss開始 =====
-.title_h1 {
-    display: inline-block;
-    position: relative;
-    h1 {
-        display: inline-block;
-        font-size: 36px;
-        color: #515151;
-    }
-    span {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        height: 5px;
-        border-radius: 5px;
-        background-color: #dfb9b0;
-    }
-    img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
-    }
-}
-@media (max-width:576px){
-    .title_h1 h1{
-        font-size:24px;
-        position:relative;
-        line-height:48px;
-    }
-}
-// ===== 組件title_h1的scss結束 =====
-
 
 
 // ===== 組件card_voting的scss開始 =====

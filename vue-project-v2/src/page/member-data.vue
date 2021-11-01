@@ -88,11 +88,8 @@
         <section id="cake_design">
 
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>蛋糕庫設計</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container_design">
+                <title_h1 :title="titleDesign" class="title_h1"></title_h1>
             </div>
 
             <div id="cake_design_cards">
@@ -171,11 +168,8 @@
         <section id="coupon_block">
 
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>折價券</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container_coupon">
+                <title_h1 :title="titleCoupon" class="title_h1"></title_h1>
             </div>
 
             <div id="coupon_area">
@@ -310,16 +304,22 @@
     import footercomp from "../components/footercom";
     import axios from 'axios';
 
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                titleDesign: "蛋糕庫設計",
+                titleCoupon: "折價券",
+            };
         },
         mounted(){
-            axios.get("http://tfd103g2.sexfat.tw/test.php").then(res => console.log(res));
+            // axios.get("http://tfd103g2.sexfat.tw/test.php").then(res => console.log(res));
         },
     }
 </script>
@@ -365,6 +365,10 @@
             justify-content: space-between;
             width: 410px;
             margin: 0 auto 110px;
+
+            @media (max-width: 575.98px){
+                transform: scale(0.8);
+            }
 
             .member_page_nav_link{
                 // border: 1px solid green;
@@ -481,14 +485,9 @@
         text-align: center;
         padding: 0 40px;
 
-        .title_h1{
-            margin-bottom: 40px;
-
-            > h1{
-                margin-top: 50px;
-                font-weight: normal;
-            }
-
+        .title_h1_container_design{
+            margin: 0 auto;
+            padding: 45px 0 50px;
         }
 
         #cake_design_cards{
@@ -605,17 +604,9 @@
         border-radius: 5px;
         text-align: center;
 
-        .title_h1{
-
-            >span{
-                // 顏色不搭，讓品涵確認一下
-                // background-color: #F0D5CE;
-            }
-
-            > h1{
-                margin-bottom: 32px;
-                font-weight: normal;
-            }
+        .title_h1_container_coupon{
+            margin: 0 auto;
+            padding: 12px 0 15px;
         }
 
         #coupon_area{
@@ -790,7 +781,7 @@
             text-align: center;
             cursor: pointer;
             position: relative;
-            top: -20px;
+            top: -10px;
 
             #arrow_down_icon{
                 display: inline-block;
@@ -819,48 +810,10 @@
 }
 
 //
-// 折價券h1組件的底線顏色不搭(可搜尋"品涵"前往該樣式)
-// 折價券展開的按鈕view_all_coupon要往下一點嗎
+// 折價券手機版縮小成0.75倍
+// 折價券排版修改 奇數個時有問題
 
 // ===== 頁面的scss結束 =====
-
-
-
-// ===== 組件title_h1的scss開始 =====
-.title_h1 {
-    display: inline-block;
-    position: relative;
-    h1 {
-        display: inline-block;
-        font-size: 36px;
-        color: #515151;
-    }
-    span {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        height: 5px;
-        border-radius: 5px;
-        background-color: #dfb9b0;
-    }
-    img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
-    }
-}
-@media (max-width:576px){
-    .title_h1 h1{
-        font-size:24px;
-        position:relative;
-        line-height:48px;
-    }
-}
-// ===== 組件title_h1的scss結束 =====
 
 
 
