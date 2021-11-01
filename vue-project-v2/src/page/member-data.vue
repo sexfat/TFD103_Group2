@@ -307,7 +307,8 @@
 
 <script>
     import headercomp from "../components/headercom";
-    import footercomp from "../components/footercom";    
+    import footercomp from "../components/footercom";
+    import axios from 'axios';
 
     export default {
         components: {
@@ -316,6 +317,9 @@
         },
         data(){
             return{};
+        },
+        mounted(){
+            axios.get("http://tfd103g2.sexfat.tw/test.php").then(res => console.log(res));
         },
     }
 </script>
