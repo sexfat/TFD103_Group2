@@ -22,5 +22,8 @@ export default[{
         {path:'member_order', component: member_order},   // 會員訂單查詢頁
         {path:'member_fav', component: member_fav},   // 會員最愛分類頁
         {path:'member_fav_detail', component: member_fav_detail},   // 會員最愛詳細頁
+        {path:'product', component: r => require.ensure([], () => r(require('../page/product')), 'product')},
+        {path:'product_detail', component: r => require.ensure([], () => r(require('../page/product_detail')), 'product_detail')},
+        {path:'shopping_cart', component: r => require.ensure([], () => r(require('../page/shopping_cart')), 'shopping_cart')},
     ],
 }]
