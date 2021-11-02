@@ -5,7 +5,7 @@
         <h1>員工資料</h1>
         <search-bar></search-bar>
         </div>
-    <div class="forPosition" v-for="(data,index) in employee_data" :key="index">
+    <div class="forPosition" v-for="(data,index) in data" :key="index">
       <section class="first_site" >
       
       <div id="employee">
@@ -17,31 +17,31 @@
       <div class="manager_list_content">
         <div class="manager_details">
             <label for="">員工編號</label>
-            <input class="authority" type="text" :value="data.id">
+            <input class="authority" type="text" :value="data.ID">
         </div>
         <div class="manager_details">
             <label for="">員工密碼</label>
-            <input class="authority" type="password" :value="data.password">
+            <input class="authority" type="password" :value="data.PASSWORD">
         </div>
        <div class="manager_details">
             <label for="">員工姓名</label>
-            <input class="authority" type="text" :value="data.name">
+            <input class="authority" type="text" :value="data.EMPLOYEE_NAME">
         </div>
       </div>
       <div class="manager_list_content">
           <div class="manager_details">
               <label for="">創建員工</label>
-              <input class="authority" type="text" :value="data.creator">
+              <input class="authority" type="text" :value="data.BIULDER">
           </div>
           <div class="manager_details">
               <label for="">創建日期</label>
-              <input class="authority" type="text" :value="data.createDate">
+              <input class="authority" type="text" :value="data.CREATE_DATE">
           </div>
           <div class="manager_details">
             <label for="">權限</label>
             <select name="" class="authority">
-              <option value="" :selected="data.power == 0" >管理者</option>
-              <option value="" :selected="data.power == 1">超級管理者</option>
+              <option value="" :selected="data.AUTHORITY == 0" >管理者</option>
+              <option value="" :selected="data.AUTHORITY == 1">超級管理者</option>
             </select>
           </div>
       </div>
@@ -49,8 +49,8 @@
       <div class="manager_list_button">
           <span class="switch_button" @click="change(index)">
     <label for="" style="margin-right:3px;">狀態</label>
-    <div class="switch" id="outline" :class="{'-on':data.status}">
-    <span class="circle" id="circle" :class="{'-on':data.status}"></span>
+    <div class="switch" id="outline" :class="{'-on':data.ACTIVE}">
+    <span class="circle" id="circle" :class="{'-on':data.ACTIVE}"></span>
     </div>
 </span>
           <span></span>
@@ -67,6 +67,9 @@
 <script>
 // import "../font/fff.less";
 import $ from "jquery";
+import VueAxios from 'vue-axios'
+import axios from "axios";
+// Vue.use(VueAxios,axios);
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
 import employee from "../components/employee";
@@ -77,10 +80,23 @@ export default {
     searchBar,
     employee,
   },
+  data(){
+    return{
+      data:{},
+    }
+  },
   mounted(){
     $("#employee").siblings().removeClass("target");
     $("#employee").addClass("target");
-
+    
+    axios({
+        method: "get",
+        url: "/static/quire_member.php"
+      }).then(res => {
+        console.log(res.data);
+        this.data = res.data;
+        console.log(this.data);
+      });
   },
   methods:{
     change(index){

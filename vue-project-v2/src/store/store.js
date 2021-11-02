@@ -242,7 +242,6 @@ const state = {
     ten:1200,
     status:2,
     description:"營養好吃的蛋糕，吃完太胖必須要去三鐵"
-    
   }]
 
 };
