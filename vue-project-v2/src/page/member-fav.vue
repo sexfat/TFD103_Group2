@@ -248,6 +248,8 @@
                 width: 100vw;
                 overflow-y: scroll;
                 grid-template-areas: "first .";
+                padding: 0 30px 10px;
+                margin: 33px 0 5px;
             }
 
             .folder{
@@ -391,7 +393,6 @@
 // RWD
 // 1. 手機版各元件要縮小
 // 2. 手機版的增加資料夾按鈕要如何顯現？要持續顯現一小塊
-// 3. 手機版資料夾下方要加margin，不然陰影會被吃掉
 
 // ===== 頁面的scss結束 =====
 
