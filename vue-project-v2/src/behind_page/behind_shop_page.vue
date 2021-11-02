@@ -39,7 +39,7 @@ import chefCake from './behind_component_chef_cake'
 import ideaCake from './behind_component_idea_cake'
 import plus from './behind_component_plus'
 export default {
-  name: "member_manager",
+  name: "behind_shop_manager",
   components: {
     behindHeader,
     searchBar,

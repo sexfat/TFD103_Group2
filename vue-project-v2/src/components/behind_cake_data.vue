@@ -2,6 +2,7 @@
         <div class="outline close">
             <div class="img_outline">
                 <img src="../assets/images/cho_cake.jpg" alt="">
+                <button>修改照片</button>
             </div>
             <div class="text_outline">
                 <div class="infor">
@@ -64,7 +65,7 @@
 import $ from "jquery";
 import switchButton from "./switch_button"
 export default {
-  name: "member_data",
+  name: "behind_shop_data",
   methods: {
     open:　function(e){
         // console.log($(e.target).parents('.outline').siblings())
@@ -92,12 +93,30 @@ export default {
     border-radius:5px;
     transition:.3s;
     .img_outline{
+        position:relative;
         flex:1;
         img{
             width:100%;
             height:100%;
             object-fit: cover;
         }
+        button{
+            position:absolute;
+      right:0;
+      bottom:0;
+      width:100px;
+      height:40px;
+      font-size: 20px;
+      box-shadow: $shadow;
+      cursor:pointer;
+      background: #515151;
+      color:white;
+      border-radius:5px;
+      &:active{
+        box-shadow: inset $shadow;
+      }
+        }
+        
     }
     .text_outline{
         // flex:1;

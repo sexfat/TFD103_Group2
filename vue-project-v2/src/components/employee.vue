@@ -96,6 +96,7 @@ export default {
             color:white;
             font-weight: 900;
             box-shadow: $shadow;
+            cursor: pointer;
         }
     }
     .manager_list_content{
@@ -154,6 +155,7 @@ export default {
     background-color: #454545;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
   }
 }
 select{

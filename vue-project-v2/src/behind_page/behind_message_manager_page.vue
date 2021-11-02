@@ -160,6 +160,7 @@ main{
     }
   }
   button{
+    font-size:20px;
     margin-top:10px;
     width:180px;
     height:40px;
@@ -184,12 +185,16 @@ main{
   background:#F4E9C9;
   top:-20px;
   height:100%;
-  padding:80px;
+  padding:80px 20px;
   .first_line{
     // width:570px;
     justify-content: space-between;
     display:flex;
+    p{
+      font-size:24px;
+    }
     button{
+      font-size:20px;
       width:100px;
       height:40px;
       background: #454545;

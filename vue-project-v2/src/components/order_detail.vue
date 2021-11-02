@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="third_line">
-        <div class="first_item">
+        <div class="first_item" style="max-width:350px;">
           <p>收件人：</p>
           <p class="content">丁丁</p>
         </div>
@@ -83,25 +83,24 @@
       </div>
       <div class="combo_prize_outline">
         <div class="combo_prize">
-          <p class="operate">+</p>
+          
           <p class="prize">500</p>
         </div>
         <div class="combo_prize">
-          <p class="operate">+</p>
+          
           <p class="prize">80</p>
         </div>
         <div class="combo_prize">
-          <p class="operate">+</p>
+          
           <p class="prize">50</p>
         </div>
         <div class="combo_prize">
-          <p class="operate">$</p>
           <p class="prize">630</p>
         </div>
       </div>
     </div>
     <div class="description">
-      <p>備註...</p>
+      <input type="text">
       <div class="button_zone">
         <button>修改</button>
         <button>確認</button>
@@ -156,7 +155,7 @@ export default {
   .content{
     padding:0 10px;
     border-radius:5px;
-    background:white;
+    background:#E4E4E4;
   }
 }
 .detail_outline.open{
@@ -282,7 +281,7 @@ export default {
     display:flex;
     height:80px;
     margin-top:20px;
-    p{
+    input{
         flex:7;
         margin:0;
         background: white;

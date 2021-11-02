@@ -1,24 +1,196 @@
 <template>
   <div>
     <behind-header thistitle="員工管理"></behind-header>
-    <div class="forPosition">
+    <div id="top_bar">
+      <h1>員工資料</h1>
+      <search-bar></search-bar>
+    </div>
+
+    <div id="new_employee" v-if="create">
+      <font-awesome-icon
+        icon="fa-solid fa-square-plus"
+        id="plus"
+        @click="create = 0"
+      />
+    </div>
+    <div id="new_employee" v-else>
+      <form method="get">
+        <section class="first_site">
+          <div id="employee">
+            <div class="manager_list">
+              <div class="manager_img_outline">
+                <img src="" alt="" />
+                <button>修改照片</button>
+              </div>
+              <div class="manager_list_content">
+                <div class="manager_details">
+                  <label for="">員工編號</label>
+                  <input
+                    class="authority"
+                    type="text"
+                    v-model="new_employee.number"
+                  />
+                </div>
+                <div class="manager_details">
+                  <label for="">員工密碼</label>
+                  <input
+                    class="authority"
+                    type="password"
+                    v-model="new_employee.password"
+                  />
+                </div>
+                <div class="manager_details">
+                  <label for="">員工姓名</label>
+                  <input
+                    class="authority"
+                    type="text"
+                    v-model="new_employee.name"
+                  />
+                </div>
+              </div>
+              <div class="manager_list_content">
+                <div class="manager_details">
+                  <label for="">創建員工</label>
+                  <input
+                    class="authority"
+                    type="text"
+                    v-model="new_employee.biulder"
+                  />
+                </div>
+                <div class="manager_details">
+                  <label for="">創建日期</label>
+                  <input
+                    class="authority"
+                    type="text"
+                    v-model="new_employee.create_date"
+                  />
+                </div>
+                <div class="manager_details">
+                  <label for="">權限</label>
+                  <select
+                    name=""
+                    class="authority"
+                    v-model="new_employee.authority"
+                  >
+                    <option value="0">管理者</option>
+                    <option value="1">超級管理者</option>
+                  </select>
+                </div>
+              </div>
+              <!--按鈕開關-->
+              <div class="manager_list_button">
+                <span class="switch_button" @click="change(index)">
+                  <label for="" style="margin-right: 3px">狀態</label>
+                  <div
+                    class="switch"
+                    id="outline"
+                    :class="{ '-on': data.ACTIVE }"
+                  >
+                    <span
+                      class="circle"
+                      id="circle"
+                      :class="{ '-on': data.ACTIVE }"
+                    ></span>
+                  </div>
+                </span>
+                <span></span>
+
+                <button @click="sendData">確認送出</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </form>
+    </div>
+    <div class="forPosition" v-for="(data, index) in 1" :key="index">
       <section class="first_site">
-        <h1>員工資料</h1>
-        <search-bar></search-bar>
+        <div id="employee">
+          <div class="manager_list">
+            <div class="manager_img_outline">
+              <img src="" alt="" />
+              <button>修改照片</button>
+            </div>
+            <div class="manager_list_content">
+              <div class="manager_details">
+                <label for="">員工編號</label>
+                <input class="authority" type="text" :value="data.ID" />
+              </div>
+              <div class="manager_details">
+                <label for="">員工密碼</label>
+                <input
+                  class="authority"
+                  type="password"
+                  :value="data.PASSWORD"
+                />
+              </div>
+              <div class="manager_details">
+                <label for="">員工姓名</label>
+                <input
+                  class="authority"
+                  type="text"
+                  :value="data.EMPLOYEE_NAME"
+                />
+              </div>
+            </div>
+            <div class="manager_list_content">
+              <div class="manager_details">
+                <label for="">創建員工</label>
+                <input class="authority" type="text" :value="data.BIULDER" />
+              </div>
+              <div class="manager_details">
+                <label for="">創建日期</label>
+                <input
+                  class="authority"
+                  type="text"
+                  :value="data.CREATE_DATE"
+                />
+              </div>
+              <div class="manager_details">
+                <label for="">權限</label>
+                <select name="" class="authority">
+                  <option value="" :selected="data.AUTHORITY == 0">
+                    管理者
+                  </option>
+                  <option value="" :selected="data.AUTHORITY == 1">
+                    超級管理者
+                  </option>
+                </select>
+              </div>
+            </div>
+            <!--按鈕開關-->
+            <div class="manager_list_button">
+              <span class="switch_button" @click="change(index)">
+                <label for="" style="margin-right: 3px">狀態</label>
+                <div
+                  class="switch"
+                  id="outline"
+                  :class="{ '-on': data.ACTIVE }"
+                >
+                  <span
+                    class="circle"
+                    id="circle"
+                    :class="{ '-on': data.ACTIVE }"
+                  ></span>
+                </div>
+              </span>
+              <span></span>
+              <span></span>
+              <button>修改</button>
+              <button>確認</button>
+            </div>
+          </div>
+        </div>
       </section>
-      <div id="employee">
-        <employee
-          thistitle="狀態"
-          v-for="(sss, index) in 5"
-          :key="index"
-        ></employee>
-      </div>
     </div>
   </div>
 </template>
 <script>
 // import "../font/fff.less";
 import $ from "jquery";
+import qs from 'qs';
+import VueAxios from "vue-axios";
+import axios from "axios";
+// Vue.use(VueAxios,axios);
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
 import employee from "../components/employee";
@@ -29,10 +201,99 @@ export default {
     searchBar,
     employee,
   },
-  mounted(){
+  data() {
+    return {
+      data: {},
+      create: 1,
+      new_employee: {
+        number: "",
+        name: "",
+        password: "",
+        authority: "",
+        create_date: "",
+        phone: "",
+        biulder: "",
+        active: "",
+        img: "",
+      },
+    };
+  },
+  mounted() {
     $("#employee").siblings().removeClass("target");
     $("#employee").addClass("target");
 
+    axios({
+      method: "get",
+      url: "/static/quire_member.php",
+    }).then((res) => {
+      console.log(res.data);
+      this.data = res.data;
+      console.log(this.data);
+    });
+  },
+  methods: {
+    change(index) {
+      let i = this.data[index].ACTIVE;
+      this.data[index].ACTIVE = this.data[index].ACTIVE ? 0 : 1;
+      return index;
+    },
+    sendData() {
+      // let number = this.new_employee.number;
+      // let password = this.new_employee.password;
+      // let name = this.new_employee.name;
+      // let biulder = this.new_employee.biulder;
+      // let create_date = this.new_employee.create_date;
+      // let authority = this.new_employee.authority;
+      // let data = {
+      //   'number':number,
+      //   'password': password,
+      //   'name': name,
+      //   'biulder': biulder,
+      //   'create_date': create_date,
+      //   'authority': authority,
+      // };
+      // params.append("number", number); //你要传给后台的参数值 key/value
+      // params.append("password", password);
+      // params.append("name", name);
+      // params.append("biulder", biulder);
+      // params.append("create_date", create_date);
+      // params.append("authority", authority);
+      axios({
+        method: "get",
+        url: "/static/join_employee.php",
+        data: {
+        number:this.new_employee.number,
+        password: this.new_employee.password,
+        name:this.new_employee.name,
+        biulder: this.new_employee.biulder,
+        create_date:this.new_employee.create_date,
+        authority: this.new_employee.authority
+        }
+      }).then((res) => {
+        console.log(res.data);
+      });
+      // this.axios
+      //   .get("/static/join_employee.php", { params: data })
+      //   .then((response) => {
+      //     console.log(response.data);
+      //     console.log(response);
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
+      this.create = 1;
+      this.new_employee.number = "";
+      this.new_employee.password = "";
+      this.new_employee.name = "";
+      this.new_employee.biulder = "";
+      this.new_employee.create_date = "";
+      this.new_employee.authority = "";
+    },
+  },
+  computed: {
+    employee_data() {
+      return this.$store.state.employee_data;
+    },
   },
 };
 </script>
@@ -48,7 +309,7 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
   justify-content: space-between;
   align-items: center;
   margin-bottom: 70px;
-  margin-top:70px;
+  margin-top: 70px;
 }
 #employee {
   display: grid;
@@ -62,5 +323,162 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.manager_list {
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0d5ce;
+  .manager_img_outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    button {
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      width: 100px;
+      height: 50px;
+      border: none;
+      border-radius: 5px 0 0 0;
+      font-size: 20px;
+      background: #454545;
+      color: white;
+      font-weight: 900;
+      box-shadow: $shadow;
+      cursor: pointer;
+    }
+  }
+  .manager_list_content {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+  }
+  .manager_details {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  label {
+    font-size: 20px;
+    width: 90px;
+  }
+  .authority {
+    width: 180px;
+    text-align: center;
+  }
+}
+.manager_list_button {
+  width: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+
+  .switch {
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #454545;
+    position: relative;
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+      background-color: white;
+      display: inline-block;
+      position: relative;
+      left: 2px;
+      // left: 14px;
+    }
+  }
+  button {
+    background-color: #454545;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+}
+select {
+  border: 2px solid;
+}
+.switch_button {
+  display: flex;
+  align-items: center;
+  // justify-content: space-evenly;
+}
+.switch {
+  margin-left: 5px;
+  width: 40px;
+  height: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #454545;
+  position: relative;
+  cursor: pointer;
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    left: 2px;
+    top: -1px;
+    // left: 14px;
+    transition: 0.5s;
+  }
+  .circle.-on {
+    left: 12px;
+    transition: 0.5s;
+  }
+}
+
+.switch.-on {
+  transition: 0.5s;
+  background-color: green;
+}
+#top_bar {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#new_employee {
+  width: 1000px;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0d5ce;
+  border-radius: 5px;
+  margin-top: 70px;
+  .fa-square-plus {
+    color: white;
+    font-size: 200px;
+    cursor: pointer;
+  }
 }
 </style>
