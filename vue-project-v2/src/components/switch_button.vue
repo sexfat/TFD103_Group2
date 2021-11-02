@@ -1,8 +1,8 @@
 <template>
-<span class="switch_button" @click="myfunc">
+<span class="switch_button" @click="change">
     <label for="" style="margin-right:3px;">{{title}}</label>
-    <div class="switch" id="outline">
-    <span class="circle" id="circle"></span>
+    <div class="switch" id="outline" :class="{'-on':switchCase}">
+    <span class="circle" id="circle" :class="{'-on':switchCase}"></span>
     </div>
     <!--按鈕開關-->
 </span>
@@ -11,19 +11,29 @@
 import $ from "jquery";
 export default {
 name: "switch_button",
+data(){
+    return{
+        switchCase:test,
+    }
+},
+props:["index"],
 methods: {
-    myfunc:　function(e){
-        if($(e.target).attr("id") =="outline"){
-            $(e.target).toggleClass("-on");
-            $(e.target).children().toggleClass("-on");
-        };
-        if($(e.target).attr("id") == "circle"){
-            $(e.target).parent().toggleClass("-on");
-            $(e.target).toggleClass("-on");
-        }
+    change(){
+        this.switchCase = this.switchCase? 0:1;
     },
 },
-props:['title'],
+props:['title',],
+computed:{
+    test(){
+        return  this.$store.state.member_status[this.index]
+    }
+},
+mounted(){
+   this.switchCase = this.$store.state.member_status[this.index]
+},
+watch:{
+    
+},
 };
 </script>
 <style scoped lang="scss">
@@ -37,6 +47,7 @@ box-sizing: border-box;
     // justify-content: space-evenly;
   }
 .switch {
+margin-left: 5px;
 width: 40px;
 height: 25px;
 border-radius: 10px;

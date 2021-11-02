@@ -13,5 +13,6 @@ export default[{
         {path:'shopManager', component: r => require.ensure([], () => r(require('../behind_page/behind_shop_page')), 'behind_shop')},
         {path:'cakeMakeManager', component: r => require.ensure([], () => r(require('../behind_page/behind_cake_make_page')), 'behind__cake_make')},
         {path:'messageManager', component: r => require.ensure([], () => r(require('../behind_page/behind_message_manager_page')), 'behind_message_manager')},
+        {path:'test', component: r => require.ensure([], () => r(require('../behind_page/behind_component_newEvent_page')), 'behind_component_newEvent_page')},
     ],
 }]

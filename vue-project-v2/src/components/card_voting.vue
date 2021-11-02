@@ -123,24 +123,4 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     height: 22px;
     width: 22px;
 }
-section#vote{
-    width:100%;
-    max-width:1120px;
-    margin:0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    gap:70px 35px;
-    justify-content: space-between;
-    margin-bottom:80px;
-    .card_outline{
-        width:100%;
-        max-width: 350px;
-        margin:0 auto;
-        .img_container{
-            width:100%;
-            height:auto;
-        }
-    }
-    
-}
 </style>
