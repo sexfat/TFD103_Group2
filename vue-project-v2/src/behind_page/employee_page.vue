@@ -5,7 +5,7 @@
         <h1>員工資料</h1>
         <search-bar></search-bar>
         </div>
-    <div class="forPosition" v-for="(data,index) in data" :key="index">
+    <div class="forPosition" v-for="(data,index) in 0" :key="index">
       <section class="first_site" >
       
       <div id="employee">
@@ -100,8 +100,8 @@ export default {
   },
   methods:{
     change(index){
-        let i =  this.employee_data[index].status;
-        this.employee_data[index].status = this.employee_data[index].status?0:1
+        let i =  this.data[index].ACTIVE;
+        this.data[index].ACTIVE = this.data[index].ACTIVE?0:1
           return index;
     },
   },
