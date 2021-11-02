@@ -1,9 +1,9 @@
 <template>
-    <div class="outline">
+    <div class="confirm_outline">
         <h1>狀態是否改為停用</h1>
         <div class="check">
-            <button class="true">確認</button>
-            <button class="false">取消</button>
+            <button class="true" @click="yes">確認</button>
+            <button class="false" @click="cancel">取消</button>
         </div>
     </div>
 </template>
@@ -14,6 +14,14 @@ export default {
   methods: {},
   components:{
   },
+  methods:{
+      cancel(){
+          this.$emit("no",1)
+      },
+      yes(){
+          this.$emit("yes",0)
+      }
+  }
 };
 </script>
 <style scoped lang="scss">
@@ -21,11 +29,13 @@ export default {
 *{
     box-sizing: border-box;
 }
-.outline{
+.confirm_outline{
     width:570px;
     height:300px;
     border-radius: 5px;
     background: #EFE6E4;
+    display:flex;
+    flex-direction: column;
     // border:1px solid red;
     h1{
         text-align: center;

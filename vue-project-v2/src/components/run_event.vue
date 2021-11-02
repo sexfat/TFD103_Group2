@@ -12,7 +12,7 @@
           </div>
           <div class="text_content">
             <p>活動內容：</p>
-            <p>大家一起做蛋糕，看看老媽多辛勞</p>
+            <p>大家一起做蛋糕，看看老媽多辛勞大家一起做蛋糕，看看老媽多辛勞大家一起做蛋糕，看看老媽多辛勞大家一起做蛋糕，看看老媽多辛勞</p>
           </div>
           <div class="text_content">
             <p>活動時程：</p>
@@ -23,21 +23,22 @@
         </div>
         <div class="progress">
           <h1>進行中</h1>
-        </div>
-      </div>
-      <div class="class_zone">
+          <div class="button_zone">
         <div>
           <button>修改活動</button>
           <button>結束活動</button>
         </div>
       </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </template>
 <script>
 import $ from "jquery";
 export default {
-  name: "upload_vote",
+  name: "runOrStopEvent",
   methods: {},
   components: {},
   props: ["title", "author", "text"],
@@ -69,24 +70,30 @@ export default {
     }
   }
   .text_outline {
-    flex: 1;
+    flex: 3;
     display: flex;
     margin-left: 20px;
     flex-direction: column;
     align-items: flex-start;
     .content {
       flex: 1;
+      width:100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       .text_content {
         display: flex;
-        align-items: center;
-        white-space: nowrap;
+        align-items: flex-start;
+        margin-bottom:10px;
+        
         p {
           margin: 0 8px 0 0;
           font-size: 18px;
           color:#515151;
+        }
+        p:nth-child(1){
+          white-space: nowrap;
+          vertical-align: top;
         }
       }
     }
@@ -94,17 +101,23 @@ export default {
       flex: 1;
       display: flex;
       align-items: flex-end;
+      width:100%;
+      justify-content: space-between;
       h1 {
         margin: 0;
         color:#515151;
       }
     }
   }
-  .class_zone {
+  .button_zone {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     button{
+      width:100px;
+      height:25px;
+      font-size:16px;
+      line-height:16px;
         border-radius: 5px;
         background:#F4E9C9 ;
         cursor: pointer;

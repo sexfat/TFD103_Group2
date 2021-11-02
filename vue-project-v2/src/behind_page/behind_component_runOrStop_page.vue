@@ -2,9 +2,13 @@
  <section id="right_section">
         <div class="title">
           <h1>活動內容管理</h1>
-          <searchBar></searchBar>
+          <searchBar ></searchBar>
         </div>
         <div class="cake">
+          <div id="new_event">
+            <h1>舉辦新活動</h1>
+            <font-awesome-icon icon="fa-solid fa-square-plus" id="plus_new_event" @click="newEvent" />
+          </div>
           <run-event v-for="(test,index) in 5" :key="index"></run-event>
        </div>
       </section>
@@ -27,7 +31,11 @@ export default {
       showWhat: [],
     };
   },
-  methods: {},
+  methods: {
+    newEvent(){
+      this.$emit("runEvent")
+    }
+  },
   mounted(){
       $("#runOrStop").siblings().removeClass("target");
     $("#runOrStop").addClass("target");
@@ -55,10 +63,33 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     gap:30px;
 }
 #right_section {
-  padding:70px 100px;
+  padding:70px 50px;
   .title {
     display: flex;
     justify-content: space-between;
+  }
+}
+#new_event{
+  width:775px;
+  height:250px;
+  padding:20px;
+  background: #f7dcdc;
+  border-radius:5px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  h1{
+    font-size:24px;
+    color:#515151;
+  }
+  #plus_new_event{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-size:150px;
+    color:white;
+    cursor: pointer;
   }
 }
 </style>
