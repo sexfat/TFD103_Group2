@@ -13,6 +13,7 @@ export default[{
         {path:'assign', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
         {path:'vote', component: r => require.ensure([], () => r(require('../page/vote_page')), 'vote_page')},
         {path:'', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
+        {path:'employee', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
         {path:'memberManager', component: r => require.ensure([], () => r(require('../behind_page/member_manager')), 'member_manager')},
         {path:'voteManager', component: r => require.ensure([], () => r(require('../behind_page/vote_manager')), 'vote_manager')},
         {path:'shopManager', component: r => require.ensure([], () => r(require('../behind_page/behind_shop_page')), 'behind_shop')},

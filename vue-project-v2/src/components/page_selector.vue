@@ -1,14 +1,14 @@
 <template>
 	<ul class="page_select">
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-left" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-left" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-1" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-2" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-3" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-4" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-5" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-right" /></a></li>
-        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-right" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-left" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-left" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-1" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-2" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-3" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-4" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-5" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angle-right" class="number" /></a></li>
+        <li><a href="#"><font-awesome-icon icon="fa-solid fa-angles-right" class="number" /></a></li>
     </ul>
 </template>
 <script>
@@ -32,13 +32,16 @@ export default {
     width:100%;
     li{
         margin:0 8px;
-        a{
+        a{  
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 14px;
-            border:1px solid red;
+            width:40px;
+            height:40px;
             text-decoration: none;
             color:#515151;
             background-color: white;
-            padding:10px 12px;
             border-radius: 50%;
             &:hover{
                 background-color: black;

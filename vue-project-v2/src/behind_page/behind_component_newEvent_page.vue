@@ -33,13 +33,11 @@
 import $ from "jquery";
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
-import runEvent from "../components/run_event";
 export default {
   name: "newEvent",
   components: {
     behindHeader,
     searchBar,
-    runEvent,
   },
   data() {
     return {

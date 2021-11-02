@@ -220,6 +220,7 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 }
 #confirm.open {
   display: flex;
+  z-index:999;
 }
 // 按鈕
 .switch_button {
