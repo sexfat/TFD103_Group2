@@ -14,7 +14,7 @@
       />
     </div>
     <div id="new_employee" v-else>
-      <form method="get">
+      <form @submit.prevent="sendData">
         <section class="first_site">
           <div id="employee">
             <div class="manager_list">
@@ -95,12 +95,12 @@
                 </span>
                 <span></span>
 
-                <button @click="sendData">確認送出</button>
+                <button >確認送出</button>
               </div>
             </div>
           </div>
         </section>
-      </form>
+      </form >
     </div>
     <div class="forPosition" v-for="(data, index) in 1" :key="index">
       <section class="first_site">
@@ -185,7 +185,6 @@
   </div>
 </template>
 <script>
-// import "../font/fff.less";
 import $ from "jquery";
 import qs from 'qs';
 import VueAxios from "vue-axios";
@@ -228,9 +227,19 @@ export default {
     }).then((res) => {
       console.log(res.data);
       this.data = res.data;
-      console.log(this.data);
+      // console.log(this.data);
     });
   },
+  // created(){
+  //   axios({
+  //     method: "get",
+  //     url: "/static/join_employee.php",
+  //   }).then((res) => {
+  //     console.log(res.data);
+  //     this.data = res.data;
+  //     console.log(this.data);
+  //   });
+  // },
   methods: {
     change(index) {
       let i = this.data[index].ACTIVE;
@@ -244,14 +253,14 @@ export default {
       // let biulder = this.new_employee.biulder;
       // let create_date = this.new_employee.create_date;
       // let authority = this.new_employee.authority;
-      // let data = {
-      //   'number':number,
-      //   'password': password,
-      //   'name': name,
-      //   'biulder': biulder,
-      //   'create_date': create_date,
-      //   'authority': authority,
-      // };
+      let data = {
+        number:this.new_employee.number,
+        password:this.new_employee.password,
+        name: this.new_employee.name,
+        biulder:this.new_employee.biulder,
+        create_date:this.new_employee.create_date,
+        authority:this.new_employee.authority,
+      };
       // params.append("number", number); //你要传给后台的参数值 key/value
       // params.append("password", password);
       // params.append("name", name);
@@ -261,16 +270,11 @@ export default {
       axios({
         method: "get",
         url: "/static/join_employee.php",
-        data: {
-        number:this.new_employee.number,
-        password: this.new_employee.password,
-        name:this.new_employee.name,
-        biulder: this.new_employee.biulder,
-        create_date:this.new_employee.create_date,
-        authority: this.new_employee.authority
-        }
+        data: data,
       }).then((res) => {
-        console.log(res.data);
+        console.log(res.data)
+      }).catch((error)=>{
+        console.log(error)
       });
       // this.axios
       //   .get("/static/join_employee.php", { params: data })
