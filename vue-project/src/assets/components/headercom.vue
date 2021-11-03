@@ -1,15 +1,18 @@
 <template>
     <header class="header">
         <div class="header_box">
-            <a href="" id="logo">
+            <!-- <a href="" id="logo">
                 <img src="../images/logo.png">
-            </a>
+            </a> -->
+            <router-link to="" id="logo"><img src="../images/logo.png"></router-link>
             <ul id="header_nav" @click= isShow>
                 <div id="header_div_one">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->
                     <img id="hamburger_img" src="../images/snowRWD.svg" alt="">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->   
-                    <li class="nav_item"><a href="">蛋糕設計</a></li>
+                    <li class="nav_item">
+                        <router-link to="/cakeDesign" id="cakeDesign">蛋糕設計</router-link>
+                    </li>
                     <li class="nav_item"><a href="">人氣票選</a></li>
                     <li class="nav_item"><a href="">商城</a></li>
                     <li class="nav_item"><a href="">QA</a></li>
@@ -114,8 +117,10 @@ export default {
                 height: 70px;
                 display: flex;
                 align-items: center;
+                cursor: pointer;
                 img{
                     height: 100%;
+                    cursor: pointer;
                 }
             }
             ul#header_nav{
@@ -131,12 +136,15 @@ export default {
                         text-align: center;
                         list-style-type: none;
                         margin: 0px 16px;
+                        cursor: pointer;
                         a{
                             color: #515151;
                             text-decoration: none;
                             font-size: 18px;
+                            cursor: pointer;
                             &:hover{
                                 color: #9F746B;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -153,6 +161,7 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                height: 35px;
                 li.nav_icon{
                     text-align: center;
                     margin: 0px 15px;
@@ -185,6 +194,7 @@ export default {
                     align-items: center;
                     text-align: center;
                     margin: 0px 10px;
+                    cursor: pointer;
                 }
                 div#header_div_two_two{
                     display: none;

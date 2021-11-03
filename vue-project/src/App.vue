@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <router-view></router-view>
-<<<<<<< HEAD
-=======
   <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
   <!-- <cardVote></cardVote> -->
     <!-- <router-view> -->
@@ -26,7 +24,6 @@
     <!-- <confirmReason></confirmReason> -->
     <!-- <footercom></footercom> -->
     <!-- <votePage></votePage> -->
->>>>>>> Melody
   </div>
 </template>
 <script>
