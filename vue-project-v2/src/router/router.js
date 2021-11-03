@@ -10,9 +10,10 @@ export default[{
     component:App,   //component: r => require.ensure([], () => r(require('../page/home')), 'home')
     children:[
         // {path:'dm', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_pages')},
+
         {path:'assign', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
         {path:'vote', component: r => require.ensure([], () => r(require('../page/vote_page')), 'vote_page')},
-        {path:'', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
+        // {path:'', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
         {path:'employee', component: r => require.ensure([], () => r(require('../behind_page/employee_page')), 'employee_page')},
         {path:'memberManager', component: r => require.ensure([], () => r(require('../behind_page/member_manager')), 'member_manager')},
         {path:'voteManager', component: r => require.ensure([], () => r(require('../behind_page/vote_manager')), 'vote_manager')},
@@ -27,5 +28,7 @@ export default[{
         // {path:'member_order', component: member_order},   // 會員訂單查詢頁
         // {path:'member_fav', component: member_fav},   // 會員最愛分類頁
         // {path:'member_fav_detail', component: member_fav_detail},   // 會員最愛詳細頁
+        {path:'', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
+        {path:'cakeDesign', component: r => require.ensure([], () => r(require('../page/cake_design')), 'cakeDesign')},//蛋糕設計
     ],
 }]
