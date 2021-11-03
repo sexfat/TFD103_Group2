@@ -186,7 +186,6 @@
 </template>
 <script>
 import $ from "jquery";
-import qs from 'qs';
 import VueAxios from "vue-axios";
 import axios from "axios";
 // Vue.use(VueAxios,axios);
@@ -247,12 +246,12 @@ export default {
       return index;
     },
     sendData() {
-      // let number = this.new_employee.number;
-      // let password = this.new_employee.password;
-      // let name = this.new_employee.name;
-      // let biulder = this.new_employee.biulder;
-      // let create_date = this.new_employee.create_date;
-      // let authority = this.new_employee.authority;
+      let number = this.new_employee.number;
+      let password = this.new_employee.password;
+      let name = this.new_employee.name;
+      let biulder = this.new_employee.biulder;
+      let create_date = this.new_employee.create_date;
+      let authority = this.new_employee.authority;
       let data = {
         number:this.new_employee.number,
         password:this.new_employee.password,
@@ -261,16 +260,18 @@ export default {
         create_date:this.new_employee.create_date,
         authority:this.new_employee.authority,
       };
-      // params.append("number", number); //你要传给后台的参数值 key/value
-      // params.append("password", password);
-      // params.append("name", name);
-      // params.append("biulder", biulder);
-      // params.append("create_date", create_date);
-      // params.append("authority", authority);
+      let params= new URLSearchParams();
+      params.append("number", number); //你要传给后台的参数值 key/value
+      params.append("password", password);
+      params.append("name", name);
+      params.append("biulder", biulder);
+      params.append("create_date", create_date);
+      params.append("authority", authority);
       axios({
         method: "get",
         url: "/static/join_employee.php",
-        data: data,
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        data:{number:number},
       }).then((res) => {
         console.log(res.data)
       }).catch((error)=>{
