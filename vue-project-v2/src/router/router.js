@@ -26,5 +26,8 @@ export default[{
         {path:'product_detail', component: r => require.ensure([], () => r(require('../page/product_detail')), 'product_detail')},
         {path:'shopping_cart', component: r => require.ensure([], () => r(require('../page/shopping_cart')), 'shopping_cart')},
         {path:'ready_to_checkout', component: r => require.ensure([], () => r(require('../page/ready_to_checkout')), 'ready_to_checkout')},
+        {path:'checkout_complete', component: r => require.ensure([], () => r(require('../page/checkout_complete')), 'checkout_complete')},
+        {path:'qa', component: r => require.ensure([], () => r(require('../page/qa')), 'qa')},
+        {path:'qa_chat', component: r => require.ensure([], () => r(require('../page/qa_chat')), 'qa_chat')},
     ],
 }]
