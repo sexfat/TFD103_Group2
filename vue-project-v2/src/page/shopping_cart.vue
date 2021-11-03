@@ -94,21 +94,10 @@ export default {
 
 </script>
 <style scoped lang="scss">
-// @import "../assets/style/var.scss";
+@import "../assets/style/var.scss";
 *{
     box-sizing: border-box;
 }
-$bg:#EFE6E4;
-$h1 : 36px;
-$h2 : 28px;
-$h3 : 24px;
-$h4 : 20px;
-$p : 16px;
-$shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
-$darkGrey : #515151;
-$palePike : #DFB9B0;
-$lightPike : #EFE6E4;
-$lightYellow : #F4E9C9;
 body{
     background-color: $bg;
 }
@@ -143,8 +132,120 @@ body{
     height: 20px;
     object-fit: cover;
 }
-// 購物車麵包屑RWD768
+
+
+
+
+.shopping_cart_list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.shopping_cart_list_outline{
+    max-width: 1120px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 90%;
+    background-color: #DFB9B0;
+    border-radius: 5px;
+    // height: 250px;
+    // margin: 0 auto;
+    margin-bottom: 40px;
+    }
+.shopping_cart_block{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1050px;
+}
+.choose_cakeandimg{
+    display: flex;
+    align-items: center;
+    max-width: 215px;
+    width: 100%;
+    justify-content: space-between;
+}
+.shopping_cart_check{
+    width: 30px;   
+    height: 30px;
+    cursor: pointer;
+}
+.shopping_cart_img{
+    width: 150px;
+    height: 150px;
+}
+.choose_contentandcancel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    margin-left: 50px;
+}
+.choose_content{
+max-width: 750px;
+width: 100%;
+}
+.cancel_logo{
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+}
+.shopping_cart_button{
+    max-width: 520px;
+    // width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.return_shopping,.goto_checkout{
+    width: 120px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    background-color: $darkGrey;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.goto_checkout:hover{
+    color: $lightYellow;
+}
+.return_shopping:hover{
+    color: $lightYellow;
+}
 @media screen and (max-width:767.98px){ 
+    .titleh1rwd{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 50px;
+    }
+    .shopping_cart_list_outline{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 90%;
+    background-color: #DFB9B0;
+    border-radius: 5px;
+    height: 300px;
+    margin-bottom: 40px;
+    }
+    .shopping_cart_block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
     .shopping_cart_bread{
         display: flex;
         flex-direction: column;
@@ -158,108 +259,21 @@ body{
     }
     .shopping_cart_page,.prepare_checkout_page,.checkout_page{
         font-size: $h4;
-
+    }
+    .choose_cakeandimg{
+        display: flex;
+        justify-content: space-around;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .choose_contentandcancel{
+        display: flex;
+        justify-content: space-around;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
     }
 }
 
-
-
-
-.shopping_cart_list{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // margin-top: 150px;
-    margin-bottom: 50px;
-;
-    .shopping_cart_list_outline{
-        padding-top: 40px;
-        padding-bottom: 40px;
-        width: 90%;
-        background-color: #DFB9B0;
-        border-radius: 5px;
-        height: 230px;
-        // margin: 0 auto;
-        margin-bottom: 40px;
-        .shopping_cart_block{
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            max-width: 1050px;
-            .choose_cakeandimg{
-                display: flex;
-                align-items: center;
-                max-width: 215px;
-                width: 100%;
-                justify-content: space-between;
-            }
-            .shopping_cart_check{
-                width: 30px;   
-                height: 30px;
-                cursor: pointer;
-            }
-            .shopping_cart_img{
-                width: 150px;
-                height: 150px;
-            }
-            .choose_contentandcancel{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                max-width: 800px;
-                width: 100%;
-                margin-left: 50px;
-                .choose_content{
-                    max-width: 750px;
-                    width: 100%;
-                }
-                .cancel_logo{
-                    width: 25px;
-                    height: 30px;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-}
-.shopping_cart_button{
-    max-width: 520px;
-    // width: 100%;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    margin-top: 35px;
-    display: flex;
-    justify-content: space-between;
-    .return_shopping,.goto_checkout{
-        width: 120px;
-        height: 60px;
-        font-size: 20px;
-        text-align: center;
-        align-items: center;
-        color: white;
-        background-color: $darkGrey;
-        cursor: pointer;
-        border-radius: 10px;
-    }
-    .goto_checkout:hover{
-        color: $lightYellow;
-    }
-    .return_shopping:hover{
-        color: $lightYellow;
-    }
-}
-@media screen and (max-width:767.98px){ 
-    .titleh1rwd{
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
-            align-items: center;
-            width: 100%;
-            
-    }
-}
 </style>

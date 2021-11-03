@@ -25,5 +25,6 @@ export default[{
         {path:'product', component: r => require.ensure([], () => r(require('../page/product')), 'product')},
         {path:'product_detail', component: r => require.ensure([], () => r(require('../page/product_detail')), 'product_detail')},
         {path:'shopping_cart', component: r => require.ensure([], () => r(require('../page/shopping_cart')), 'shopping_cart')},
+        {path:'ready_to_checkout', component: r => require.ensure([], () => r(require('../page/ready_to_checkout')), 'ready_to_checkout')},
     ],
 }]

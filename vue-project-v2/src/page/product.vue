@@ -1,12 +1,13 @@
 <template>
     <div>
         <headercom></headercom>
+        <!-- 主廚/創意頁面切換 -->
         <div class="product_page_main_bar">
             <div class="change_page">
                 <div class="chef_cake">主廚推薦</div>         
                 <div class="designer_cake">創意點子</div>         
             </div>
-            <!-- 頁面選擇器 -->
+            <!-- 搜尋欄 -->
             <div class="searchbar_titlebar">
                 <input type="text" placeholder="搜尋..." class="search_baron"/>
             </div>
@@ -71,67 +72,92 @@ export default {
 
 </script>
 <style scoped lang="scss">
-// @import "../assets/style/var.scss";
+@import "../assets/style/var.scss";
 *{
     box-sizing: border-box;
 }
-$bg:#EFE6E4;
-$h1 : 36px;
-$h2 : 28px;
-$h3 : 24px;
-$h4 : 20px;
-$p : 16px;
-$shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
-$darkGrey : #515151;
-$palePike : #DFB9B0;
-$lightPike : #EFE6E4;
-$lightYellow : #F4E9C9;
 body{
     background-color: $bg;
 }
+.outline{
+    margin-bottom: 50px;
+}
+.titleh1rwd{
+    margin-bottom: 50px;
+    @media screen and (max-width:767.98px){ 
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        // margin-bottom: 150px;
+    }
+}
+// 主廚/創意頁面切換
 .product_page_main_bar{
     max-width: 1120px;
     width:100%;
     margin:0 auto;
-}
-.change_page{
-    margin-top: 150px;
-    max-width: 1120px;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-.chef_cake,.designer_cake{
-    width: 50%;
-    font-size: $h3;
-    color: $darkGrey;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: $shadow;
-    &:hover{
-        font-weight: bold;
-        text-shadow: 0px 0px 1px $darkGrey(0,0,0,.8);
+    @media screen and (max-width:767.98px){ 
+        justify-content: center;
+        max-width: 576px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
     }
-}
-.chef_cake{
+    .change_page{
+        margin-top: 150px;
+        max-width: 1120px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        @media screen and (max-width:767.98px){ 
+            max-width: 400px;
+            width: 95%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .chef_cake,.designer_cake{
+        width: 50%;
+        font-size: $h3;
+        color: $darkGrey;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: $shadow;
+        &:hover{
+            font-weight: bold;
+            text-shadow: 0px 0px 1px $darkGrey(0,0,0,.8);
+        }
+    }
+    .chef_cake{
     background-color: $palePike;
     box-shadow: inset -12px -12px 10px -13px rgba(0 , 0 , 0 , 80%);
     border-radius: 10px 0px 0px 10px;
+    }
+    .designer_cake{
+        border-radius: 0px 10px 10px 0px;
+        background-color: #F7F2F1;
+    }
 }
-.designer_cake{
-    border-radius: 0px 10px 10px 0px;
-    // background-color: $palePike;
-    background-color: #F7F2F1;
-}
+// 搜尋欄
 .searchbar_titlebar{
     display: flex;
     justify-content: flex-end;
+    @media screen and (max-width:767.98px){ 
+        max-width: 400px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
 }
 .search_baron{
     max-width:100%;
@@ -151,6 +177,10 @@ body{
     &:focus{
         border:none;
     }
+    @media screen and (max-width:767.98px){ 
+        max-width: 400px;
+        width: 95%;
+    }
 }
 #select_test{
     margin-bottom: 85px;
@@ -163,12 +193,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    .title_h1{
+    @media screen and (max-width:767.98px){ 
+        max-width: 576px;
+        width: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        width: 270px;
-        margin-top:100px;
-        margin-bottom:65px;
     }
 }
 
@@ -181,6 +212,16 @@ body{
     gap:85px 30px;
     max-width: 1120px;
     width: 95%;
+    @media screen and (max-width:767.98px){ 
+        margin: 0 auto;
+        margin-bottom:70px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+        flex-wrap: wrap;
+        gap:70px 30px;
+        max-width: 576px;
+        width: 100%;
+    }
     .product_card_outline{
         background-color: $palePike;
         display: flex;
@@ -190,6 +231,17 @@ body{
         margin: auto;
         width: 100%;
         max-width: 350px;
+        @media screen and (max-width:767.98px){ 
+            background-color: $palePike;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+            max-width: 576px;
+
+        }   
         .product_img_container{
             max-width: 300px;
             margin: 25px;
@@ -200,8 +252,12 @@ body{
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
+                @media screen and (max-width:767.98px){ 
+                width: 80%;
+                height: 80%;
+                object-fit: cover;
+                }
             }
-
         }
         .product_introduce{
             margin: 20px;
@@ -240,84 +296,5 @@ body{
 }
 .like_button{
     cursor: pointer;
-}
-@media screen and (max-width:767.98px){ 
-    .product_page_main_bar{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-    }
-    .change_page{
-        max-width: 400px;
-        width: 95%;
-        display: flex;
-        justify-content: center;
-    }
-    .searchbar_titlebar{
-        max-width: 400px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: auto;
-    }
-    .search_baron{
-        max-width: 400px;
-        width: 95%;
-    }
-    .product_card_outline{
-        max-width: 576px;
-        display: flex;
-        justify-content: center;
-    }
-    .titleh1rwd{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        align-items: center;
-        
-    }
-    .product_page_main{
-        max-width: 576px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .product_page_main_bar{
-        max-width: 576px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: auto;
-    }
-    #product_cakecard{
-        margin: 0 auto;
-        margin-bottom:70px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
-        flex-wrap: wrap;
-        gap:70px 30px;
-        max-width: 576px;
-        width: 100%;
-        .product_card_outline{
-            background-color: $palePike;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-            width: 100%;
-            max-width: 320px;
-        }
-    }
-    .product_img_container_img{
-        width: 80%;
-        height: 80%;
-        object-fit: cover;
-    }
 }
 </style>

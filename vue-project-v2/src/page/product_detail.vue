@@ -154,65 +154,67 @@
                     </div>
                 </section>
                 <section id="product_details_combination3">
-                    <div id="product_details_total">
-                        <div id="combination_titlebar">
-                            <div id="combination_title">組合一</div>
-                        </div>
-                        <div class="combination_contentbar">
-                            <div class="product_contentbar">
-                                <div class="product">巧克力蛋糕巧克力蛋糕</div>
-                                <div class="product_product_priceandamount_product_twandprice">
-                                    <div class="product_priceandamount">
-                                        <div class="proudct_amount_x">X</div>
-                                        <div class="proudct_amount_number">1</div>
-                                    </div>
-                                    <div class="product_twandprice">
-                                        <div class="product_price_tw">NT$</div>
-                                        <div class="product_price">500</div>
+                    <div id="combination3_contentoutline">
+                        <div id="product_details_total">
+                            <div id="combination_titlebar">
+                                <div id="combination_title">組合一</div>
+                            </div>
+                            <div class="combination_contentbar">
+                                <div class="product_contentbar">
+                                    <div class="product">巧克力蛋糕巧克力蛋糕</div>
+                                    <div class="product_product_priceandamount_product_twandprice">
+                                        <div class="product_priceandamount">
+                                            <div class="proudct_amount_x">X</div>
+                                            <div class="proudct_amount_number">1</div>
+                                        </div>
+                                        <div class="product_twandprice">
+                                            <div class="product_price_tw">NT$</div>
+                                            <div class="product_price">500</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="combination_contentbar">
-                            <div class="product_contentbar">
-                                <div class="product">卡片普通</div>
-                                <div class="product_product_priceandamount_product_twandprice">
-                                    <div class="product_priceandamount">
-                                        <div class="proudct_amount_x">X</div>
-                                        <div class="proudct_amount_number">1</div>
-                                    </div>
-                                    <div class="product_twandprice">
-                                        <div class="product_price_tw">NT$</div>
-                                        <div class="product_price">500</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="combination_contentbar">
-                            <div class="product_contentbar">
-                                <div class="product">普通蠟燭</div>
-                                <div class="product_product_priceandamount_product_twandprice">
-                                    <div class="product_priceandamount">
-                                        <div class="proudct_amount_x">X</div>
-                                        <div class="proudct_amount_number">1</div>
-                                    </div>
-                                    <div class="product_twandprice">
-                                        <div class="product_price_tw">NT$</div>
-                                        <div class="product_price">500</div>
+                            <div class="combination_contentbar">
+                                <div class="product_contentbar">
+                                    <div class="product">卡片普通</div>
+                                    <div class="product_product_priceandamount_product_twandprice">
+                                        <div class="product_priceandamount">
+                                            <div class="proudct_amount_x">X</div>
+                                            <div class="proudct_amount_number">1</div>
+                                        </div>
+                                        <div class="product_twandprice">
+                                            <div class="product_price_tw">NT$</div>
+                                            <div class="product_price">500</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <span class="addnew_product_hr2"></span>
-                        </div>
-                        <div class="combination_contentbar">
-                            <div class="product_contentbar">
-                                <div class="product">小計</div>
-                                <div class="product_product_priceandamount_product_twandprice">
-                                    <div class="product_priceandamount">
+                            <div class="combination_contentbar">
+                                <div class="product_contentbar">
+                                    <div class="product">普通蠟燭</div>
+                                    <div class="product_product_priceandamount_product_twandprice">
+                                        <div class="product_priceandamount">
+                                            <div class="proudct_amount_x">X</div>
+                                            <div class="proudct_amount_number">1</div>
+                                        </div>
+                                        <div class="product_twandprice">
+                                            <div class="product_price_tw">NT$</div>
+                                            <div class="product_price">500</div>
+                                        </div>
                                     </div>
-                                    <div class="product_twandprice">
-                                        <div class="product_price_tw">NT$</div>
-                                        <div class="product_price">500</div>
+                                </div>
+                                <span class="addnew_product_hr2"></span>
+                            </div>
+                            <div class="combination_contentbar">
+                                <div class="product_contentbar">
+                                    <div class="product">小計</div>
+                                    <div class="product_product_priceandamount_product_twandprice">
+                                        <div class="product_priceandamount">
+                                        </div>
+                                        <div class="product_twandprice">
+                                            <div class="product_price_tw">NT$</div>
+                                            <div class="product_price">500</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -270,21 +272,10 @@ export default {
 
 </script>
 <style scoped lang="scss">
-// @import "../assets/style/var.scss";
+@import "../assets/style/var.scss";
 *{
     box-sizing: border-box;
 }
-$bg:#EFE6E4;
-$h1 : 36px;
-$h2 : 28px;
-$h3 : 24px;
-$h4 : 20px;
-$p : 16px;
-$shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
-$darkGrey : #515151;
-$palePike : #DFB9B0;
-$lightPike : #EFE6E4;
-$lightYellow : #F4E9C9;
 body{
     background-color: $bg;
 }
@@ -653,13 +644,17 @@ body{
     height: 150px;
     background-color: #EBDCD8;
     .new_combination{
-        margin-left: 60px;
-        max-width: 280px;
-        width: 100%;
+        max-width: 1120px;
+        width: 93.5%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        @media screen and (max-width:767.98px){ 
+            width: 90%;
+        }
         .new_combination_title{
+            // margin-left: 60px;
             font-size: $h2;
         }
         img{
@@ -675,6 +670,7 @@ body{
     width: 100%;
 }
 #product_details_combination3{
+    margin: 0 auto;
     width: 100%;
     max-width: 1120px;
     height: 350px;
@@ -682,18 +678,20 @@ body{
     display: flex;
     justify-content: space-between;
     #product_details_total{
-        width: 100%; 
+        width: 90%; 
         max-width: 700px;
         height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin-left: 60px;
+        margin: 0 auto;
         margin-top: 50px;
         #combination_titlebar{
             margin-bottom: 40px;
             #combination_title{
                 font-size: $h2;
+                max-width: 470px;
+                width: 100%;
             }
         }
         .combination_contentbar{
@@ -757,6 +755,10 @@ body{
         }
     }
 }
+#combination3_contentoutline{
+    max-width: 760px;
+    width: 100%;
+}
 .product_price_tw{
     display: flex;
     justify-content: space-between;
@@ -765,6 +767,7 @@ body{
 }
 .product_price{
     margin-left: 5px;
+    margin-right: 5px;
     display: inline-block;
     max-width: 100px;
     width: 100%;
@@ -786,10 +789,11 @@ body{
     margin-bottom: 25px;
 }
 #product_details_combination4{
-    // max-width: 1120px;
-    // width: 100%;
+    max-width: 1120px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 100px;
     border: 0;
@@ -797,14 +801,14 @@ body{
 #product_details_combination_checkout{
     background-color: #F7EDD4;
     // max-width: 1120px;
-    width: 90%;
+    width: 100%;
     height: 70px;
     font-size: 24px;
     border: 0;
     border-radius: 5px;
     box-shadow: $shadow;
-    cursor: pointer;
     color: $darkGrey;
+    cursor: pointer;
 }
 #product_details_combination_checkout:hover{
     color: #9F746B;
@@ -813,26 +817,110 @@ body{
     display: flex;
     justify-content: center;
     text-decoration: none;
+    // max-width: 1120px;
+    width: 100%;
 }
 .product_details_combination_checkout_text{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 768px;
-    // width: 100%;
+    max-width: 1120px;
+    width: 100%;
 }
 @media screen and (max-width:767.98px){ 
-
-
-
-
-
+    #cake_information{
+        display: flex;
+        flex-direction: column;
+        max-width: 768px;
+        width: 100%;
+        align-items: center;
+    }
+    .cake_titlebar_content{
+        margin-top: 20px;
+    }
+    .addenda_title{
+        max-width: 470px;
+        width: 100%;
+        align-items: center;
+        margin: auto;
+    }
+    .addenda_detail_item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #addenda_detail{
+            display: flex;
+            max-width: 470px;
+            width: 100%;
+            justify-content: space-between;
+            // .addenda_img{
+            // width: 200px;
+            // height: 200px;
+            // img{
+            //     object-fit: fill;
+            //     width: 200px;
+            //     height: 200px;
+            // }
+        }    
+    }
+    .addenda_detail_outline{
+        margin-top: 20px;
+    }
     .titleh1rwd{
             display: flex;
             justify-content: center;
             margin: 0 auto;
             align-items: center;
             
+    }
+    .new_addenda_titlebar{
+        max-width: 470px;
+        width: 100%;
+    }
+    #product_logo_img{
+        display: none;
+    }
+    .product_contentbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .product{
+            display: flex;
+            justify-content: left;
+        }
+    #product_details_combination3{
+        display: flex;
+        max-width: 700px;
+        width: 100%;
+        height: 450px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #combination3_contentoutline{
+        height: 500px;
+    }
+    #product_details_total{
+        // margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        // max-width: 470px;
+        // width: 100%;
+        justify-content: center;
+    }
+    .product_contentbar{
+        display: flex;
+        max-width: 470px;
+        width: 90%;
+
+    }
+    .product_product_priceandamount_product_twandprice{
+        max-width: 250px;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
     }
 }
 </style>
