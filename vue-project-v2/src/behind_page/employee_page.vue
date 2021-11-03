@@ -270,6 +270,7 @@ export default {
       axios({
         method: "get",
         url: "/static/join_employee.php",
+        crossdomain:true,
         headers:{'Content-Type':'application/x-www-form-urlencoded'},
         data:{number:number},
       }).then((res) => {
