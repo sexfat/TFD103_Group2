@@ -162,60 +162,54 @@
                             <div class="combination_contentbar">
                                 <div class="product_contentbar">
                                     <div class="product">巧克力蛋糕巧克力蛋糕</div>
-                                    <div class="product_product_priceandamount_product_twandprice">
                                         <div class="product_priceandamount">
                                             <div class="proudct_amount_x">X</div>
                                             <div class="proudct_amount_number">1</div>
                                         </div>
-                                        <div class="product_twandprice">
-                                            <div class="product_price_tw">NT$</div>
-                                            <div class="product_price">500</div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="product_twandprice">
+                                    <div class="product_price_tw">NT$</div>
+                                    <div class="product_price">500</div>
                                 </div>
                             </div>
                             <div class="combination_contentbar">
                                 <div class="product_contentbar">
                                     <div class="product">卡片普通</div>
-                                    <div class="product_product_priceandamount_product_twandprice">
                                         <div class="product_priceandamount">
                                             <div class="proudct_amount_x">X</div>
                                             <div class="proudct_amount_number">1</div>
                                         </div>
-                                        <div class="product_twandprice">
-                                            <div class="product_price_tw">NT$</div>
-                                            <div class="product_price">500</div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="product_twandprice">
+                                    <div class="product_price_tw">NT$</div>
+                                    <div class="product_price">0</div>
                                 </div>
                             </div>
                             <div class="combination_contentbar">
                                 <div class="product_contentbar">
                                     <div class="product">普通蠟燭</div>
-                                    <div class="product_product_priceandamount_product_twandprice">
                                         <div class="product_priceandamount">
                                             <div class="proudct_amount_x">X</div>
                                             <div class="proudct_amount_number">1</div>
                                         </div>
-                                        <div class="product_twandprice">
-                                            <div class="product_price_tw">NT$</div>
-                                            <div class="product_price">500</div>
-                                        </div>
-                                    </div>
                                 </div>
-                                <span class="addnew_product_hr2"></span>
+                                <div class="product_twandprice">
+                                    <div class="product_price_tw">NT$</div>
+                                    <div class="product_price">0</div>
+                                </div>
                             </div>
+                            <span class="addnew_product_hr2"></span>
                             <div class="combination_contentbar">
                                 <div class="product_contentbar">
-                                    <div class="product">小計</div>
-                                    <div class="product_product_priceandamount_product_twandprice">
+                                    <div class="product product_speical_fontsize">小計</div>
                                         <div class="product_priceandamount">
+                                            <div class="proudct_amount_x"></div>
+                                            <div class="proudct_amount_number"></div>
                                         </div>
-                                        <div class="product_twandprice">
-                                            <div class="product_price_tw">NT$</div>
-                                            <div class="product_price">500</div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="product_twandprice">
+                                    <div class="product_price_tw">NT$</div>
+                                    <div class="product_price product_speical_color">500</div>
                                 </div>
                             </div>
                         </div>
@@ -279,6 +273,12 @@ export default {
 body{
     background-color: $bg;
 }
+.titleh1rwd{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
 #product_details{
     background-color: $lightPike;
     box-sizing: border-box;
@@ -293,17 +293,6 @@ body{
     margin: 0 auto;
     margin-top: 150px;
     background-color: $palePike;
-    // .combination_titlebar{
-    //     // width: 100%;
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: center;
-    // }
-    //     .title{
-    //         margin-top: 35px;
-    //         margin-bottom: 85px;
-    //         font-size: 36px;
-    //     }
     #cake_information{
         margin: 0 auto;
         margin-top: 100px;
@@ -312,8 +301,14 @@ body{
         width: 95%;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            flex-direction: column;
+            max-width: 768px;
+            width: 100%;
+            align-items: center;
+        }
         #cake_img_outline{
-            // margin: 100px;
             width: 350px;
             height: 380px;
             position: relative;
@@ -346,7 +341,6 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                // margin-bottom: 80px;
                 #cake_title{
                     font-size: 36px;
                     display: inline-block;
@@ -433,6 +427,9 @@ body{
     flex-direction: column;
     justify-content: space-between;
     height: 220px;
+    @media screen and (max-width:767.98px){ 
+    margin-top: 20px;
+    }
 }
 .addenda_titlebar{
     margin: 0 auto;
@@ -446,6 +443,12 @@ body{
         margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width:767.98px){ 
+        max-width: 470px;
+        width: 100%;
+        align-items: center;
+        margin: auto;
+        }
     }
     .addenda_cancel_icon{
         display: inline-block;
@@ -466,11 +469,22 @@ body{
     // margin-left: 100px;
     // margin-right: 100px;
     align-items: center;
+    @media screen and (max-width:767.98px){ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     #addenda_detail{
         max-width: 350px;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            max-width: 470px;
+            width: 100%;
+            justify-content: space-between;
+        }
     }
     .addenda_img{
         width: 200px;
@@ -497,6 +511,9 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @media screen and (max-width:767.98px){ 
+            margin-top: 20px;
+        }
         .addenda_amount{
             width: 200px;
             height: 40px;
@@ -579,6 +596,10 @@ body{
     background-color:rgba(255, 255, 255, .5);
     justify-content: center;
     align-items: center;
+    @media screen and (max-width:767.98px){ 
+        max-width: 470px;
+        width: 100%;
+    }
     .new_addenda{
         display: flex;
         flex-direction: column;
@@ -668,6 +689,12 @@ body{
     justify-content: space-between;
     max-width: 425px;
     width: 100%;
+    @media screen and (max-width:767.98px){ 
+        max-width: 250px;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
 }
 #product_details_combination3{
     margin: 0 auto;
@@ -677,6 +704,16 @@ body{
     background-color: #EBDCD8;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width:767.98px){ 
+        display: flex;
+        max-width: 700px;
+        width: 100%;
+        height: 450px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
     #product_details_total{
         width: 90%; 
         max-width: 700px;
@@ -686,31 +723,56 @@ body{
         justify-content: space-between;
         margin: 0 auto;
         margin-top: 50px;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         #combination_titlebar{
             margin-bottom: 40px;
             #combination_title{
                 font-size: $h2;
                 max-width: 470px;
                 width: 100%;
+                @media screecombination_titlen and (max-width:767.98px){ 
+                    margin-top: 50px;
+                }   
             }
         }
         .combination_contentbar{
             max-width: 700px;
+            display: flex;
+            justify-content: space-between;
             width: 100%;
             font-size: $h4;
+            @media screen and (max-width:767.98px){ 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // height: 100px;
+            }
             .product_contentbar{
                 display: flex;
                 justify-content: space-between;
-                // margin-bottom: 10px;
-                max-width: 700px;
+                max-width: 315px;
                 width: 100%;
                 align-items: center;
+                @media screen and (max-width:767.98px){ 
+                    display: flex;
+                    max-width: 470px;
+                    width: 90%;
+                    justify-content: flex-start;
+                }
                 .product{
                     display: inline-block;
                     max-width: 280px;
-                    // margin-right: 80px;
                     width: 100%;
                     font-size: $h4;
+                    
+                    @media screen and (max-width:767.98px){ 
+                        display: flex;
+                        justify-content: left;
+                    }
                 }
                 .product_priceandamount{
                     display: flex;
@@ -731,17 +793,42 @@ body{
                         max-width: 30px;
                     }
                 }
+            .product_twandprice{
+                display: flex;
+                justify-content: space-between;
+                max-width: 150px;
+                width: 100%;
+                @media screen and (max-width:767.98px){ 
+                    display: flex;
+                    justify-content: right;
+                    width: 100%;
+                    max-width: 500px;
+                    }
+                    .product_price_tw{
+                        display: flex;
+                        justify-content: space-between;
+                        max-width: 50px;
+                        width: 100%;
+                    }
+                    .product_price{
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        display: inline-block;
+                        max-width: 100px;
+                        width: 100%;
+                        text-align: right;
+                    }
+                }
             }
         }
     }
     #product_logo_img{
         max-width: 360px;
         width: 70%;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // margin: 0 auto;
         position: relative;
+        @media screen and (max-width:767.98px){ 
+            display: none;
+        }
         img{
             // max-width: 250px;
             width: 250px;
@@ -758,27 +845,20 @@ body{
 #combination3_contentoutline{
     max-width: 760px;
     width: 100%;
+    @media screen and (max-width:767.98px){ 
+        height: 500px;
+    }
+
 }
-.product_price_tw{
-    display: flex;
-    justify-content: space-between;
-    max-width: 50px;
-    width: 100%;
+
+.product_speical_fontsize{
+    font-size: $h3;
 }
-.product_price{
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline-block;
-    max-width: 100px;
-    width: 100%;
-    text-align: right;
+.product_speical_color{
+    color: #9F746B;
+    font-size: $h4;
 }
-.product_twandprice{
-    display: flex;
-    justify-content: space-between;
-    max-width: 150px;
-    width: 100%;
-}
+
 .addnew_product_hr2{
     max-width: 700px;
     margin: 0 auto;
@@ -826,101 +906,5 @@ body{
     align-items: center;
     max-width: 1120px;
     width: 100%;
-}
-@media screen and (max-width:767.98px){ 
-    #cake_information{
-        display: flex;
-        flex-direction: column;
-        max-width: 768px;
-        width: 100%;
-        align-items: center;
-    }
-    .cake_titlebar_content{
-        margin-top: 20px;
-    }
-    .addenda_title{
-        max-width: 470px;
-        width: 100%;
-        align-items: center;
-        margin: auto;
-    }
-    .addenda_detail_item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        #addenda_detail{
-            display: flex;
-            max-width: 470px;
-            width: 100%;
-            justify-content: space-between;
-            // .addenda_img{
-            // width: 200px;
-            // height: 200px;
-            // img{
-            //     object-fit: fill;
-            //     width: 200px;
-            //     height: 200px;
-            // }
-        }    
-    }
-    .addenda_detail_outline{
-        margin-top: 20px;
-    }
-    .titleh1rwd{
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
-            align-items: center;
-            
-    }
-    .new_addenda_titlebar{
-        max-width: 470px;
-        width: 100%;
-    }
-    #product_logo_img{
-        display: none;
-    }
-    .product_contentbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .product{
-            display: flex;
-            justify-content: left;
-        }
-    #product_details_combination3{
-        display: flex;
-        max-width: 700px;
-        width: 100%;
-        height: 450px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-    }
-    #combination3_contentoutline{
-        height: 500px;
-    }
-    #product_details_total{
-        // margin-left: 0px;
-        display: flex;
-        flex-direction: column;
-        // max-width: 470px;
-        // width: 100%;
-        justify-content: center;
-    }
-    .product_contentbar{
-        display: flex;
-        max-width: 470px;
-        width: 90%;
-
-    }
-    .product_product_priceandamount_product_twandprice{
-        max-width: 250px;
-        width: 100%;
-        display: flex;
-        align-items: flex-end;
-    }
 }
 </style>
