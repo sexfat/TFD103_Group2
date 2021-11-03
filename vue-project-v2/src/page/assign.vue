@@ -42,7 +42,7 @@
                 <label for="user_name">姓名 </label>
                 <input type="text" id="user_name" placeholder="請輸入姓名" />
                 <label>生日</label>
-                <div style="display:flex">
+                <div  id="birthday">
                 <select name="" id="years">
                     <option value="">1999</option>
                     <option value="">2000</option>
@@ -132,6 +132,7 @@ body{
 }
 .assign_page_title_h1_outline{
     width:100%;
+    padding:0 40px;
     max-width:1200px;
     margin:50px auto 0;
     display: flex;
@@ -139,7 +140,6 @@ body{
     >div{
         flex:1;
         margin-top: 70px;
-        margin-left:40px;
         margin-bottom:100px;
         span{
             display: none;
@@ -149,13 +149,14 @@ body{
 #assign_page_main{
     width:100%;
     max-width:1200px;
-    // border:1px solid black;
+    gap:20px;
+    padding:0 40px;
     margin:0 auto 50px;
     display:grid;
     grid-template-columns: 1fr 1fr;
     section{
         // border:1px solid red;
-        margin-left:40px;
+        // margin-left:40px;
         display:flex;
         flex-direction: column;
         color:#515151;
@@ -205,11 +206,14 @@ body{
     }
     
     #register{
+        #birthday{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:10px;
+        }
         select{
-            max-width:140px;
             width:100%;
             height:45px;
-            margin-right:16px;
             border-radius: 5px;
             option{
                 text-align: center;
@@ -257,5 +261,8 @@ body{
     .close{
             display:none;
         }
+    h1{
+        white-space: nowrap;
+    }
 }
 </style>

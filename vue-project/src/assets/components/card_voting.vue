@@ -39,6 +39,7 @@ $shadow:4px 4px 5px 0 rgba(0, 0, 0, 0.3);
     height: 480px;
     padding: 25px;
     border-radius: 7px;
+    box-shadow: $shadow;
     .img_container{
         overflow: hidden;
         width: 300px;

@@ -59,9 +59,9 @@ export default {
    data(){
     return{
       show:true,
-      total_cakebodys:['test',"testt"],
-      total_ingredients:[5,6,7,8],
-      total_decorations:[1,2,3,4]
+      total_cakebodys:['戚風蛋糕',"水果蛋糕",'巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕'],
+      total_ingredients:['水果','糖果','巧克力','牛奶布丁'],
+      total_decorations:['葉子','看板','慶生板']
     }
   },
     methods:{
@@ -184,8 +184,8 @@ section#vote{
     max-width:1120px;
     margin:0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    gap:70px 35px;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    gap:60px 25px;
     justify-content: space-between;
     margin-bottom:80px;
     .card_outline{
