@@ -267,17 +267,18 @@ export default {
       params.append("biulder", biulder);
       params.append("create_date", create_date);
       params.append("authority", authority);
-      axios({
-        method: "get",
-        url: "/static/join_employee.php",
-        crossdomain:true,
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        data:{number:number},
-      }).then((res) => {
-        console.log(res.data)
-      }).catch((error)=>{
-        console.log(error)
-      });
+      // axios({
+      //   method: "get",
+      //   url: "/static/join_employee.php",
+      //   crossdomain:true,
+      //   headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      //   data:{number:number},
+      // }).then((res) => {
+      //   console.log(res.data)
+      // }).catch((error)=>{
+      //   console.log(error)
+      // });
+
       // this.axios
       //   .get("/static/join_employee.php", { params: data })
       //   .then((response) => {
@@ -287,6 +288,25 @@ export default {
       //   .catch(function (error) {
       //     console.log(error);
       //   });
+
+      var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+    console.log("done");
+            }
+        }
+    xhttp.open("POST","/static/join_employee.php", true);
+    xhttp.send(JSON.stringify({
+        // email:email,
+        // password:password,
+        number:number,
+        password:password,
+        name:name,
+        biulder:biulder,
+        create_date:create_date,
+        authority:authority
+    }));
+
       this.create = 1;
       this.new_employee.number = "";
       this.new_employee.password = "";
