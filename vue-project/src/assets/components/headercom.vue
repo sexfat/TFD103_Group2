@@ -4,7 +4,7 @@
             <a href="" id="logo">
                 <img src="../images/logo.png">
             </a>
-            <ul class="header_nav">
+            <ul id="header_nav" @click= isShow>
                 <div id="header_div_one">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->
                     <img id="hamburger_img" src="../images/snowRWD.svg" alt="">
@@ -25,7 +25,7 @@
                 <li class="nav_icon"><a href=""><img src="../images/member.svg" alt=""></a></li>
                 <li class="nav_icon"><a href=""><img src="../images/shoppingCar.svg" alt=""></a></li>
             <!-- RWD漢堡選單 -->
-            <a class="hamburger" href="">
+            <a id="hamburger" href="" @click.prevent="isShow">
                 <span class="hamburger_icon"></span>
                 <span class="hamburger_icon"></span>
                 <span class="hamburger_icon"></span>
@@ -38,6 +38,12 @@
 import $ from 'jquery'
 export default {
     name:"headercom",
+    methods: {
+        isShow(){
+             $('#header_nav').toggleClass('show');
+             $(".nav_item").css({"margin":20,});
+        }
+    },
     mounted() {
         // header陰影
         console.log(window);
@@ -52,14 +58,15 @@ export default {
             });
         });
         // 漢堡選單
-        $(document).ready(() => {
-                $('.hamburger').click(function(){
-                    event.preventDefault();
-                        
-                    $('.header_nav').toggleClass('show');
-                    $("li.nav_item").css({"margin":20,});
-                    // $("img.eggBeater").css({"width":18,"display":"block"})  
-                })
+        $(document).ready(function() {
+                // $('.hamburger').click(function(e){
+                //     e.preventDefault();
+                //     // e.stopPropagation();  
+                //     // alert("10"); 
+                //     $('#header_nav').toggleClass('show');
+                //     $(".nav_item").css({"margin":20,});
+                //     // $("img.eggBeater").css({"width":18,"display":"block"})  
+                // })
                 $('.header_nav div li a').click(function(){
                         
                     $('.header_nav').removeClass('show');
@@ -111,7 +118,7 @@ export default {
                     height: 100%;
                 }
             }
-            ul.header_nav{
+            ul#header_nav{
                 padding: 0;
                 display: flex;
                 justify-content: space-between;
@@ -172,7 +179,7 @@ export default {
             
             div#header_div_two_two{
                 display: none;
-                a.hamburger{
+                a#hamburger{
                     display: none;
                     width: 46px;
                     align-items: center;
@@ -185,8 +192,19 @@ export default {
             }
     // RWD
     @media all and (max-width: 768px){
+        header.header{
+            padding:0px 20px;
+            div.header_box{
+                a#logo{
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    padding: 5px 0px;
+                }
+            }
+        }
         div#header_div_two_two{
-            a.hamburger{
+            a#hamburger{
                 display: flex;
                 flex-direction: column;
                 span.hamburger_icon{
@@ -198,39 +216,39 @@ export default {
                 }
             }
         }
+            ul#header_nav.show{
+                height: 100vh;
+                display: flex;
+                transition: all .3s ease-out;
+            }
+            ul#header_nav{
+                display: flex;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom:0;
+                flex-direction: column;
+                transform:translateY(calc(100% + 15px));
+                background-color: #EFE6E4;
+                height: 0px;
+                overflow:hidden;
+                transition: all .3s ;
+                div#header_div_one{
+                    /* menu轉直 */
+                    display: flex;
+                    flex-direction: column;
+                    margin: 20px;
+                    margin-top: 0;
+                    background-color: #EFE6E4;
+                    li.nav_item{
+                        width: 100%;
+                        margin: 10px;
+                    }
+                }
+            }
         img#hamburger_img{
             display:block;
             height: 35px;
-        }
-        ul.header_nav.show{
-            height: 100vh;
-            display: flex;
-            transition: all .3s ease-out;
-        }
-        ul.header_nav{
-            display: flex;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom:0;
-            flex-direction: column;
-            transform:translateY(calc(100% + 15px));
-            background-color: #EFE6E4;
-            height: 0px;
-            overflow:hidden;
-            transition: all .3s ;
-            div#header_div_one{
-                /* menu轉直 */
-                display: flex;
-                flex-direction: column;
-                margin: 20px;
-                margin-top: 0;
-                background-color: #EFE6E4;
-                li.nav_item{
-                    width: 100%;
-                    margin: 10px;
-                }
-            }
         }
         li.nav_item > img{
             width: 18px;
@@ -271,18 +289,19 @@ export default {
         }
     }
     @media all and (max-width: 576px){
-        header.header{
-            padding-top: 0;
-            padding-bottom: 0;
-            a#logo{
-                height: 60px;
-                display: flex;
-                align-items: center;
-                padding: 5px 0px;
-            }
-        }
+        // header.header{
+        //     padding:0px 20px;
+        //     div.header_box{
+        //         a#logo{
+        //             height: 45px;
+        //             display: flex;
+        //             align-items: center;
+        //             padding: 5px 0px;
+        //         }
+        //     }
+        // }
         div#header_div_two_two{
-            li.nav_icon,a.hamburger{
+            li.nav_icon,a#hamburger{
                 display: flex;
                 text-align: center;
                 justify-content: center;

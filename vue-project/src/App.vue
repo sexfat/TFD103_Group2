@@ -3,7 +3,7 @@
     <headercom></headercom>
     <router-view></router-view>
   <!-- <buttontest titleText="自訂TITLE"></buttontest> -->
-  <cardVote></cardVote>
+  <!-- <cardVote></cardVote> -->
     <!-- <router-view> -->
     <!-- </router-view> -->
 
@@ -13,12 +13,9 @@
     <!-- <saleCard></saleCard> -->
     <!-- <searchBar></searchBar> -->
     <!-- <cakeSelector :total_cakebodys="totalCake"></cakeSelector> -->
-    <titleh1 title="自訂文字"></titleh1>
+    <!-- <titleh1 title="自訂文字"></titleh1> -->
     <!-- <watchmore title="ASSSD"></watchmore> -->
-<<<<<<< HEAD
     <!-- <headercom></headercom> -->
-=======
->>>>>>> Melody
     <!-- <watchmore title="自訂文字"></watchmore> -->
     <!-- <assignPage></assignPage> -->
     <!-- <employee></employee> -->

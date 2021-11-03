@@ -10,6 +10,8 @@ export default[{
         
         {path:'assign', component: r => require.ensure([], () => r(require('../page/assign')), 'assign_page')},
         {path:'vote', component: r => require.ensure([], () => r(require('../page/vote_page')), 'vote_page')},
+        {path:'', component: r => require.ensure([], () => r(require('../page/index')), 'index')},
+        {path:'cakeDesign', component: r => require.ensure([], () => r(require('../page/cake_design')), 'cakeDesign')},
     ],
     data(){
         return{
