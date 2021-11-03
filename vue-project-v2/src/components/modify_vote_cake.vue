@@ -1,5 +1,11 @@
 <template>
   <div class="outline">
+    <switchButton
+      :title="thistitle"
+      style="lineheight: 27px"
+      class="switch_button"
+    ></switchButton>
+
     <div class="img_outline">
       <img src="" alt="" />
     </div>
@@ -18,9 +24,6 @@
         <p>票數：</p>
         <p>123</p>
       </div>
-    </div>
-    <div class="switch_button">
-      <switchButton :title="thistitle" style="lineheight: 27px"></switchButton>
     </div>
   </div>
 </template>
@@ -53,6 +56,7 @@ export default {
   border-radius: 5px;
   justify-content: space-between;
   align-items: space-between;
+  position: relative;
   .img_outline {
     flex: 2.5;
     width: 100%;
@@ -66,7 +70,7 @@ export default {
   .text_outline {
     flex: 7;
     height: 100%;
-    padding: 0 10px;
+    padding-left: 10px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -86,6 +90,7 @@ export default {
     }
     #text {
       flex: 1;
+      margin-top:15px;
     }
   }
   .switch_button {
@@ -95,5 +100,10 @@ export default {
     align-items: flex-start;
     white-space: nowrap;
   }
+}
+.switch_button{
+  position:absolute;
+  right:15px;
+  top:8px;
 }
 </style>

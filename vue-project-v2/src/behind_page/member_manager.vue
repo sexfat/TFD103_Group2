@@ -45,6 +45,7 @@ import votePage from './behind_component_upload_vote_page'
 import membership from './behind_component_member_ship_page'
 import order from './behind_component_order_page'
 import coupon from './behind_component_coupon_page'
+import confirm from '../components/confirm'
 export default {
   name: "member_manager",
   components: {
@@ -54,10 +55,11 @@ export default {
     membership,
     order,
     coupon,
+    confirm
   },
   data() {
     return {
-      showWhat: 'votePage',
+      showWhat: votePage,
     };
   },
   methods: {},
@@ -75,12 +77,16 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 }
 main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 280px 1fr;
   top:-20px;
   position:relative;
 }
 #left_section{
   background:#F0D5CE;
+  position:sticky;
+  top:80px;
+  height:calc(100vh - 80px);
+  overflow-y: auto;
   .select_option {
     height: 120px;
     display: flex;
@@ -121,7 +127,8 @@ main {
   }
 }
 #right_section {
-  padding:70px 100px;
+  width:920px;
+  margin:0 auto;
   .title {
     display: flex;
     justify-content: space-between;

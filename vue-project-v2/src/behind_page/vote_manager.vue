@@ -21,7 +21,7 @@
         
       </section>
       <diV id="content">
-      <section id="right_section" :is="showWhat">
+      <section id="right_section" :is="showWhat" @runEvent="event">
         
       </section>
       </diV>
@@ -35,6 +35,7 @@ import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
 import runOrStop from './behind_component_runOrStop_page';
 import modifyVoteCake from './behind_component_modify_vote_cake_page';
+import newEvent from './behind_component_newEvent_page';
 
 export default {
   name: "vote_manager",
@@ -49,7 +50,11 @@ export default {
       showWhat: 'runOrStop',
     };
   },
-  methods: {},
+  methods: {
+    event(){
+      this.showWhat = newEvent
+    }
+  },
   mounted(){
       $("#vote").siblings().removeClass("target");
     $("#vote").addClass("target");
@@ -63,12 +68,16 @@ $shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
 }
 main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 280px 3fr;
   top:-20px;
   position:relative;
 }
 #left_section{
   background:#F0D5CE;
+  position:sticky;
+  top:80px;
+  height:calc(100vh - 80px);
+  overflow-y: auto;
   .select_option {
     height: 120px;
     display: flex;
@@ -109,6 +118,8 @@ main {
 }
 #right_section {
   padding:70px 100px;
+  width:920px;
+  margin:0 auto;
   .title {
     display: flex;
     justify-content: space-between;
