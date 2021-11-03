@@ -21,6 +21,7 @@ const router = new VueRouter({
   routes,
   mode:"history",
 })
+
 // console.log(router)
 new Vue({
   router,
