@@ -129,15 +129,15 @@
                         </div>
                         <div class="information_right">
                             <div class="deliver_fee">
-                                運費: $
+                                <span>運費: $&nbsp;</span>
                                 <span>60</span>
                             </div>
                             <div class="discount">
-                                折扣: $
+                                <span>折扣: $&nbsp;</span>
                                 <span>100</span>
                             </div>
                             <div class="order_total">
-                                總計: $
+                                <span>總計: $&nbsp;</span>
                                 <span>580</span>
                             </div>
                         </div>
@@ -266,6 +266,10 @@
                 transform: scale(0.8);
             }
 
+             @media (max-width: 409.98px){
+                width: 375px;
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -322,10 +326,18 @@
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 991.98px){
+            display: block;
+        }
+
             #select_block{
                 display: inline-flex;
                 justify-content: space-between;
                 padding-top: 5px;
+
+                @media (max-width: 992.98px){
+                    display: flex;
+                }
 
                 .choose_date{
                     width: 260px;
@@ -336,6 +348,10 @@
 
                     &:nth-child(1){
                         margin-right: 40px;
+                    }
+
+                    @media (max-width: 992.98px){
+                        width: 100%;
                     }
 
                 }
@@ -371,17 +387,29 @@
                     align-self: center;
                     display: flex;
                     position: relative;
+                    margin-left: 40px;
+
+                    @media (max-width: 575.98px){
+                        flex-direction: column;
+                        margin-left: 20px;
+                    }
 
                     .order_number{
                         font-size: $h2;
                         color: $darkGrey;
-                        margin-left: 45px;
                     }
 
                     .order_status{
                         font-size: $h2;
                         color: $darkGrey;
-                        margin-left: 40px;
+                        margin-left: 45px;
+
+                        @media (max-width: 575.98px) {
+                            margin-left: 0;
+                            text-align: right;
+                            margin-top: 5px;
+                        }
+
                     }
 
                     .order_date{
@@ -389,8 +417,12 @@
                         color: #848484;
                         position: absolute;
                         line-height: 16px;
-                        left: 45px;
+                        left: 0px;
                         bottom: -17px;
+
+                        @media (max-width: 575.98px) {
+                            bottom: 12px;
+                        }
                     }
 
                 }
@@ -405,6 +437,10 @@
                     cursor: pointer;
                     align-self: center;
                     margin-right: 50px;
+
+                    @media (max-width: 575.98px) {
+                        margin-right: 15px;
+                    }
 
                     .plus_icon, .minus_icon{
                         font-size: 40px;
@@ -424,6 +460,19 @@
                     margin: 50px 45px 0;
                     display: flex;
                     flex-wrap: nowrap;
+                    position: relative;
+
+                    @media (max-width: 767.98px){
+                        margin: 70px 45px 0;
+                    }
+
+                    @media (max-width: 575.98px){
+                        margin: 70px 25px 0;
+                    }
+
+                    @media (max-width: 414px){
+                        margin: 70px 15px 0;
+                    }
 
                     .product_image{
                         width: 100px;
@@ -431,6 +480,15 @@
                         overflow: hidden;
                         margin-right: 45px;
                         flex-shrink: 0;
+                        align-self: center;
+
+                        @media (max-width: 767.98px){
+                            margin-right: 25px;
+                        }
+
+                        @media (max-width: 414px){
+                            margin-right: 15px;
+                        }
 
                         > img{
                             width: 100%;
@@ -447,6 +505,15 @@
                         flex-direction: column;
                         justify-content: center;
                         padding-right: 100px;
+
+                        @media (max-width: 1199.98px) and (min-width: 991.98px){
+                            padding-right: 50px;
+                        }
+
+                        @media (max-width: 991.98px){
+                            padding: 0;
+                        }
+
                     }
 
                     .item_number{
@@ -456,6 +523,20 @@
                         width: 135px;
                         text-align: right;
                         flex-shrink: 0;
+
+                        @media (max-width: 1199.98px) and (min-width: 767.98px){
+                            width: 100px
+                        }
+
+                        @media (max-width: 767.98px){
+                            width: 70px;
+                            align-self: flex-start;
+                        }
+                        
+                        @media (max-width: 414px){
+                            width: 50px;
+                        }
+
                     }
 
                     .item_total{
@@ -465,6 +546,22 @@
                         width: 135px;
                         text-align: right;
                         flex-shrink: 0;
+
+                        @media (max-width: 1199.98px) and (min-width: 767.98px){
+                            width: 100px
+                        }
+
+                        @media (max-width: 767.98px){
+                            width: 70px;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+
+                        @media (max-width: 414px){
+                            width: 50px;
+                        }
+
                     }
 
                 }
@@ -475,6 +572,15 @@
                     justify-content: space-between;
                     font-size: $h2;
                     color: $darkGrey;
+
+                    @media(max-width: 767.98px){
+                        font-size: 22px;
+                    }
+
+                    @media(max-width: 575.98px){
+                        flex-direction: column;
+                        margin: 50px 25px 0;
+                    }
 
                     .information_left{
 
@@ -492,19 +598,36 @@
 
                     .information_right{
 
+                        @media(max-width: 575.98px){
+                        font-size: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        
+                    }
+
+                    @media(max-width: 414px){
+                        font-size: 18px;
+                    }
+
                         .deliver_fee{
                             line-height: 37px;
                             margin-bottom: 15px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                         .discount{
                             line-height: 37px;
                             margin-bottom: 15px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                         .order_total{
                             line-height: 37px;
                             margin-bottom: 27px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                     }
@@ -601,6 +724,18 @@ input.search{
     &:focus{
         border:none;
     }
+
+    // 自己加上的RWD樣式
+    @media (max-width: 1199.98px) and (min-width: 992px){
+        width: 300px;
+    }
+
+    @media (max-width: 991.98px){
+        display: block;
+        margin-top: 50px;
+        width: 100%;
+    }
+
 }
 // ===== 組件searchbar的scss結束 =====
 

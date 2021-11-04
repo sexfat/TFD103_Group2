@@ -203,6 +203,10 @@
                 transform: scale(0.8);
             }
 
+            @media (max-width: 409.98px){
+                width: 375px;
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -250,15 +254,16 @@
 
         #fav_area{
             margin: 0 25px 5px;
-            display: inline-grid;
+            display: grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
             grid-gap: 70px 50px;
             width: auto;
+            justify-items: center;
             
             @media (max-width: 1199.98px){
                 grid-template-columns: auto auto;
-                margin: 33px 19px 5px;
+                margin: 0 19px 5px;
                 grid-gap: 42px 30px;
             }
 
@@ -271,7 +276,7 @@
             }
 
             .card_outline{
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: $shadow;
 
                 .description_block{
                     
@@ -356,8 +361,7 @@
 }
 
 //版面問題
-// RWD
-// 1. 手機版各元件要縮小
+// 375px的時候卡片區域壓迫感會不會太重？
 
 // ===== 頁面的scss結束 =====
 
@@ -370,7 +374,7 @@
     width: 350px;
     height: 480px;
     padding: 25px;
-    border-radius: 7px;
+    border-radius: 5px;
     .img_container{
         overflow: hidden;
         width: 300px;
@@ -419,16 +423,16 @@
                 margin-top: 15px;
                 width: 180px;
                 height: 60px;
-                border-radius: 100px;
+                border-radius: 30px;
                 border: 0;
                 box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
                 font-size: 20px;
                 position: relative;
-                color: #515151;
+                color: $darkGrey;
                 cursor: pointer;
-                background-color: #EFE6E4;
+                background-color: $lightPike;
                 &:hover{
-                    background-color: #F4E9C9;
+                    background-color: $lightYellow;
                 }
                 &:active{
                     span{

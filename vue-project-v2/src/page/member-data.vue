@@ -65,19 +65,19 @@
                     <img src="http://via.placeholder.com/20x20" alt="">
                 </div>
                 <div id="member_address">
-                    <span>地址: </span>
+                    <span>地址:&nbsp;</span>
                     <input type="text" name="member_address" class="data-input">
                     <span class="data_input_span">台北市中山區南京東路三段219號4-5F</span>
                     <img src="http://via.placeholder.com/20x20" alt="">
                 </div>
                 <div id="member_phone">
-                    <span>電話: </span>
+                    <span>電話:&nbsp;</span>
                     <input type="text" name="member_phone" class="data-input">
                     <span class="data_input_span">0912234456</span>
                     <img src="http://via.placeholder.com/20x20" alt="">
                 </div>
                 <div id="member_password">
-                    <span>密碼: </span>
+                    <span>密碼:&nbsp;</span>
                     <input type="text" name="member_password" class="data-input">
                     <span class="data_input_span">******336</span>
                     <img src="http://via.placeholder.com/20x20" alt="">
@@ -251,31 +251,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="coupon">
-                    <div class="coupon_left_block">
-                        <div class="discount_amout">$<span>150</span></div>
-                        <div class="A_cake_text_logo">
-                            <img src="http://via.placeholder.com/60x22" alt="">
-                        </div>
-                        <div class="coupon_left_decoration_img">
-                            <img src="http://via.placeholder.com/40x0" alt="">
-                        </div>
-                        <div class="use_threshold">消費滿<span>1000</span>即可折抵</div>
-                        <img class="bottom_decoration_img" src="../assets/images/snowRWD.svg">
-                    </div>
-                    <div class="coupon_right_block">
-                        <div class="expiration">
-                            <span>使用期限</span>
-                            <span class="expiration_date">2021/10/31</span>
-                        </div>
-                        <div class="coupon_right_decoration_img">
-                            <img src="http://via.placeholder.com/39x39" alt="">
-                        </div>
-                        <div class="expiration_countdown">
-                            即將失效：剩下<span>10</span>天
-                        </div>
-                    </div>
-                </div>
                 <!-- 排版用重複組件結束 -->
 
             </div>
@@ -370,6 +345,10 @@
                 transform: scale(0.8);
             }
 
+             @media (max-width: 409.98px){
+                width: 375px;
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -412,9 +391,19 @@
         margin: 40px auto 70px;
         color: $darkGrey;
 
+        @media (max-width: 575.98px){
+            margin: 20px auto 30px;
+        }
+
         > form{
             display: flex;
             justify-content: space-between;
+
+            @media (max-width: 575.98px){
+                flex-direction: column;
+                align-items: center;
+                height: 120px;
+            }
 
             span{
                 font-size: $h4;
@@ -447,6 +436,14 @@
         background-color: #F7EDD4;
         color: $darkGrey;
         border-radius: 5px;
+
+        @media (max-width: 767.98px){
+            padding-left: 50px;
+        }
+
+        @media (max-width: 575.98px){
+            padding: 0 25px;
+        }
 
         > form{
             height: 100%;
@@ -485,6 +482,10 @@
         text-align: center;
         padding: 0 40px;
 
+        @media (max-width: 575.98px){
+            padding: 0;
+        }
+
         .title_h1_container_design{
             margin: 0 auto;
             padding: 45px 0 50px;
@@ -495,8 +496,18 @@
             display: flex;
             justify-content: space-between;
 
+            @media (max-width: 1199.98px){
+                width: 100vw;
+                overflow-y: scroll;
+                padding: 0 30px 10px;
+            }
+
             .card_outline{
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: $shadow;
+
+                @media (max-width: 575.98px){
+                    margin: 0 17.5px;
+                }
 
                 .description_block{
                     
@@ -546,16 +557,16 @@
                             margin-top: 15px;
                             width: 180px;
                             height: 60px;
-                            border-radius: 100px;
+                            border-radius: 30px;
                             border: 0;
-                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
                             font-size: $h4;
                             position: relative;
-                            color: #515151;
+                            color: $darkGrey;
                             cursor: pointer;
-                            background-color: #EFE6E4;
+                            background-color: $lightPike;
                             &:hover{
-                                background-color: #F4E9C9;
+                                background-color: $lightYellow;
                             }
 
                             .scope_icon{
@@ -577,15 +588,19 @@
 
         #view_all_design_area{
 
+            @media (max-width: 575.98px){
+                height: 75px;
+            }
+
             #view_all_design_button{
                 width: 180px;
                 height: 60px;
-                background-color: #707070;
+                background-color: $darkGrey;
                 color: #FFFFFF;
                 border: 0;
                 outline: none;
                 cursor: pointer;
-                border-radius: 7px;
+                border-radius: 5px;
                 margin: 50px 0;
                 font-size: $h3;
                 box-shadow: $shadow;
@@ -593,6 +608,11 @@
                     background-color: $lightYellow;
                     color: $darkGrey;
                 }
+
+                @media (max-width: 575.98px){
+                    display: none;
+                }
+                
             }
         }
 
@@ -604,20 +624,40 @@
         border-radius: 5px;
         text-align: center;
 
+        @media (max-width: 474.98px){
+            margin: 0 15px 32px;
+        }
+
         .title_h1_container_coupon{
             margin: 0 auto;
             padding: 12px 0 15px;
         }
 
         #coupon_area{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-auto-rows: auto;
+            grid-row-gap: 40px;
+            grid-column-gap: 30px;
+            justify-items: center;
             padding: 0 40px;
+
+            @media (max-width: 1029.98px){
+                grid-template-columns: auto;
+            }
+
+            @media (max-width: 575.98px){
+                grid-template-columns: 100%;
+                grid-auto-rows: 112.5px;
+                grid-row-gap: 25px;
+            }
+
+            @media (max-width: 474.98px){
+                padding: 0 15px;
+            }
 
             .coupon{
                 display: inline-flex;
-                margin: 0 15px 30px;
 
                 .coupon_left_block{
                     width: 300px;
@@ -765,6 +805,23 @@
 
                 }
 
+                @media (min-width: 1029.98px){
+                // 排版上一列有兩個時用的設定
+                    &:nth-child(2n){
+                        justify-self: start;
+                    }
+
+                    &:nth-child(2n + 1){
+                        justify-self: end;
+                    }
+                }
+
+                @media (max-width: 575.98px){
+                    // 手機版
+                    transform-origin: center top;
+                    transform: scale(.75);
+                }
+
             }
 
         }
@@ -780,8 +837,7 @@
             font-size: 0;
             text-align: center;
             cursor: pointer;
-            position: relative;
-            top: -10px;
+            margin: 15px 0 20px;
 
             #arrow_down_icon{
                 display: inline-block;
@@ -810,8 +866,7 @@
 }
 
 //
-// 折價券手機版縮小成0.75倍
-// 折價券排版修改 奇數個時有問題
+// 折價券左下圖案樣式未定
 
 // ===== 頁面的scss結束 =====
 
@@ -825,17 +880,22 @@
     width: 350px;
     height: 480px;
     padding: 25px;
-    border-radius: 7px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+
     .img_container{
         overflow: hidden;
         width: 300px;
         height: 300px;
         margin: 0 auto;
+
         img{
             height: 100%;
             width: 100%;
         }
+
     }
+
     .down_block{
         .cake_title{
             margin: 15px 0;

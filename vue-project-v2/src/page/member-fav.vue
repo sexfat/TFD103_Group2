@@ -182,6 +182,10 @@
                 transform: scale(0.8);
             }
 
+             @media (max-width: 409.98px){
+                width: 375px;
+            }
+
             .member_page_nav_link{
                 // border: 1px solid green;
 
@@ -221,6 +225,11 @@
     #fav_folder{
         text-align: center;
         margin-bottom: 32px;
+        padding: 0 40px;
+
+        @media (max-width: 767.98px){
+            padding: 0;
+        }
 
         .title_h1_container{
             margin: 0 auto;
@@ -229,16 +238,17 @@
 
         #folder_area{
             margin: 0 auto 5px;
-            display: inline-grid;
+            display: grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
-            grid-gap: 70px;
-            width: auto;
+            // grid-gap: 75px;
+            grid-row-gap: 65px;
+            justify-items: center;
             
             @media (max-width: 1199.98px){
                 grid-template-columns: auto auto;
-                margin: 33px 25px 5px;
-                grid-gap: 100px;
+                // grid-gap: 100px;
+                grid-row-gap: 65px;
             }
 
             @media (max-width: 767.98px){
@@ -250,6 +260,7 @@
                 grid-template-areas: "first .";
                 padding: 0 30px 10px;
                 margin: 33px 0 5px;
+                grid-gap: 70px;
             }
 
             .folder{
@@ -390,9 +401,7 @@
 }
 
 //版面問題
-// RWD
-// 1. 手機版各元件要縮小
-// 2. 手機版的增加資料夾按鈕要如何顯現？要持續顯現一小塊
+// 手機版的增加資料夾按鈕要持續顯現一小塊
 
 // ===== 頁面的scss結束 =====
 
