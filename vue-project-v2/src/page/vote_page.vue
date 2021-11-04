@@ -1,6 +1,6 @@
 <template>
     <div>
-        <headercom></headercom>
+        <headercom openWhat="vote"></headercom>
         <div id="vote_page_main_bar">
             <titleh1 title="人氣投票"></titleh1>
             <p>
@@ -12,14 +12,17 @@
             </p>
         </div>
         <main id="vote_page_main">
-            <search-bar></search-bar>
-            <cake-selector :total_decorations="total_decorations" :total_ingredients="total_ingredients" :total_cakebodys="total_cakebodys"></cake-selector>
-            <div id="select_test"></div>
-            <h1 class="vote_title"><img src="" alt="" />現在排名</h1>
+            <h1 class="nowRange"><img src="" alt="" />現在排名</h1>
             <section id="topthree">
                 <card-topthree v-for="(test,index) in 3" :key="index"></card-topthree>
             </section>
-            <h1 class="vote_title"><img src="" alt="" />候選名單</h1>
+            
+            <cake-selector :total_decorations="total_decorations" :total_ingredients="total_ingredients" :total_cakebodys="total_cakebodys"></cake-selector>
+            <!-- <div id="select_test"></div> -->
+            <h1 class="vote_title">
+                <span><img src="" alt="" />候選名單</span>
+                <search-bar></search-bar>
+                </h1>
             <section id="vote">
                 <card-voting v-for="(cake_name,index) in 9" :key="index"></card-voting>
             </section>
@@ -61,7 +64,7 @@ export default {
       show:true,
       total_cakebodys:['戚風蛋糕',"水果蛋糕",'巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕','巧克力蛋糕'],
       total_ingredients:['水果','糖果','巧克力','牛奶布丁'],
-      total_decorations:['葉子','看板','慶生板']
+      total_decorations:['葉子','看板','慶生板'],
     }
   },
     methods:{
@@ -72,7 +75,6 @@ export default {
     },
     computed:{
         
-
     },
     mounted(){
        
@@ -115,22 +117,41 @@ $bg:#EFE6E4;
     max-width: 1120px;
     margin:0 auto;
     border:1px solid red;
-    .search{
-        position: relative;
-        left:100%;
-        transform: translateX(-100%);
-        margin-bottom:50px;
-    }
 }
 
+.nowRange{
+    width:100%;
+    justify-content:flex-start;
+    display:flex;
+    margin-bottom:100px;
+    align-items: center;
+    margin-bottom:100px;
+    img{
+        width:60px;
+        height:60px;
+        display: inline-block;
+    }
+}
 .vote_title{
-    margin-top:100px;
-    margin-left:150px;
-    margin-bottom:65px;
+    width:100%;
+    justify-content: space-between;
+    display:flex;
+    margin-bottom:100px;
+    align-items: center;
+    span{
+        display: flex;
+        align-items: center;
+    }
+    img{
+        width:60px;
+        height:60px;
+        display: inline-block;
+    }
 }
 #topthree{
     display:grid;
     gap:35px;
+    margin-bottom:100px;
     grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
     div.vote_topthree{
         margin:0 auto;

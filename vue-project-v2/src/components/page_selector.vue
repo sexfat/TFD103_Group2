@@ -30,6 +30,7 @@ export default {
     justify-content: center;
     align-items: center;
     width:100%;
+    padding:0;
     li{
         margin:0 8px;
         a{  
