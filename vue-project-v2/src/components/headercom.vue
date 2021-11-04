@@ -4,7 +4,7 @@
             <!-- <a href="" id="logo">
                 <img src="../assets/images/logo.png">
             </a> -->
-            <router-link to="" id="logo"><img src="../assets/images/logo.png"></router-link>
+            <router-link to="/" id="logo"><img src="../assets/images/logo.png"></router-link>
             <ul id="header_nav" @click= isShow>
                 <div id="header_div_one">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->
@@ -31,8 +31,8 @@
             </ul>
             
             <div id="header_div_two_two">
-                <li class="nav_icon"><a href=""><img src="../assets/images/member.svg" alt=""></a></li>
-                <li class="nav_icon"><a href=""><img src="../assets/images/shoppingCar.svg" alt=""></a></li>
+                <li class="nav_icon"><router-link to="/member_data" id="member_data"><img src="../assets/images/member.svg" alt=""></router-link></li>
+                <li class="nav_icon"><router-link to="/shopping_cart" id="shopping_cart"><img src="../assets/images/shoppingCar.svg" alt=""></router-link></li>
             <!-- RWD漢堡選單 -->
             <a id="hamburger" href="" @click.prevent="isShow">
                 <span class="hamburger_icon"></span>
@@ -133,6 +133,7 @@ export default {
                 padding: 0;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 overflow: hidden;
                 div#header_div_one{
                     display: flex;
