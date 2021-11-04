@@ -15,8 +15,26 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faGoogle,faInstagram,faLine,faAnglesLeft,faAngleLeft,faAnglesRight,faAngleRight,fa5,fa4,fa3,fa2,fa1,faXmark,faSortDown,faSortUp, faCircle, faMagnifyingGlass, faAnglesDown, faPlus, faMinus, faTrashCan,faSquarePlus)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.prototype.$qs = qs
-// Vue.config.productionTip = true
 Vue.use(VueRouter,VueAxios,axios)
+
+// // 以下為遠端請求
+// // for axiosInstance, no need to xampp
+// let subPath = process.env.NODE_ENV === "production" 
+//       ? process.env.VUE_APP_SUB_PATH 
+//       : ""
+// let axiosInstance = axios.create({
+//   baseURL:
+//     process.env.NODE_ENV === "production"
+//       ? `http://localhost/${subPath}`
+//       : "http://localhost:3000/",
+// })
+// // for php cli server
+// Vue.prototype.$axios = axiosInstance
+// // for xampp
+// Vue.prototype.$axios = axios;
+// Vue.config.productionTip = false
+// // 以上為遠端請求
+
 const router = new VueRouter({
   routes,
   mode:"history",
