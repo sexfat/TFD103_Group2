@@ -88,6 +88,7 @@ body{
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        margin-bottom: 50px;
         align-items: center;
         // margin-bottom: 150px;
     }
@@ -239,7 +240,7 @@ body{
             align-items: center;
             margin: auto;
             width: 100%;
-            max-width: 576px;
+            max-width: 320px;
 
         }   
         .product_img_container{
