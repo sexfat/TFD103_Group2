@@ -230,7 +230,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="bill_ready_to_checkout_sumbit">下單購買</button>
+                            <router-link to="checkout_complete">
+                                <button class="bill_ready_to_checkout_sumbit">下單購買</button>
+                            </router-link>
                             <span class="security_and_privacy">您的個人數據將用於處理您的訂單，支持您在整個網站的體驗，以及我們的隱私權政策中描述的其他目的</span>
                         </form>
                     </div>
@@ -282,6 +284,9 @@ export default {
 }
 body{
     background-color: $bg;
+}
+router-link{
+    text-decoration: none;
 }
 
 .shopping_cart_main{

@@ -17,7 +17,8 @@
         <main class="product_page_main">
             <titleh1 class="titleh1rwd" title="主廚蛋糕"></titleh1>
                 <div id="product_cakecard" >
-                        <div class="product_card_outline" v-for="(card, index) in 12" :key="index"> 
+                    <router-link to="product_detail"  v-for="(card, index) in 12" :key="index">
+                        <div class="product_card_outline"> 
                             <div class="product_img_container">
                                 <img class="product_img_container_img" src="../assets/images/cho_cake.jpg" />
                             </div>
@@ -32,6 +33,7 @@
                                 </button>
                             </div>
                         </div>
+                    </router-link>
                 </div>
         </main>
         <main class="product_page_main">
@@ -202,7 +204,9 @@ body{
         justify-content: center;
     }
 }
-
+router-link{
+    text-decoration: none;
+}
 // 下方商品卡片
 #product_cakecard{
     margin: 0 auto;
@@ -222,6 +226,7 @@ body{
         max-width: 576px;
         width: 100%;
     }
+    
     .product_card_outline{
         background-color: $palePike;
         display: flex;
