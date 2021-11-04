@@ -126,6 +126,7 @@ import titleh1 from '../components/title_h1.vue'
 import cardVoting from '../components/card_voting.vue'
 import buttontest from '../components/button_h1.vue'
 import footercom from '../components/footercom'
+// import {gsap} from "gsap"
 
 export default {
     name:"index",
@@ -175,14 +176,14 @@ export default {
         });                         
 
         // gsap
-        // gsap.to('.subtitle', {
+        TweenMax.to('#shiny1', {
 
-        //     duration: 1,
-        //     repeat: 4,
-        //     yoyo: true,
-        //     rotation: 50,
-        //     transformOrigin:'center top',
-        // });
+            duration: 1,
+            repeat: 4,
+            yoyo: true,
+            rotation: 50,
+            transformOrigin:'center top',
+        });
     },
 }
 </script>
