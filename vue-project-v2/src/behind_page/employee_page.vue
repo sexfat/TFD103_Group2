@@ -102,7 +102,7 @@
         </section>
       </form >
     </div>
-    <div class="forPosition" v-for="(data, index) in 1" :key="index">
+    <div class="forPosition" v-for="(data, index) in data" :key="index">
       <section class="first_site">
         <div id="employee">
           <div class="manager_list">
@@ -187,7 +187,7 @@
 <script>
 import $ from "jquery";
 import VueAxios from "vue-axios";
-import axios from "axios";
+// import axios from "axios";
 // Vue.use(VueAxios,axios);
 import behindHeader from "../components/behind_page_headercom";
 import searchBar from "../components/search_bar";
@@ -219,15 +219,32 @@ export default {
   mounted() {
     $("#employee").siblings().removeClass("target");
     $("#employee").addClass("target");
-
-    axios({
+const url ='api'
+    this.$axios({
       method: "get",
-      url: "/static/quire_member.php",
+      url: 'http://tfd103g2.sexfat.tw/quire_member.php',
+      data:{
+        number:1234
+      }
     }).then((res) => {
       console.log(res.data);
       this.data = res.data;
       // console.log(this.data);
     });
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+    console.log("done");
+            }
+        }
+    xhttp.open("POST","http://tfd103g2.sexfat.tw/join_employee.php", true);
+    xhttp.send(JSON.stringify({
+        // email:email,
+        // password:password,
+        number:123,
+    }));
   },
   // created(){
   //   axios({
@@ -260,13 +277,13 @@ export default {
         create_date:this.new_employee.create_date,
         authority:this.new_employee.authority,
       };
-      let params= new URLSearchParams();
-      params.append("number", number); //你要传给后台的参数值 key/value
-      params.append("password", password);
-      params.append("name", name);
-      params.append("biulder", biulder);
-      params.append("create_date", create_date);
-      params.append("authority", authority);
+      // let params= new URLSearchParams();
+      // params.append("number", number); //你要传给后台的参数值 key/value
+      // params.append("password", password);
+      // params.append("name", name);
+      // params.append("biulder", biulder);
+      // params.append("create_date", create_date);
+      // params.append("authority", authority);
       // axios({
       //   method: "get",
       //   url: "/static/join_employee.php",
@@ -295,10 +312,8 @@ export default {
     console.log("done");
             }
         }
-    xhttp.open("POST","/static/join_employee.php", true);
+    xhttp.open("POST","http://tfd103g2.sexfat.tw/join_employee.php", true);
     xhttp.send(JSON.stringify({
-        // email:email,
-        // password:password,
         number:number,
         password:password,
         name:name,
