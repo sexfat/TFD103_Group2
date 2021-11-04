@@ -18,10 +18,13 @@
         </section>
          <!-- 開始製作 -->
          <!-- 製作中 -->
+         <div class="center_box">
          <section id="second_screen">
              <div id="production_area">
+                 <input type="button" style="opacity: 0;">
                  <div id="cake_box">
-                     <img id="big_cake_model" src="" alt="">
+                     <img id="big_cake_model" src="../assets/images/cake_design/cake_model1.png" alt="">
+                     <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
                  </div>
                  <input type="button">
              </div>
@@ -42,10 +45,12 @@
                      </div>
                      <button id="right_move" style="z-index:10;">》</button>
                  </div>
-                 <div><img src="" alt=""></div>
-                 <div>
+                 <div id="instructions_text"><img src="../assets/images/dialog_box.png" alt=""></div>
+                 <div id="mascot_box">
                      <button>使用</button>
-                     <img src="" alt="">
+                     <div id="mascot">
+                        <img src="../assets/images/mascot1.png" alt="">
+                     </div>
                  </div>
              </div>
              <!-- 選擇糕體 -->
@@ -60,6 +65,7 @@
              </div>
              <!-- 選擇裝飾 -->
          </section>
+         </div>
          <!-- 製作中 -->
         <footercom></footercom>
     </div>
@@ -81,10 +87,10 @@ export default {
 
         // 選擇-蛋糕糕體
         $("#left_move").click(function(){
-            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=340px'},200);
+            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'+=340px'},200);
         });
         $("#right_move").click(function(){
-            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'+=340px'},200);
+            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=340px'},200);
             if ($("div").marginLeft >= 500) {
                 $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=500px'},200);
             }
@@ -100,6 +106,14 @@ export default {
         margin: 0;
         position: relative;
         background-color: #EFE6E4;
+        // div{
+        //     div.center_box{
+        //         margin: 0;
+        //         width: 100%;
+        //         display: flex;
+        //         justify-content: center;
+        //     }
+        // }
     }
 
     //---------------------------------- 開始製作 first_screen ----------------------------------
@@ -190,25 +204,46 @@ export default {
 
     //---------------------------------- 開始製作 second_screen ----------------------------------
     section#second_screen{
-        max-width: 1200px;
+        width: 100%;
         height: 100vh;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 370px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         margin: 0;
         position: relative;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%,0)
         // overflow: hidden;
     }
     div#production_area{
         height: 100vh;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
         grid-column: 1/3;
-        background-image: url("../assets/images/index_kitchen_img.png");
+        background-image: url("../assets/images/index_kitchen_img_small.png");
         background-size: cover;
         background-repeat:no-repeat;
+        div#cake_box{
+            width: 450px;
+            height: 450px;
+            position: relative;
+            img#big_cake_model{
+                width: 100%;
+                z-index: 10;
+            }
+            img#big_plate{
+                width: 90%;
+                position: absolute;
+                top: 90%;
+                left: 52%;
+                transform: translate(-50%,-50%);
+                z-index: 0;
+            }
+        }
         input{
             background-image: url("../assets/images/next_step.png");
             width: 85px;
@@ -217,6 +252,7 @@ export default {
             border: none;
             cursor: pointer;
             transition: 0.2s;
+            background-color: none;
             &:hover{
                 transform: translateY(-5px);
             }
@@ -233,7 +269,8 @@ export default {
         position: relative;
         div#cake_model_title_box{
             margin: 0;
-            margin-top: 80px;
+            margin-top: 85px;
+            margin-left: 30px;
             height: 6%;
             width: 100%;
             display: flex;
@@ -251,6 +288,18 @@ export default {
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            div#mascot_box{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                div#mascot{
+                    width: 210px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
             div#choose_cake_model_box_contents{
                 position: relative;
                 display: flex;
