@@ -2,7 +2,7 @@
     <div>
         <headercom></headercom>
         <main class="shopping_cart_main">
-            <titleh1 class="titleh1rwd" title="購物車"></titleh1>
+            <!-- <titleh1 class="titleh1rwd" title="購物車"></titleh1>
             <section class="shopping_cart_bread">
                 <span class="shopping_cart_page">購物車</span>
                 <div class="shopping_cart_bread_arrow">
@@ -13,7 +13,7 @@
                     <img class="shopping_cart_bread_arrow_img" src="../assets/images/process_icon.svg" alt="">
                 </div>
                 <span class="checkout_page">結帳完成</span>
-            </section>
+            </section> -->
             <!-- 搜尋欄 -->
             <div class="searchbar_titlebar">
                 <input type="text" placeholder="搜尋..." class="search_baron"/>
@@ -173,6 +173,7 @@ body{
     justify-content: flex-end;
     width: 100%;
     max-width: 1120px;
+    margin-top: 150px;
     @media screen and (max-width:767.98px){ 
         max-width: 400px;
         width: 100%;

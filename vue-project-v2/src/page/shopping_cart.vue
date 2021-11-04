@@ -47,8 +47,12 @@
                 </div>
             </section>
             <section class="shopping_cart_button">
-                <button class="return_shopping">繼續購物</button>
-                <button class="goto_checkout">前往結帳</button>
+                <router-link to="product">
+                    <button class="return_shopping">繼續購物</button>
+                </router-link>
+                <router-link to="ready_to_checkout">
+                    <button class="goto_checkout">前往結帳</button>
+                </router-link>
             </section>
         </main>
         <footercom></footercom>

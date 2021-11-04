@@ -26,9 +26,9 @@
                         </div>
                         <div id="cake_size_quantity">
                             <form id='cake_quantity' method='POST' action='#'>
-                                <input type='button' value='-' class='qtyminus' field='quantity' />
-                                <input type='text' name='quantity' value='數量' class='qty' disabled/>
-                                <input type='button' value='+' class='qtyplus' field='quantity'/>
+                                <input type='button' value='-' class='qtyminus' field='quantity' @click="minus"/>
+                                <input type='text' name='quantity' value='數量' class='qty' disabled v-model="counter"/>
+                                <input type='button' value='+' class='qtyplus' field='quantity' @click="add"/>
                             </form>
                             <div id="cake_size">
                                 <label for="">
@@ -246,10 +246,20 @@ export default {
     },
     data(){
         return{
-            asd:123546
+            counter: 1,
         }
     },
     methods:{
+        add(){
+            this.counter += 1;
+        },
+        minus(){
+            if(this.counter > 1){
+                (this.counter -= 1);
+            }
+
+            
+        },
     },
     watch:{
         
