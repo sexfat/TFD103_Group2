@@ -9,27 +9,8 @@
 
     <main id="member_fav_detail_page">
 
-        <!-- 會員頁共用開始 -->
-        <div class="main_bar">
-            <div id="avatar_container">
-                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
-            </div>
-            <div id="member_page_nav">
-                <div id="member_data" class="member_page_nav_link">
-                    <img src="../assets/images/member_member.svg" alt="" id="member_data_icon" >
-                    <span id="member_data_span">會員資料</span>
-                </div>
-                <div id="member_order" class="member_page_nav_link">
-                    <img src="../assets/images/member_shoppingBag.svg" alt="" id="member_order_icon">
-                    <span id="member_order_span">訂單查詢</span>
-                </div>
-                <div id="member_fav" class="member_page_nav_link -on">
-                    <img src="../assets/images/member_favorites_hover.svg" alt="" id="member_fav_icon">
-                    <span id="member_fav_span">我的最愛</span>
-                </div>
-            </div>
-        </div>
-        <!-- 會員頁共用結束 -->
+        <!-- 會員頁共用main_bar組件 -->
+        <member_main_bar :page="page"></member_main_bar>
 
         <section id="fav_folder">
 
@@ -140,16 +121,19 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
 
+    import member_main_bar from "../components/member_main_bar";
     import title_h1 from "../components/title_h1";
 
     export default {
         components: {
             headercomp,
             footercomp,
+            member_main_bar,
             title_h1,
         },
         data(){
             return{
+                page: "fav",
                 title: "我的最愛",
             };
         },
@@ -179,69 +163,6 @@
     min-width: 320px;
     margin: 0 auto;
     font-size: 0;
-
-    .main_bar{
-        height: 500px;
-        padding-top: 150px;
-        
-        #avatar_container{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0px auto 50px;
-        }
-        #member_page_nav{
-            // border: 1px solid blue;
-
-            display: flex;
-            justify-content: space-between;
-            width: 410px;
-            margin: 0 auto 110px;
-
-            @media (max-width: 575.98px){
-                transform: scale(0.8);
-            }
-
-            @media (max-width: 409.98px){
-                width: 375px;
-            }
-
-            .member_page_nav_link{
-                // border: 1px solid green;
-
-                width: 82px;
-                height: 92px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-
-                > img{
-                    width: 50px;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                }
-
-                > span{
-                    width: 82px;
-                    height: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: $p;
-                    line-height: 32px;
-                    color: #9F746B;
-                    cursor: pointer;
-                }
-            }
-            .member_page_nav_link.-on{
-                > span{
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-        }
-    }
 
     #fav_folder{
         text-align: center;
