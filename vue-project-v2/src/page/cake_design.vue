@@ -27,7 +27,7 @@
                         <img id="big_cake_model" src="../../static/cake_design/cake_model1.png"  alt="">
                      </div>
                      <div id="big_plate_box">
-                        <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
+                        <img id="big_plate" :src="require('../assets/images/cake_design/plate.png')" alt=""> <!--老師打的src 請照抄-->
                      </div>
                  </div>
                  <input id="next_step" type="button">
