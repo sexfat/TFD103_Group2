@@ -70,7 +70,7 @@
             <div class="addenda_titlebar">
                 <div class="addenda_title">蠟燭
                     <div class="addenda_cancel_icon">
-                        <img src="" alt="">
+                        <img src="../assets/images/cho_cake.jpg" alt="">
                     </div>
                 </div>
                 

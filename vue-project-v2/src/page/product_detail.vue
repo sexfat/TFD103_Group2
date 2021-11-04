@@ -30,10 +30,13 @@
                                     <!-- <router-link to="shopping_cart"> -->
                                         <button id="product_details_combination1_commit">加入購物車</button>
                                     <!-- </router-link> -->
-                                        <button id="product_details_combination1_buy" @click="open" >直接購買</button>
-                                        <div class="productDetailAddenda_block ㄌ">
+                                    <router-link to="shopping_cart">
+
+                                        <button id="product_details_combination1_buy" @click="open">直接購買</button>
+                                    </router-link>
+                                        <!-- <div class="productDetailAddenda_block ㄌ">
                                             <productDetailAddenda></productDetailAddenda>
-                                        </div>
+                                        </div> -->
                                 </div>
 
 
@@ -74,7 +77,7 @@ import $ from 'jquery'
 import headercom from '../components/headercom'
 import footercom from '../components/footercom'
 import titleh1 from "../components/title_h1.vue"
-import productDetailAddenda from "../components/productDetailAddenda"
+// import productDetailAddenda from "../components/productDetailAddenda"
 
 export default {
     name:'product_detail',
@@ -82,7 +85,7 @@ export default {
         titleh1,
         headercom,
         footercom,
-        productDetailAddenda,
+        // productDetailAddenda,
     },
     data(){
         return{
@@ -551,6 +554,10 @@ body{
             &:hover{
                 color: $lightYellow;
             }
+        router-link{
+            text-decoration: none;
+        }
+
         }
     }
 }
