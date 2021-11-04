@@ -13,14 +13,20 @@
                     <li class="nav_item">
                         <router-link to="/cakeDesign" id="cakeDesign">蛋糕設計</router-link>
                     </li>
-                    <li class="nav_item"><a href="">人氣票選</a></li>
-                    <li class="nav_item"><a href="">商城</a></li>
-                    <li class="nav_item"><a href="">QA</a></li>
+                    <li class="nav_item">
+                        <router-link to="/vote" id="vote">人氣票選</router-link>
+                    </li>
+                    <li class="nav_item">
+                        <router-link to="/product" id="product">商城</router-link>
+                    </li>
+                    <li class="nav_item">
+                        <router-link to="/qa" id="qa">QA</router-link>
+                    </li>
                 </div>
 
                 <div id="header_div_two">
-                    <li class="nav_icon"><a href=""><img src="../assets/images/member.svg" alt=""></a></li>
-                    <li class="nav_icon"><a href=""><img src="../assets/images/shoppingCar.svg" alt=""></a></li>
+                    <li class="nav_icon"><router-link to="/member_data" id="member_data"><img src="../assets/images/member.svg" alt=""></router-link></li>
+                    <li class="nav_icon"><router-link to="/shopping_cart" id="shopping_cart"><img src="../assets/images/shoppingCar.svg" alt=""></router-link></li>
                 </div>
             </ul>
             

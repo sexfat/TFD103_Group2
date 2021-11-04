@@ -28,6 +28,10 @@ export default[{
         {path:'product_detail', component: r => require.ensure([], () => r(require('../page/product_detail')), 'product_detail')},
         {path:'shopping_cart', component: r => require.ensure([], () => r(require('../page/shopping_cart')), 'shopping_cart')},
         {path:'ready_to_checkout', component: r => require.ensure([], () => r(require('../page/ready_to_checkout')), 'ready_to_checkout')},
+        {path:'checkout_complete', component: r => require.ensure([], () => r(require('../page/checkout_complete')), 'checkout_complete')},
+        {path:'qa', component: r => require.ensure([], () => r(require('../page/qa')), 'qa')},
+        {path:'qa_chat', component: r => require.ensure([], () => r(require('../page/qa_chat')), 'qa_chat')},
+// >>>>>>> dev
         {path:'member_data', component: r => require.ensure([], () => r(require('../page/member-data')), 'member-data')}, // 會員資料頁
         {path:'member_fav', component: r => require.ensure([], () => r(require('../page/member-fav')), 'member_fav')}, // 會員最愛分類頁
         {path:'member_order', component: r => require.ensure([], () => r(require('../page/member-order')), 'member_order')}, // 會員訂單查詢頁

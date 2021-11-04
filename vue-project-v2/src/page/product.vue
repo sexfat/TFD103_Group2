@@ -4,8 +4,7 @@
         <!-- 主廚/創意頁面切換 -->
         <div class="product_page_main_bar">
             <div class="change_page">
-                <div class="chef_cake">主廚推薦</div>         
-                <div class="designer_cake">創意點子</div>         
+                <switchTab></switchTab>   
             </div>
             <!-- 搜尋欄 -->
             <div class="searchbar_titlebar">
@@ -14,8 +13,29 @@
             <!-- </div> -->
             <!-- <div id="select_test"></div> -->
         </div>
+
         <main class="product_page_main">
             <titleh1 class="titleh1rwd" title="主廚蛋糕"></titleh1>
+                <div id="product_cakecard" >
+                        <div class="product_card_outline" v-for="(card, index) in 12" :key="index"> 
+                            <div class="product_img_container">
+                                <img class="product_img_container_img" src="../assets/images/cho_cake.jpg" />
+                            </div>
+                            <div class="product_introduce">
+                                <div class="product_detail">
+                                    <div class="product_cake_title" >巧克力蛋糕</div>
+                                    <span class="price">NT$800</span>
+                                </div>
+                                <button class="like_button">
+                                    加入我的最愛
+                                    <img src="../assets/images/love_icon.svg">
+                                </button>
+                            </div>
+                        </div>
+                </div>
+        </main>
+        <main class="product_page_main">
+            <titleh1 class="titleh1rwd" title="私廚蛋糕"></titleh1>
                 <div id="product_cakecard" >
                     <div class="product_card_outline" v-for="(card, index) in 12" :key="index"> 
                         <div class="product_img_container">
@@ -34,6 +54,7 @@
                     </div>
                 </div>
         </main>
+
         <footercom></footercom>
         
     </div>
@@ -43,16 +64,18 @@ import $ from 'jquery'
 import headercom from '../components/headercom'
 import footercom from '../components/footercom'
 import titleh1 from "../components/title_h1.vue"
+import switchTab from "../components/switchTab"
 export default {
     name:'product',
     components:{
         titleh1,
         headercom,
         footercom,
+        switchTab,
     },
     data(){
         return{
-            asd:123546
+            asd:123546,
         }
     },
     methods:{
@@ -88,6 +111,7 @@ body{
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        margin-bottom: 50px;
         align-items: center;
         // margin-bottom: 150px;
     }
@@ -114,37 +138,13 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         @media screen and (max-width:767.98px){ 
             max-width: 400px;
             width: 95%;
             display: flex;
             justify-content: center;
         }
-    }
-    .chef_cake,.designer_cake{
-        width: 50%;
-        font-size: $h3;
-        color: $darkGrey;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: $shadow;
-        &:hover{
-            font-weight: bold;
-            text-shadow: 0px 0px 1px $darkGrey(0,0,0,.8);
-        }
-    }
-    .chef_cake{
-    background-color: $palePike;
-    box-shadow: inset -12px -12px 10px -13px rgba(0 , 0 , 0 , 80%);
-    border-radius: 10px 0px 0px 10px;
-    }
-    .designer_cake{
-        border-radius: 0px 10px 10px 0px;
-        background-color: #F7F2F1;
     }
 }
 // 搜尋欄
@@ -239,7 +239,7 @@ body{
             align-items: center;
             margin: auto;
             width: 100%;
-            max-width: 576px;
+            max-width: 320px;
 
         }   
         .product_img_container{
@@ -296,5 +296,8 @@ body{
 }
 .like_button{
     cursor: pointer;
+}
+a{
+    text-decoration: none;
 }
 </style>
