@@ -3,8 +3,8 @@
         <headercom></headercom>
         <!-- 開始製作 -->
         <section id="first_screen">
-            <div id="first_screen_button">
-                    <buttontest title=" 開始製作" @click="isStart"></buttontest>
+            <div id="first_screen_button" @click="isStart">
+                    <buttontest title=" 開始製作"></buttontest>
             </div>
             <div id="first_screen_cake">
             <img id="first_screen_cake_look" src="../assets/images/cake_design_look.svg" alt="">
@@ -100,10 +100,10 @@ export default {
             bigImages:["../../static/cake_design/cake_model"],
         }
     },
-    method:{
+    methods:{
         isStart(){
-            // alert("10")
-            $('#first_screen').toggleClass('start');
+            alert("10")
+            // $('#first_screen').toggleClass('start');
             // $('#first_screen').css("display: none;")
         }
         // chaneImage(e){
@@ -171,7 +171,7 @@ li.nav_item > a#cakeDesign{
         margin: 0;
         position: relative;
         overflow: hidden;
-        display: none;
+        // display: none;
 
         //頁面切換
         transition:0.5s all ease;
@@ -265,7 +265,7 @@ li.nav_item > a#cakeDesign{
         // left: 50%;
         // transform: translate(-50%,0)
         // overflow: hidden;
-        // display: none;
+        display: none;
     }
     div#production_area{
         height: 100vh;
