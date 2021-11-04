@@ -11,38 +11,14 @@
 
     <main id="member_fav_page">
 
-        <!-- 會員頁共用開始 -->
-        <div class="main_bar">
-            <div id="avatar_container">
-                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
-            </div>
-            <div id="member_page_nav">
-                <div id="member_data" class="member_page_nav_link">
-                    <img src="../assets/images/member_member.svg" alt="" id="member_data_icon" >
-                    <span id="member_data_span">會員資料</span>
-                </div>
-                <div id="member_order" class="member_page_nav_link">
-                    <img src="../assets/images/member_shoppingBag.svg" alt="" id="member_order_icon">
-                    <span id="member_order_span">訂單查詢</span>
-                </div>
-                <div id="member_fav" class="member_page_nav_link -on">
-                    <img src="../assets/images/member_favorites_hover.svg" alt="" id="member_fav_icon">
-                    <span id="member_fav_span">我的最愛</span>
-                </div>
-            </div>
-        </div>
-        <!-- 會員頁共用結束 -->
+        <!-- 會員頁共用main_bar組件 -->
+        <member_main_bar :page="page"></member_main_bar>
 
         <section id="fav_folder">
 
             <!-- h1組件 -->
-            <div id="title_h1_outline">
-                <div class="title_h1">
-                    <span></span>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                    <h1>資料夾分類</h1>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                </div>
+            <div class="title_h1_container">
+                <title_h1 :title="title" class="title_h1"></title_h1>
             </div>
 
             <div id="folder_area">
@@ -55,7 +31,9 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
+                        <router-link to="/member_fav_detail">
+                            <img src="../assets/images/cho_cake.jpg" alt="">
+                        </router-link>
                     </div>
                 </div>
 
@@ -68,7 +46,9 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
+                        <router-link to="/member_data">
+                            <img src="../assets/images/cho_cake.jpg" alt="">
+                        </router-link>
                     </div>
                 </div>
                 <div class="folder">
@@ -79,7 +59,9 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
+                        <router-link to="./member_fav_detail">
+                            <img src="../assets/images/cho_cake.jpg" alt="">
+                        </router-link>
                     </div>
                 </div>
                 <div class="folder">
@@ -90,7 +72,9 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
+                        <router-link to="./member_fav_detail">
+                            <img src="../assets/images/cho_cake.jpg" alt="">
+                        </router-link>
                     </div>
                 </div>
                 <!-- 排版用重複組件結束 -->
@@ -124,13 +108,21 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
 
+    import member_main_bar from "../components/member_main_bar";
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            member_main_bar,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                page: "fav",
+                title: "資料夾分類",
+            };
         },
     }
 </script>
@@ -159,77 +151,33 @@
     margin: 0 auto;
     font-size: 0;
 
-    .main_bar{
-        height: 500px;
-        padding-top: 150px;
-        
-        #avatar_container{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0px auto 50px;
-        }
-        #member_page_nav{
-            // border: 1px solid blue;
-
-            display: flex;
-            justify-content: space-between;
-            width: 410px;
-            margin: 0 auto 110px;
-
-            .member_page_nav_link{
-                // border: 1px solid green;
-
-                width: 82px;
-                height: 92px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-
-                > img{
-                    width: 50px;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                }
-
-                > span{
-                    width: 82px;
-                    height: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: $p;
-                    line-height: 32px;
-                    color: #9F746B;
-                    cursor: pointer;
-                }
-            }
-            .member_page_nav_link.-on{
-                > span{
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-        }
-    }
-
     #fav_folder{
         text-align: center;
         margin-bottom: 32px;
+        padding: 0 40px;
+
+        @media (max-width: 767.98px){
+            padding: 0;
+        }
+
+        .title_h1_container{
+            margin: 0 auto;
+            padding: 27px 0 48px;
+        }
 
         #folder_area{
-            margin: 33px auto 5px;
-            display: inline-grid;
+            margin: 0 auto 5px;
+            display: grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
-            grid-gap: 70px;
-            width: auto;
+            // grid-gap: 75px;
+            grid-row-gap: 65px;
+            justify-items: center;
             
             @media (max-width: 1199.98px){
                 grid-template-columns: auto auto;
-                margin: 33px 25px 5px;
-                grid-gap: 100px;
+                // grid-gap: 100px;
+                grid-row-gap: 65px;
             }
 
             @media (max-width: 767.98px){
@@ -239,6 +187,9 @@
                 width: 100vw;
                 overflow-y: scroll;
                 grid-template-areas: "first .";
+                padding: 0 30px 10px;
+                margin: 33px 0 5px;
+                grid-gap: 70px;
             }
 
             .folder{
@@ -314,12 +265,18 @@
                     cursor: pointer;
                     overflow: hidden;
 
-                    > img{
-                        width: 100%;
-                        position: relative;
-                        top: 50%;
-                        transform: translateY(-50%);
+                    > a{
+                        display: block;
+
+                        > img{
+                            width: 100%;
+                            // position: relative;
+                            // top: 50%;
+                            // transform: translateY(-50%);
+                        }
+
                     }
+
 
                 }
 
@@ -379,10 +336,7 @@
 }
 
 //版面問題
-// RWD
-// 1. 手機版各元件要縮小
-// 2. 手機版.title_h1組件要使用嗎?
-// 3. 手機版的增加資料夾按鈕要如何顯現
+// 手機版的增加資料夾按鈕要持續顯現一小塊
 
 // ===== 頁面的scss結束 =====
 
@@ -392,8 +346,12 @@
 .title_h1 {
     display: inline-block;
     position: relative;
+    .outline{
+        display:flex;
+    }
     h1 {
         display: inline-block;
+        margin:0;
         font-size: 36px;
         color: #515151;
     }
@@ -401,18 +359,20 @@
         display: inline-block;
         position: absolute;
         left: 0;
-        bottom: 10px;
+        bottom: 0;
         width: 100%;
         height: 5px;
         border-radius: 5px;
         background-color: #dfb9b0;
     }
     img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
+        max-width: 58px;
+        max-height: 58px;
+        width:100%;
+        height:100%;
+        // vertical-align: middle;
+        // position: relative;
+        // transform: translateY(-10px);
     }
 }
 @media (max-width:576px){

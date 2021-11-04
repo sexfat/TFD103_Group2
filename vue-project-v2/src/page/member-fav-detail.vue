@@ -9,38 +9,14 @@
 
     <main id="member_fav_detail_page">
 
-        <!-- 會員頁共用開始 -->
-        <div class="main_bar">
-            <div id="avatar_container">
-                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
-            </div>
-            <div id="member_page_nav">
-                <div id="member_data" class="member_page_nav_link">
-                    <img src="../assets/images/member_member.svg" alt="" id="member_data_icon" >
-                    <span id="member_data_span">會員資料</span>
-                </div>
-                <div id="member_order" class="member_page_nav_link">
-                    <img src="../assets/images/member_shoppingBag.svg" alt="" id="member_order_icon">
-                    <span id="member_order_span">訂單查詢</span>
-                </div>
-                <div id="member_fav" class="member_page_nav_link -on">
-                    <img src="../assets/images/member_favorites_hover.svg" alt="" id="member_fav_icon">
-                    <span id="member_fav_span">我的最愛</span>
-                </div>
-            </div>
-        </div>
-        <!-- 會員頁共用結束 -->
+        <!-- 會員頁共用main_bar組件 -->
+        <member_main_bar :page="page"></member_main_bar>
 
         <section id="fav_folder">
 
             <!-- h1組件 -->
-            <div id="title_h1_outline">
-                <div class="title_h1">
-                    <span></span>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                    <h1>我的最愛</h1>
-                    <img src="../assets/images/eggBeater.png" alt="">
-                </div>
+            <div class="title_h1_container">
+                <title_h1 :title="title" class="title_h1"></title_h1>
             </div>
 
             <div id="fav_area">
@@ -145,13 +121,21 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
 
+    import member_main_bar from "../components/member_main_bar";
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            member_main_bar,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                page: "fav",
+                title: "我的最愛",
+            };
         },
     }
 </script>
@@ -180,76 +164,27 @@
     margin: 0 auto;
     font-size: 0;
 
-    .main_bar{
-        height: 500px;
-        padding-top: 150px;
-        
-        #avatar_container{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0px auto 50px;
-        }
-        #member_page_nav{
-            // border: 1px solid blue;
-
-            display: flex;
-            justify-content: space-between;
-            width: 410px;
-            margin: 0 auto 110px;
-
-            .member_page_nav_link{
-                // border: 1px solid green;
-
-                width: 82px;
-                height: 92px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-
-                > img{
-                    width: 50px;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                }
-
-                > span{
-                    width: 82px;
-                    height: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: $p;
-                    line-height: 32px;
-                    color: #9F746B;
-                    cursor: pointer;
-                }
-            }
-            .member_page_nav_link.-on{
-                > span{
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-        }
-    }
-
     #fav_folder{
         text-align: center;
         margin-bottom: 32px;
 
+        .title_h1_container{
+            margin: 0 auto;
+            padding: 32px 0 45px;
+        }
+
         #fav_area{
-            margin: 33px 25px 5px;
-            display: inline-grid;
+            margin: 0 25px 5px;
+            display: grid;
             grid-template-columns: auto auto auto;
             grid-auto-rows: auto;
             grid-gap: 70px 50px;
             width: auto;
+            justify-items: center;
             
             @media (max-width: 1199.98px){
                 grid-template-columns: auto auto;
-                margin: 33px 19px 5px;
+                margin: 0 19px 5px;
                 grid-gap: 42px 30px;
             }
 
@@ -262,7 +197,7 @@
             }
 
             .card_outline{
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: $shadow;
 
                 .description_block{
                     
@@ -347,50 +282,9 @@
 }
 
 //版面問題
-// RWD
-// 1. 手機版各元件要縮小
-// 2. 手機版.title_h1組件要使用嗎?
+// 375px的時候卡片區域壓迫感會不會太重？
 
 // ===== 頁面的scss結束 =====
-
-
-
-// ===== 組件title_h1的scss開始 =====
-.title_h1 {
-    display: inline-block;
-    position: relative;
-    h1 {
-        display: inline-block;
-        font-size: 36px;
-        color: #515151;
-    }
-    span {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        height: 5px;
-        border-radius: 5px;
-        background-color: #dfb9b0;
-    }
-    img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
-    }
-}
-@media (max-width:576px){
-    .title_h1 h1{
-        font-size:24px;
-        position:relative;
-        line-height:48px;
-    }
-}
-// ===== 組件title_h1的scss結束 =====
-
 
 
 // ===== 組件card_voting的scss開始 =====
@@ -401,7 +295,7 @@
     width: 350px;
     height: 480px;
     padding: 25px;
-    border-radius: 7px;
+    border-radius: 5px;
     .img_container{
         overflow: hidden;
         width: 300px;
@@ -450,16 +344,16 @@
                 margin-top: 15px;
                 width: 180px;
                 height: 60px;
-                border-radius: 100px;
+                border-radius: 30px;
                 border: 0;
                 box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
                 font-size: 20px;
                 position: relative;
-                color: #515151;
+                color: $darkGrey;
                 cursor: pointer;
-                background-color: #EFE6E4;
+                background-color: $lightPike;
                 &:hover{
-                    background-color: #F4E9C9;
+                    background-color: $lightYellow;
                 }
                 &:active{
                     span{

@@ -9,49 +9,30 @@
 
     <main id="member_data_page">
 
-        <!-- 會員頁共用開始 -->
-        <div class="main_bar">
-            <div id="avatar_container">
-                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
-            </div>
-            <div id="member_page_nav">
-                <div id="member_data" class="member_page_nav_link -on">
-                    <img src="../assets/images/member_member_hover.svg" alt="" id="member_data_icon" >
-                    <span id="member_data_span">會員資料</span>
-                </div>
-                <div id="member_order" class="member_page_nav_link">
-                    <img src="../assets/images/member_shoppingBag.svg" alt="" id="member_order_icon">
-                    <span id="member_order_span">訂單查詢</span>
-                </div>
-                <div id="member_fav" class="member_page_nav_link">
-                    <img src="../assets/images/member_favorites.svg" alt="" id="member_fav_icon">
-                    <span id="member_fav_span">我的最愛</span>
-                </div>
-            </div>
-        </div>
-        <!-- 會員頁共用結束 -->
+        <!-- 會員頁共用main_bar組件 -->
+        <member_main_bar :page="page"></member_main_bar>
         
         <section id="member_name_block">
             <form action="" method="post">
                 <div id="member_name">
                     <span>姓名: </span>
-                    <input type="text" name="member_name" class="data-input">
-                    <span class="data_input_span">王大涵</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <input type="text" name="member_name" class="data-input" v-model="userName">
+                    <span class="data_input_span">{{userName}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
                 <div id="member_nickname">
                     <span>暱稱: </span>
-                    <input type="text" name="member_nickname" class="data-input">
-                    <span class="data_input_span">王小涵</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <input type="text" name="member_nickname" class="data-input" v-model="userNickname">
+                    <span class="data_input_span">{{userNickname}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
                 <div id="member_birthday">
                     <span>生日: </span>
-                    <input type="text" name="member_birthday_year" class="data-input">
-                    <input type="text" name="member_birthday_month" class="data-input">
-                    <input type="text" name="member_birthday_date" class="data-input">
-                    <span id="data_input_span">88/06/12</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <input type="text" name="member_birthday_year" class="data-input" v-model="userBirthdayYear">
+                    <input type="text" name="member_birthday_month" class="data-input" v-model="userBirthdayMonth">
+                    <input type="text" name="member_birthday_date" class="data-input" v-model="userBirthdayDate">
+                    <span id="data_input_span">{{userBirthday}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
             </form>
         </section>
@@ -60,27 +41,27 @@
             <form action="" method="post">
                 <div id="member_email">
                     <span>E-mail: </span>
-                    <input type="email" name="member_email" class="data-input">
-                    <span class="data_input_span">mmm@gmail.com</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <input type="email" name="member_email" class="data-input" v-model="userEmail">
+                    <span class="data_input_span">{{userEmail}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
                 <div id="member_address">
-                    <span>地址: </span>
-                    <input type="text" name="member_address" class="data-input">
-                    <span class="data_input_span">台北市中山區南京東路三段219號4-5F</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <span>地址:&nbsp;</span>
+                    <input type="text" name="member_address" class="data-input" v-model="userAddress">
+                    <span class="data_input_span">{{userAddress}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
                 <div id="member_phone">
-                    <span>電話: </span>
-                    <input type="text" name="member_phone" class="data-input">
-                    <span class="data_input_span">0912234456</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <span>電話:&nbsp;</span>
+                    <input type="text" name="member_phone" class="data-input" v-model="userPhone">
+                    <span class="data_input_span">{{userPhone}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
                 <div id="member_password">
-                    <span>密碼: </span>
-                    <input type="text" name="member_password" class="data-input">
-                    <span class="data_input_span">******336</span>
-                    <img src="http://via.placeholder.com/20x20" alt="">
+                    <span>密碼:&nbsp;</span>
+                    <input type="text" name="member_password" class="data-input" v-model="userPassword">
+                    <span class="data_input_span">{{userPassword}}</span>
+                    <img src="../assets/images/pen_icon.svg" alt="">
                 </div>
             </form>
         </section>
@@ -88,11 +69,8 @@
         <section id="cake_design">
 
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>蛋糕庫設計</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container_design">
+                <title_h1 :title="titleDesign" class="title_h1"></title_h1>
             </div>
 
             <div id="cake_design_cards">
@@ -171,11 +149,8 @@
         <section id="coupon_block">
 
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>折價券</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container_coupon">
+                <title_h1 :title="titleCoupon" class="title_h1"></title_h1>
             </div>
 
             <div id="coupon_area">
@@ -257,31 +232,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="coupon">
-                    <div class="coupon_left_block">
-                        <div class="discount_amout">$<span>150</span></div>
-                        <div class="A_cake_text_logo">
-                            <img src="http://via.placeholder.com/60x22" alt="">
-                        </div>
-                        <div class="coupon_left_decoration_img">
-                            <img src="http://via.placeholder.com/40x0" alt="">
-                        </div>
-                        <div class="use_threshold">消費滿<span>1000</span>即可折抵</div>
-                        <img class="bottom_decoration_img" src="../assets/images/snowRWD.svg">
-                    </div>
-                    <div class="coupon_right_block">
-                        <div class="expiration">
-                            <span>使用期限</span>
-                            <span class="expiration_date">2021/10/31</span>
-                        </div>
-                        <div class="coupon_right_decoration_img">
-                            <img src="http://via.placeholder.com/39x39" alt="">
-                        </div>
-                        <div class="expiration_countdown">
-                            即將失效：剩下<span>10</span>天
-                        </div>
-                    </div>
-                </div>
                 <!-- 排版用重複組件結束 -->
 
             </div>
@@ -307,15 +257,44 @@
 
 <script>
     import headercomp from "../components/headercom";
-    import footercomp from "../components/footercom";    
+    import footercomp from "../components/footercom";
+    import axios from 'axios';
+
+    import member_main_bar from "../components/member_main_bar";
+    import title_h1 from "../components/title_h1";
 
     export default {
         components: {
             headercomp,
             footercomp,
+            member_main_bar,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                page: "data",
+                // 會員資料
+                userName: "王大涵",
+                userNickname: "王小涵",
+                userBirthdayYear: "88",
+                userBirthdayMonth: "06",
+                userBirthdayDate: "12",
+                userEmail: "mmm@gmail.com",
+                userAddress: "台北市中山區南京東路三段219號4-5F",
+                userPhone: "0912234456",
+                userPassword: "******336",
+                // 折價券資料
+                titleDesign: "蛋糕庫設計",
+                titleCoupon: "折價券",
+            };
+        },
+        computed: {
+            userBirthday(){
+                return this.userBirthdayYear + "/" + this.userBirthdayMonth + "/" + this.userBirthdayDate;
+            },
+        },
+        mounted(){
+            // axios.get("http://tfd103g2.sexfat.tw/test_echo.php").then(res => console.log(res));
         },
     }
 </script>
@@ -343,70 +322,25 @@
     min-width: 320px;
     margin: 0 auto;
 
-    .main_bar{
-        height: 500px;
-        padding-top: 150px;
-        
-        #avatar_container{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0px auto 50px;
-        }
-        #member_page_nav{
-            // border: 1px solid blue;
-
-            display: flex;
-            justify-content: space-between;
-            width: 410px;
-            margin: 0 auto 110px;
-
-            .member_page_nav_link{
-                // border: 1px solid green;
-
-                width: 82px;
-                height: 92px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-
-                > img{
-                    width: 50px;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                }
-
-                > span{
-                    width: 82px;
-                    height: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: $p;
-                    line-height: 32px;
-                    color: #9F746B;
-                    cursor: pointer;
-                }
-            }
-            .member_page_nav_link.-on{
-                > span{
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-        }
-    }
-
     #member_name_block{
         width: 535px;
         font-size: 0px;
         margin: 40px auto 70px;
         color: $darkGrey;
 
+        @media (max-width: 575.98px){
+            margin: 20px auto 30px;
+        }
+
         > form{
             display: flex;
             justify-content: space-between;
+
+            @media (max-width: 575.98px){
+                flex-direction: column;
+                align-items: center;
+                height: 120px;
+            }
 
             span{
                 font-size: $h4;
@@ -421,6 +355,8 @@
             }
 
             img{
+                width: 20px;
+                height: 20px;
                 position: relative;
                 top: 2.5px;
                 cursor: pointer;
@@ -440,6 +376,14 @@
         color: $darkGrey;
         border-radius: 5px;
 
+        @media (max-width: 767.98px){
+            padding-left: 50px;
+        }
+
+        @media (max-width: 575.98px){
+            padding: 0 25px;
+        }
+
         > form{
             height: 100%;
             display: flex;
@@ -454,6 +398,8 @@
                 }
 
                 img{
+                    width: 20px;
+                    height: 20px;
                     position: relative;
                     top: 2.5px;
                     cursor: pointer;
@@ -477,14 +423,13 @@
         text-align: center;
         padding: 0 40px;
 
-        .title_h1{
-            margin-bottom: 40px;
+        @media (max-width: 575.98px){
+            padding: 0;
+        }
 
-            > h1{
-                margin-top: 50px;
-                font-weight: normal;
-            }
-
+        .title_h1_container_design{
+            margin: 0 auto;
+            padding: 45px 0 50px;
         }
 
         #cake_design_cards{
@@ -492,8 +437,18 @@
             display: flex;
             justify-content: space-between;
 
+            @media (max-width: 1199.98px){
+                width: 100vw;
+                overflow-y: scroll;
+                padding: 0 30px 10px;
+            }
+
             .card_outline{
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: $shadow;
+
+                @media (max-width: 575.98px){
+                    margin: 0 17.5px;
+                }
 
                 .description_block{
                     
@@ -543,16 +498,16 @@
                             margin-top: 15px;
                             width: 180px;
                             height: 60px;
-                            border-radius: 100px;
+                            border-radius: 30px;
                             border: 0;
-                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+                            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
                             font-size: $h4;
                             position: relative;
-                            color: #515151;
+                            color: $darkGrey;
                             cursor: pointer;
-                            background-color: #EFE6E4;
+                            background-color: $lightPike;
                             &:hover{
-                                background-color: #F4E9C9;
+                                background-color: $lightYellow;
                             }
 
                             .scope_icon{
@@ -574,15 +529,19 @@
 
         #view_all_design_area{
 
+            @media (max-width: 575.98px){
+                height: 75px;
+            }
+
             #view_all_design_button{
                 width: 180px;
                 height: 60px;
-                background-color: #707070;
+                background-color: $darkGrey;
                 color: #FFFFFF;
                 border: 0;
                 outline: none;
                 cursor: pointer;
-                border-radius: 7px;
+                border-radius: 5px;
                 margin: 50px 0;
                 font-size: $h3;
                 box-shadow: $shadow;
@@ -590,6 +549,11 @@
                     background-color: $lightYellow;
                     color: $darkGrey;
                 }
+
+                @media (max-width: 575.98px){
+                    display: none;
+                }
+                
             }
         }
 
@@ -601,28 +565,40 @@
         border-radius: 5px;
         text-align: center;
 
-        .title_h1{
+        @media (max-width: 474.98px){
+            margin: 0 15px 32px;
+        }
 
-            >span{
-                // 顏色不搭，讓品涵確認一下
-                // background-color: #F0D5CE;
-            }
-
-            > h1{
-                margin-bottom: 32px;
-                font-weight: normal;
-            }
+        .title_h1_container_coupon{
+            margin: 0 auto;
+            padding: 12px 0 15px;
         }
 
         #coupon_area{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-auto-rows: auto;
+            grid-row-gap: 40px;
+            grid-column-gap: 30px;
+            justify-items: center;
             padding: 0 40px;
+
+            @media (max-width: 1029.98px){
+                grid-template-columns: auto;
+            }
+
+            @media (max-width: 575.98px){
+                grid-template-columns: 100%;
+                grid-auto-rows: 112.5px;
+                grid-row-gap: 25px;
+            }
+
+            @media (max-width: 474.98px){
+                padding: 0 15px;
+            }
 
             .coupon{
                 display: inline-flex;
-                margin: 0 15px 30px;
 
                 .coupon_left_block{
                     width: 300px;
@@ -770,6 +746,23 @@
 
                 }
 
+                @media (min-width: 1029.98px){
+                // 排版上一列有兩個時用的設定
+                    &:nth-child(2n){
+                        justify-self: start;
+                    }
+
+                    &:nth-child(2n + 1){
+                        justify-self: end;
+                    }
+                }
+
+                @media (max-width: 575.98px){
+                    // 手機版
+                    transform-origin: center top;
+                    transform: scale(.75);
+                }
+
             }
 
         }
@@ -785,8 +778,7 @@
             font-size: 0;
             text-align: center;
             cursor: pointer;
-            position: relative;
-            top: -20px;
+            margin: 15px 0 20px;
 
             #arrow_down_icon{
                 display: inline-block;
@@ -815,48 +807,9 @@
 }
 
 //
-// 折價券h1組件的底線顏色不搭(可搜尋"品涵"前往該樣式)
-// 折價券展開的按鈕view_all_coupon要往下一點嗎
+// 折價券左下圖案樣式未定
 
 // ===== 頁面的scss結束 =====
-
-
-
-// ===== 組件title_h1的scss開始 =====
-.title_h1 {
-    display: inline-block;
-    position: relative;
-    h1 {
-        display: inline-block;
-        font-size: 36px;
-        color: #515151;
-    }
-    span {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        bottom: 10px;
-        width: 100%;
-        height: 5px;
-        border-radius: 5px;
-        background-color: #dfb9b0;
-    }
-    img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
-    }
-}
-@media (max-width:576px){
-    .title_h1 h1{
-        font-size:24px;
-        position:relative;
-        line-height:48px;
-    }
-}
-// ===== 組件title_h1的scss結束 =====
 
 
 
@@ -868,17 +821,22 @@
     width: 350px;
     height: 480px;
     padding: 25px;
-    border-radius: 7px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+
     .img_container{
         overflow: hidden;
         width: 300px;
         height: 300px;
         margin: 0 auto;
+
         img{
             height: 100%;
             width: 100%;
         }
+
     }
+
     .down_block{
         .cake_title{
             margin: 15px 0;
