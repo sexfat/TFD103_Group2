@@ -1,7 +1,7 @@
 <template>
     <div>
         <headercom></headercom>
-        <main class="shopping_cart_list">
+        <main class="shopping_cart_main">
             <titleh1 class="titleh1rwd" title="購物車"></titleh1>
             <section class="shopping_cart_bread">
                 <span class="shopping_cart_page">購物車</span>
@@ -84,7 +84,7 @@
                                 <div class="hr4"></div>
                                 <div class="ready_bill_details_product_cake_block">
                                     <div class="ready_bill_details_product_detail">
-                                        <label for="" class="ready_bill_details_product_item">一般包裝</label>
+                                        <label for="" class="ready_bill_details_product_item">普通包裝</label>
                                         <div class="ready_bill_details_product_cake_x">X</div>
                                         <div class="ready_bill_details_product_cake_amount">1</div>
                                         <div class="ready_bill_details_product_cake_tw">NT$</div>
@@ -283,80 +283,408 @@ export default {
 body{
     background-color: $bg;
 }
-.titleh1rwd{
-    margin-bottom: 150px;
-}
-.shopping_banner{
-    margin: 0 auto;
+
+.shopping_cart_main{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    height: 350px;
-    max-width: 1200px;
-    width: 100%;
-}
-
-// 購物車麵包屑
-.shopping_cart_bread{
-    width: 60%;
-    justify-content: space-around;
-    display: flex;
-    margin: 0 auto;
-    font-size: 36px;
-    margin-bottom: 50px;
-    .prepare_checkout_page,.checkout_page{
-        opacity: .2;
-    }
-}
-.shopping_cart_bread_arrow_img{
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-}
-
-
-.shopping_cart_list{
-    margin: 0 auto;
-    // max-width: 1200px;
-    width: 100%;
-    // font-size: 0;
-    
-}
-.shopping_banner{
-    font-size: 0;
-    margin: 0 auto;
-    display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 350px;
-    width: 100%;
-    margin-bottom: 60px;
-    background-image: url("/img/background_img300.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    .shopping_title{
-        margin: 0 auto;
+    // 購物車麵包屑
+    .shopping_cart_bread{
+        width: 70%;
+        justify-content: space-around;
         display: flex;
-        justify-content: center;
+        margin: 0 auto;
+        font-size: $h1;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            margin-top: 100px;
+            flex-direction: column;
+            align-items: center;
+            height: 250px;
+        }
+        .shopping_cart_page,.prepare_checkout_page,.checkout_page{
+            font-size: $h1;
+            max-width: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            @media screen and (max-width:767.98px){ 
+                font-size: $h4;
+            }
+        }
+        .shopping_cart_bread_arrow{
+            width: 100%;
+            max-width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .shopping_cart_bread_arrow_img{
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                @media screen and (max-width:767.98px){ 
+                    width: 20px;
+                    height: 20px;
+                    object-fit: cover;
+                    transform: rotate(90deg);
+                }
+            }
+        }
     }
-}
-.shopping_cart_bread{
-    width: 60%;
-    justify-content: space-around;
-    display: flex;
-    margin: 0 auto;
-    font-size: 36px;
-    margin-bottom: 50px;
-    max-width: 1200px;
-    
+     // 購物車麵包屑結束
+    .bill_list_outline{
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        background-color: $lightYellow;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            align-items: center;
+            max-width: 576px;
+            width: 100%;
+        }
+        .bill_list_titlebar{
+            background-color: $palePike;;
+            max-width: 1120px;
+            width: 100%;
+            display: flex;
+            border-radius: 10px 10px 0 0 ;
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            @media screen and (max-width:767.98px){ 
+                max-width: 576px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .list_id{
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                max-width: 1120px;
+                width: 100%;
+            }
+        }
+        .bill_list_contentbar{
+            width: 100%;
+            max-width: 1120px;
+            display: flex;
+            justify-content: center;
+            @media screen and (max-width:767.98px){ 
+                display: flex;
+                flex-direction: column;
+                max-width: 576px;
+                width: 100%;
+            }
+            .bill_individual_outline{
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                max-width: 1120px;
+                background-color: #F7F2F1;
+                box-sizing: border-box;
+                @media screen and (max-width:767.98px){ 
+                    margin: auto;
+                    max-width:768px;
+                    width: 100%;
+                }
+                .bill_individual{
+                    margin-top: 35px;
+                    width: 95%;
+                    max-width: 580px;
+                    flex-direction: column;
+                    justify-items: center;
+                    display: flex;
+                    .bill_individual_title{
+                        font-size: $h3;
+                        margin-bottom: 20px;
+                        .recipient,.phone,.preset_address,.new_address,.send_date,.mark,.ready_to_checkout_coupon{
+                            margin-bottom: 15px;
+                            font-size: $h4;
+                            display: flex;
+                            .bill_individual_address{
+                                height: 28px;
+                                max-width: 550px;
+                                width: 100%;
+                                display: block;
+                            }
+                            .bill_individual_title_short{
+                                display: flex;
+                                max-width: 100px;
+                                width: 100%;
+                            }
+                            .bill_individual_short{
+                                height: 28px;
+                                max-width: 150px;
+                                width: 100%;
+                            }
+                            .bill_individual_title_long{
+                                max-width: 500px;
+                                width: 100%;
+                                margin-bottom: 15px;
+                                .bill_individual_title_marktext{
+                                    font-size: $p;
+                                }
+                            }
+                            .bill_individual_mark{
+                                height: 60px;
+                                max-width: 550px;
+                                width: 100%;
+                                display: block;
+                                resize: none;
+                                &:hover{
+                                    border-width: 2px;
+                                    padding: 1px 2px;
+                                    border-style: ins-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+                                }
+                            }
+                        }
+                        .preset_address,.new_address,.mark{
+                            display: flex;
+                            flex-direction: column;
+                            .address_inline{
+                                display: flex;
+                                align-items: center;
+                                max-width: 170px;
+                                justify-content: space-between  ;
+                                width: 100%;
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                    .ready_to_checkout_coupon{
+                        align-items: center;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    .bill_details_outline{
+        display: flex;
+        .ready_bill_details{
+            width: 95%;
+            margin-top: 35px;
+            max-width: 350px;
+            @media screen and (max-width:767.98px){ 
+                max-width: 768px;
+                width: 95%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+                margin-top: 35px;
+                margin-bottom: 50px;
+            }
+            .ready_bill_details_title{
+                font-size: $h3;
+                margin-bottom: 20px;
+            }
+            .ready_bill_details_second_title{
+                font-size: $h4;
+                max-width: 100px;
+                width: 100%;
+            }
+            .hr3{
+                width: 100%;
+                max-width: 380px;
+                border-top: 2px solid $darkGrey;
+                margin: auto;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .combination_ready{
+                display: flex;
+                flex-direction: column;
+                @media screen and (max-width:767.98px){ 
+                    // max-width: 0px;
+                    width: 95%;
+                }
+                .ready_bill_details_product_title{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-size: $p;
+                    border: 5px;
+                    .ready_bill_details_product_cakesizeamount{
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        max-width: 280px;
+                        .ready_bill_details_product_item{
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            max-width: 160px;
+                            align-items: center;
+                        }
+                        .ready_bill_details_product_cake_size{
+                            max-width: 40px;
+                            width: 100%;
+                            display: flex;
+                            line-height: 16px;
+                            text-align: right;
+                            align-items: center;
+                        }
+                        .ready_bill_details_product_cake_x{
+                            text-align: right;
+                            max-width: 30px;
+                            line-height: 16px;
+                            width: 100%;
+                            display: inline-block;
+                            text-align: right;
+                            align-items: center;
+                        }
+                        .ready_bill_details_product_cake_amount{
+                            text-align: right;
+                            max-width: 30px;
+                            width: 100%;
+                            display: inline-block;
+                            align-items: center;
+                        }
+                    }
+                    .ready_bill_details_product_twandprice{
+                        display: flex;
+                        justify-content: flex-end;
+                        // max-width: 350px;
+                        width: 100%;
+                        .ready_bill_details_product_cake_tw{
+                        max-width: 40px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        text-align: right;
+                        justify-content: flex-end;
+                        }
+                        .ready_bill_special_color{
+                            color: #9F746B;
+                            font-weight: bold;
+                        }
+                        .ready_bill_details_product_cake_price{
+                        max-width: 60px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        }
+                        .last_price{
+                            color: red;
+                        }
+                    }
+                }
+                .hr4{
+                    width: 100%;
+                    max-width: 580px;
+                    border-top: 2px dotted rgb(119, 119, 119);
+                    margin: auto;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                } 
+                .ready_bill_details_product_cake_block{
+                    max-width: 580px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .ready_bill_details_product_detail{
+                        display: flex;
+                        max-width: 580px;
+                        width: 100%;
+                        @media screen and (max-width:767.98px){ 
+                            max-width: 576px;
+                            width: 100%;
+                            display: flex;
+                        }
+                    }   
+                }
+            }
+        }
+        .subtotal{
+            display: flex;
+            justify-content: space-between;
+        }
+        .couple_cost{
+            display: flex;
+            justify-content: space-between;
+        }
+        .ready_bill_details_second_title,.subtotal,.couple_cost,.shipping_method,.ready_bill_total,.payment_method{
+            max-width: 350px;
+            width: 100%;
+            // @media screen and (max-width:767.98px){ 
+                // display: flex;
+                // justify-content: space-between;
+            // }
+            .shipping_style_block{
+                display: flex;
+                margin-top: 10px;
+                flex-direction: column;
+                .shipping_style_titlebar{
+                    max-width: 350px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                    .shipping_style_input{
+                        max-width: 200px;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                }
+            }
+            .bill_payment_block{
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                .bill_payment_style_block{
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .ready_bill_total{
+            font-size: $h4;
+            display: flex;
+        }
+        .bill_ready_to_checkout_sumbit{
+            margin-top: 45px;
+            margin-bottom: 20px;
+            width: 120px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: $darkGrey;
+            color: white;
+            font-size: $h4;
+            box-shadow: $shadow;
+            &:hover{
+                color: $lightYellow;
+                cursor: pointer;
+            }
+        }
+        .security_and_privacy{
+            display: block;
+            font-size: $p;
+            @media screen and (max-width:767.98px){ 
+                max-width: 350px;
+                width: 100%;
+            }
+        }
+    }
 }
 .bill_list_outline{
     box-sizing: border-box;
     width: 100%;
     max-width: 1120px;
-    margin: 0 auto;
-    margin-bottom: 100px;
 }
 .bill_list_titlebar{
     background-color: $palePike;;
@@ -708,5 +1036,8 @@ font-weight: bold;
         width: 100%;
     }
 }
+
+
+
 
 </style>
