@@ -119,6 +119,7 @@ body{
         justify-content: space-around;
         display: flex;
         margin: 0 auto;
+        max-width: 1120px;
         font-size: $h1;
         margin-top: 200px;
         margin-bottom: 50px;

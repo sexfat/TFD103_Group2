@@ -321,6 +321,7 @@ router-link{
     // 購物車麵包屑
     .shopping_cart_bread{
         width: 70%;
+        max-width: 1120px;
         justify-content: space-around;
         display: flex;
         margin: 0 auto;

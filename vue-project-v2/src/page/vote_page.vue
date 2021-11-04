@@ -1,19 +1,10 @@
 <template>
-<<<<<<< HEAD
     <div>
         <headercom voteon=1 qaon=0 saleon=0 cakeon=0></headercom>
         <div id="vote_page_main_bar">
             <titleh1 title="主廚推薦"></titleh1>
             <p>
                 <span>「老母辛苦了！！」母親節檔期活動</span>
-=======
-  <div>
-    <headercom openWhat="vote"></headercom>
-    <div id="vote_page_main_bar">
-      <titleh1 title="人氣投票"></titleh1>
-      <p>
-        <span>「老母辛苦了！！」母親節檔期活動</span>
->>>>>>> ca3e9b67cd20b23374bb68355fd08542514dd0ca
 
         對媽媽的愛要大聲說，一份專屬於媽媽特別的愛，快來秀出你的創意讓大家看到
 
@@ -90,7 +81,6 @@ export default {
     cardTopthree,
     card_topthree,
   },
-<<<<<<< HEAD
     methods:{
         
     },
@@ -108,36 +98,6 @@ export default {
     
 }
 
-=======
-  data() {
-    return {
-      show: true,
-      total_cakebodys: [
-        "戚風蛋糕",
-        "水果蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-        "巧克力蛋糕",
-      ],
-      total_ingredients: ["水果", "糖果", "巧克力", "牛奶布丁"],
-      total_decorations: ["葉子", "看板", "慶生板"],
-    };
-  },
-  methods: {
-      
-  },
-  watch: {},
-  computed: {},
-  mounted() {
-  },
-};
->>>>>>> ca3e9b67cd20b23374bb68355fd08542514dd0ca
 </script>
 <style scoped lang="scss">
 // @import "../assets/style/var.scss";

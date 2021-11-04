@@ -16,6 +16,7 @@
                 <span class="checkout_page">結帳完成</span>
             </section>
             <!-- 從這開始 -->
+            <font-awesome-icon icon="coffee" />
             <section class="addenda_block_outline">
                 <div class="addenda_block_inline">
                     <div class="addenda_block_list1">
@@ -326,6 +327,7 @@ body{
     // 購物車麵包屑
     .shopping_cart_bread{
         width: 70%;
+        max-width: 1120px;
         justify-content: space-around;
         display: flex;
         margin: 0 auto;

@@ -1,7 +1,6 @@
 <template>
     <div>
         <div class="addenda_title_block">
-
             <div class="addenda_titlebar">
                 <div class="addenda_title">包裝
                     <div class="addenda_cancel_icon">
@@ -109,9 +108,7 @@
                 
                 <button id="addenda_button_sumbit">前往結帳</button>
                 <button id="addenda_button_backtoproduct">返回商品</button>
-
             </div>
-
         </div>
     </div>
 </template>
@@ -119,13 +116,16 @@
 import $ from 'jquery'
 import headercom from '../components/headercom'
 import footercom from '../components/footercom'
-import titleh1 from "../components/title_h1.vue"
+// import titleh1 from "./title_h1.vue"
+// import productDetailAddenda from "../components/productDetailAddenda"
+
 export default {
-    name:'product_detail_addenda',
+    name:'productDetailAddenda',
     components:{
-        titleh1,
+        // titleh1,
         headercom,
         footercom,
+        // productDetailAddenda,
     },
     data(){
         return{
@@ -164,7 +164,8 @@ export default {
     box-sizing: border-box;
 }
 body{
-    background-color: $bg;
+    // background-color: $bg;
+    z-index: 5;
 }
 .addenda_title_block{
     background-color: $palePike;
@@ -250,7 +251,6 @@ body{
                 }  
                 .addenda_describe{
                     max-width: 120px;
-                    white-space:pre-wrap;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
