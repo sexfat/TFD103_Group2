@@ -12,7 +12,7 @@
             </p>
         </div>
         <main id="vote_page_main">
-            <h1 class="nowRange"><img src="" alt="" />現在排名</h1>
+            <h1 class="nowRange"><img src="../assets/images/jellyfish_icon.svg" alt="" />現在排名</h1>
             <section id="topthree">
                 <card-topthree v-for="(test,index) in 3" :key="index"></card-topthree>
             </section>
@@ -20,7 +20,7 @@
             <cake-selector :total_decorations="total_decorations" :total_ingredients="total_ingredients" :total_cakebodys="total_cakebodys"></cake-selector>
             <!-- <div id="select_test"></div> -->
             <h1 class="vote_title">
-                <span><img src="" alt="" />候選名單</span>
+                <span><img src="../assets/images/jellyfish_icon.svg" alt="" />候選名單</span>
                 <search-bar></search-bar>
                 </h1>
             <section id="vote">
