@@ -20,7 +20,7 @@ export default[{
         {path:'shopManager', component: r => require.ensure([], () => r(require('../behind_page/behind_shop_page')), 'behind_shop')},
         {path:'cakeMakeManager', component: r => require.ensure([], () => r(require('../behind_page/behind_cake_make_page')), 'behind__cake_make')},
         {path:'messageManager', component: r => require.ensure([], () => r(require('../behind_page/behind_message_manager_page')), 'behind_message_manager')},
-<<<<<<< HEAD
+// <<<<<<< HEAD
         {path:'member_data', component: member_data},   // 會員資料頁
         {path:'member_order', component: member_order},   // 會員訂單查詢頁
         {path:'member_fav', component: member_fav},   // 會員最愛分類頁
@@ -29,23 +29,9 @@ export default[{
         {path:'product_detail', component: r => require.ensure([], () => r(require('../page/product_detail')), 'product_detail')},
         {path:'shopping_cart', component: r => require.ensure([], () => r(require('../page/shopping_cart')), 'shopping_cart')},
         {path:'ready_to_checkout', component: r => require.ensure([], () => r(require('../page/ready_to_checkout')), 'ready_to_checkout')},
-<<<<<<< HEAD
         {path:'checkout_complete', component: r => require.ensure([], () => r(require('../page/checkout_complete')), 'checkout_complete')},
         {path:'qa', component: r => require.ensure([], () => r(require('../page/qa')), 'qa')},
         {path:'qa_chat', component: r => require.ensure([], () => r(require('../page/qa_chat')), 'qa_chat')},
-=======
-=======
-        {path:'member_data', component: r => require.ensure([], () => r(require('../page/member-data')), 'member-data')}, // 會員資料頁
-        {path:'member_fav', component: r => require.ensure([], () => r(require('../page/member-fav')), 'member_fav')}, // 會員最愛分類頁
-        {path:'member_order', component: r => require.ensure([], () => r(require('../page/member-order')), 'member_order')}, // 會員訂單查詢頁
-        {path:'member_fav_detail', component: r => require.ensure([], () => r(require('../page/member-fav-detail')), 'member_fav_detail')}, // 會員最愛詳細頁
-        // {path:'member_data', component: member_data},   // 會員資料頁
-        // {path:'member_order', component: member_order},   // 會員訂單查詢頁
-        // {path:'member_fav', component: member_fav},   // 會員最愛分類頁
-        // {path:'member_fav_detail', component: member_fav_detail},   // 會員最愛詳細頁
-        {path:'', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
-        {path:'cakeDesign', component: r => require.ensure([], () => r(require('../page/cake_design')), 'cakeDesign')},//蛋糕設計
->>>>>>> 9b521c8c6be01e2219e833751dd980b7e22bf8c3
->>>>>>> dev
+// >>>>>>> dev
     ],
 }]
