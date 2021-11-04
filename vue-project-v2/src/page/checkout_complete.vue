@@ -35,7 +35,9 @@
                     </div>
                 </div>
             </div>
-            <button class="checkout_complete_goto_statement_sumbit">訂單查詢</button>
+            <router-link to="member_order">
+                <button class="checkout_complete_goto_statement_sumbit">訂單查詢</button>
+            </router-link>
         </main>
         <footercom></footercom>
     </div>
