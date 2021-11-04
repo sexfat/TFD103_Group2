@@ -2,7 +2,7 @@
     <div>
         <headercom></headercom>
         <div id="vote_page_main_bar">
-            <titleh1 title="主廚推薦"></titleh1>
+            <titleh1 title="人氣投票"></titleh1>
             <p>
                 <span>「老母辛苦了！！」母親節檔期活動</span>
 
