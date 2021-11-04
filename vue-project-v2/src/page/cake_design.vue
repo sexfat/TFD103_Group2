@@ -1,6 +1,6 @@
 <template>
     <div class="all">
-        <headercom></headercom>
+        <headercom openWhat="cakeDesign"></headercom>
         <!-- 開始製作 -->
         <section id="first_screen">
             <div id="first_screen_button">
