@@ -13,8 +13,8 @@ $name = $data->name;
 $biulder = $data->biulder;
 $create_date = $data->create_date;
 $authority = $data->authority;
-$sql = "INSERT INTO `A_cake`.`EMPLOYEE`  (`EMPLOYEE_NUMBER`, `EMPLOYEE_NAME`, `PASSWORD`, `AUTHORITY`,`CREATE_DATE`,`PHONE`, `BIULDER`, `ACTIVE`,`IMG`) VALUES(?,?,?,?,NOW(),1234,?,11234) ";
-
+$sql = "INSERT INTO `A_cake`.`EMPLOYEE` ( `EMPLOYEE_NUMBER`, `EMPLOYEE_NAME`, `PASSWORD`, `AUTHORITY`,
+ `CREATE_DATE`, `PHONE`, `BIULDER`, `ACTIVE`, `IMG`) VALUES ( ?, ?, ?, ?, '2021-12-23', '3201252', ?, '1', '123654.jpg');";
 $statement = getPDO()->prepare($sql);
        $statement -> bindValue(1,$number);
        $statement -> bindValue(2,$name);
@@ -24,4 +24,14 @@ $statement = getPDO()->prepare($sql);
        $statement -> execute();
 
 echo $number;
+echo "<br>";
+echo $password;
+echo "<br>";
+echo $name;
+echo "<br>";
+echo $biulder;
+echo "<br>";
+echo $create_date;
+echo "<br>";
+echo $authority;
 ?>
