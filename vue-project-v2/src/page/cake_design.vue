@@ -137,6 +137,11 @@ export default {
     },
 }
 </script>
+<style>
+li.nav_item > a#cakeDesign{
+    color: #9F746B;
+}
+</style>
 <style scoped lang="scss">
 @import "../assets/style/var.scss";
     body{
