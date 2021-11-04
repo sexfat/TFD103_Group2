@@ -171,7 +171,7 @@ li.nav_item > a#cakeDesign{
         margin: 0;
         position: relative;
         overflow: hidden;
-        // display: none;
+        display: none;
 
         //頁面切換
         transition:0.5s all ease;
@@ -265,7 +265,7 @@ li.nav_item > a#cakeDesign{
         // left: 50%;
         // transform: translate(-50%,0)
         // overflow: hidden;
-        display: none;
+        // display: none;
     }
     div#production_area{
         height: 100vh;

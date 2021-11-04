@@ -5,7 +5,7 @@
                 <img src="../assets/images/logo.png">
             </a> -->
             <router-link to="/" id="logo"><img src="../assets/images/logo.png"></router-link>
-            <ul id="header_nav" @click= isShow>
+            <ul id="header_nav">
                 <div id="header_div_one">
                     <!-- RWD漢堡選單 才會出現的背景圖 -->
                     <img id="hamburger_img" src="../assets/images/snowRWD.svg" alt="">
