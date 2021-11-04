@@ -9,36 +9,13 @@
 
     <main id="member_order_page">
 
-        <!-- 會員頁共用開始 -->
-        <div class="main_bar">
-            <div id="avatar_container">
-                <img src="http://via.placeholder.com/100x100" alt="會員大頭照">
-            </div>
-            <div id="member_page_nav">
-                <div id="member_data" class="member_page_nav_link">
-                    <img src="../assets/images/member_member.svg" alt="" id="member_data_icon" >
-                    <span id="member_data_span">會員資料</span>
-                </div>
-                <div id="member_order" class="member_page_nav_link -on">
-                    <img src="../assets/images/member_shoppingBag_hover.svg" alt="" id="member_order_icon">
-                    <span id="member_order_span">訂單查詢</span>
-                </div>
-                <div id="member_fav" class="member_page_nav_link">
-                    <img src="../assets/images/member_favorites.svg" alt="" id="member_fav_icon">
-                    <span id="member_fav_span">我的最愛</span>
-                </div>
-            </div>
-        </div>
-        <!-- 會員頁共用結束 -->
-
+        <!-- 會員頁共用main_bar組件 -->
+        <member_main_bar :page="page"></member_main_bar>
 
         <section id="title_h1_block">
             <!-- h1組件 -->
-            <div class="title_h1">
-                <span></span>
-                <img src="../assets/images/eggBeater.png" alt="">
-                <h1>我的訂單</h1>
-                <img src="../assets/images/eggBeater.png" alt="">
+            <div class="title_h1_container">
+                <title_h1 :title="title" class="title_h1"></title_h1>
             </div>
         </section>
 
@@ -133,15 +110,15 @@
                         </div>
                         <div class="information_right">
                             <div class="deliver_fee">
-                                運費: $
+                                <span>運費: $&nbsp;</span>
                                 <span>60</span>
                             </div>
                             <div class="discount">
-                                折扣: $
+                                <span>折扣: $&nbsp;</span>
                                 <span>100</span>
                             </div>
                             <div class="order_total">
-                                總計: $
+                                <span>總計: $&nbsp;</span>
                                 <span>580</span>
                             </div>
                         </div>
@@ -207,13 +184,21 @@
     import headercomp from "../components/headercom";
     import footercomp from "../components/footercom";
     
+    import member_main_bar from "../components/member_main_bar";
+    import title_h1 from "../components/title_h1";
+
     export default {
         components: {
             headercomp,
             footercomp,
+            member_main_bar,
+            title_h1,
         },
         data(){
-            return{};
+            return{
+                page: "order",
+                title: "我的訂單",
+            };
         },
     }
 </script>
@@ -242,68 +227,17 @@
     margin: 0 auto;
     font-size: 0;
 
-    .main_bar{
-        height: 500px;
-        padding-top: 150px;
-        
-        #avatar_container{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0px auto 50px;
-        }
-        #member_page_nav{
-            // border: 1px solid blue;
-
-            display: flex;
-            justify-content: space-between;
-            width: 410px;
-            margin: 0 auto 110px;
-
-            .member_page_nav_link{
-                // border: 1px solid green;
-
-                width: 82px;
-                height: 92px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-
-                > img{
-                    width: 50px;
-                    height: 50px;
-                    margin-bottom: 10px;
-                    cursor: pointer;
-                }
-
-                > span{
-                    width: 82px;
-                    height: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: $p;
-                    line-height: 32px;
-                    color: #9F746B;
-                    cursor: pointer;
-                }
-            }
-            .member_page_nav_link.-on{
-                > span{
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-                }
-            }
-        }
-    }
-
     #title_h1_block{
         text-align: center;
+        .title_h1_container{
+            margin: 0 auto;
+            padding: 27px 0 50px;
+        }
     }
 
     #switch_tab_block{  // 佔位用的樣式大小
         height: 50px;
-        margin: 40px auto 55px;
+        margin: 0 auto 55px;
     }
     
     #filter_block{
@@ -313,10 +247,18 @@
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 991.98px){
+            display: block;
+        }
+
             #select_block{
                 display: inline-flex;
                 justify-content: space-between;
                 padding-top: 5px;
+
+                @media (max-width: 992.98px){
+                    display: flex;
+                }
 
                 .choose_date{
                     width: 260px;
@@ -327,6 +269,10 @@
 
                     &:nth-child(1){
                         margin-right: 40px;
+                    }
+
+                    @media (max-width: 992.98px){
+                        width: 100%;
                     }
 
                 }
@@ -362,17 +308,29 @@
                     align-self: center;
                     display: flex;
                     position: relative;
+                    margin-left: 40px;
+
+                    @media (max-width: 575.98px){
+                        flex-direction: column;
+                        margin-left: 20px;
+                    }
 
                     .order_number{
                         font-size: $h2;
                         color: $darkGrey;
-                        margin-left: 40px;
                     }
 
                     .order_status{
                         font-size: $h2;
                         color: $darkGrey;
-                        margin-left: 40px;
+                        margin-left: 45px;
+
+                        @media (max-width: 575.98px) {
+                            margin-left: 0;
+                            text-align: right;
+                            margin-top: 5px;
+                        }
+
                     }
 
                     .order_date{
@@ -380,8 +338,12 @@
                         color: #848484;
                         position: absolute;
                         line-height: 16px;
-                        left: 40px;
+                        left: 0px;
                         bottom: -17px;
+
+                        @media (max-width: 575.98px) {
+                            bottom: 12px;
+                        }
                     }
 
                 }
@@ -396,6 +358,10 @@
                     cursor: pointer;
                     align-self: center;
                     margin-right: 50px;
+
+                    @media (max-width: 575.98px) {
+                        margin-right: 15px;
+                    }
 
                     .plus_icon, .minus_icon{
                         font-size: 40px;
@@ -415,6 +381,19 @@
                     margin: 50px 45px 0;
                     display: flex;
                     flex-wrap: nowrap;
+                    position: relative;
+
+                    @media (max-width: 767.98px){
+                        margin: 70px 45px 0;
+                    }
+
+                    @media (max-width: 575.98px){
+                        margin: 70px 25px 0;
+                    }
+
+                    @media (max-width: 414px){
+                        margin: 70px 15px 0;
+                    }
 
                     .product_image{
                         width: 100px;
@@ -422,6 +401,15 @@
                         overflow: hidden;
                         margin-right: 45px;
                         flex-shrink: 0;
+                        align-self: center;
+
+                        @media (max-width: 767.98px){
+                            margin-right: 25px;
+                        }
+
+                        @media (max-width: 414px){
+                            margin-right: 15px;
+                        }
 
                         > img{
                             width: 100%;
@@ -438,6 +426,15 @@
                         flex-direction: column;
                         justify-content: center;
                         padding-right: 100px;
+
+                        @media (max-width: 1199.98px) and (min-width: 991.98px){
+                            padding-right: 50px;
+                        }
+
+                        @media (max-width: 991.98px){
+                            padding: 0;
+                        }
+
                     }
 
                     .item_number{
@@ -447,6 +444,20 @@
                         width: 135px;
                         text-align: right;
                         flex-shrink: 0;
+
+                        @media (max-width: 1199.98px) and (min-width: 767.98px){
+                            width: 100px
+                        }
+
+                        @media (max-width: 767.98px){
+                            width: 70px;
+                            align-self: flex-start;
+                        }
+                        
+                        @media (max-width: 414px){
+                            width: 50px;
+                        }
+
                     }
 
                     .item_total{
@@ -456,6 +467,22 @@
                         width: 135px;
                         text-align: right;
                         flex-shrink: 0;
+
+                        @media (max-width: 1199.98px) and (min-width: 767.98px){
+                            width: 100px
+                        }
+
+                        @media (max-width: 767.98px){
+                            width: 70px;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+
+                        @media (max-width: 414px){
+                            width: 50px;
+                        }
+
                     }
 
                 }
@@ -466,6 +493,15 @@
                     justify-content: space-between;
                     font-size: $h2;
                     color: $darkGrey;
+
+                    @media(max-width: 767.98px){
+                        font-size: 22px;
+                    }
+
+                    @media(max-width: 575.98px){
+                        flex-direction: column;
+                        margin: 50px 25px 0;
+                    }
 
                     .information_left{
 
@@ -483,19 +519,36 @@
 
                     .information_right{
 
+                        @media(max-width: 575.98px){
+                        font-size: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        
+                    }
+
+                    @media(max-width: 414px){
+                        font-size: 18px;
+                    }
+
                         .deliver_fee{
                             line-height: 37px;
                             margin-bottom: 15px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                         .discount{
                             line-height: 37px;
                             margin-bottom: 15px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                         .order_total{
                             line-height: 37px;
                             margin-bottom: 27px;
+                            display: flex;
+                            justify-content: space-between;
                         }
 
                     }
@@ -526,13 +579,9 @@
 
 //版面問題
 // 1. 下拉選單預設選項的設置方式需要優化
-// 2. 訂單展開後下方margin要改成100px嗎(現在都是50px)
-// 3. 訂單收合的+與-按鈕要用font-awesome的嗎
-// 4. 下拉選單的樣式要再調整
-// 5. 下拉選單的寬高設定在safari似乎不起作用
-// 6. 訂單標題字對齊下面的圖片
-// 7. 金額計算個位數要對齊
-// 8. 折價券排版修改 奇數個時有問題
+// 2. 下拉選單的樣式要再調整
+// 3. 下拉選單的寬高設定在safari似乎不起作用
+// 4. 金額計算個位數要對齊
 
 // ===== 頁面的scss結束 =====
 
@@ -542,8 +591,12 @@
 .title_h1 {
     display: inline-block;
     position: relative;
+    .outline{
+        display:flex;
+    }
     h1 {
         display: inline-block;
+        margin:0;
         font-size: 36px;
         color: #515151;
     }
@@ -551,18 +604,20 @@
         display: inline-block;
         position: absolute;
         left: 0;
-        bottom: 10px;
+        bottom: 0;
         width: 100%;
         height: 5px;
         border-radius: 5px;
         background-color: #dfb9b0;
     }
     img {
-        width: 58px;
-        height: 58px;
-        vertical-align: middle;
-        position: relative;
-        transform: translateY(-10px);
+        max-width: 58px;
+        max-height: 58px;
+        width:100%;
+        height:100%;
+        // vertical-align: middle;
+        // position: relative;
+        // transform: translateY(-10px);
     }
 }
 @media (max-width:576px){
@@ -590,6 +645,18 @@ input.search{
     &:focus{
         border:none;
     }
+
+    // 自己加上的RWD樣式
+    @media (max-width: 1199.98px) and (min-width: 992px){
+        width: 300px;
+    }
+
+    @media (max-width: 991.98px){
+        display: block;
+        margin-top: 50px;
+        width: 100%;
+    }
+
 }
 // ===== 組件searchbar的scss結束 =====
 
