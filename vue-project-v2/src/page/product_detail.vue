@@ -805,11 +805,12 @@ body{
                     margin-top: 25px;
                     margin-bottom: 25px;
                     @media screen and (max-width:767.98px){ 
-                        max-width: 900px;
+                        max-width: 768px;
                         margin: 0 auto;
                         width: 100%;
                         display: block;
-                        margin-bottom: 50px;
+                        margin-top: 25px;
+                        margin-bottom: 25px;
                     }
                 }
             }

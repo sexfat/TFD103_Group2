@@ -1,9 +1,10 @@
 <template>
     <div>
         <headercom></headercom>
+        <div id="main-bar-img300"></div>
         <main class="shopping_cart_main">
-            <!-- <titleh1 class="titleh1rwd" title="購物車"></titleh1>
-            <section class="shopping_cart_bread">
+            <titleh1 class="titleh1rwd" title="QA問答"></titleh1>
+            <!-- <section class="shopping_cart_bread">
                 <span class="shopping_cart_page">購物車</span>
                 <div class="shopping_cart_bread_arrow">
                     <img class="shopping_cart_bread_arrow_img" src="../assets/images/process_icon.svg" alt="">
@@ -116,10 +117,34 @@ body{
     background-color: $bg;
 }
 
+#main-bar-img300{
+    margin-top: 50px;
+    height: 300px;
+    background-image: url("../assets/images/background_img300.png");
+    background-size: auto 100%;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
 .shopping_cart_main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    .titleh1rwd{
+        margin-top: 150px;
+        margin-bottom: 20px;
+        @media screen and (max-width:767.98px){ 
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 150px;
+            margin-bottom: 50px;
+            align-items: center;
+        }
+    }
     // 購物車麵包屑
     .shopping_cart_bread{
         width: 70%;
@@ -127,14 +152,14 @@ body{
         display: flex;
         margin: 0 auto;
         font-size: $h1;
-        margin-top: 150px;
+        margin-top: 200px;
         margin-bottom: 50px;
         @media screen and (max-width:767.98px){ 
             display: flex;
             margin-top: 100px;
             flex-direction: column;
             align-items: center;
-            height: 250px;
+            height: 200px;
         }
         .shopping_cart_page,.prepare_checkout_page,.checkout_page{
             font-size: $h1;
@@ -203,6 +228,7 @@ body{
     @media screen and (max-width:767.98px){ 
         max-width: 400px;
         width: 95%;
+        margin-top: 120px;
     }
 }
 .qa_question_block{

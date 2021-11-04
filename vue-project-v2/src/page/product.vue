@@ -104,6 +104,7 @@ export default {
 body{
     background-color: $bg;
 }
+
 .outline{
     margin-bottom: 50px;
 }
