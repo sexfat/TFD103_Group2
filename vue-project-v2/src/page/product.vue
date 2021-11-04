@@ -276,6 +276,7 @@ router-link{
                 display: flex;
                 flex-direction: column;
                 // height: 60px;
+                color: black;
                 .product_cake_title{
                     font-size: $h3;
                 }

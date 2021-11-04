@@ -1,6 +1,6 @@
 <template>
     <div>
-        <headercom></headercom>
+        <headercom voteon=1 qaon=0 saleon=0 cakeon=0></headercom>
         <div id="vote_page_main_bar">
             <titleh1 title="主廚推薦"></titleh1>
             <p>
@@ -75,7 +75,7 @@ export default {
 
     },
     mounted(){
-       
+        
     },
 
     

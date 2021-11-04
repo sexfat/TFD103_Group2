@@ -139,6 +139,10 @@ body{
                 font-size: $h4;
             }
         }
+        .shopping_cart_page,.prepare_checkout_page{
+            color: $darkGrey;
+            opacity: .2;
+        }
         .shopping_cart_bread_arrow{
             width: 100%;
             max-width: 50px;
