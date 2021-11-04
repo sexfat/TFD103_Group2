@@ -102,7 +102,7 @@
         </section>
       </form >
     </div>
-    <div class="forPosition" v-for="(data, index) in 1" :key="index">
+    <div class="forPosition" v-for="(data, index) in data" :key="index">
       <section class="first_site">
         <div id="employee">
           <div class="manager_list">
@@ -209,36 +209,37 @@ export default {
         password: "",
         authority: "",
         create_date: "",
-        phone: "",
         biulder: "",
-        active: "",
-        img: "",
       },
     };
   },
   mounted() {
     $("#employee").siblings().removeClass("target");
     $("#employee").addClass("target");
-
-    axios({
+const url ='api'
+    this.$axios({
       method: "get",
-      url: "/static/quire_member.php",
+      url: 'http://localhost/static/quire_member.php',
     }).then((res) => {
       console.log(res.data);
       this.data = res.data;
-      // console.log(this.data);
     });
+
+
+  //   var xhttp = new XMLHttpRequest();
+  //   xhttp.onreadystatechange = function () {
+  //       if (this.readyState == 4 && this.status == 200) {
+  //   console.log("done");
+  //           }
+  //       }
+  //   xhttp.open("POST","http://tfd103g2.sexfat.tw/join_employee.php", true);
+  //   xhttp.send(JSON.stringify({
+  //       // email:email,
+  //       // password:password,
+  //       number:123,
+  //   }));
+  
   },
-  // created(){
-  //   axios({
-  //     method: "get",
-  //     url: "/static/join_employee.php",
-  //   }).then((res) => {
-  //     console.log(res.data);
-  //     this.data = res.data;
-  //     console.log(this.data);
-  //   });
-  // },
   methods: {
     change(index) {
       let i = this.data[index].ACTIVE;
@@ -252,60 +253,41 @@ export default {
       let biulder = this.new_employee.biulder;
       let create_date = this.new_employee.create_date;
       let authority = this.new_employee.authority;
-      let data = {
-        number:this.new_employee.number,
-        password:this.new_employee.password,
-        name: this.new_employee.name,
-        biulder:this.new_employee.biulder,
-        create_date:this.new_employee.create_date,
-        authority:this.new_employee.authority,
-      };
-      let params= new URLSearchParams();
-      params.append("number", number); //你要传给后台的参数值 key/value
-      params.append("password", password);
-      params.append("name", name);
-      params.append("biulder", biulder);
-      params.append("create_date", create_date);
-      params.append("authority", authority);
-      // axios({
-      //   method: "get",
-      //   url: "/static/join_employee.php",
-      //   crossdomain:true,
-      //   headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      //   data:{number:number},
-      // }).then((res) => {
-      //   console.log(res.data)
-      // }).catch((error)=>{
-      //   console.log(error)
-      // });
+      let data = this.new_employee;
 
-      // this.axios
-      //   .get("/static/join_employee.php", { params: data })
-      //   .then((response) => {
-      //     console.log(response.data);
-      //     console.log(response);
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
 
-      var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-    console.log("done");
-            }
-        }
-    xhttp.open("POST","/static/join_employee.php", true);
-    xhttp.send(JSON.stringify({
-        // email:email,
-        // password:password,
-        number:number,
-        password:password,
-        name:name,
-        biulder:biulder,
-        create_date:create_date,
-        authority:authority
-    }));
+
+
+    const params = new URLSearchParams();
+
+    
+    params.append('number', number);
+    params.append('password', password);
+    params.append('name', name);
+    params.append('biulder', biulder);
+    params.append('create_date', create_date);
+    params.append('authority', authority);
+    params.append('data', data);
+
+              // const json = encodeURI(JSON.stringify(data),'utf-8')
+                axios({
+                    method: 'post',
+                    url: 'http://localhost/static/join_employee.php',
+
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    data: params,
+                })
+                    .then((response) => {
+                      console.log(response);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+
+
+
 
       this.create = 1;
       this.new_employee.number = "";

@@ -30,6 +30,10 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals:{
+    'gsap':'gsap',
+  },
+
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

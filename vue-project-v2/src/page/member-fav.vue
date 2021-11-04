@@ -46,7 +46,7 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <router-link to="/member_data">
+                        <router-link to="/member_fav_detail">
                             <img src="../assets/images/cho_cake.jpg" alt="">
                         </router-link>
                     </div>
@@ -59,7 +59,7 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <router-link to="./member_fav_detail">
+                        <router-link to="/member_fav_detail">
                             <img src="../assets/images/cho_cake.jpg" alt="">
                         </router-link>
                     </div>
@@ -72,7 +72,7 @@
                         </button>
                     </div>
                     <div class="folder_img_outline">
-                        <router-link to="./member_fav_detail">
+                        <router-link to="/member_fav_detail">
                             <img src="../assets/images/cho_cake.jpg" alt="">
                         </router-link>
                     </div>
@@ -123,6 +123,11 @@
                 page: "fav",
                 title: "資料夾分類",
             };
+        },
+        methods: {
+            test(){
+                alert("點擊事件");
+            }
         },
     }
 </script>
@@ -223,6 +228,7 @@
                     left: 0;
                     box-shadow: $shadow;
                     border-radius: 5px;
+                    z-index: -1;
                 }
 
                 .folder_title_tag{

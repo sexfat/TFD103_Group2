@@ -10,7 +10,9 @@
                 </div>
                 <img class="subtitle" src="../assets/images/subtitle.png" alt="">
                 <div class="first_screen_button">
-                    <buttontest title=" 前往設計"></buttontest>
+                    <router-link to="/cakeDesign" id="cakeDesign">
+                        <buttontest title=" 前往設計"></buttontest>
+                    </router-link>
                 </div>
                 <img class="background_img" src="../assets/images/background_img130.png" alt="">
             </div>
@@ -126,6 +128,7 @@ import titleh1 from '../components/title_h1.vue'
 import cardVoting from '../components/card_voting.vue'
 import buttontest from '../components/button_h1.vue'
 import footercom from '../components/footercom'
+// import {gsap} from "gsap"
 
 export default {
     name:"index",
@@ -175,14 +178,14 @@ export default {
         });                         
 
         // gsap
-        // gsap.to('.subtitle', {
+        TweenMax.to('#shiny1', {
 
-        //     duration: 1,
-        //     repeat: 4,
-        //     yoyo: true,
-        //     rotation: 50,
-        //     transformOrigin:'center top',
-        // });
+            duration: 1,
+            repeat: 4,
+            yoyo: true,
+            rotation: 50,
+            transformOrigin:'center top',
+        });
     },
 }
 </script>
@@ -388,6 +391,17 @@ export default {
         }
     }
 
+    @media all and (max-width: 768px){
+
+        div#second_box{
+            div.second_content{
+                margin-left: 40px;
+                margin-right: 40px;
+                flex-direction: column;
+            }
+        }
+    }
+
     // 第三屏third_screen
     div.third_screen{
         background-color: #F7EDD4;
@@ -588,6 +602,37 @@ export default {
             }
             hr{
                 color: #515151;
+            }
+        }
+    }
+
+    @media all and (max-width: 768px){
+        div#fifth_box{
+            margin-left: 40px;
+            margin-right: 40px;
+            div.first_knowledge_img{
+                grid-column: 1/5;
+                order:1;
+            }
+            div.first_knowledge_text{
+                grid-column: 1/5;
+                order:2;
+            }
+            div.second_knowledge_img{
+                grid-column: 1/5;
+                order:3;
+            }
+            div.second_knowledge_text{
+                grid-column: 1/5;
+                order:4;
+            }
+            div.third_knowledge_img{
+                grid-column: 1/5;
+                order:5;
+            }
+            div.third_knowledge_text{
+                grid-column: 1/5;
+                order:6;
             }
         }
     }

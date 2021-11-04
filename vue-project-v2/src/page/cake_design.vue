@@ -1,10 +1,10 @@
 <template>
     <div class="all">
-        <headercom></headercom>
+        <headercom openWhat="cakeDesign"></headercom>
         <!-- 開始製作 -->
-        <section id="first_screen" @click.prevent="isStart">
-            <div id="first_screen_button">
-                    <buttontest title=" 開始製作" @click= isStart></buttontest>
+        <section id="first_screen">
+            <div id="first_screen_button" @click="isStart">
+                    <buttontest title=" 開始製作"></buttontest>
             </div>
             <div id="first_screen_cake">
             <img id="first_screen_cake_look" src="../assets/images/cake_design_look.svg" alt="">
@@ -27,7 +27,7 @@
                         <img id="big_cake_model" src="../../static/cake_design/cake_model1.png"  alt="">
                      </div>
                      <div id="big_plate_box">
-                        <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
+                        <img id="big_plate" :src="require('../assets/images/cake_design/plate.png')" alt=""> <!--老師打的src 請照抄-->
                      </div>
                  </div>
                  <input id="next_step" type="button">
@@ -100,10 +100,10 @@ export default {
             bigImages:["../../static/cake_design/cake_model"],
         }
     },
-    method:{
+    methods:{
         isStart(){
-            // alert("10")
-            $('#first_screen').toggleClass('start');
+            alert("10")
+            // $('#first_screen').toggleClass('start');
             // $('#first_screen').css("display: none;")
         }
         // chaneImage(e){
@@ -137,6 +137,11 @@ export default {
     },
 }
 </script>
+<style>
+li.nav_item > a#cakeDesign{
+    color: #9F746B;
+}
+</style>
 <style scoped lang="scss">
 @import "../assets/style/var.scss";
     body{

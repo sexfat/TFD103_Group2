@@ -1,5 +1,8 @@
 <?php
 include "connection.php";
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Headers: Origin, Methods, Content-Type");
 // $number = htmlspecialchars($_GET["number"]);
 // $password = htmlspecialchars($_GET["password"]);
 // $name = htmlspecialchars($_GET["name"]);
@@ -14,7 +17,7 @@ $biulder = $data->biulder;
 $create_date = $data->create_date;
 $authority = $data->authority;
 $sql = "INSERT INTO `A_cake`.`EMPLOYEE` ( `EMPLOYEE_NUMBER`, `EMPLOYEE_NAME`, `PASSWORD`, `AUTHORITY`,
- `CREATE_DATE`, `PHONE`, `BIULDER`, `ACTIVE`, `IMG`) VALUES ( ?, ?, ?, ?, '2021-12-23', '3201252', ?, '1', '123654.jpg');";
+ `CREATE_DATE`, `PHONE`, `BIULDER`, `ACTIVE`, `IMG`) VALUES ( ?, ?, ?, ?, NOW(), '3201252', ?, '1', '123654.jpg');";
 $statement = getPDO()->prepare($sql);
        $statement -> bindValue(1,$number);
        $statement -> bindValue(2,$name);

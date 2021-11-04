@@ -17,6 +17,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.prototype.$qs = qs
 Vue.use(VueRouter,VueAxios,axios)
 
+// Vue.prototype.HOST = '/api'
 // // 以下為遠端請求
 // // for axiosInstance, no need to xampp
 // let subPath = process.env.NODE_ENV === "production" 
@@ -31,7 +32,7 @@ Vue.use(VueRouter,VueAxios,axios)
 // // for php cli server
 // Vue.prototype.$axios = axiosInstance
 // // for xampp
-// Vue.prototype.$axios = axios;
+Vue.prototype.$axios = axios;
 // Vue.config.productionTip = false
 // // 以上為遠端請求
 
