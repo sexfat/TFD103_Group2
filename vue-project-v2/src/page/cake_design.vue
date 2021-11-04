@@ -2,9 +2,9 @@
     <div class="all">
         <headercom></headercom>
         <!-- 開始製作 -->
-        <section id="first_screen" @click.prevent="isStart">
+        <section id="first_screen">
             <div id="first_screen_button">
-                    <buttontest title=" 開始製作" @click= isStart></buttontest>
+                    <buttontest title=" 開始製作" @click="isStart"></buttontest>
             </div>
             <div id="first_screen_cake">
             <img id="first_screen_cake_look" src="../assets/images/cake_design_look.svg" alt="">
