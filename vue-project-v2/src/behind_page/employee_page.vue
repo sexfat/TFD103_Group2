@@ -14,7 +14,7 @@
       />
     </div>
     <div id="new_employee" v-else>
-      <form method="get">
+      <form @submit.prevent="sendData">
         <section class="first_site">
           <div id="employee">
             <div class="manager_list">
@@ -95,14 +95,14 @@
                 </span>
                 <span></span>
 
-                <button @click="sendData">確認送出</button>
+                <button >確認送出</button>
               </div>
             </div>
           </div>
         </section>
-      </form>
+      </form >
     </div>
-    <div class="forPosition" v-for="(data, index) in 1" :key="index">
+    <div class="forPosition" v-for="(data, index) in data" :key="index">
       <section class="first_site">
         <div id="employee">
           <div class="manager_list">
@@ -185,9 +185,7 @@
   </div>
 </template>
 <script>
-// import "../font/fff.less";
 import $ from "jquery";
-import qs from 'qs';
 import VueAxios from "vue-axios";
 import axios from "axios";
 // Vue.use(VueAxios,axios);
@@ -228,9 +226,19 @@ export default {
     }).then((res) => {
       console.log(res.data);
       this.data = res.data;
-      console.log(this.data);
+      // console.log(this.data);
     });
   },
+  // created(){
+  //   axios({
+  //     method: "get",
+  //     url: "/static/join_employee.php",
+  //   }).then((res) => {
+  //     console.log(res.data);
+  //     this.data = res.data;
+  //     console.log(this.data);
+  //   });
+  // },
   methods: {
     change(index) {
       let i = this.data[index].ACTIVE;
@@ -238,40 +246,39 @@ export default {
       return index;
     },
     sendData() {
-      // let number = this.new_employee.number;
-      // let password = this.new_employee.password;
-      // let name = this.new_employee.name;
-      // let biulder = this.new_employee.biulder;
-      // let create_date = this.new_employee.create_date;
-      // let authority = this.new_employee.authority;
-      // let data = {
-      //   'number':number,
-      //   'password': password,
-      //   'name': name,
-      //   'biulder': biulder,
-      //   'create_date': create_date,
-      //   'authority': authority,
-      // };
-      // params.append("number", number); //你要传给后台的参数值 key/value
-      // params.append("password", password);
-      // params.append("name", name);
-      // params.append("biulder", biulder);
-      // params.append("create_date", create_date);
-      // params.append("authority", authority);
-      axios({
-        method: "get",
-        url: "/static/join_employee.php",
-        data: {
+      let number = this.new_employee.number;
+      let password = this.new_employee.password;
+      let name = this.new_employee.name;
+      let biulder = this.new_employee.biulder;
+      let create_date = this.new_employee.create_date;
+      let authority = this.new_employee.authority;
+      let data = {
         number:this.new_employee.number,
-        password: this.new_employee.password,
-        name:this.new_employee.name,
-        biulder: this.new_employee.biulder,
+        password:this.new_employee.password,
+        name: this.new_employee.name,
+        biulder:this.new_employee.biulder,
         create_date:this.new_employee.create_date,
-        authority: this.new_employee.authority
-        }
-      }).then((res) => {
-        console.log(res.data);
-      });
+        authority:this.new_employee.authority,
+      };
+      let params= new URLSearchParams();
+      params.append("number", number); //你要传给后台的参数值 key/value
+      params.append("password", password);
+      params.append("name", name);
+      params.append("biulder", biulder);
+      params.append("create_date", create_date);
+      params.append("authority", authority);
+      // axios({
+      //   method: "get",
+      //   url: "/static/join_employee.php",
+      //   crossdomain:true,
+      //   headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      //   data:{number:number},
+      // }).then((res) => {
+      //   console.log(res.data)
+      // }).catch((error)=>{
+      //   console.log(error)
+      // });
+
       // this.axios
       //   .get("/static/join_employee.php", { params: data })
       //   .then((response) => {
@@ -281,6 +288,35 @@ export default {
       //   .catch(function (error) {
       //     console.log(error);
       //   });
+
+      var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+    console.log("done");
+            }
+        }
+    xhttp.open("POST","/static/join_employee.php", true);
+    xhttp.send(JSON.stringify({
+        // email:email,
+        // password:password,
+        number:number,
+        password:password,
+        name:name,
+        biulder:biulder,
+        create_date:create_date,
+        authority:authority
+    }));
+    
+    axios({
+      method: "get",
+      url: "/static/quire_member.php",
+    }).then((res) => {
+      console.log(res.data);
+      this.data = res.data;
+      // console.log(this.data);
+    });
+
+
       this.create = 1;
       this.new_employee.number = "";
       this.new_employee.password = "";
@@ -288,6 +324,7 @@ export default {
       this.new_employee.biulder = "";
       this.new_employee.create_date = "";
       this.new_employee.authority = "";
+
     },
   },
   computed: {

@@ -1,0 +1,112 @@
+.checkout_complete_goto_statement_sumbit{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 120px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: $darkGrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: $h4;
+    box-shadow: $shadow;
+}
+.checkout_complete_goto_statement_sumbit:hover{
+    color: $lightYellow;
+    cursor: pointer;
+}
+.checkout_complete_titlebar{
+    background-color: $palePike;;
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    border-radius: 10px 10px 0 0 ;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+.checkout_complete_list{
+    height: 250px;
+    max-width: 1120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $lightYellow;
+}
+.checkout_complete_list_orderidandother{
+    height: 120px;
+    max-width: 1080px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.checkout_complete_list_orderid{
+    max-width: 1120px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: $p;
+}
+.checkout_complete_list_orderother{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1120px;
+    width: 100%;
+    text-align: center;
+    font-size: $p;
+}
+.checkout_complete_list_outline{
+    display: flex;
+}
+.checkout_complete_list_titlebar{
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+.list_id{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 1120px;
+    width: 100%;
+}
+@media screen and (max-width:767.98px){
+    .checkout_complete_titlebar{
+        max-width: 576px;
+        width: 100%;
+    }
+
+    .checkout_complete_list{
+        height: 300px;
+        max-width: 576px;
+        width: 100%;
+    }
+    .checkout_complete_list_orderidandother{
+        max-width: 496px;
+        width: 95%;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .checkout_complete_list_orderid{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .checkout_complete_list_orderother{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .checkout_complete_goto_statement_sumbit{
+        margin-top: 50px;
+    }
+}

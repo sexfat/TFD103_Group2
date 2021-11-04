@@ -56,10 +56,10 @@
           v-for="(choose, index) in choose_total"
           :key="index"
           :for="choose"
-          >{{ choose }} <i class="fa-solid fa-xmark"></i
-        ></label>
+          ><span>{{ choose }} <font-awesome-icon icon="fa-solid fa-xmark" /></span></label>
       </div>
-      <button class="clearall">清空選項</button>
+      <button class="clearall" id='send'>確認送出</button>
+      <button class="clearall" id='clear'>清空選項</button>
     </div>
   </div>
 </template>
@@ -82,11 +82,20 @@ export default {
 }
 label {
   margin: 5px;
-  line-height: 36px;
-  padding: 5px 15px;
+  padding: 5px;
   background: burlywood;
   border-radius: 10px;
   cursor: pointer;
+  white-space: nowrap;
+  span{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+  .fa-xmark{
+    font-size:16px;
+  }
 }
 input {
   margin: 5px;
@@ -104,7 +113,7 @@ input {
 #treat {
   background-color: #f7edd4;
   border-radius: 5px;
-  padding: 40px 60px;
+  padding: 90px 60px 40px 60px;
   position: relative;
 }
 .select {
@@ -115,18 +124,17 @@ input {
   margin-bottom: 35px;
 }
 .select span {
-  width: 120px;
   font-size: 18px;
 }
-.select span:first-child {
+.select>span:first-child {
   position: relative;
   width: 80px;
   line-height: 30px;
 }
 button {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  
+  // transform: translateY(-50%);
   width: 100px;
   height: 30px;
   background-color: #515151;
@@ -134,8 +142,20 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+#clear{
+  right: 180px;
+  top: 40px;
+  background: transparent;
+  color:black;
+}
+#send{
+right: 40px;
+  top: 40px;
+}
 #choose_label {
-  width: 80%;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(50px,130px));
+  // width:80%
 }
 .selected {
   display: grid;
@@ -145,7 +165,21 @@ button {
 .checkbox {
   display: flex;
   // flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
+}
+@media all and (max-width:576px){
+  #choose_label{
+    justify-content: space-between;
+  }
+  .selected{
+    grid-template-columns:1fr 1fr;
+  }
+  .select{
+    flex-direction: column;
+  }
+  #treat{
+    padding:90px 60px 40px 60px;
+  }
 }
 </style>
