@@ -102,7 +102,7 @@
         </section>
       </form >
     </div>
-    <div class="forPosition" v-for="(data, index) in data" :key="index">
+    <div class="forPosition" v-for="(data, index) in 1" :key="index">
       <section class="first_site">
         <div id="employee">
           <div class="manager_list">
@@ -306,16 +306,6 @@ export default {
         create_date:create_date,
         authority:authority
     }));
-    
-    axios({
-      method: "get",
-      url: "/static/quire_member.php",
-    }).then((res) => {
-      console.log(res.data);
-      this.data = res.data;
-      // console.log(this.data);
-    });
-
 
       this.create = 1;
       this.new_employee.number = "";
@@ -324,7 +314,6 @@ export default {
       this.new_employee.biulder = "";
       this.new_employee.create_date = "";
       this.new_employee.authority = "";
-
     },
   },
   computed: {

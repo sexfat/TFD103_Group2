@@ -11,6 +11,21 @@ function resolve (dir) {
 
 
 module.exports = {
+  // publicPath: 
+  //   process.env.NODE_ENV === 'production'
+  //     ? `/${process.env.VUE_APP_SUB_PATH}`
+  //     : '/'
+  // ,
+
+  // // if using xampp 
+  // devServer: {
+  //   proxy: {
+  //     '^/api': {
+  //       target: 'http://localhost',
+  //       changeOrigin: true
+  //     }
+  //   }
+  // },
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
