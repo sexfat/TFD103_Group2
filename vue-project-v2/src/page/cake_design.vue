@@ -44,8 +44,8 @@
                             <img class="cake" id="cake_model1" src="../assets/images/cake_design/cake_model1.png" alt="">
                             <img class="cake" id="cake_model2" src="../assets/images/cake_design/cake_model2.png" alt="">
                             <img class="cake" id="cake_model3" src="../assets/images/cake_design/cake_model3.png" alt="">
-                            <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
                          </div>
+                        <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
                      </div>
                      <button id="right_move" style="z-index:10;">》</button>
                  </div>
@@ -374,7 +374,7 @@ li.nav_item > a#cakeDesign{
                 height: 170px;
                 margin: 0 10px;
                 div{
-                    position: relative;
+                    // position: relative;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -383,12 +383,13 @@ li.nav_item > a#cakeDesign{
                         width: 170px;
                         margin: 0;
                     }
-                    img#cake_plate{
-                        position: absolute;
-                        width: 170px;
-                        bottom: 0;
-                        z-index: -1;
-                    }
+                }
+                img#cake_plate{
+                    position: absolute;
+                    width: 170px;
+                    bottom: 0;
+                    z-index: -1;
+                    left: 3px;
                 }
             }
         }
