@@ -1,6 +1,6 @@
 <template>
     <div class="all">
-        <headercom openWhat="cakeDesign"></headercom>
+        <headercom></headercom>
         <!-- 開始製作 -->
         <section id="first_screen">
             <div id="first_screen_button" @click="isStart">
@@ -27,7 +27,7 @@
                         <img id="big_cake_model" src="../../static/cake_design/cake_model1.png"  alt="">
                      </div>
                      <div id="big_plate_box">
-                        <img id="big_plate" :src="require('../assets/images/cake_design/plate.png')" alt=""> <!--老師打的src 請照抄-->
+                        <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
                      </div>
                  </div>
                  <input id="next_step" type="button">
@@ -41,7 +41,7 @@
                      <button id="left_move" style="z-index:10;">《</button>
                      <div id="choose_cake_model_box_contents">
                          <div id="small_img">
-                            <img class="cake" id="cake_model1" src="../assets/images/cake_design/cake_model1.png" alt="" @click="changeImage">
+                            <img class="cake" id="cake_model1" src="../assets/images/cake_design/cake_model1.png" alt="">
                             <img class="cake" id="cake_model2" src="../assets/images/cake_design/cake_model2.png" alt="">
                             <img class="cake" id="cake_model3" src="../assets/images/cake_design/cake_model3.png" alt="">
                             <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
@@ -102,8 +102,9 @@ export default {
     },
     methods:{
         isStart(){
-            alert("10")
-            // $('#first_screen').toggleClass('start');
+            // alert("10")
+            $('#first_screen').toggleClass('start');
+            $('#second_screen').addClass('add_start');
             // $('#first_screen').css("display: none;")
         }
         // chaneImage(e){
@@ -159,7 +160,7 @@ li.nav_item > a#cakeDesign{
     }
 
     //---------------------------------- 開始製作 first_screen ----------------------------------
-    .start{
+    section#first_screen.start{
         display: none;
     }
     section#first_screen{
@@ -251,10 +252,13 @@ li.nav_item > a#cakeDesign{
     }
 
     //---------------------------------- 開始製作 second_screen ----------------------------------
+    section#second_screen.add_start{
+        display: grid;
+    }
     section#second_screen{
         width: 100%;
         height: 100vh;
-        display: grid;
+        // display: grid;
         grid-template-columns: 1fr 1fr 370px;
         justify-content: center;
         flex-direction: column;
@@ -276,6 +280,7 @@ li.nav_item > a#cakeDesign{
         background-image: url("../assets/images/index_kitchen_img_small.png");
         background-size: cover;
         background-repeat:no-repeat;
+        background-color: rgba(255, 255, 255, 0.4);
         z-index: -2;
         div#cake_box{
             width: 450px;
