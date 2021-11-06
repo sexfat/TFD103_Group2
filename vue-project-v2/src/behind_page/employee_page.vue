@@ -4,6 +4,9 @@
     <div id="top_bar">
       <h1>員工資料</h1>
       <search-bar></search-bar>
+      <div class="seach">
+        <div class="se"></div>
+      </div>
     </div>
 
     <div id="new_employee" v-if="create">
@@ -211,6 +214,7 @@ export default {
         authority: "",
         create_date: "",
         biulder: "",
+        img:"",
       },
       theIndex:0,
     };
@@ -283,14 +287,16 @@ const url ='api'
       button.onchange=this.pushImage;
     },
     pushImage(){
-      
+      let that = this;
       let index = this.theIndex;
       let file = document.querySelectorAll("input[type='file']")[this.theIndex].files[0];
+      this.new_employee.img=file.name;
+      console.log(file.name);
       let readFile = new FileReader();
       readFile.readAsDataURL(file);
       readFile.addEventListener('load',function(){
         let image = document.getElementsByClassName("employee_image")[index];
-        image.src = readFile.result
+        image.src = readFile.result;
       })
     }
   },
