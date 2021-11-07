@@ -48,7 +48,7 @@
                                 <img src="../assets/images/cho_cake.jpg" alt="">
                             </div>
                             <div class="addenda_block_cake_content">
-                                <div class="addenda_block_cake_title">普通包裝</div>
+                                <div class="addenda_block_cake_title">{{package_select}}</div>
                                 <div class="addenda_block_cake_sizeandamount">
                                     <div class="addenda_block_cake_size">
                                     </div>
@@ -64,8 +64,8 @@
                             </div>
                         </div>
                         <div class="addenda_block_package_select_block">  
-                            <select name="" id="addenda_block_package_select">
-                                <option>普通包裝</option>
+                            <select name="" id="addenda_block_package_select" v-model="package_select">
+                                <option selected>普通包裝</option>
                                 <option>高級包裝</option>
                                 <option>特殊包裝</option>
                             </select>
@@ -194,8 +194,8 @@
                         <div class="addenda_item_amount"></div> -->
                     <!-- </div> -->
                     <div class="addenda_block_list4">
-                        <div class="new_addenda_block_outline">
-                            <div class="new_addenda_block_square">
+                        <div class="new_addenda_block_outline" >
+                            <div class="new_addenda_block_square" >
                                 <img src="../assets/images/add_purchase_icon.png" alt="">
                             </div>
                         </div>
@@ -268,7 +268,8 @@ export default {
     },
     data(){
         return{
-            asd:123546
+            asd:123546,
+            package_select: '',
         }
     },
     methods:{
@@ -677,7 +678,6 @@ body{
                     .new_addenda_block_square{
                         width: 75px;
                         height: 75px;
-                        
                         display: flex;
                         flex-direction: column;
                         justify-content: space-around;
