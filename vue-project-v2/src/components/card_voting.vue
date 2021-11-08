@@ -31,9 +31,9 @@ export default {
     methods:{
         votePlus(){
             if(this.choose == 0){
-                this.vote++
-            }else{
                 this.vote--
+            }else{
+                this.vote++
             }
         }
     }
