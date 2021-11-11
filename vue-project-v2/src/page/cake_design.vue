@@ -1,6 +1,7 @@
 <template>
     <div class="all">
         <headercom></headercom>
+        <section id="outside">
         <!-- 開始製作 -->
         <section id="first_screen">
             <div id="first_screen_button" @click="isStart">
@@ -21,7 +22,7 @@
          <div class="center_box">
          <section id="second_screen">
              <div id="production_area">
-                 <input id="back_step" type="button" style="opacity: 0;">
+                 <input id="back_step" type="button" style="visibility: hidden;">
                  <div id="cake_box">
                      <div id="big_cake_model_box">
                         <img id="big_cake_model" src="../../static/cake_design/cake_model1.png"  alt="">
@@ -30,46 +31,59 @@
                         <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
                      </div>
                  </div>
-                 <input id="next_step" type="button">
+                 <input id="next_step" type="button" @click="nextStepOne">
              </div>
              <!-- 選擇糕體 -->
              <div id="choose_cake_model">
                  <div id="cake_model_title_box">
-                     <img src="../assets/images/button_butter.png" alt="" style="width:30px"><p>選擇糕體</p><img src="../assets/images/button_butter.png" alt="" style="width:30px">
+                     <img src="../assets/images/cake_design/decoration4.png" alt="" style="width:30px"><p>選擇糕體</p><img src="../assets/images/cake_design/decoration4.png" alt="" style="width:30px">
                  </div>
                  <div id="choose_cake_model_box">
-                     <button id="left_move" style="z-index:10;">《</button>
+                     <input id="left_move" type="button" style="z-index:10;" @click="prev">
+                     <!-- <div class="swiper-button-prev swiper-button-white" slot="button-prev"  @click="prev" style="z-index:10;"></div> -->
                      <div id="choose_cake_model_box_contents">
-                         <div id="small_img">
-                            <img class="cake" id="cake_model1" src="../assets/images/cake_design/cake_model1.png" alt="">
-                            <img class="cake" id="cake_model2" src="../assets/images/cake_design/cake_model2.png" alt="">
-                            <img class="cake" id="cake_model3" src="../assets/images/cake_design/cake_model3.png" alt="">
-                         </div>
+                         <swiper ref="hits" :auto-update="true" class="actor-list" :options="swiperOption" id="small_img" >
+                            <swiper-slide v-for="(slide, key) in swiperList" :key="key" >
+                                <div align="center"><img class="cake" :src="slide" @click="method(slide,key)" alt=""></div>
+                            </swiper-slide>
+                         </swiper>
                         <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
                      </div>
-                     <button id="right_move" style="z-index:10;">》</button>
+                     <!-- <div class="swiper-button-next swiper-button-white" slot="button-next" @click="next" style="z-index:10;"></div> -->
+                     <input id="right_move" type="button"  style="z-index:10;" @click="next"> 
+                     <!-- @click=data='datatotal[index]'
+                     datatotal:[{
+                         text:'11122344', 
+                         img:'',
+                         title:'',
+                         prize:'',
+                     },...]
+                     data:{},
+                     data.text -->
                  </div>
                  <div id="instructions_text">
                      <div id="instructions_text_con">
-                        草莓原產於南美，目前中國位居生產草莓
-榜首而且，草莓的果實，其實是上面佈滿的眾多小點唷!!是不是嚇了一大跳呀？
-                        
-                     <!-- <img src="../assets/images/dialog_box.png" alt=""> -->
+                         <h4 style="margin-top: 0px; margin-bottom: 2px;">優格馬斯卡邦糕體</h4>
+                         酸甜可口的特製野莓優格醬搭配鬆軟的海綿糕體，甜而不膩 ♡
+                        <!-- 草莓原產於南美，目前中國位居生產草莓
+                        榜首而且，草莓的果實，其實是上面佈滿的眾多小點唷!!是不是嚇了一大跳呀？ -->
                      </div>
                 </div>
                  <div id="mascot_box">
-                     <button id="use_button">使用</button>
+                     <!-- <button id="use_button">使用</button> -->
                      <div id="mascot">
                         <img src="../assets/images/mascot1.png" alt="">
                      </div>
                  </div>
              </div>
              <!-- 選擇糕體 -->
+            
              <!-- 選擇水果 -->
              <div id="choose_cake_fruits">
-
+                 <p>choose_cake_fruits</p>
              </div>
              <!-- 選擇水果 -->
+
              <!-- 選擇裝飾 -->
              <div id="choose_cake_decorations">
 
@@ -78,11 +92,13 @@
          </section>
          </div>
          <!-- 製作中 -->
+        </section>
         <footercom></footercom>
     </div>
 </template>
 <script>
 import $ from 'jquery'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import headercom from '../components/headercom'
 import buttontest from '../components/button_h1.vue'
 import footercom from '../components/footercom'
@@ -92,15 +108,114 @@ export default {
     components:{
         headercom,
         buttontest,
+        Swiper,
+        SwiperSlide,
         footercom,
     },
     data(){
         return{
             smallIMages:["../../static/cake_design/cake_model"],
             bigImages:["../../static/cake_design/cake_model"],
+            swiperList:[
+                require ('../assets/images/cake_design/cake_model1.png'),
+                require ('../assets/images/cake_design/cake_model2.png'),
+                require ('../assets/images/cake_design/cake_model3.png'),
+            ],
+            cakeImg: '',
+            datatotal:[
+                {
+                    title: '',
+                    text: '',
+                    img: '',
+                    prize: '',
+
+                },
+            ],
+            // imgIndex: 0,
+            swiperOption:{
+                autoplay:{
+                    disableOnInteraction: false,  // 使用者操作swiper之後，是否禁止autoplay
+                    delay: 3000, // 自動切換的時間間隔（單位ms）
+                },
+                initialSlide: 0,
+                loop: true,
+                paginationClickable: true,
+                onSlideChangeEnd: swiper => {
+                //console.log('onSlideChangeEnd', swiper.realIndex)
+                },
+            },
+            navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+            },
+            indexx:0,
         }
     },
     methods:{
+        prev(){
+            this.$refs.hits.$swiper.slidePrev();
+        },
+        next(){
+            this.$refs.hits.$swiper.slideNext();
+        },
+        
+        // 更換製作區
+        nextStepOne(){
+            $('div#choose_cake_model').toggleClass();
+            $('div#choose_cake_model').toggleClass();
+        },
+
+        // 大圖換小圖
+         method (val,index) {
+             console.log(val)
+             console.log(index)
+            // this.cakeImg = val;
+            this.indexx=index;
+            $("#big_cake_model").attr( "src" , val );
+            // console.log(i)
+            // var i = this.key;
+            
+            // for (let k in this.swiperList) {
+            //     console.log(k)
+            //     console.log(this.swiperList[k])
+            // }
+
+            // let k = this.swiperList.length - 1
+            // console.log(k)
+
+            // let _this = this
+            // function findValue(key) {
+            //     for (let k in _this.swiperList) {
+            //         if(k === key){
+            //             return _this.swiperList[k]
+            //         }
+                    
+            //     }
+            // }
+            // console.log(findValue('2'))
+
+            // let a = [];
+            // function getKey(swiperList,isKey) {
+            //     if (typeof swiperList !== 'val' || swiperList == null) {
+            //         return
+            //     }
+            //     for (let key in swiperList) {
+            //         typeof swiperList[key] === 'val' ? getKey(swiperList[key]): '';
+            //         a.push(key)
+            //     }
+            // }
+            // console.log(a) 
+
+            // $("#big_cake_model").attr( "src" , val[i] );
+            // for (let i = 0; i < val.length; i++) {
+            //     // const element = array[i];
+                
+            // $("#big_cake_model").attr( "src" , val[i] );
+            // }
+            // var i = this.swiperList(key);
+            
+        },
+
         isStart(){
             // alert("10")
             $('#first_screen').toggleClass('start');
@@ -114,27 +229,35 @@ export default {
     mounted() {
 
         // 選擇-蛋糕糕體
-        $("#left_move").click(function(){
-            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'+=340px'},200);
-        });
-        $("#right_move").click(function(){
-            $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=340px'},200);
-            if ($("div").marginLeft >= 500) {
-                $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=500px'},200);
-            }
-        });
+        // $("#left_move").click(function(){
+        //     $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'+=340px'},200);
+        // });
+        // $("#right_move").click(function(){
+        //     $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=340px'},200);
+        //     if ($("div").marginLeft >= 500) {
+        //         $("#choose_cake_model_box_contents").children("div").animate({marginLeft:'-=500px'},200);
+        //     }
+        // });
         // 當選項到底 會跑回第一個
 
 
         //點擊小圖換大圖
-        $(function(){	
-            $("#small_img img").click(function(){
-                // alert("1");		
-                var num = $(this).attr("id").substr(10);		
-                $("#big_cake_model").attr( "src" , "../../static/cake_design/cake_model" + num + ".png" );
-            });
-        });
+        // $(function(){	
+        //     $("#small_img img").click(function(){
+        //         // alert("1");		
+        //         var num = $(this).attr("id").substr(10);		
+        //         $("#big_cake_model").attr( "src" , "../../static/cake_design/cake_model" + num + ".png" );
+        //     });
+        // });
         
+    },
+    watch: {
+        $route: {
+            handler () {
+            this.productId = this.$route.params.Id
+            this.getDetail()
+            }
+        }
     },
 }
 </script>
@@ -158,10 +281,17 @@ li.nav_item > a#cakeDesign{
         //     }
         // }
     }
-
+    //---------------------------------- 最外層 ----------------------------------
+    section#outside{
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
     //---------------------------------- 開始製作 first_screen ----------------------------------
     section#first_screen.start{
-        display: none;
+        // display: none;
+        // transform: translateY(-100vh);
+        height: 0vh;
     }
     section#first_screen{
         height: 100vh;
@@ -281,7 +411,7 @@ li.nav_item > a#cakeDesign{
         background-size: cover;
         background-repeat:no-repeat;
         background-color: rgba(255, 255, 255, 0.4);
-        z-index: -2;
+        z-index: 1;
         div#cake_box{
             width: 450px;
             height: 450px;
@@ -323,6 +453,7 @@ li.nav_item > a#cakeDesign{
             width: 85px;
             height: 85px;
             background-size: 100%;
+            background-repeat: no-repeat;
             border: none;
             cursor: pointer;
             transition: 0.2s;
@@ -362,6 +493,37 @@ li.nav_item > a#cakeDesign{
             flex-direction: row;
             align-items: center;
             justify-content: center;
+
+            input#left_move{
+                background-image: url("../assets/images/left_move_icon.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 20px;
+                height: 40px;
+                background-size: 100%;
+                border: none;
+                cursor: pointer;
+                transition: 0.2s;
+                background-color:rgba(0, 0, 0, 0.0);
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            input#right_move{
+                background-image: url("../assets/images/right_move_icon.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 20px;
+                height: 40px;
+                background-size: 100%;
+                border: none;
+                cursor: pointer;
+                transition: 0.2s;
+                background-color:rgba(0, 0, 0, 0.0);
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
             
             div#choose_cake_model_box_contents{
                 position: relative;
@@ -373,7 +535,8 @@ li.nav_item > a#cakeDesign{
                 width: 170px;
                 height: 170px;
                 margin: 0 10px;
-                div{
+                cursor: pointer;
+                #small_img{
                     // position: relative;
                     display: flex;
                     flex-direction: row;
@@ -395,27 +558,33 @@ li.nav_item > a#cakeDesign{
         }
         div#instructions_text{
             // height: 220px;
-            width: 370px;
+            width: 320px;
+            height: 170px;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            background-image: url("../assets/images/dialog_box.png");
+            background-size: cover;
+            background-repeat:no-repeat;
             div#instructions_text_con{
-                padding: 20px 15px;
-                padding-bottom: 40px;
+                position: absolute;
+                top: 20px;
+                // padding: 20px 15px;
+                // padding-bottom: 40px;
                 // padding-left: 20px;
                 display: -webkit-box;
                 -webkit-line-clamp: 3; // 行數
                 -webkit-box-orient: vertical;
                 white-space: normal;
+                text-overflow : ellipsis;
                 color: #515151;
                 // line-height: 24px;
 
-                width: 320px;
-                height: 140px;
-                background-image: url("../assets/images/dialog_box.png");
-                background-size: cover;
-                background-repeat:no-repeat;
+                width: 295px;
+                height: 70px;
+                overflow: hidden;
 
             }
         }
@@ -424,21 +593,21 @@ li.nav_item > a#cakeDesign{
                 flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
-                button#use_button{
-                    width: 100px;
-                    height: 40px;
-                    border: none;
-                    border-radius: 5px;
-                    background-color: #F7EDD4;
-                    color: #515151;
-                    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
-                    transition: 0.2s;
-                    &:hover{
-                        background-color: #515151;
-                        color: #F7EDD4;
-                        transform: translateY(-5px);
-                    }
-                }
+                // button#use_button{
+                //     width: 100px;
+                //     height: 40px;
+                //     border: none;
+                //     border-radius: 5px;
+                //     background-color: #F7EDD4;
+                //     color: #515151;
+                //     box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+                //     transition: 0.2s;
+                //     &:hover{
+                //         background-color: #515151;
+                //         color: #F7EDD4;
+                //         transform: translateY(-5px);
+                //     }
+                // }
                 div#mascot{
                     width: 210px;
                     img{
