@@ -43,6 +43,11 @@ export default[{
         {path:'/', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
         {path:'', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
         {path:'cakeDesign', component: r => require.ensure([], () => r(require('../page/cake_design')), 'cakeDesign')},//蛋糕設計
+<<<<<<< HEAD
         // {path:'productDetailAddenda', component: r => require.ensure([], () => r(require('../page/productDetailAddenda')), 'productDetailAddenda')},//蛋糕設計
+=======
+        {path:'productDetailAddenda', component: r => require.ensure([], () => r(require('../page/productDetailAddenda')), 'productDetailAddenda')},//蛋糕設計
+        {path:'swiperTest', component: r => require.ensure([], () => r(require('../page/swiper_test')), 'swiperTest')},//swiper_test
+>>>>>>> 955f113965709e084f38c6a8d123a4ddc94661e3
     ],
 }]
