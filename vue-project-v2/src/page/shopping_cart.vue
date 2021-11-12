@@ -269,7 +269,7 @@ export default {
                 idname: '一般蠟燭',
                 price: 0,
                 items:{
-                    },
+                },
 
             }],
             items:['一般蠟燭','特殊蠟燭','一般卡片','特殊卡片'],

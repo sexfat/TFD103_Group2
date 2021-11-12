@@ -32,10 +32,10 @@
                                     <!-- <router-link to="shopping_cart"> -->
                                         <button id="product_details_combination1_commit">加入購物車</button>
                                     <!-- </router-link> -->
-                                    <router-link to="shopping_cart">
+                                    <!-- <router-link to="shopping_cart"> -->
 
                                         <button id="product_details_combination1_buy" @click="open">直接購買</button>
-                                    </router-link>
+                                    <!-- </router-link> -->
                                         
                                 </div>
 
@@ -65,8 +65,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="productDetailAddenda_block">
-                    <productDetailAddenda></productDetailAddenda>
+                <div class="productDetailAddenda_block" >
+                    <productDetailAddenda v-show="showpage" @closepage="nnn" :show="showpage"></productDetailAddenda>
                 </div>
             </section>
         </main>
@@ -82,6 +82,7 @@ import titleh1 from "../components/title_h1.vue"
 import productDetailAddenda from "../components/productDetailAddenda"
 
 export default {
+    
     name:'product_detail',
     components:{
         titleh1,
@@ -92,6 +93,7 @@ export default {
     data(){
         return{
             counter: 1,
+            showpage: true,
         }
     },
     methods:{
@@ -104,8 +106,13 @@ export default {
             }
         },
         open(){
-            true;
+            this.showpage = !this.showpage;
         },
+        nnn(ev){
+            // console.log(ev)
+            // this.qqq = ev;
+            this.showpage = ev;
+        }
     },
     watch:{
         
@@ -148,7 +155,7 @@ body{
         // margin-bottom: 50px;
         a{
             text-decoration: none;
-             color: black;
+            color: black;
         }
         @media screen and (max-width:767.98px){ 
             display: flex;
@@ -585,9 +592,13 @@ body{
     // display: none;
     max-width: 1120px;
     width: 100%;
+   
     margin: auto;
+    position: absolute;
+    top: 150px;
+    z-index: 100;
+    // transform: scale(0.5);
 }
-
 
 
 
