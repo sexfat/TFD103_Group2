@@ -16,6 +16,7 @@ import qs from 'qs'
 // import 'swiper/css/swiper.css'
 import 'vue-fabric/dist/vue-fabric.min.css'
 import { Fabric } from 'vue-fabric'
+import { fabric } from 'fabric'
 import html2canvas from "html2canvas"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -33,6 +34,7 @@ Vue.use(VueRouter,axios,VueAxios)
 Vue.use(VueAwesomeSwiper)
 Vue.use(html2canvas)
 Vue.use(Fabric)
+Vue.use(fabric)
 
 // Vue.prototype.HOST = '/api'
 // // 以下為遠端請求
