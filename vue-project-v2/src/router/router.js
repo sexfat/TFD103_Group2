@@ -30,7 +30,7 @@ export default[{
         {path:'ready_to_checkout', component: r => require.ensure([], () => r(require('../page/ready_to_checkout')), 'ready_to_checkout')},
         {path:'checkout_complete', component: r => require.ensure([], () => r(require('../page/checkout_complete')), 'checkout_complete')},
         {path:'qa', component: r => require.ensure([], () => r(require('../page/qa')), 'qa')},
-        {path:'qa_chat', component: r => require.ensure([], () => r(require('../page/qa_chat')), 'qa_chat')},
+        // {path:'qa_chat', component: r => require.ensure([], () => r(require('../page/qa_chat')), 'qa_chat')},
 // >>>>>>> dev
         {path:'member_data', component: r => require.ensure([], () => r(require('../page/member-data')), 'member-data')}, // 會員資料頁
         {path:'member_fav', component: r => require.ensure([], () => r(require('../page/member-fav')), 'member_fav')}, // 會員最愛分類頁
@@ -43,7 +43,6 @@ export default[{
         {path:'/', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
         {path:'', component: r => require.ensure([], () => r(require('../page/index')), 'index')},//首頁
         {path:'cakeDesign', component: r => require.ensure([], () => r(require('../page/cake_design')), 'cakeDesign')},//蛋糕設計
-        {path:'productDetailAddenda', component: r => require.ensure([], () => r(require('../page/productDetailAddenda')), 'productDetailAddenda')},//蛋糕設計
-        {path:'swiperTest', component: r => require.ensure([], () => r(require('../page/swiper_test')), 'swiperTest')},//swiper_test
+        // {path:'productDetailAddenda', component: r => require.ensure([], () => r(require('../page/productDetailAddenda')), 'productDetailAddenda')},//蛋糕設計
     ],
 }]
