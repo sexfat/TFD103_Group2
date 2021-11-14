@@ -14,6 +14,9 @@ import qs from 'qs'
 // import VueFullPage from '../static/fullpage/vue-fullpage.js'
 // fullpage
 // import 'swiper/css/swiper.css'
+import 'vue-fabric/dist/vue-fabric.min.css'
+import { Fabric } from 'vue-fabric'
+import html2canvas from "html2canvas"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGoogle,faInstagram,faLine} from '@fortawesome/free-brands-svg-icons'
@@ -28,6 +31,8 @@ Vue.prototype.$qs = qs
 // Vue.use(VueFullPage)
 Vue.use(VueRouter,axios,VueAxios)
 Vue.use(VueAwesomeSwiper)
+Vue.use(html2canvas)
+Vue.use(Fabric)
 
 // Vue.prototype.HOST = '/api'
 // // 以下為遠端請求
