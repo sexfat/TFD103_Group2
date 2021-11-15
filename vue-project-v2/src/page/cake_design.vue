@@ -25,7 +25,7 @@
                  <input id="back_step" type="button" style="visibility: hidden;">
                  <div id="cake_box">
                      <div id="big_cake_model_box">
-                        <img id="big_cake_model" src="../../static/cake_design/cake_model1.png"  alt="">
+                        <img id="big_cake_model" :src="bigPic"  alt="">
                      </div>
                      <div id="big_plate_box">
                         <img id="big_plate" src="../assets/images/cake_design/plate.png" alt="">
@@ -39,36 +39,45 @@
                      <img src="../assets/images/cake_design/decoration4.png" alt="" style="width:30px"><p>選擇糕體</p><img src="../assets/images/cake_design/decoration4.png" alt="" style="width:30px">
                  </div>
                  <div id="choose_cake_model_box">
-                     <input id="left_move" type="button" style="z-index:10;" @click="prev">
+                     <!-- 左鍵 -->
+                     <input id="left_move" type="button" style="z-index:10; position: absolute; left:50px; top:33%" @click="prev">
                      <!-- <div class="swiper-button-prev swiper-button-white" slot="button-prev"  @click="prev" style="z-index:10;"></div> -->
+
                      <div id="choose_cake_model_box_contents">
                          <swiper ref="hits" :auto-update="true" class="actor-list" :options="swiperOption" id="small_img" >
                             <swiper-slide v-for="(slide, key) in swiperList" :key="key" >
-                                <div align="center"><img class="cake" :src="slide" @click="method(slide,key)" alt=""></div>
+                                <div align="center" class="cake_box" style="position: relative;">
+                                    <img class="cake" :src="slide.img" @click="[method(slide,key),bigPic=slide.img]" alt="">
+                                    <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
+                                </div>
+                                <div id="instructions_text">
+                                    <div id="instructions_text_con">
+                                        <h4 style="margin-top: 0px; margin-bottom: 2px;">
+                                            {{slide.title}}
+                                        </h4>
+                                            {{slide.text}}
+                                    </div>
+                                </div>
                             </swiper-slide>
                          </swiper>
-                        <img id="cake_plate" src="../assets/images/cake_design/plate.png" alt="">
+
                      </div>
                      <!-- <div class="swiper-button-next swiper-button-white" slot="button-next" @click="next" style="z-index:10;"></div> -->
-                     <input id="right_move" type="button"  style="z-index:10;" @click="next"> 
-                     <!-- @click=data='datatotal[index]'
-                     datatotal:[{
-                         text:'11122344', 
-                         img:'',
-                         title:'',
-                         prize:'',
-                     },...]
-                     data:{},
-                     data.text -->
+
+                     <!-- 右鍵 -->
+                     <input id="right_move" type="button"  style="z-index:10; position: absolute; right: 50px; top:33%" @click="next"> 
+                     <!-- @click=data='datatotal[index]' -->
                  </div>
-                 <div id="instructions_text">
-                     <div id="instructions_text_con">
-                         <h4 style="margin-top: 0px; margin-bottom: 2px;">優格馬斯卡邦糕體</h4>
-                         酸甜可口的特製野莓優格醬搭配鬆軟的海綿糕體，甜而不膩 ♡
-                        <!-- 草莓原產於南美，目前中國位居生產草莓
-                        榜首而且，草莓的果實，其實是上面佈滿的眾多小點唷!!是不是嚇了一大跳呀？ -->
-                     </div>
-                </div>
+                 
+                 <!-- <div id="instructions_text" v-show='indexx==key' v-for="(slide,key) in swiperList" :key="key"> -->
+                     <!-- <div id="instructions_text_con" v-show='indexx==key' v-for="(slide,key) in swiperList" :key="key">
+                         <h4 style="margin-top: 0px; margin-bottom: 2px;">
+                            {{slide.title}}
+                        </h4>
+                            {{slide.text}}
+                     </div> -->
+                <!-- </div> -->
+                 
                  <div id="mascot_box">
                      <!-- <button id="use_button">使用</button> -->
                      <div id="mascot">
@@ -79,15 +88,15 @@
              <!-- 選擇糕體 -->
             
              <!-- 選擇水果 -->
-             <div id="choose_cake_fruits">
+             <!-- <div id="choose_cake_fruits">
                  <p>choose_cake_fruits</p>
-             </div>
+             </div> -->
              <!-- 選擇水果 -->
 
              <!-- 選擇裝飾 -->
-             <div id="choose_cake_decorations">
+             <!-- <div id="choose_cake_decorations">
 
-             </div>
+             </div> -->
              <!-- 選擇裝飾 -->
          </section>
          </div>
@@ -116,20 +125,27 @@ export default {
         return{
             smallIMages:["../../static/cake_design/cake_model"],
             bigImages:["../../static/cake_design/cake_model"],
+            bigPic:require ('../assets/images/cake_design/cake_model1.png'),
             swiperList:[
-                require ('../assets/images/cake_design/cake_model1.png'),
-                require ('../assets/images/cake_design/cake_model2.png'),
-                require ('../assets/images/cake_design/cake_model3.png'),
+                {img:require ('../assets/images/cake_design/cake_model1.png'),
+                title:'優格馬斯卡邦糕體',
+                text: '酸甜可口的特製野莓優格醬搭配鬆軟的海綿糕體，甜而不膩 ♡',
+                prize: 500
+                },
+                {img:require ('../assets/images/cake_design/cake_model2.png'),
+                title:'鮮奶油草莓糕體',
+                text: '百分百法國原裝頂級鮮奶油，與大溪地香草完美比例的清新香緹 ♡',
+                prize: 600
+                },
+                {img:require ('../assets/images/cake_design/cake_model3.png'),
+                title:'威士忌覆盆子巧克力糕體',
+                text: '72% 法國頂級苦甜黑巧克力的香緹，打造重磅迷人的大人風味 ♡',
+                prize: 700
+                },
             ],
             cakeImg: '',
             datatotal:[
-                {
-                    title: '',
-                    text: '',
-                    img: '',
-                    prize: '',
-
-                },
+                
             ],
             // imgIndex: 0,
             swiperOption:{
@@ -138,7 +154,7 @@ export default {
                     delay: 3000, // 自動切換的時間間隔（單位ms）
                 },
                 initialSlide: 0,
-                loop: true,
+                loop: false,
                 paginationClickable: true,
                 onSlideChangeEnd: swiper => {
                 //console.log('onSlideChangeEnd', swiper.realIndex)
@@ -153,7 +169,10 @@ export default {
     },
     methods:{
         prev(){
+            // let that = this
             this.$refs.hits.$swiper.slidePrev();
+            // console.log(document.getElementsByClassName("cake")[6]);
+            // document.getElementsByClassName("cake")[0].click();
         },
         next(){
             this.$refs.hits.$swiper.slideNext();
@@ -167,11 +186,18 @@ export default {
 
         // 大圖換小圖
          method (val,index) {
+             let that = this;
              console.log(val)
-             console.log(index)
+            //  console.log(that.swiperList[index])
             // this.cakeImg = val;
             this.indexx=index;
-            $("#big_cake_model").attr( "src" , val );
+            // $("#big_cake_model").attr( "src" , val.img );
+            that.datatotal.push({
+                    title: '',
+                    text: '',
+                    img: val,
+                    prize: '',
+                });
             // console.log(i)
             // var i = this.key;
             
@@ -225,6 +251,7 @@ export default {
         // chaneImage(e){
         //     document.querySelector("#big_cake_model").attr("src")=e.target.attr("src");
         // }
+        ,
     },
     mounted() {
 
@@ -249,7 +276,6 @@ export default {
         //         $("#big_cake_model").attr( "src" , "../../static/cake_design/cake_model" + num + ".png" );
         //     });
         // });
-        
     },
     watch: {
         $route: {
@@ -284,7 +310,7 @@ li.nav_item > a#cakeDesign{
     //---------------------------------- 最外層 ----------------------------------
     section#outside{
         overflow: hidden;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
     }
     //---------------------------------- 開始製作 first_screen ----------------------------------
@@ -389,7 +415,7 @@ li.nav_item > a#cakeDesign{
         width: 100%;
         height: 100vh;
         // display: grid;
-        grid-template-columns: 1fr 1fr 370px;
+        grid-template-columns: 1fr 1fr 375px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
@@ -413,11 +439,17 @@ li.nav_item > a#cakeDesign{
         background-color: rgba(255, 255, 255, 0.4);
         z-index: 1;
         div#cake_box{
+            // border: solid 1px #515151;
             width: 450px;
-            height: 450px;
+            // height: 450px;
             position: relative;
             bottom: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
             div#big_cake_model_box{
+                // border: solid 1px #f88282;
                 z-index: 10;
                 img#big_cake_model{
                     width: 100%;
@@ -428,6 +460,7 @@ li.nav_item > a#cakeDesign{
                 width: 90%;
                 position: absolute;
                 top: 85%;
+                // bottom: -40px;
                 left: 52%;
                 transform: translate(-50%,-50%);
                 img#big_plate{
@@ -464,6 +497,8 @@ li.nav_item > a#cakeDesign{
         }
     }
     div#choose_cake_model{
+        // overflow: hidden;
+        // width: 370px;
         height: 100vh;
         display: flex;
         // justify-content: center;
@@ -532,8 +567,8 @@ li.nav_item > a#cakeDesign{
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
-                width: 170px;
-                height: 170px;
+                width: 375px;
+                height: 375px;
                 margin: 0 10px;
                 cursor: pointer;
                 #small_img{
@@ -542,22 +577,38 @@ li.nav_item > a#cakeDesign{
                     flex-direction: row;
                     align-items: center;
                     justify-content: center;
-                    img.cake{
-                        width: 170px;
-                        margin: 0;
+                    div.cake_box{
+                        img.cake{
+                            width: 170px;
+                            height: 170px;
+                            margin: 0;
+                        }
+                        img#cake_plate{
+                            position: absolute;
+                            width: 170px;
+                            bottom: 0;
+                            z-index: -1;
+                            // left: 3px;
+                            left: 51%;
+                            bottom: 8px;
+                            transform: translateX(-50%);
+                        }
                     }
                 }
-                img#cake_plate{
-                    position: absolute;
-                    width: 170px;
-                    bottom: 0;
-                    z-index: -1;
-                    left: 3px;
-                }
+                // img#cake_plate{
+                //     position: absolute;
+                //     width: 170px;
+                //     bottom: 0;
+                //     z-index: -1;
+                //     left: 3px;
+                // }
+                
             }
         }
         div#instructions_text{
             // height: 220px;
+            // border: solid 1px orchid;
+            margin: 0;
             width: 320px;
             height: 170px;
             position: relative;
@@ -566,8 +617,9 @@ li.nav_item > a#cakeDesign{
             align-items: center;
 
             background-image: url("../assets/images/dialog_box.png");
-            background-size: cover;
+            background-size: 99.99%;
             background-repeat:no-repeat;
+            transform: translate(20px,25px);
             div#instructions_text_con{
                 position: absolute;
                 top: 20px;
