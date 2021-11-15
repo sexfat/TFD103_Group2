@@ -3,9 +3,9 @@
     <div class="addenda_title_block">
       <div class="addenda_titlebar">
         <div class="addenda_title">
-          包裝
+          {{checkPackageDatas[packageIndex].NAME}}
           <div class="addenda_cancel_icon">
-            <img src="" alt="" />
+            <!-- <img src="" alt="" /> -->
           </div>
         </div>
 
@@ -14,41 +14,29 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">{{ packagedata.content[dude] }}</div>
+            <div class="addenda_describe">{{checkPackageDatas[packageIndex].DESCRIPTION}}</div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
-                <select
-                  v-model="packageselect"
-                  @change="fuckAllthisShit(packageselect)"
-                  :value="packagedata.packs[0]"
-                >
-                  <option
-                    v-for="(pack, index) in packagedata.packs"
-                    :key="index"
-                    >{{ pack }}</option
-                  >
+                <select v-model="packageIndex">
+                  <option v-for="(packageData, packageIndex) in checkPackageDatas" :key="packageIndex" :value="packageIndex">{{checkPackageDatas[packageIndex].NAME}}
+                </option>
                 </select>
               </label>
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price">{{ packagedata.price[dude] }}</div>
+              <div class="addenda_price">{{checkPackageDatas[packageIndex].PRICE}}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="addenda_block">
-      <div
-        class="addenda_titlebar"
-        v-for="(addendacard, index) in addendacards"
-        :key="index"
-      >
-        <div class="addenda_title">
-          {{ addendacard.choice[addendacard.value].idname }}
-          <div class="addenda_cancel_icon" @click="deladdenda(index)">
+      <div class="addenda_titlebar" v-for="(checkAdditional, additionalIndex) in checkAdditionals" :key="additionalIndex" :value="additionalIndex">
+        <div class="addenda_title">{{checkAdditional.NAME}}
+          <div class="addenda_cancel_icon" @click="delAdditional(additionalIndex)" v-show="checkAdditional.NAME !== '一般卡片' && checkAdditional.NAME !== '一般蠟燭'">
             <img src="" alt="" />
           </div>
         </div>
@@ -58,113 +46,48 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">
-              {{ addendacard.choice[addendacard.value].description }}
+            <div class="addenda_describe">{{checkAdditionals[additionalIndex].DESCRIPTION}}
+              
             </div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
-                <!-- <select v-model="addendacard.value" @change="fukcMyAnal"> -->
-                <select v-model="addendacard.value" @change="fukcMyAnal">
-                  <!-- <option
-                    v-for="(product, index) in checkChoice(addendacard.choice)"
-                    :key="index"
-                    :value="index"
-                    >{{ product.idname }}</option -->
-                  <option
-                    v-for="(product, i) in addendacard.choice"
-                    :key="i"
-                    :value="i"
-
-                    >{{ product.idname }}</option
-                  >
+                <select name="additionalName" @change="changeName(additionalNameIndex)" >
+                  <option>替換其他商品</option >
+                  <option v-for="(checkAdditionalName, additionalNameIndex) in additionals" :key="additionalNameIndex" :value="additionalNameIndex" >{{checkAdditionalName.NAME}}{{checkAdditionalName.ID}}
+                  </option>
                 </select>
               </label>
+              <select name="quantity" >
+                <option v-for="(quantity, quantityIndex) in 10" :key="quantityIndex">{{quantity}}
+                
+                </option>
+              </select>
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price" v-if="addendacard.choice[addendacard.value].price">{{ addendacard.choice[addendacard.value].price }}</div>
+              <div class="addenda_price">{{checkAdditionals[additionalIndex].PRICE}}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="addenda_titlebar" v-for="(choose,index) in CTY_TEST" :key="index">
-                <div class="addenda_title" >{{choose[indexx].product}}
-                    <div class="addenda_cancel_icon">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
-                    </div>
-                </div>
-                
-                <div class="addenda_detail_item">
-                    <div id="addenda_detail">
-                        <div class="addenda_img">
-                            <img src="../assets/images/cho_cake.jpg" alt="">   
-                        </div>
-                        <div class="addenda_describe">{{choose[indexx].description}}</div>
-                    </div>
-                    <div class="addenda_detail_outline">
-                        <div class="addenda_amount">
-                            <label for="">
-                                <select v-model='indexx'>
-                                    <option v-for="(product,index) in CTY_TEST[index]" :key="index" @click='sendIndex(index)' :value='index' >{{product.product}}</option>
-                                    
-                                </select>
-                            </label>
-                        </div>
-                        <div class="addenda_twandprice">
-                            <div class="addenda_price_tw">NT$</div>
-                            <div class="addenda_price">{{choose[indexx].price}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-      <!-- <div class="addenda_titlebar"> -->
-      <!-- <div class="addenda_title">蠟燭
-                    <div class="addenda_cancel_icon">
-                        <img src="../assets/images/cho_cake.jpg" alt="">
-                    </div>
-                </div>
-                <div class="addenda_detail_item">
-                    <div id="addenda_detail">
-                        <div class="addenda_img">
-                            <img src="../assets/images/cho_cake.jpg" alt="">   
-                        </div>
-                        <div class="addenda_describe">一根小蠟燭一根小蠟燭一根小蠟燭一根小蠟燭一根小蠟燭</div>
-                    </div>
-                    <div class="addenda_detail_outline">
-                        <div class="addenda_amount">
-                            <label for="">
-                                <select>
-                                    <option>一根蠟燭</option>
-                                    <option>造型蠟燭:數字0</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="addenda_twandprice">
-                            <div class="addenda_price_tw">NT$</div>
-                            <div class="addenda_price">0</div>
-                        </div>
-                    </div>
-                </div> -->
-      <!-- </div> -->
-
       <span class="addnew_product_hr"></span>
       <div class="new_addenda_titlebar">
-        <div class="new_addenda" @click="addaddenda(index)">
-        <div class="new_addenda_title" >新增加購</div>
-            <img src="../assets/images/cho_cake.jpg" alt="" />
+        <div class="new_addenda" @click="addNewAdditional()">
+          <div class="new_addenda_title">新增加購</div>
+          <img src="../assets/images/cho_cake.jpg" alt="" />
         </div>
       </div>
       <div class="addenda_button_bar">
-        <router-link to="shopping_cart">
-          <button id="addenda_button_sumbit" @click="aaaaa()">前往結帳</button>
-        </router-link>
         <router-link to="">
           <button id="addenda_button_backtoproduct" @click="close">
             返回商品
           </button>
+        </router-link>
+        <router-link to="shopping_cart">
+          <button id="addenda_button_sumbit" @click="aaaaa()">前往結帳</button>
         </router-link>
       </div>
     </div>
@@ -174,26 +97,8 @@
 import $ from "jquery";
 import headercom from "../components/headercom";
 import footercom from "../components/footercom";
-const choice =[
-          {
-            idname: "一班卡片",
-            description: "我是一班卡片",
-            price: 20,
-            option: ""
-          },
-          {
-            idname: "一班蠟燭",
-            description: "我是一班蠟燭",
-            price: 50,
-            option: ""
-          },
-          {
-            idname: "特殊卡片",
-            description: "我是特殊卡片",
-            price: 100,
-            option: ""
-          }
-        ]
+import axios from "axios"
+
 export default {
   model: {
     prop: "showpage", //這個字段，是指父組件設置 v-model 時，將變量值傳給子組件的 msg
@@ -207,76 +112,35 @@ export default {
     // productDetailAddenda,
   },
   data() {
-    
-    
     return {
-      theselect: '',
+      a: [],
+      theselect: "",
       rank: 0,
-      addendacards: [
-        {
-          choice:choice,
-          value:0
-        },
-          {
-          choice,
-          value:1
-        },
-      ],
-      packageselected: "",
-
-      packagedata: {
-        content: [
-          "一般包裝就是一班包裝",
-          "高級包裝就是高級包裝",
-          "特殊包裝就是特殊包裝"
-        ],
-        price: [0, 60, 120],
-        packs: ["普通包裝", "高級包裝", "特殊包裝"]
-      },
-      addenda_card: [
-        {
-          idname: "一般卡片",
-          price: 0,
-          items: [
-            {
-              content: ["a", "b", "c"],
-              price: [0, 60, 120],
-              packs: [1, 2, 3]
-            },
-            {
-              content: ["a", "b", "c"],
-              price: [0, 60, 120],
-              packs: [1, 2, 3]
-            }
-          ]
-        },
-        {
-          idname: "一般蠟燭",
-          price: 0,
-          items: {}
-        }
-      ],
+      packageIndex: 0,
+      packageDatas:[],
+      checkPackageDatas:[],
       counter: 1,
       closethat: this.showpage,
-      packageselect: "普通包裝",
-
-      dude: 0
+      additionals : [],
+      checkAdditionals: [],
+      checkAdditionalNames: [],
+      // additionalNameIndex: 0,
+      // dude: Array(choices.length)
+      //   .fill(null)
+      //   .map((val, index) => index)
+      //   .slice(2)
     };
   },
   props: ["show"],
   methods: {
-    // sendIndex(){
-
+    changeName(additionalNameIndex){
+      console.log(additionalNameIndex)
+      // checkAdditional.NAME = this.checkAdditionals[additionalIndex].NAME
+    },
+   // changeCheckPackageDatas(packageIndex){
+    //   console.log(packageIndex)
     // },
-    fukcMyAnal(){
-     console.log(this.theselect);
-      // console.log(choice[index].addendacard.value)
-      // console.log(choice[index].idname)
-    },
-    fuckAllthisShit(packageselect) {
-      this.dude = this.packagedata.packs.indexOf(packageselect);
-      console.log(dude);
-    },
+    // 
     add() {
       this.counter += 1;
     },
@@ -288,45 +152,78 @@ export default {
     close() {
       this.$emit("closepage", !this.show);
       console.log(this.show);
+      document.querySelector('body').style.overflow='auto'
     },
-    aaaaa() {
-      console.log(packageselect);
+    checkChoice() {},
+    addNewAdditional(){
+      console.log(this.additionals[0]);
+      if(this.additionals[0]){
+        this.checkAdditionals.push(this.additionals[0])
+        this.additionals.shift();
+        // console.log('全部商品', this.additionals)
+        // console.log('選取商品',this.checkAdditionals)
+      }
     },
-    checkChoice(){
+    delAdditional(additionalIndex){
+      // if(this.checkAdditionals[0] && this.checkAdditionals[1]){
 
+        console.log('處理前', this.additionals)
+        this.additionals.push(...this.checkAdditionals.splice(additionalIndex,1));
+        console.log('處理後', this.additionals)
+      // }
     },
-    addaddenda(index){
-      
-        this.addendacards.push({
-            choice:choice,
-            value:0
-        });
-        // console.log(this.addendacards);
-        // console.log(this.addendacards.choice);
-    },
-    deladdenda(index){
-        // console.log(index)
-        if(index !== 1 && index !== 0){
-          this.addendacards.splice(index,1);
-        }
-    }
-  },
-  watch: {
-    addendacards: {
-        handler(newValue,oldValue){
-            // console.log(`addendacards: ${oldValue} ---> ${newValue}`);
-            console.log(oldValue, newValue);
-            newV
-        },
-        immediate: true,   
-        // false by default, if true --> 當 Vue instance 一建立(create) 就立刻執行 watch
-        deep: false, //false by default, 詳見下一個程式
-    },
+    // deladdenda(index) {
+    //   // console.log(this.dude);
+    //   console.log(this.addendacards);
+    //   // this.index = index
+    //   if (index !== 1 && index !== 0) {
+    //     this.addendacards.splice(index, 1);
+    //     console.log(index);
+    //     this.dude.push(index);
+    //     this.dude.sort((a, b) => a - b);
+    //     console.log(this.dude);
+    //   }
+    // }
   },
   computed: {},
-  mounted() {},
+  mounted(){
+        axios.post("http://localhost/acake/productDetailSelectPackage.php")
+            .then(res => {
+                // console.log(res);
+                this.packageDatas = res.data
+                this.checkPackageDatas = this.packageDatas 
+                // console.log(this.packageDatas[0].NAME)
+                this.checkPackageDatas.push(this.packageDatas[0])
+                // console.log(this.checkPackageDatas[0].NAME)
+                
+            })
+            .catch( err => console.log(err));
+        axios.post("http://localhost/acake/productDetailSelectAdditional.php")
+            .then(res => {
+              // console.log(res.data);
+              this.additionals = res.data 
+              // console.log(this.additionals)
+              this.checkAdditionals.push(this.additionals[0])
+              this.additionals.splice(0, 1)
+              this.checkAdditionals.push(this.additionals[0])
+              this.additionals.splice(0, 1)
+              console.log(this.additionals)
+              console.log(this.checkAdditionals)  
+              // console.log(this.checkAdditionals)
+              // this.checkAdditionals.push(this.additionals[1])
+              // console.log(this.checkAdditionals)
+              // console.log(this.checkAdditionals)
+              // console.log(this.checkAdditionals[0].NAME)
+            })
+            .catch( err => console.log(err));
+              
+    
+            
+  },
+  beforeDestroy() {
+   
+  },
   created() {
-    this.packageselect = this.packagedata.packs[0];
   }
 };
 </script>
@@ -340,8 +237,9 @@ body {
   z-index: 5;
 }
 .addenda_all {
+  // overscroll-behavior: contain;
   overflow-y: scroll;
-  height: clac(100%vh - 150px);
+  height: 70vh;
 }
 .addenda_title_block {
   background-color: $palePike;
@@ -350,7 +248,7 @@ body {
   margin: auto;
   height: 350px;
   padding-top: 10px;
-  margin-top: 30px;
+  // margin-top: 30px;
   @media screen and (max-width: 767.98px) {
     height: 400px;
   }

@@ -308,6 +308,7 @@ export default {
     },
     created(){
         this.packdata = this.packs[0];
+        document.querySelector('body').style.overflow='auto'
     }
 }
 

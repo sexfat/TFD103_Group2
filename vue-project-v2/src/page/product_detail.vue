@@ -65,8 +65,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="productDetailAddenda_block" >
-                    <productDetailAddenda v-show="showpage" @closepage="nnn" :show="showpage"></productDetailAddenda>
+                <div class="productDetailAddenda_block" v-show="showpage">
+                    <productDetailAddenda class="heyBro" v-show="showpage" @closepage="nnn" :show="showpage"></productDetailAddenda>
                 </div>
             </section>
         </main>
@@ -93,7 +93,7 @@ export default {
     data(){
         return{
             counter: 1,
-            showpage: true,
+            showpage: false,
         }
     },
     methods:{
@@ -107,6 +107,8 @@ export default {
         },
         open(){
             this.showpage = !this.showpage;
+            document.querySelector('body').style.overflow='hidden'
+            
         },
         nnn(ev){
             // console.log(ev)
@@ -589,15 +591,22 @@ body{
 
 
 .productDetailAddenda_block{
-    // display: none;
-    max-width: 1120px;
+    // overflow:scroll ;
     width: 100%;
-   
+    height: 100%;
+    // overflow: hidden;
+    background-color: rgba(0,0,0,.35);
     margin: auto;
-    position: absolute;
-    top: 150px;
-    z-index: 100;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 99999999;
     // transform: scale(0.5);
+
+    .heyBro{
+        margin: 100px auto;
+    }
+
 }
 
 
