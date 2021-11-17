@@ -35,9 +35,9 @@
     </div>
     <div class="addenda_block">
       <div class="addenda_titlebar" v-for="(checkAdditional, additionalIndex) in checkAdditionals" :key="additionalIndex" :value="additionalIndex">
-        <div class="addenda_title">{{checkAdditionals[melodyIndex].NAME}}
+        <div class="addenda_title">{{checkAdditional.NAME}}
           <div class="addenda_cancel_icon" @click="delAdditional(checkAdditional)" v-show="checkAdditional.NAME !== '一般卡片' && checkAdditional.NAME !== '一般蠟燭'">
-            <img src="" alt="" />
+            <img src="../assets/images/trash_icon.svg" alt="">
           </div>
         </div>
 
@@ -46,16 +46,16 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">{{checkAdditionals[additionalIndex].DESCRIPTION}}
+            <div class="addenda_describe">{{checkAdditional.DESCRIPTION}}
               
             </div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
-                <select name="additionalName" v-model="additionals[additionalNameIndex]" @change="changeName(additionalNameIndex)" >
+                <select name="additionalName" @change="changeName(additionalIndex)" v-model="a">
                   <option>替換其他商品</option >
-                  <option v-for="(checkAdditionalName, additionalNameIndex) in additionalsMelody" :key="additionalNameIndex" :value="additionalNameIndex" >{{checkAdditionalName.NAME}}{{checkAdditionalName.ID}}
+                  <option v-for="(checkAdditionalName, additionalNameIndex) in checkAdditionals" :key="additionalNameIndex" :value="additionalNameIndex" >{{checkAdditionalName.NAME}}
                   </option>
                 </select>
               </label>
@@ -67,7 +67,7 @@
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price">{{checkAdditionals[additionalIndex].PRICE}}
+              <div class="addenda_price">{{checkAdditional.PRICE}}
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default {
   },
   data() {
     return {
-      a: [],
+      a: {},
       theselect: "",
       rank: 0,
       packageIndex: 0,
@@ -130,14 +130,14 @@ export default {
       //   .fill(null)
       //   .map((val, index) => index)
       //   .slice(2)
+      abc:0,
     };
   },
   props: ["show"],
   methods: {
-    changeName(additionalNameIndex){
-      console.log(additionalNameIndex)
-      let melodyIndex = additionalNameIndex
-      
+    changeName(aaa){
+      this.checkAdditionals[aaa] = this.additionals[this.a]
+      // let melodyIndex = abc 
       // checkAdditional.NAME = this.checkAdditionals[additionalIndex].NAME
     },
    // changeCheckPackageDatas(packageIndex){
@@ -210,10 +210,11 @@ export default {
               // console.log(res.data);
               this.additionals = res.data;
               this.additionalsMelody = JSON.parse(JSON.stringify(res.data)); 
+              console.log(this.additionalsMelody)
               this.checkAdditionals.push(this.additionals[0])
               this.checkAdditionals.push(this.additionals[1])
-              console.log(this.additionals)
-              console.log(this.checkAdditionals)  
+              // console.log(this.additionals)
+              // console.log(this.checkAdditionals)  
               
               // console.log(this.checkAdditionals)
               // this.checkAdditionals.push(this.additionals[1])
@@ -229,6 +230,14 @@ export default {
   beforeDestroy() {
   },
   created() {
+  },
+  watch:{
+    checkAdditionals:{
+      handle:function(newValue){
+        this.checkAdditionals=newValue
+      },
+      deep:true,
+    }
   }
 };
 </script>
@@ -255,7 +264,7 @@ body {
   padding-top: 10px;
   // margin-top: 30px;
   @media screen and (max-width: 767.98px) {
-    height: 400px;
+    // height: 400px;
   }
 }
 .addenda_titlebar {
@@ -266,6 +275,9 @@ body {
   max-width: 900px;
   width: 95%;
   // background-color: $pi;
+  @media screen and (max-width: 767.98px) {
+    padding-bottom: 50px;
+  }
   .addenda_title {
     font-size: 20px;
     margin-bottom: 20px;
@@ -286,7 +298,6 @@ body {
         width: 35px;
         height: 35px;
         object-fit: fill;
-        background-color: black;
       }
     }
   }
