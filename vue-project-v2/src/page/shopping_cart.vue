@@ -281,6 +281,11 @@ export default {
 
     },
     mounted(){
+        // 會員認證，非會員跳轉到登入頁面
+            if(this.$store.state.member_id==0){
+                alert("您尚未登入，將跳轉到登入頁面");
+                this.$router.push('/assign')
+            }
     },
 
     

@@ -5,7 +5,6 @@ import App from './App'
 import './assets/style/var.scss'
 import VueAxios from 'vue-axios'
 import axios from "axios";
-import $ from 'jquery'
 import store from './store/store.js'
 import qs from 'qs'
 import { library } from '@fortawesome/fontawesome-svg-core'

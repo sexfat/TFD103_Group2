@@ -21,7 +21,7 @@
         
       </section>
       <diV id="content">
-      <section id="right_section" :is="showWhat" @runEvent="event">
+      <section id="right_section" :is="showWhat" @runEvent="event" @back="back">
         
       </section>
       </diV>
@@ -53,6 +53,9 @@ export default {
   methods: {
     event(){
       this.showWhat = newEvent
+    },
+    back(){
+      this.showWhat=runOrStop
     }
   },
   mounted(){
