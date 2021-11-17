@@ -242,10 +242,10 @@ export default {
     },
     mounted(){
         // 會員認證，非會員跳轉到登入頁面
-            if(this.$store.state.member_id==0){
-                alert("您尚未登入，將跳轉到登入頁面");
-                this.$router.push('/assign')
-            }
+            // if(this.$store.state.member_id==0){
+            //     alert("您尚未登入，將跳轉到登入頁面");
+            //     this.$router.push('/assign')
+            // }
     },
     updated() {
         // console.log(`updated() pack: ---> ${this.packdata}`)
@@ -507,7 +507,7 @@ body{
                         margin-left: 60px;
                         // justify-content: space-between;
                         @media screen and (max-width:991.98px){ 
-                            // max-width: 576px;
+                            max-width: 345px;
                             // width: 100%;
                             // max-width: 220px;
                             //   width: 100%;
@@ -528,7 +528,7 @@ body{
                         }
                         
                         .addenda_block_cake_content{
-                            max-width: 100px;
+                            // max-width: 100px;
                             width: 100%;
                             display: flex;
                             flex-direction: column;
@@ -536,7 +536,7 @@ body{
                             // margin: 0px;
                             @media screen and (max-width:991.98px){ 
                                 margin-left: 18px;
-                                width: 100px;
+                                width: 225px;
                             }
                             @media screen and (max-width:575.98px){ 
                                 width: 100%
@@ -563,16 +563,16 @@ body{
                         }
                     }
                 .addenda_block_package_select_block{
-                    max-width: 220px;
+                    max-width: 177.5px;
                     width: 100%;
                     display: flex;
-                    margin-left: 85px;
                     align-items: center;
                     text-align: center;
+                    margin-left: 0px;
                     @media screen and (max-width:991.98px){ 
                         max-width: 120px;
                         width: 100%;
-                        margin-left: 155px;
+                        margin-left: 37px;
                         @media screen and (max-width:575.98px){ 
                             margin-left: 0px;
                         }

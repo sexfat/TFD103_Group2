@@ -3,9 +3,9 @@
     <div class="addenda_title_block">
       <div class="addenda_titlebar">
         <div class="addenda_title">
-          {{checkPackageDatas[packageIndex].NAME}}
+          包裝
           <div class="addenda_cancel_icon">
-            <!-- <img src="" alt="" /> -->
+            <img src="" alt="" />
           </div>
         </div>
 
@@ -14,30 +14,42 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">{{checkPackageDatas[packageIndex].DESCRIPTION}}</div>
+            <div class="addenda_describe">{{ packagedata.content[dude] }}</div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
-                <select v-model="packageIndex">
-                  <option v-for="(packageData, packageIndex) in checkPackageDatas" :key="packageIndex" :value="packageIndex">{{checkPackageDatas[packageIndex].NAME}}
-                </option>
+                <select
+                  v-model="packageselect"
+                  @change="fuckAllthisShit(packageselect)"
+                  :value="packagedata.packs[0]"
+                >
+                  <option
+                    v-for="(pack, index) in packagedata.packs"
+                    :key="index"
+                    >{{ pack }}</option
+                  >
                 </select>
               </label>
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price">{{checkPackageDatas[packageIndex].PRICE}}</div>
+              <div class="addenda_price">{{ packagedata.price[dude] }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="addenda_block">
-      <div class="addenda_titlebar" v-for="(checkAdditional, additionalIndex) in checkAdditionals" :key="additionalIndex" :value="additionalIndex">
-        <div class="addenda_title">{{checkAdditional.NAME}}
-          <div class="addenda_cancel_icon" @click="delAdditional(checkAdditional)" v-show="checkAdditional.NAME !== '一般卡片' && checkAdditional.NAME !== '一般蠟燭'">
-            <img src="../assets/images/trash_icon.svg" alt="">
+      <div
+        class="addenda_titlebar"
+        v-for="(addendacard, index) in addendacards"
+        :key="index"
+      >
+        <div class="addenda_title">
+          {{ addendacard.choice.idname }}
+          <div class="addenda_cancel_icon" @click="deladdenda(index)">
+            <img src="" alt="" />
           </div>
         </div>
 
@@ -46,38 +58,39 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">{{checkAdditional.DESCRIPTION}}
-              
+            <div class="addenda_describe">
+              {{ addendacard.choice.description }}
             </div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
-                <select name="additionalName" @change="changeName(additionalIndex)" v-model="a">
-                  <option>替換其他商品</option >
-                  <option v-for="(checkAdditionalName, additionalNameIndex) in checkAdditionals" :key="additionalNameIndex" :value="additionalNameIndex" >{{checkAdditionalName.NAME}}
-                  </option>
+                <select v-model="addendacards[index].choice">
+                  <option
+                    v-for="(choice, i) in choices"
+                    :key="i"
+                    :value="choice"
+                    v-show="!addendacards.map(card=>card.choice).includes(choice)"
+                    >{{ choice.idname }}</option
+                  >
                 </select>
               </label>
-              <select name="quantity" >
-                <option v-for="(quantity, quantityIndex) in 10" :key="quantityIndex">{{quantity}}
-                
-                </option>
+              <select name="quantity" v-model="addendacards[index].quantity">
+                <option v-for="quantity in 10" :key="quantity">{{quantity}}</option>
               </select>
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price">{{checkAdditional.PRICE}}
-              </div>
+              <div class="addenda_price" >{{ addendacard.choice.price * addendacard.quantity - addendacard.choice.discount }}</div>
             </div>
           </div>
         </div>
       </div>
       <span class="addnew_product_hr"></span>
       <div class="new_addenda_titlebar">
-        <div class="new_addenda" @click="addNewAdditional()">
-          <div class="new_addenda_title">新增加購</div>
-          <img src="../assets/images/cho_cake.jpg" alt="" />
+        <div class="new_addenda" @click="addaddenda(index)">
+        <div class="new_addenda_title" >新增加購</div>
+            <img src="../assets/images/cho_cake.jpg" alt="" />
         </div>
       </div>
       <div class="addenda_button_bar">
@@ -97,8 +110,64 @@
 import $ from "jquery";
 import headercom from "../components/headercom";
 import footercom from "../components/footercom";
-import axios from "axios"
-
+const choices =[
+          {
+            idname: "一般卡片",
+            description: "我是一般卡片",
+            price: 10,
+            option: "",
+            discount: 10,
+            id:1,
+          },
+          {
+            idname: "一般蠟燭",
+            description: "我是一般蠟燭",
+            price: 10,
+            discount: 10,
+            option: "",
+            id:2,
+          },
+          {
+            idname: "特殊蠟燭",
+            description: "我是特殊蠟燭",
+            price: 50,
+            discount: 0,
+            option: "",
+            id:3,
+          },
+          {
+            idname: "情人節卡片",
+            description: "情人節卡片",
+            price: 30,
+            discount: 0,
+            option: "",
+            id:4,
+          },
+          {
+            idname: "聖誕節卡片",
+            description: "聖誕節卡片",
+            price: 30,
+            discount: 0,
+            option: "",
+            id:5,
+          },
+          {
+            idname: "造型數字蠟燭(0)",
+            description: "數字0蠟燭",
+            price: 30,
+            discount: 0,
+            option: "",
+            id:6,
+          },
+          {
+            idname: "造型數字蠟燭(1)",
+            description: "數字1蠟燭",
+            price: 30,
+            discount: 0,
+            option: "",
+            id:7,
+          }
+        ]
 export default {
   model: {
     prop: "showpage", //這個字段，是指父組件設置 v-model 時，將變量值傳給子組件的 msg
@@ -112,38 +181,54 @@ export default {
     // productDetailAddenda,
   },
   data() {
+
+
     return {
-      a: {},
-      theselect: "",
+      index: 0,
+      choices,
+      // quantity: 0,
+      theselect: '',
       rank: 0,
-      packageIndex: 0,
-      packageDatas:[],
-      checkPackageDatas:[],
+      addendacards: [
+        {
+          quantity: 1,
+          choice: choices[0],
+          value: 0,
+        },
+        {
+          quantity: 1,
+          choice: choices[1],
+          value: 1,
+        }
+      ],
+      packageselected: "",
+
+      packagedata: {
+        content: [
+          "一般包裝就是一班包裝",
+          "高級包裝就是高級包裝",
+          "特殊包裝就是特殊包裝"
+        ],
+        price: [0, 60, 120],
+        packs: ["普通包裝", "高級包裝", "特殊包裝"]
+      },
       counter: 1,
       closethat: this.showpage,
-      additionals : [],
-      checkAdditionals: [],
-      checkAdditionalNames: [],
-      melodyIndex: 0,
-      // additionalNameIndex: 0,
-      // dude: Array(choices.length)
-      //   .fill(null)
-      //   .map((val, index) => index)
-      //   .slice(2)
-      abc:0,
+      packageselect: "普通包裝",
+
+      dude: Array(choices.length).fill(null).map((val, index)=> index).slice(2),
     };
   },
   props: ["show"],
   methods: {
-    changeName(aaa){
-      this.checkAdditionals[aaa] = this.additionals[this.a]
-      // let melodyIndex = abc 
-      // checkAdditional.NAME = this.checkAdditionals[additionalIndex].NAME
+
+    fukcMyAnal(){
+    console.log(this.theselect);
     },
-   // changeCheckPackageDatas(packageIndex){
-    //   console.log(packageIndex)
-    // },
-    // 
+    fuckAllthisShit(packageselect) {
+      this.dude = this.packagedata.packs.indexOf(packageselect);
+      console.log(dude);
+    },
     add() {
       this.counter += 1;
     },
@@ -155,89 +240,52 @@ export default {
     close() {
       this.$emit("closepage", !this.show);
       console.log(this.show);
-      document.querySelector('body').style.overflow='auto'
     },
-    checkChoice() {},
-    addNewAdditional(){
-      // console.log(this.additionals[0]);
-      if(this.checkAdditionals.length < this.additionals.length){
+    aaaaa() {
+      console.log(packageselect);
+    },
+    checkChoice(){
 
-        this.checkAdditionals.push(this.additionals[this.checkAdditionals.length]);
+    },
+    addaddenda(){
+      let index = this.dude.shift();
+      // console.log(this.dude);
+      // console.log(index)
+      // console.log(this.addendacards[0].choice.idname)
+      // console.log(choices.length)
+      // console.log(this.addendacards.length)
+      // console.log(choices.id)
+      console.log(this.addendacards[0].choice.id)
+      if(this.addendacards.length < choices.length ){
+      // if(this.addendacards.length < choices.length && this.addendacards == this.addendacards[index].choice.idname)){
+        this.addendacards.push(
+          {
+            quantity: 1,
+            choice: choices[index],
+            value: index,
+          }
+        )
       }
-      // console.log(this.additionalsMelody.map(item => item.DESCRIPTION));
-      // console.log(this.additionals[this.checkAdditionals.length]);
     },
-    delAdditional(item){
-      // if(this.checkAdditionals[0] && this.checkAdditionals[1]){
-        let index = this.additionals.map(item => item.ID).indexOf(item.ID);
-        this.checkAdditionals.splice(index,1);
-        let melody060201 = this.additionals.splice(index, 1);
-        console.log(melody060201);
-        this.additionals.push(...melody060201);
-        // console.log('處理前', this.additionals)
-        // this.additionals.push(...this.checkAdditionals.splice(additionalIndex,1));
-        // console.log('處理後', this.additionals)
-      // }
+    deladdenda(index){
+        // console.log(this.dude);
+        console.log(this.addendacards);
+        // this.index = index
+        if(index !== 1 && index !== 0){
+          this.addendacards.splice(index,1);
+          console.log(index);
+          this.dude.push(index);
+          this.dude.sort((a, b)=> a - b);
+          console.log(this.dude);
+  // choices.length
+        }
     },
-    // deladdenda(index) {
-    //   // console.log(this.dude);
-    //   console.log(this.addendacards);
-    //   // this.index = index
-    //   if (index !== 1 && index !== 0) {
-    //     this.addendacards.splice(index, 1);
-    //     console.log(index);
-    //     this.dude.push(index);
-    //     this.dude.sort((a, b) => a - b);
-    //     console.log(this.dude);
-    //   }
-    // }
   },
   computed: {},
-  mounted(){
-        axios.post("http://localhost/acake/productDetailSelectPackage.php")
-            .then(res => {
-                // console.log(res);
-                this.packageDatas = res.data
-                this.checkPackageDatas = this.packageDatas 
-                // console.log(this.packageDatas[0].NAME)
-                // this.checkPackageDatas.push(this.packageDatas[0])
-                // console.log(this.checkPackageDatas[0].NAME)
-                
-            })
-            .catch( err => console.log(err));
-        axios.post("http://localhost/acake/productDetailSelectAdditional.php")
-            .then(res => {
-              // console.log(res.data);
-              this.additionals = res.data;
-              this.additionalsMelody = JSON.parse(JSON.stringify(res.data)); 
-              console.log(this.additionalsMelody)
-              this.checkAdditionals.push(this.additionals[0])
-              this.checkAdditionals.push(this.additionals[1])
-              // console.log(this.additionals)
-              // console.log(this.checkAdditionals)  
-              
-              // console.log(this.checkAdditionals)
-              // this.checkAdditionals.push(this.additionals[1])
-              // console.log(this.checkAdditionals)
-              // console.log(this.checkAdditionals)
-              // console.log(this.checkAdditionals[0].NAME)
-            })
-            .catch( err => console.log(err));
-              
-    
-            
-  },
-  beforeDestroy() {
+  mounted() {
   },
   created() {
-  },
-  watch:{
-    checkAdditionals:{
-      handle:function(newValue){
-        this.checkAdditionals=newValue
-      },
-      deep:true,
-    }
+    this.packageselect = this.packagedata.packs[0];
   }
 };
 </script>
@@ -251,9 +299,8 @@ body {
   z-index: 5;
 }
 .addenda_all {
-  // overscroll-behavior: contain;
   overflow-y: scroll;
-  height: 70vh;
+  height: calc(100vh - 150px);
 }
 .addenda_title_block {
   background-color: $palePike;
@@ -262,9 +309,9 @@ body {
   margin: auto;
   height: 350px;
   padding-top: 10px;
-  // margin-top: 30px;
+  margin-top: 30px;
   @media screen and (max-width: 767.98px) {
-    // height: 400px;
+    height: 400px;
   }
 }
 .addenda_titlebar {
@@ -275,9 +322,6 @@ body {
   max-width: 900px;
   width: 95%;
   // background-color: $pi;
-  @media screen and (max-width: 767.98px) {
-    padding-bottom: 50px;
-  }
   .addenda_title {
     font-size: 20px;
     margin-bottom: 20px;
@@ -298,6 +342,7 @@ body {
         width: 35px;
         height: 35px;
         object-fit: fill;
+        background-color: black;
       }
     }
   }
