@@ -86,7 +86,7 @@
         </div>
       </div>
       <span class="addnew_product_hr"></span>
-      <div class="new_addenda_titlebar">
+      <div v-show="addendacards.length<choices.length" class="new_addenda_titlebar">
         <div class="new_addenda" @click="addaddenda(index)">
         <div class="new_addenda_title" >新增加購</div>
             <img src="../assets/images/cho_cake.jpg" alt="" />
@@ -206,12 +206,10 @@ export default {
         {
           quantity: 1,
           choice: choices[0],
-          value: 0,
         },
         {
           quantity: 1,
           choice: choices[1],
-          value: 1,
         }
       ],
       packageSelected: packages[0],
@@ -245,40 +243,28 @@ export default {
 
     },
     addaddenda(){
-      let index = this.dude.shift();
-      // console.log(this.dude);
-      // console.log(index)
-      // console.log(this.addendacards[0].choice.idname)
-      // console.log(choices.length)
-      // console.log(this.addendacards.length)
-      // console.log(choices.id)
-      console.log(this.addendacards[0].choice.id)
       if(this.addendacards.length < choices.length ){
-      // if(this.addendacards.length < choices.length && this.addendacards == this.addendacards[index].choice.idname)){
         this.addendacards.push(
           {
             quantity: 1,
-            choice: choices[index],
-            value: index,
+            choice: this.notSelectedChoices[0],
           }
         )
       }
     },
     deladdenda(index){
-        // console.log(this.dude);
-        console.log(this.addendacards);
-        // this.index = index
-        if(index !== 1 && index !== 0){
-          this.addendacards.splice(index,1);
-          console.log(index);
-          this.dude.push(index);
-          this.dude.sort((a, b)=> a - b);
-          console.log(this.dude);
-  // choices.length
-        }
+      this.addendacards.splice(index,1);
     },
   },
-  computed: {},
+  computed: {
+    notSelectedChoices(){
+      return this.choices.filter((choice) => {
+        return !this.addendacards.some((addendacard) => {
+          return addendacard.choice === choice
+        })
+      })
+    }
+  },
   mounted() {
   },
   created() {
