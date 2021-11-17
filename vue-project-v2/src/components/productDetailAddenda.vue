@@ -3,7 +3,7 @@
     <div class="addenda_title_block">
       <div class="addenda_titlebar">
         <div class="addenda_title">
-          包裝
+          {{ packageSelected.name }}
           <div class="addenda_cancel_icon">
             <img src="" alt="" />
           </div>
@@ -14,27 +14,26 @@
             <div class="addenda_img">
               <img src="../assets/images/cho_cake.jpg" alt="" />
             </div>
-            <div class="addenda_describe">{{ packagedata.content[dude] }}</div>
+            <div class="addenda_describe">{{ packageSelected.description }}</div>
           </div>
           <div class="addenda_detail_outline">
             <div class="addenda_amount">
               <label for="">
                 <select
-                  v-model="packageselect"
-                  @change="fuckAllthisShit(packageselect)"
-                  :value="packagedata.packs[0]"
+                  v-model="packageSelected"
                 >
                   <option
-                    v-for="(pack, index) in packagedata.packs"
+                    v-for="(pack, index) in packages"
                     :key="index"
-                    >{{ pack }}</option
+                    :value="pack"
+                    >{{ pack.name }}</option
                   >
                 </select>
               </label>
             </div>
             <div class="addenda_twandprice">
               <div class="addenda_price_tw">NT$</div>
-              <div class="addenda_price">{{ packagedata.price[dude] }}</div>
+              <div class="addenda_price">{{ packageSelected.price }}</div>
             </div>
           </div>
         </div>
@@ -168,6 +167,20 @@ const choices =[
             id:7,
           }
         ]
+
+const packages = [{
+  name:"普通包裝",
+  price:0,
+  description:"一般包裝就是一班包裝",
+},{
+  name: "高級包裝",
+  price:60,
+  description:          "高級包裝就是高級包裝",
+},{
+  name: "特殊包裝",
+  price:120,
+  description:"特殊包裝就是特殊包裝",
+}]
 export default {
   model: {
     prop: "showpage", //這個字段，是指父組件設置 v-model 時，將變量值傳給子組件的 msg
@@ -186,7 +199,7 @@ export default {
     return {
       index: 0,
       choices,
-      // quantity: 0,
+      packages,
       theselect: '',
       rank: 0,
       addendacards: [
@@ -201,21 +214,9 @@ export default {
           value: 1,
         }
       ],
-      packageselected: "",
-
-      packagedata: {
-        content: [
-          "一般包裝就是一班包裝",
-          "高級包裝就是高級包裝",
-          "特殊包裝就是特殊包裝"
-        ],
-        price: [0, 60, 120],
-        packs: ["普通包裝", "高級包裝", "特殊包裝"]
-      },
+      packageSelected: packages[0],
       counter: 1,
       closethat: this.showpage,
-      packageselect: "普通包裝",
-
       dude: Array(choices.length).fill(null).map((val, index)=> index).slice(2),
     };
   },
@@ -224,10 +225,6 @@ export default {
 
     fukcMyAnal(){
     console.log(this.theselect);
-    },
-    fuckAllthisShit(packageselect) {
-      this.dude = this.packagedata.packs.indexOf(packageselect);
-      console.log(dude);
     },
     add() {
       this.counter += 1;
@@ -285,7 +282,6 @@ export default {
   mounted() {
   },
   created() {
-    this.packageselect = this.packagedata.packs[0];
   }
 };
 </script>
